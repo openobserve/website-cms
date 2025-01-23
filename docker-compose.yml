@@ -1,0 +1,49 @@
+name: openobserve-cms
+services:
+  strapi:
+    container_name: openobserve-cms-strapi
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: strapi-db
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - openobserve-cms-uploads:/opt/app/public
+    ports:
+      - "1337:1337"
+    networks:
+      - openobserve-cms-network
+    depends_on:
+      - strapi-db
+
+  strapi-db:
+    container_name: openobserve-cms-strapi-db
+    restart: unless-stopped
+    env_file: .env
+    image: postgres:16.3-alpine
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - openobserve-cms-db:/var/lib/postgresql/data/ #using a volume
+    ports:
+      - "5432:5432"
+    networks:
+      - openobserve-cms-network
+
+volumes:
+  openobserve-cms-db:
+  openobserve-cms-uploads:
+
+networks:
+  openobserve-cms-network:
