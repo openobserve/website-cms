@@ -26,14 +26,7 @@ jobs:
     - name: Test SSH Connection
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo SSH Connection Successful"
-
-    - name: Create .env File
-      uses: 'DamianReeves/write-file-action@master'
-      with:
-        path: ~/website-cms/.env
-        write-mode: overwrite
-        contents: ${{ secrets.ENV_FILE_CONTENT }}
-          
+     
     - name: Deploy to EC2
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
@@ -45,6 +38,8 @@ jobs:
           sudo chmod -R u+rwX ~/website-cms
           git config --global --add safe.directory "$(pwd)"
           git pull origin main
-          
+          cat << 'EOT' > .env
+          ${{ secrets.ENV_FILE_CONTENT }}
+          EOT
           docker compose up -d --build
         EOF
