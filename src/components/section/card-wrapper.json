@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_card_wrappers",
+  "info": {
+    "displayName": "CardWrapper",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading",
+      "required": true
+    },
+    "data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items",
+      "required": true
+    },
+    "useCaseButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

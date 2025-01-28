@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_section_herosections",
+  "info": {
+    "displayName": "Herosection",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "backgroundVideo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "primary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button",
+      "required": true
+    },
+    "secondary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

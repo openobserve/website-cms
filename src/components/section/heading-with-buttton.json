@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_section_heading_with_butttons",
+  "info": {
+    "displayName": "HeadingWithButtton"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "primary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

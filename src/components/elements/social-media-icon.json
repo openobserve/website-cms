@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_social_media_icons",
+  "info": {
+    "displayName": "SocialMediaIcon"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "slack",
+        "twitter",
+        "github",
+        "linkdin",
+        "youtube"
+      ],
+      "default": "slack",
+      "required": true
+    }
+  }
+}

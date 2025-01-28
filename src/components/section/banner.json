@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_section_banners",
+  "info": {
+    "displayName": "Banner"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "bannerTitle": {
+      "type": "string",
+      "required": true
+    },
+    "bannerDescription": {
+      "type": "text"
+    },
+    "primary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}
