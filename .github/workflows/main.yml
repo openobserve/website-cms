@@ -3,7 +3,7 @@ name: Deploy Strapi CMS
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   deploy:
@@ -17,21 +17,26 @@ jobs:
     - name: Setup SSH Key
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+        echo "${{ secrets.EC2_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+        ls -lah ~/.ssh
+        cat ~/.ssh/id_rsa
+
+    - name: Test SSH Connection
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo SSH Connection Successful"
 
     - name: Deploy to EC2
       run: |
-        ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          # Navigate to deployment directory
+        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          set -e 
+          echo "Connected to EC2"
           cd ~/website-cms || git clone https://github.com/openobserve/website-cms.git ~/website-cms
           cd ~/website-cms
           git pull origin main
-
-          # Write .env file
-          echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
-
-          # Build and restart containers
+          cat <<EOT > .env
+          ${{ secrets.ENV_FILE_CONTENT }}
+          EOT
           docker compose up -d --build
         EOF
