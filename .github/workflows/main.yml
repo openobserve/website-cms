@@ -38,7 +38,7 @@ jobs:
           sudo chmod -R u+rwX ~/website-cms
           git config --global --add safe.directory "$(pwd)"
           git pull origin main
-          cat <<EOT > .env
+          cat > .env <<EOT
           ${{ secrets.ENV_FILE_CONTENT }}
           EOT
           docker compose up -d --build
