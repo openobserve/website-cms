@@ -1,0 +1,37 @@
+name: Deploy Strapi CMS
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup SSH Key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy to EC2
+      run: |
+        ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          # Navigate to deployment directory
+          cd ~/website-cms || git clone https://github.com/openobserve/website-cms.git ~/website-cms
+          cd ~/website-cms
+          git pull origin main
+
+          # Write .env file
+          echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
+
+          # Build and restart containers
+          docker compose up -d --build
+        EOF
