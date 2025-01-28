@@ -34,6 +34,8 @@ jobs:
           echo "Connected to EC2"
           cd ~/website-cms || git clone https://github.com/openobserve/website-cms.git ~/website-cms
           cd ~/website-cms
+          sudo chown -R $USER:$USER ~/website-cms
+          sudo chmod -R u+rwX ~/website-cms
           git config --global --add safe.directory "$(pwd)"
           git pull origin main
           cat <<EOT > .env
