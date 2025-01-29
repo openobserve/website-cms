@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_cards_feature4s",
+  "info": {
+    "displayName": "Feature4"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items",
+      "required": true
+    }
+  }
+}

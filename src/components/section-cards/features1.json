@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_cards_features1s",
+  "info": {
+    "displayName": "Features1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading",
+      "required": true
+    },
+    "data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items",
+      "required": true
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

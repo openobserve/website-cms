@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solution_pages",
+  "info": {
+    "singularName": "solution-page",
+    "pluralName": "solution-pages",
+    "displayName": "Solution Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.feature-sub-hero-section",
+        "section-cards.feature-highlights",
+        "section-faqs.frequently-asked-question",
+        "section-features.feature-list",
+        "section-cards.case-studies",
+        "section-cta.banner"
+      ]
+    }
+  }
+}

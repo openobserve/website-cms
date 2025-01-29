@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "solution_landing_pages",
+  "info": {
+    "singularName": "solution-landing-page",
+    "pluralName": "solution-landing-pages",
+    "displayName": "Solution-landing-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.feature-hero-section",
+        "section-forms.contact",
+        "section-cta.banner",
+        "section-features.platform-tabs-wrapper",
+        "section-cta.call-to-action",
+        "section-cards.features5",
+        "section-cards.case-studies"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_section_forms_contacts",
+  "info": {
+    "displayName": "Contact"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    }
+  }
+}

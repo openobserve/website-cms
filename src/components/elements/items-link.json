@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_items_links",
+  "info": {
+    "displayName": "Items-link",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
