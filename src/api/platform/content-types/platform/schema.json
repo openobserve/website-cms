@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "platforms",
+  "info": {
+    "singularName": "platform",
+    "pluralName": "platforms",
+    "displayName": "platform-landing-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.feature-hero-section",
+        "section-forms.contact",
+        "section-features.tabs-features",
+        "section-features.platform-tabs-wrapper",
+        "section-features.feature-list",
+        "section-cta.banner"
+      ]
+    }
+  }
+}

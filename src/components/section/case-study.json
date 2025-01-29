@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_case_studies",
+  "info": {
+    "displayName": "CaseStudy"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

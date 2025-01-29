@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platform_pages",
+  "info": {
+    "singularName": "platform-page",
+    "pluralName": "platform-pages",
+    "displayName": "Platform Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.feature-sub-hero-section",
+        "section-features.feature-list",
+        "section-faqs.frequently-asked-question",
+        "section-cta.banner",
+        "section-cards.case-studies"
+      ],
+      "required": true
+    }
+  }
+}

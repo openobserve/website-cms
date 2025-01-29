@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_section_hero_feature_hero_sections",
+  "info": {
+    "displayName": "FeatureHeroSection",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button",
+      "required": true
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_section_cards_clients",
+  "info": {
+    "displayName": "Clients",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image",
+      "required": true
+    }
+  }
+}

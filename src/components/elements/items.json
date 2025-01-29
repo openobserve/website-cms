@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_elements_items",
+  "info": {
+    "displayName": "items",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "logs",
+        "metrices",
+        "traces",
+        "alerts",
+        "dashboard",
+        "real-user-monitorting",
+        "session-replay",
+        "error-tracking",
+        "pipelines",
+        "slack",
+        "github",
+        "devops",
+        "developer",
+        "site-reliability-engineer"
+      ],
+      "required": true,
+      "default": "logs"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.homepage-hero",
+        "section-forms.contact",
+        "section-features.feature-list",
+        "section-cta.banner",
+        "section-cards.stats",
+        "section-cards.features3",
+        "section-cards.features2",
+        "section-cards.features1",
+        "section-cards.clients",
+        "section-cards.case-studies"
+      ],
+      "required": true
+    }
+  }
+}
