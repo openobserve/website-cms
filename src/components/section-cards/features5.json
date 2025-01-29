@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_cards_features5s",
+  "info": {
+    "displayName": "Features5"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items",
+      "required": true
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button",
+      "required": true
+    }
+  }
+}

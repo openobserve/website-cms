@@ -369,13 +369,13 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPagePage extends Struct.CollectionTypeSchema {
-  collectionName: 'pages';
+export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
+  collectionName: 'homepages';
   info: {
     description: '';
-    displayName: 'Pages';
-    pluralName: 'pages';
-    singularName: 'page';
+    displayName: 'Homepage';
+    pluralName: 'homepages';
+    singularName: 'homepage';
   };
   options: {
     draftAndPublish: true;
@@ -383,20 +383,16 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section.herosection',
-        'section.feature-section',
-        'section.company',
-        'section.case-study',
-        'section.card-wrapper',
-        'section.banner',
-        'section.platform-tabs-wrapper',
-        'section.heading-with-buttton',
-        'section.feature-sub-hero-section',
-        'section.feature-hero-section',
-        'section.faq',
-        'section.contact',
-        'section.company-hero-section',
-        'section.community-support',
+        'section-hero.homepage-hero',
+        'section-forms.contact',
+        'section-features.feature-list',
+        'section-cta.banner',
+        'section-cards.stats',
+        'section-cards.features3',
+        'section-cards.features2',
+        'section-cards.features1',
+        'section-cards.clients',
+        'section-cards.case-studies',
       ]
     > &
       Schema.Attribute.Required;
@@ -404,10 +400,51 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    > &
       Schema.Attribute.Private;
-    path: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlatformPagePlatformPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'platform_pages';
+  info: {
+    displayName: 'Platform Page';
+    pluralName: 'platform-pages';
+    singularName: 'platform-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.feature-sub-hero-section',
+        'section-features.feature-list',
+        'section-faqs.frequently-asked-question',
+        'section-cta.banner',
+        'section-cards.case-studies',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::platform-page.platform-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -418,7 +455,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   collectionName: 'platforms';
   info: {
     description: '';
-    displayName: 'Platform';
+    displayName: 'platform-landing-page';
     pluralName: 'platforms';
     singularName: 'platform';
   };
@@ -428,29 +465,14 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section.platform-tabs-wrapper',
-        'section.herosection',
-        'section.heading-with-buttton',
-        'section.feature-sub-hero-section',
-        'section.feature-section',
-        'section.feature-hero-section',
-        'section.faq',
-        'section.contact',
-        'section.company',
-        'section.company-hero-section',
-        'section.community-support',
-        'section.case-study',
-        'section.card-wrapper',
-        'section.banner',
+        'section-hero.feature-hero-section',
+        'section-forms.contact',
+        'section-features.tabs-features',
+        'section-features.platform-tabs-wrapper',
+        'section-features.feature-list',
+        'section-cta.banner',
       ]
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -458,6 +480,85 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::platform.platform'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSolutionLandingPageSolutionLandingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'solution_landing_pages';
+  info: {
+    description: '';
+    displayName: 'Solution-landing-page';
+    pluralName: 'solution-landing-pages';
+    singularName: 'solution-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.feature-hero-section',
+        'section-forms.contact',
+        'section-cta.banner',
+        'section-features.platform-tabs-wrapper',
+        'section-cta.call-to-action',
+        'section-cards.features5',
+        'section-cards.case-studies',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solution-landing-page.solution-landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSolutionPageSolutionPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'solution_pages';
+  info: {
+    description: '';
+    displayName: 'Solution Page';
+    pluralName: 'solution-pages';
+    singularName: 'solution-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.feature-sub-hero-section',
+        'section-cards.feature-highlights',
+        'section-faqs.frequently-asked-question',
+        'section-features.feature-list',
+        'section-cards.case-studies',
+        'section-cta.banner',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solution-page.solution-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -976,8 +1077,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::page.page': ApiPagePage;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::platform.platform': ApiPlatformPlatform;
+      'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
+      'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

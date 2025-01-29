@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_features_tabs_features",
+  "info": {
+    "displayName": "Features-Right-Tabs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-item",
+      "required": true
+    }
+  }
+}

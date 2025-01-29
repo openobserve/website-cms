@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "platforms",
+  "collectionName": "solution_landing_pages",
   "info": {
-    "singularName": "platform",
-    "pluralName": "platforms",
-    "displayName": "platform-landing-page",
+    "singularName": "solution-landing-page",
+    "pluralName": "solution-landing-pages",
+    "displayName": "Solution-landing-page",
     "description": ""
   },
   "options": {
@@ -17,10 +17,11 @@
       "components": [
         "section-hero.feature-hero-section",
         "section-forms.contact",
-        "section-features.tabs-features",
+        "section-cta.banner",
         "section-features.platform-tabs-wrapper",
-        "section-features.feature-list",
-        "section-cta.banner"
+        "section-cta.call-to-action",
+        "section-cards.features5",
+        "section-cards.case-studies"
       ]
     }
   }

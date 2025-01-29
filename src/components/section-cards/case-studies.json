@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_cards_case_studies",
+  "info": {
+    "displayName": "Case Studies",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

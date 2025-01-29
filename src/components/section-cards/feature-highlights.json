@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_cards_feature_highlights",
+  "info": {
+    "displayName": "FeatureHighlights"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items",
+      "required": true
+    }
+  }
+}

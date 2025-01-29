@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_cta_plain_ctas",
+  "info": {
+    "displayName": "Plain-CTA",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}
