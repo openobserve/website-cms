@@ -389,6 +389,14 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'section.case-study',
         'section.card-wrapper',
         'section.banner',
+        'section.platform-tabs-wrapper',
+        'section.heading-with-buttton',
+        'section.feature-sub-hero-section',
+        'section.feature-hero-section',
+        'section.faq',
+        'section.contact',
+        'section.company-hero-section',
+        'section.community-support',
       ]
     > &
       Schema.Attribute.Required;
@@ -399,6 +407,59 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
     path: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
+  collectionName: 'platforms';
+  info: {
+    description: '';
+    displayName: 'Platform';
+    pluralName: 'platforms';
+    singularName: 'platform';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section.platform-tabs-wrapper',
+        'section.herosection',
+        'section.heading-with-buttton',
+        'section.feature-sub-hero-section',
+        'section.feature-section',
+        'section.feature-hero-section',
+        'section.faq',
+        'section.contact',
+        'section.company',
+        'section.company-hero-section',
+        'section.community-support',
+        'section.case-study',
+        'section.card-wrapper',
+        'section.banner',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::platform.platform'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -916,6 +977,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::page.page': ApiPagePage;
+      'api::platform.platform': ApiPlatformPlatform;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

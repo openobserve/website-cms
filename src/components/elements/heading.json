@@ -1,13 +1,14 @@
 {
   "collectionName": "components_elements_headings",
   "info": {
-    "displayName": "heading"
+    "displayName": "heading",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "subtitle": {
       "type": "text",

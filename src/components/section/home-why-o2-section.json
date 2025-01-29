@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_section_home_platform _wrapper",
+  "collectionName": "components_section_home_why_o2_sections",
   "info": {
-    "displayName": "HomePlatformWrapper",
-    "description": ""
+    "displayName": "HomeWhyO2Section"
   },
   "options": {},
   "attributes": {
@@ -12,16 +11,11 @@
       "component": "elements.heading",
       "required": true
     },
-    "data": {
+    "items": {
       "type": "component",
       "repeatable": true,
       "component": "elements.items",
       "required": true
-    },
-    "useCaseButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.button"
     }
   }
 }

@@ -10,7 +10,7 @@
     "backgroundVideo": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
@@ -25,27 +25,37 @@
     "description": {
       "type": "text"
     },
-    "primary": {
+    "primaryButton": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button",
       "required": true
     },
-    "secondary": {
+    "secondaryButton": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button",
       "required": true
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
+      ]
+    },
+    "headingTextGradient": {
+      "type": "enumeration",
+      "enum": [
+        "gray",
+        "blue",
+        "sky-blue"
       ],
-      "type": "media",
-      "multiple": false
+      "required": true
     }
   }
 }

@@ -22,10 +22,15 @@
         "traces",
         "alerts",
         "dashboard",
-        "real user monitorting",
-        "session replay",
-        "error tracking",
-        "pipelines"
+        "real-user-monitorting",
+        "session-replay",
+        "error-tracking",
+        "pipelines",
+        "slack",
+        "github",
+        "devops",
+        "developer",
+        "site-reliability-engineer"
       ],
       "required": true,
       "default": "logs"
