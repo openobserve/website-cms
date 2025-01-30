@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_cards_why_customer_love_uses",
+  "info": {
+    "displayName": "Why-Customer-Love-Us",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items",
+      "required": true
+    },
+    "unifiedObservability": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.company-customer-feature",
+      "required": true
+    },
+    "integrations": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "elements.company-customer-feature"
+    }
+  }
+}

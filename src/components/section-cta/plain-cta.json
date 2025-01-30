@@ -9,6 +9,11 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }
