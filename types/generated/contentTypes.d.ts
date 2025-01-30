@@ -373,7 +373,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   collectionName: 'about_uses';
   info: {
     description: '';
-    displayName: 'AboutUs';
+    displayName: 'About Us Page';
     pluralName: 'about-uses';
     singularName: 'about-us';
   };
@@ -412,7 +412,8 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
 export interface ApiBlogBlog extends Struct.SingleTypeSchema {
   collectionName: 'blogs';
   info: {
-    displayName: 'Blog';
+    description: '';
+    displayName: 'Blog Page';
     pluralName: 'blogs';
     singularName: 'blog';
   };
@@ -441,7 +442,7 @@ export interface ApiCommunitySupportCommunitySupport
   collectionName: 'community_supports';
   info: {
     description: '';
-    displayName: 'Community-Support';
+    displayName: 'Community Support Page';
     pluralName: 'community-supports';
     singularName: 'community-support';
   };
@@ -477,7 +478,8 @@ export interface ApiCommunitySupportCommunitySupport
 export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
-    displayName: 'Contact';
+    description: '';
+    displayName: 'Contact Us Page';
     pluralName: 'contacts';
     singularName: 'contact';
   };
@@ -512,7 +514,8 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
 export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
   collectionName: 'downloads';
   info: {
-    displayName: 'Download';
+    description: '';
+    displayName: 'Download Page';
     pluralName: 'downloads';
     singularName: 'download';
   };
@@ -549,7 +552,7 @@ export interface ApiEnterpriceSupportEnterpriceSupport
   collectionName: 'enterprice_supports';
   info: {
     description: '';
-    displayName: 'Enterprice-Support';
+    displayName: 'Enterprise Support Page';
     pluralName: 'enterprice-supports';
     singularName: 'enterprice-support';
   };
@@ -586,7 +589,7 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   collectionName: 'faqs';
   info: {
     description: '';
-    displayName: 'Faq';
+    displayName: 'FAQs Page';
     pluralName: 'faqs';
     singularName: 'faq';
   };
@@ -694,7 +697,8 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
 export interface ApiJobJob extends Struct.SingleTypeSchema {
   collectionName: 'jobs';
   info: {
-    displayName: 'Job';
+    description: '';
+    displayName: 'Jobs Landing Page';
     pluralName: 'jobs';
     singularName: 'job';
   };
@@ -769,7 +773,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   collectionName: 'platforms';
   info: {
     description: '';
-    displayName: 'platform-landing-page';
+    displayName: 'platform Landing Page';
     pluralName: 'platforms';
     singularName: 'platform';
   };
@@ -809,7 +813,8 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
 export interface ApiPricingPricing extends Struct.SingleTypeSchema {
   collectionName: 'pricings';
   info: {
-    displayName: 'Pricing';
+    description: '';
+    displayName: 'Pricing Page';
     pluralName: 'pricings';
     singularName: 'pricing';
   };
@@ -846,7 +851,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
   collectionName: 'resources';
   info: {
     description: '';
-    displayName: 'Resource';
+    displayName: 'Resources Landing Page';
     pluralName: 'resources';
     singularName: 'resource';
   };
@@ -887,7 +892,7 @@ export interface ApiSolutionLandingPageSolutionLandingPage
   collectionName: 'solution_landing_pages';
   info: {
     description: '';
-    displayName: 'Solution-landing-page';
+    displayName: 'Solution Landing Page';
     pluralName: 'solution-landing-pages';
     singularName: 'solution-landing-page';
   };
@@ -968,7 +973,7 @@ export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
   collectionName: 'why_choose_uses';
   info: {
     description: '';
-    displayName: 'Why-choose-us';
+    displayName: 'Why Choose Us Page';
     pluralName: 'why-choose-uses';
     singularName: 'why-choose-us';
   };
