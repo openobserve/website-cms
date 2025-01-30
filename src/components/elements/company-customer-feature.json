@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_company_customer_features",
+  "info": {
+    "displayName": "company-customer-feature"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true
+    },
+    "buttonLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.company-hero-section",
+        "section-cards.features3",
+        "section-cards.testimonials",
+        "section-cta.call-to-action",
+        "section-features.info-left-feature"
+      ]
+    }
+  }
+}

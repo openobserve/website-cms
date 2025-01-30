@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "enterprice_supports",
+  "info": {
+    "singularName": "enterprice-support",
+    "pluralName": "enterprice-supports",
+    "displayName": "Enterprice-Support",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-separator.separator",
+        "section-cta.banner",
+        "section-hero.resource-hero-section",
+        "section-cards.features1",
+        "section-cards.blogs"
+      ]
+    }
+  }
+}

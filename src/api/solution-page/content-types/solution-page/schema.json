@@ -20,7 +20,8 @@
         "section-faqs.frequently-asked-question",
         "section-features.feature-list",
         "section-cards.case-studies",
-        "section-cta.banner"
+        "section-cta.banner",
+        "section-separator.separator"
       ]
     },
     "slug": {

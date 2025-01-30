@@ -3,11 +3,37 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ElementsButton extends Struct.ComponentSchema {
   collectionName: 'components_elements_buttons';
   info: {
+    description: '';
     displayName: 'button';
   };
   attributes: {
     link: Schema.Attribute.String & Schema.Attribute.Required;
-    text: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsButtonWithIcon extends Struct.ComponentSchema {
+  collectionName: 'components_elements_button_with_icons';
+  info: {
+    displayName: 'ButtonWithIcon';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsCompanyCustomerFeature extends Struct.ComponentSchema {
+  collectionName: 'components_elements_company_customer_features';
+  info: {
+    displayName: 'company-customer-feature';
+  };
+  attributes: {
+    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
+    buttonText: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -83,25 +109,9 @@ export interface ElementsItems extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     icon: Schema.Attribute.Enumeration<
-      [
-        'logs',
-        'metrices',
-        'traces',
-        'alerts',
-        'dashboard',
-        'real-user-monitorting',
-        'session-replay',
-        'error-tracking',
-        'pipelines',
-        'slack',
-        'github',
-        'devops',
-        'developer',
-        'site-reliability-engineer',
-      ]
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'logs'>;
+      ['logs', 'metrices', 'traces', 'slack', 'github']
+    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -130,6 +140,30 @@ export interface ElementsSocialMediaIcon extends Struct.ComponentSchema {
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'slack'>;
+  };
+}
+
+export interface ElementsSupportCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_support_cards';
+  info: {
+    description: '';
+    displayName: 'supportCard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    items: Schema.Attribute.Component<'elements.items', true> &
+      Schema.Attribute.Required;
+    primaryButton: Schema.Attribute.Component<
+      'elements.button-with-icon',
+      false
+    >;
+    secondaryButton: Schema.Attribute.Component<
+      'elements.button-with-icon',
+      false
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -177,6 +211,27 @@ export interface ElementsTestimonials extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsBlogWithCategories extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_blog_with_categories';
+  info: {
+    displayName: 'BlogWithCategories';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionCardsBlogs extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_blogs';
+  info: {
+    displayName: 'Blogs';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+  };
+}
+
 export interface SectionCardsCaseStudies extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_case_studies';
   info: {
@@ -197,6 +252,20 @@ export interface SectionCardsClients extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'elements.image', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface SectionCardsCommunitySupport extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_community_supports';
+  info: {
+    description: '';
+    displayName: 'Community-Support';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true> &
       Schema.Attribute.Required;
   };
 }
@@ -255,6 +324,7 @@ export interface SectionCardsFeatures2 extends Struct.ComponentSchema {
 export interface SectionCardsFeatures3 extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_features3s';
   info: {
+    description: '';
     displayName: 'Features3';
   };
   attributes: {
@@ -262,6 +332,7 @@ export interface SectionCardsFeatures3 extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<'elements.items', true> &
       Schema.Attribute.Required;
+    noOfGridColumns: Schema.Attribute.Integer & Schema.Attribute.Required;
   };
 }
 
@@ -280,6 +351,30 @@ export interface SectionCardsFeatures5 extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsResourceFeatureHighlight
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_resource_feature_highlights';
+  info: {
+    displayName: 'ResourceFeatureHighlight';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+    primaryButton: Schema.Attribute.Component<'elements.button', true>;
+  };
+}
+
+export interface SectionCardsResourceSupportCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_resource_support_cards';
+  info: {
+    displayName: 'ResourceSupportCard';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.support-card', true>;
+  };
+}
+
 export interface SectionCardsStats extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_stats';
   info: {
@@ -289,6 +384,41 @@ export interface SectionCardsStats extends Struct.ComponentSchema {
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface SectionCardsTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_testimonials';
+  info: {
+    description: '';
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.testimonial-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface SectionCardsWhyCustomerLoveUs extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_why_customer_love_uses';
+  info: {
+    description: '';
+    displayName: 'Why-Customer-Love-Us';
+  };
+  attributes: {
+    integrations: Schema.Attribute.Component<
+      'elements.company-customer-feature',
+      false
+    > &
+      Schema.Attribute.Required;
+    items: Schema.Attribute.Component<'elements.items', true> &
+      Schema.Attribute.Required;
+    unifiedObservability: Schema.Attribute.Component<
+      'elements.company-customer-feature',
+      true
+    > &
       Schema.Attribute.Required;
   };
 }
@@ -359,6 +489,31 @@ export interface SectionFeaturesFeatureList extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFeaturesInfoLeftFeature extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_info_left_features';
+  info: {
+    displayName: 'Info-Left-Feature';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionFeaturesInfoRightFeature
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_info_right_features';
+  info: {
+    displayName: 'Info-Right-Feature';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionFeaturesPlatformTabsWrapper
   extends Struct.ComponentSchema {
   collectionName: 'components_section_features_platform_tabs_wrappers';
@@ -376,7 +531,7 @@ export interface SectionFeaturesTabsFeatures extends Struct.ComponentSchema {
   collectionName: 'components_section_features_tabs_features';
   info: {
     description: '';
-    displayName: 'Features-Right-Tabs';
+    displayName: 'Features-Top-Tabs';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false> &
@@ -396,6 +551,29 @@ export interface SectionFormsContact extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFormsEnterpriceContact extends Struct.ComponentSchema {
+  collectionName: 'components_section_forms_enterprice_contacts';
+  info: {
+    displayName: 'Enterprice-contact';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
+export interface SectionHeroCompanyHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_company_hero_sections';
+  info: {
+    displayName: 'CompanyHeroSection';
+    icon: 'crown';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionHeroFeatureHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_feature_hero_sections';
   info: {
@@ -412,6 +590,7 @@ export interface SectionHeroFeatureHeroSection extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<'elements.items', true>;
+    noOfGridColumns: Schema.Attribute.Integer & Schema.Attribute.Required;
     primaryButton: Schema.Attribute.Component<'elements.button', false> &
       Schema.Attribute.Required;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
@@ -428,6 +607,9 @@ export interface SectionHeroFeatureSubHeroSection
   };
   attributes: {
     backgroundImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    bottomImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     heading: Schema.Attribute.Component<'elements.heading', false> &
@@ -460,42 +642,25 @@ export interface SectionHeroHomepageHero extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionCaseStudy extends Struct.ComponentSchema {
-  collectionName: 'components_section_case_studies';
+export interface SectionHeroResourceHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_resource_hero_sections';
   info: {
-    displayName: 'CaseStudy';
-  };
-  attributes: {
-    button: Schema.Attribute.Component<'elements.button', false>;
-    heading: Schema.Attribute.Component<'elements.heading', false> &
-      Schema.Attribute.Required;
-  };
-}
-
-export interface SectionCommunitySupport extends Struct.ComponentSchema {
-  collectionName: 'components_section_community_supports';
-  info: {
-    displayName: 'Community-Support';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.Component<'elements.heading', false> &
-      Schema.Attribute.Required;
-    items: Schema.Attribute.Component<'elements.items', true> &
-      Schema.Attribute.Required;
-  };
-}
-
-export interface SectionCompanyHeroSection extends Struct.ComponentSchema {
-  collectionName: 'components_section_company_hero_sections';
-  info: {
-    displayName: 'CompanyHeroSection';
+    displayName: 'ResourceHeroSection';
     icon: 'crown';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    primary: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionSeparatorSeparator extends Struct.ComponentSchema {
+  collectionName: 'components_section_separator_separators';
+  info: {
+    displayName: 'Separator';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
   };
 }
 
@@ -503,6 +668,8 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'elements.button': ElementsButton;
+      'elements.button-with-icon': ElementsButtonWithIcon;
+      'elements.company-customer-feature': ElementsCompanyCustomerFeature;
       'elements.faq-item': ElementsFaqItem;
       'elements.feature-item': ElementsFeatureItem;
       'elements.feature-title-description': ElementsFeatureTitleDescription;
@@ -511,32 +678,43 @@ declare module '@strapi/strapi' {
       'elements.items': ElementsItems;
       'elements.items-link': ElementsItemsLink;
       'elements.social-media-icon': ElementsSocialMediaIcon;
+      'elements.support-card': ElementsSupportCard;
       'elements.tab-item': ElementsTabItem;
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.testimonials': ElementsTestimonials;
+      'section-cards.blog-with-categories': SectionCardsBlogWithCategories;
+      'section-cards.blogs': SectionCardsBlogs;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
+      'section-cards.community-support': SectionCardsCommunitySupport;
       'section-cards.feature-highlights': SectionCardsFeatureHighlights;
       'section-cards.feature4': SectionCardsFeature4;
       'section-cards.features1': SectionCardsFeatures1;
       'section-cards.features2': SectionCardsFeatures2;
       'section-cards.features3': SectionCardsFeatures3;
       'section-cards.features5': SectionCardsFeatures5;
+      'section-cards.resource-feature-highlight': SectionCardsResourceFeatureHighlight;
+      'section-cards.resource-support-card': SectionCardsResourceSupportCard;
       'section-cards.stats': SectionCardsStats;
+      'section-cards.testimonials': SectionCardsTestimonials;
+      'section-cards.why-customer-love-us': SectionCardsWhyCustomerLoveUs;
       'section-cta.banner': SectionCtaBanner;
       'section-cta.call-to-action': SectionCtaCallToAction;
       'section-cta.plain-cta': SectionCtaPlainCta;
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.feature-list': SectionFeaturesFeatureList;
+      'section-features.info-left-feature': SectionFeaturesInfoLeftFeature;
+      'section-features.info-right-feature': SectionFeaturesInfoRightFeature;
       'section-features.platform-tabs-wrapper': SectionFeaturesPlatformTabsWrapper;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-forms.contact': SectionFormsContact;
+      'section-forms.enterprice-contact': SectionFormsEnterpriceContact;
+      'section-hero.company-hero-section': SectionHeroCompanyHeroSection;
       'section-hero.feature-hero-section': SectionHeroFeatureHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
-      'section.case-study': SectionCaseStudy;
-      'section.community-support': SectionCommunitySupport;
-      'section.company-hero-section': SectionCompanyHeroSection;
+      'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
+      'section-separator.separator': SectionSeparatorSeparator;
     }
   }
 }

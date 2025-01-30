@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_section_separator_separators",
+  "info": {
+    "displayName": "Separator"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

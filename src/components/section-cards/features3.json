@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_cards_features3s",
   "info": {
-    "displayName": "Features3"
+    "displayName": "Features3",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,6 +16,10 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.items",
+      "required": true
+    },
+    "noOfGridColumns": {
+      "type": "integer",
       "required": true
     }
   }

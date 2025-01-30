@@ -24,7 +24,8 @@
         "section-cards.features2",
         "section-cards.features1",
         "section-cards.clients",
-        "section-cards.case-studies"
+        "section-cards.case-studies",
+        "section-separator.separator"
       ],
       "required": true
     }

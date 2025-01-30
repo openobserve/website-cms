@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_section_cards_blog_with_categories",
+  "info": {
+    "displayName": "BlogWithCategories"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
