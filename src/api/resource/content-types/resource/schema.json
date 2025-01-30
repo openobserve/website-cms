@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "resources",
+  "info": {
+    "singularName": "resource",
+    "pluralName": "resources",
+    "displayName": "Resource",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cta.banner",
+        "section-cards.case-studies",
+        "section-cards.resource-support-card",
+        "section-separator.separator",
+        "section-cards.blogs",
+        "section-cards.resource-feature-highlight",
+        "section-cards.blog-with-categories"
+      ]
+    }
+  }
+}

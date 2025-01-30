@@ -21,7 +21,8 @@
         "section-features.platform-tabs-wrapper",
         "section-cta.call-to-action",
         "section-cards.features5",
-        "section-cards.case-studies"
+        "section-cards.case-studies",
+        "section-separator.separator"
       ]
     }
   }

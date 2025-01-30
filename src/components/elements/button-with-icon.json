@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_button_with_icons",
+  "info": {
+    "displayName": "ButtonWithIcon"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

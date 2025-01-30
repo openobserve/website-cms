@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_uses",
+  "info": {
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "AboutUs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.company-hero-section",
+        "section-features.info-right-feature",
+        "section-features.info-left-feature",
+        "section-cta.banner",
+        "section-cards.case-studies",
+        "section-cards.features3",
+        "section-separator.separator"
+      ],
+      "required": true
+    }
+  }
+}
