@@ -575,11 +575,15 @@ export interface SectionFormsEnterpriceContact extends Struct.ComponentSchema {
 export interface SectionHeroCompanyHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_company_hero_sections';
   info: {
+    description: '';
     displayName: 'CompanyHeroSection';
     icon: 'crown';
   };
   attributes: {
     description: Schema.Attribute.Text;
+    headingGradientColor: Schema.Attribute.Enumeration<
+      ['blue', 'cyan', 'orange']
+    >;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };

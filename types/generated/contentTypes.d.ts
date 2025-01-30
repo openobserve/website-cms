@@ -509,6 +509,41 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
+  collectionName: 'downloads';
+  info: {
+    displayName: 'Download';
+    pluralName: 'downloads';
+    singularName: 'download';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-forms.contact',
+        'section-cta.banner',
+        'section-faqs.frequently-asked-question',
+        'section-separator.separator',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::download.download'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEnterpriceSupportEnterpriceSupport
   extends Struct.SingleTypeSchema {
   collectionName: 'enterprice_supports';
@@ -762,6 +797,42 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::platform.platform'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPricingPricing extends Struct.SingleTypeSchema {
+  collectionName: 'pricings';
+  info: {
+    displayName: 'Pricing';
+    pluralName: 'pricings';
+    singularName: 'pricing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-separator.separator',
+        'section-forms.contact',
+        'section-faqs.frequently-asked-question',
+        'section-cards.testimonials',
+        'section-cards.feature4',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pricing.pricing'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1444,6 +1515,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::community-support.community-support': ApiCommunitySupportCommunitySupport;
       'api::contact.contact': ApiContactContact;
+      'api::download.download': ApiDownloadDownload;
       'api::enterprice-support.enterprice-support': ApiEnterpriceSupportEnterpriceSupport;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
@@ -1451,6 +1523,7 @@ declare module '@strapi/strapi' {
       'api::job.job': ApiJobJob;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::platform.platform': ApiPlatformPlatform;
+      'api::pricing.pricing': ApiPricingPricing;
       'api::resource.resource': ApiResourceResource;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;

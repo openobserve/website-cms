@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "pricings",
+  "info": {
+    "singularName": "pricing",
+    "pluralName": "pricings",
+    "displayName": "Pricing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-separator.separator",
+        "section-forms.contact",
+        "section-faqs.frequently-asked-question",
+        "section-cards.testimonials",
+        "section-cards.feature4"
+      ]
+    }
+  }
+}
