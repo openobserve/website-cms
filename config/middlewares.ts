@@ -27,7 +27,6 @@ export default [
       },
     },
   },
-  ,
   "strapi::cors",
   "strapi::poweredBy",
   "strapi::query",
