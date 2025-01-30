@@ -4,7 +4,8 @@
   "info": {
     "singularName": "platform-page",
     "pluralName": "platform-pages",
-    "displayName": "Platform Page"
+    "displayName": "Platform Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +23,8 @@
         "section-features.feature-list",
         "section-faqs.frequently-asked-question",
         "section-cta.banner",
-        "section-cards.case-studies"
+        "section-cards.case-studies",
+        "section-separator.separator"
       ],
       "required": true
     }

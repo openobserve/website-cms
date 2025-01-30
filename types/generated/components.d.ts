@@ -544,6 +544,16 @@ export interface SectionHeroHomepageHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionSeparatorSeparator extends Struct.ComponentSchema {
+  collectionName: 'components_section_separator_separators';
+  info: {
+    displayName: 'Separator';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -586,6 +596,7 @@ declare module '@strapi/strapi' {
       'section-hero.feature-hero-section': SectionHeroFeatureHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
+      'section-separator.separator': SectionSeparatorSeparator;
     }
   }
 }

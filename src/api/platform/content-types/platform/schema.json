@@ -22,7 +22,8 @@
         "section-features.feature-list",
         "section-cta.banner",
         "section-cards.feature4",
-        "section-cta.plain-cta"
+        "section-cta.plain-cta",
+        "section-separator.separator"
       ]
     }
   }

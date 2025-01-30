@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   collectionName: 'about_uses';
   info: {
+    description: '';
     displayName: 'AboutUs';
     pluralName: 'about-uses';
     singularName: 'about-us';
@@ -388,6 +389,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
         'section-cta.banner',
         'section-cards.case-studies',
         'section-cards.features3',
+        'section-separator.separator',
       ]
     > &
       Schema.Attribute.Required;
@@ -466,6 +468,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         'section-cards.features1',
         'section-cards.clients',
         'section-cards.case-studies',
+        'section-separator.separator',
       ]
     > &
       Schema.Attribute.Required;
@@ -522,6 +525,7 @@ export interface ApiPlatformPagePlatformPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'platform_pages';
   info: {
+    description: '';
     displayName: 'Platform Page';
     pluralName: 'platform-pages';
     singularName: 'platform-page';
@@ -537,6 +541,7 @@ export interface ApiPlatformPagePlatformPage
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
         'section-cards.case-studies',
+        'section-separator.separator',
       ]
     > &
       Schema.Attribute.Required;
@@ -579,6 +584,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
         'section-cta.banner',
         'section-cards.feature4',
         'section-cta.plain-cta',
+        'section-separator.separator',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -619,6 +625,7 @@ export interface ApiSolutionLandingPageSolutionLandingPage
         'section-cta.call-to-action',
         'section-cards.features5',
         'section-cards.case-studies',
+        'section-separator.separator',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -658,6 +665,7 @@ export interface ApiSolutionPageSolutionPage
         'section-features.feature-list',
         'section-cards.case-studies',
         'section-cta.banner',
+        'section-separator.separator',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
