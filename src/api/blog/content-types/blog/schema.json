@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "Blog"
+    "displayName": "Blog Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
