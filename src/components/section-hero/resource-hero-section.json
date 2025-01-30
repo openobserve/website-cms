@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_hero_resource_hero_sections",
+  "info": {
+    "displayName": "ResourceHeroSection",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

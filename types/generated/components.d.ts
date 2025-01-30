@@ -3,11 +3,24 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface ElementsButton extends Struct.ComponentSchema {
   collectionName: 'components_elements_buttons';
   info: {
+    description: '';
     displayName: 'button';
   };
   attributes: {
     link: Schema.Attribute.String & Schema.Attribute.Required;
-    text: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsButtonWithIcon extends Struct.ComponentSchema {
+  collectionName: 'components_elements_button_with_icons';
+  info: {
+    displayName: 'ButtonWithIcon';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
+    text: Schema.Attribute.String;
   };
 }
 
@@ -130,6 +143,30 @@ export interface ElementsSocialMediaIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsSupportCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_support_cards';
+  info: {
+    description: '';
+    displayName: 'supportCard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    items: Schema.Attribute.Component<'elements.items', true> &
+      Schema.Attribute.Required;
+    primaryButton: Schema.Attribute.Component<
+      'elements.button-with-icon',
+      false
+    >;
+    secondaryButton: Schema.Attribute.Component<
+      'elements.button-with-icon',
+      false
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsTabItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_tab_items';
   info: {
@@ -171,6 +208,27 @@ export interface ElementsTestimonials extends Struct.ComponentSchema {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.testimonial-card', true> &
       Schema.Attribute.Required;
+  };
+}
+
+export interface SectionCardsBlogWithCategories extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_blog_with_categories';
+  info: {
+    displayName: 'BlogWithCategories';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionCardsBlogs extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_blogs';
+  info: {
+    displayName: 'Blogs';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 
@@ -266,6 +324,7 @@ export interface SectionCardsFeatures2 extends Struct.ComponentSchema {
 export interface SectionCardsFeatures3 extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_features3s';
   info: {
+    description: '';
     displayName: 'Features3';
   };
   attributes: {
@@ -273,6 +332,7 @@ export interface SectionCardsFeatures3 extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<'elements.items', true> &
       Schema.Attribute.Required;
+    noOfGridColumns: Schema.Attribute.Integer & Schema.Attribute.Required;
   };
 }
 
@@ -288,6 +348,30 @@ export interface SectionCardsFeatures5 extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     primaryButton: Schema.Attribute.Component<'elements.button', false> &
       Schema.Attribute.Required;
+  };
+}
+
+export interface SectionCardsResourceFeatureHighlight
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_resource_feature_highlights';
+  info: {
+    displayName: 'ResourceFeatureHighlight';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+    primaryButton: Schema.Attribute.Component<'elements.button', true>;
+  };
+}
+
+export interface SectionCardsResourceSupportCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_resource_support_cards';
+  info: {
+    displayName: 'ResourceSupportCard';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.support-card', true>;
   };
 }
 
@@ -467,6 +551,16 @@ export interface SectionFormsContact extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFormsEnterpriceContact extends Struct.ComponentSchema {
+  collectionName: 'components_section_forms_enterprice_contacts';
+  info: {
+    displayName: 'Enterprice-contact';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
 export interface SectionHeroCompanyHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_company_hero_sections';
   info: {
@@ -496,6 +590,7 @@ export interface SectionHeroFeatureHeroSection extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<'elements.items', true>;
+    noOfGridColumns: Schema.Attribute.Integer & Schema.Attribute.Required;
     primaryButton: Schema.Attribute.Component<'elements.button', false> &
       Schema.Attribute.Required;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
@@ -544,6 +639,18 @@ export interface SectionHeroHomepageHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHeroResourceHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_resource_hero_sections';
+  info: {
+    displayName: 'ResourceHeroSection';
+    icon: 'crown';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionSeparatorSeparator extends Struct.ComponentSchema {
   collectionName: 'components_section_separator_separators';
   info: {
@@ -558,6 +665,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'elements.button': ElementsButton;
+      'elements.button-with-icon': ElementsButtonWithIcon;
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
       'elements.faq-item': ElementsFaqItem;
       'elements.feature-item': ElementsFeatureItem;
@@ -567,9 +675,12 @@ declare module '@strapi/strapi' {
       'elements.items': ElementsItems;
       'elements.items-link': ElementsItemsLink;
       'elements.social-media-icon': ElementsSocialMediaIcon;
+      'elements.support-card': ElementsSupportCard;
       'elements.tab-item': ElementsTabItem;
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.testimonials': ElementsTestimonials;
+      'section-cards.blog-with-categories': SectionCardsBlogWithCategories;
+      'section-cards.blogs': SectionCardsBlogs;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
       'section-cards.community-support': SectionCardsCommunitySupport;
@@ -579,6 +690,8 @@ declare module '@strapi/strapi' {
       'section-cards.features2': SectionCardsFeatures2;
       'section-cards.features3': SectionCardsFeatures3;
       'section-cards.features5': SectionCardsFeatures5;
+      'section-cards.resource-feature-highlight': SectionCardsResourceFeatureHighlight;
+      'section-cards.resource-support-card': SectionCardsResourceSupportCard;
       'section-cards.stats': SectionCardsStats;
       'section-cards.testimonials': SectionCardsTestimonials;
       'section-cards.why-customer-love-us': SectionCardsWhyCustomerLoveUs;
@@ -592,10 +705,12 @@ declare module '@strapi/strapi' {
       'section-features.platform-tabs-wrapper': SectionFeaturesPlatformTabsWrapper;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-forms.contact': SectionFormsContact;
+      'section-forms.enterprice-contact': SectionFormsEnterpriceContact;
       'section-hero.company-hero-section': SectionHeroCompanyHeroSection;
       'section-hero.feature-hero-section': SectionHeroFeatureHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
+      'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
       'section-separator.separator': SectionSeparatorSeparator;
     }
   }

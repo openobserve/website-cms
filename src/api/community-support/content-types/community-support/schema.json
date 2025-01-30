@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "community_supports",
+  "info": {
+    "singularName": "community-support",
+    "pluralName": "community-supports",
+    "displayName": "Community-Support",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cta.banner",
+        "section-cards.features1",
+        "section-separator.separator",
+        "section-cards.blogs"
+      ]
+    }
+  }
+}
