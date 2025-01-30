@@ -77,6 +77,17 @@ export interface ElementsFeatureTitleDescription
   };
 }
 
+export interface ElementsFooterItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_footer_items';
+  info: {
+    displayName: 'footerItem';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.items-link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsHeading extends Struct.ComponentSchema {
   collectionName: 'components_elements_headings';
   info: {
@@ -673,6 +684,7 @@ declare module '@strapi/strapi' {
       'elements.faq-item': ElementsFaqItem;
       'elements.feature-item': ElementsFeatureItem;
       'elements.feature-title-description': ElementsFeatureTitleDescription;
+      'elements.footer-item': ElementsFooterItem;
       'elements.heading': ElementsHeading;
       'elements.image': ElementsImage;
       'elements.items': ElementsItems;
