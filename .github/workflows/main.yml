@@ -39,5 +39,6 @@ jobs:
           git config --global --add safe.directory "$(pwd)"
           git pull origin main
           echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
+          docker-compose down
           docker compose up -d --build
         EOF
