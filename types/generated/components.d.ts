@@ -119,9 +119,6 @@ export interface ElementsItems extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Enumeration<
-      ['logs', 'metrices', 'traces', 'slack', 'github']
-    >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -295,12 +292,14 @@ export interface SectionCardsFeatureHighlights extends Struct.ComponentSchema {
 export interface SectionCardsFeature4 extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_feature4s';
   info: {
+    description: '';
     displayName: 'Feature4';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true> &
       Schema.Attribute.Required;
+    noOfGridColumns: Schema.Attribute.Integer;
   };
 }
 
