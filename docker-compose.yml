@@ -1,3 +1,4 @@
+name: openobserve-cms
 services:
   strapi:
     container_name: openobserve-cms-strapi
