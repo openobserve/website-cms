@@ -609,6 +609,9 @@ export interface SectionHeroFeatureSubHeroSection
     backgroundImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    bottomImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     heading: Schema.Attribute.Component<'elements.heading', false> &
       Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
