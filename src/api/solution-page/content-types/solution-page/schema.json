@@ -22,6 +22,10 @@
         "section-cards.case-studies",
         "section-cta.banner"
       ]
+    },
+    "slug": {
+      "type": "string",
+      "required": true
     }
   }
 }
