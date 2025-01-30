@@ -4,7 +4,8 @@
   "info": {
     "singularName": "download",
     "pluralName": "downloads",
-    "displayName": "Download"
+    "displayName": "Download Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
