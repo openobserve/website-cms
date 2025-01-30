@@ -1,8 +1,9 @@
 {
-  "collectionName": "components_section_company_hero_sections",
+  "collectionName": "components_section_hero_company_hero_sections",
   "info": {
     "displayName": "CompanyHeroSection",
-    "icon": "crown"
+    "icon": "crown",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,10 +14,18 @@
     "description": {
       "type": "text"
     },
-    "primary": {
+    "primaryButton": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
+    },
+    "headingGradientColor": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "cyan",
+        "orange"
+      ]
     }
   }
 }

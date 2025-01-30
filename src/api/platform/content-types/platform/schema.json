@@ -20,7 +20,10 @@
         "section-features.tabs-features",
         "section-features.platform-tabs-wrapper",
         "section-features.feature-list",
-        "section-cta.banner"
+        "section-cta.banner",
+        "section-cards.feature4",
+        "section-cta.plain-cta",
+        "section-separator.separator"
       ]
     }
   }

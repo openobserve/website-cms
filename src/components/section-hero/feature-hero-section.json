@@ -50,6 +50,10 @@
         "videos",
         "audios"
       ]
+    },
+    "noOfGridColumns": {
+      "type": "integer",
+      "required": true
     }
   }
 }

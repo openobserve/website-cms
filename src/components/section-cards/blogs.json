@@ -1,17 +1,16 @@
 {
-  "collectionName": "components_section_case_studies",
+  "collectionName": "components_section_cards_blogs",
   "info": {
-    "displayName": "CaseStudy"
+    "displayName": "Blogs"
   },
   "options": {},
   "attributes": {
     "heading": {
       "type": "component",
       "repeatable": false,
-      "component": "elements.heading",
-      "required": true
+      "component": "elements.heading"
     },
-    "button": {
+    "primaryButton": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button"

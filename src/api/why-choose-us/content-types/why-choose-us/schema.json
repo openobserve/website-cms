@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "why_choose_uses",
+  "info": {
+    "singularName": "why-choose-us",
+    "pluralName": "why-choose-uses",
+    "displayName": "Why-choose-us",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.company-hero-section",
+        "section-cta.banner",
+        "section-cards.case-studies",
+        "section-cards.clients",
+        "section-cta.plain-cta",
+        "section-cards.why-customer-love-us"
+      ]
+    }
+  }
+}

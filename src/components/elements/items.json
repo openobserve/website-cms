@@ -14,26 +14,26 @@
       "type": "text",
       "required": false
     },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
     "icon": {
       "type": "enumeration",
       "enum": [
         "logs",
         "metrices",
         "traces",
-        "alerts",
-        "dashboard",
-        "real-user-monitorting",
-        "session-replay",
-        "error-tracking",
-        "pipelines",
         "slack",
-        "github",
-        "devops",
-        "developer",
-        "site-reliability-engineer"
-      ],
-      "required": true,
-      "default": "logs"
+        "github"
+      ]
     }
   }
 }
