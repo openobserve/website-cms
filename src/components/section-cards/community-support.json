@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_section_features_tabs_features",
+  "collectionName": "components_section_cards_community_supports",
   "info": {
-    "displayName": "Features-Top-Tabs",
+    "displayName": "Community-Support",
     "description": ""
   },
   "options": {},
@@ -9,13 +9,16 @@
     "heading": {
       "type": "component",
       "repeatable": false,
-      "component": "elements.heading",
-      "required": true
+      "component": "elements.heading"
     },
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.feature-item",
+      "component": "elements.items",
+      "required": true
+    },
+    "description": {
+      "type": "text",
       "required": true
     }
   }

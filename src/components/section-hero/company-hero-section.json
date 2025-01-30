@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_section_hero_company_hero_sections",
+  "info": {
+    "displayName": "CompanyHeroSection",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

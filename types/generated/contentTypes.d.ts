@@ -471,6 +471,8 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
         'section-features.platform-tabs-wrapper',
         'section-features.feature-list',
         'section-cta.banner',
+        'section-cards.feature4',
+        'section-cta.plain-cta',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

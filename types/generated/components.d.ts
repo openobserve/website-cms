@@ -201,6 +201,20 @@ export interface SectionCardsClients extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsCommunitySupport extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_community_supports';
+  info: {
+    description: '';
+    displayName: 'Community-Support';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SectionCardsFeatureHighlights extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_feature_highlights';
   info: {
@@ -328,7 +342,6 @@ export interface SectionCtaPlainCta extends Struct.ComponentSchema {
     displayName: 'Plain-CTA';
   };
   attributes: {
-    primaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -376,7 +389,7 @@ export interface SectionFeaturesTabsFeatures extends Struct.ComponentSchema {
   collectionName: 'components_section_features_tabs_features';
   info: {
     description: '';
-    displayName: 'Features-Right-Tabs';
+    displayName: 'Features-Top-Tabs';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false> &
@@ -393,6 +406,19 @@ export interface SectionFormsContact extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
+export interface SectionHeroCompanyHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_company_hero_sections';
+  info: {
+    displayName: 'CompanyHeroSection';
+    icon: 'crown';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -516,6 +542,7 @@ declare module '@strapi/strapi' {
       'elements.testimonials': ElementsTestimonials;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
+      'section-cards.community-support': SectionCardsCommunitySupport;
       'section-cards.feature-highlights': SectionCardsFeatureHighlights;
       'section-cards.feature4': SectionCardsFeature4;
       'section-cards.features1': SectionCardsFeatures1;
@@ -531,6 +558,7 @@ declare module '@strapi/strapi' {
       'section-features.platform-tabs-wrapper': SectionFeaturesPlatformTabsWrapper;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-forms.contact': SectionFormsContact;
+      'section-hero.company-hero-section': SectionHeroCompanyHeroSection;
       'section-hero.feature-hero-section': SectionHeroFeatureHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
