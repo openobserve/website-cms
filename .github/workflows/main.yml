@@ -40,5 +40,6 @@ jobs:
           git pull origin main
           echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
           docker-compose down
+          sudo kill -9 $(sudo lsof -t -i:1337)
           docker compose up -d --build
         EOF
