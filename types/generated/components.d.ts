@@ -119,9 +119,6 @@ export interface ElementsItems extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Enumeration<
-      ['logs', 'metrices', 'traces', 'slack', 'github']
-    >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
