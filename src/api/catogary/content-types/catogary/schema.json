@@ -14,9 +14,9 @@
     "category": {
       "type": "string"
     },
-    "catogary": {
+    "blogs": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::blog-page.blog-page",
       "inversedBy": "catogaries"
     }
