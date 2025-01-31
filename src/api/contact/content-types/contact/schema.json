@@ -21,6 +21,11 @@
         "section-hero.company-hero-section",
         "seo.seo"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

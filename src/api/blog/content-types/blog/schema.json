@@ -19,6 +19,11 @@
         "section-cards.features1",
         "seo.seo"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

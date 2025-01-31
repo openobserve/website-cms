@@ -20,6 +20,11 @@
         "section-cta.banner",
         "seo.seo"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

@@ -28,6 +28,11 @@
     "slug": {
       "type": "string",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

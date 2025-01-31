@@ -22,6 +22,11 @@
         "section-features.info-left-feature",
         "seo.seo"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

@@ -25,6 +25,11 @@
         "section-cards.blog-with-categories",
         "seo.seo"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
