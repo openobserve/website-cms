@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_seo_alternates_items",
+  "info": {
+    "displayName": "Alternates-Item"
+  },
+  "options": {},
+  "attributes": {
+    "canonical": {
+      "type": "string"
+    }
+  }
+}

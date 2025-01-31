@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_seo_twitter_items",
+  "info": {
+    "displayName": "Twitter-Item"
+  },
+  "options": {},
+  "attributes": {
+    "card": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string"
+    },
+    "siteId": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "string"
+    },
+    "creatorId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "Images": {
+      "type": "string"
+    }
+  }
+}

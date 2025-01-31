@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_seo_authors_items",
+  "info": {
+    "displayName": "Authors-Item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
