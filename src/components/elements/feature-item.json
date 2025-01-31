@@ -1,20 +1,21 @@
 {
   "collectionName": "components_elements_feature_items",
   "info": {
-    "displayName": "feature-item"
+    "displayName": "feature-item",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "title": {
       "type": "string",
@@ -24,6 +25,9 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.feature-title-description"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

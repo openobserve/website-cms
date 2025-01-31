@@ -51,9 +51,11 @@ export interface ElementsFaqItem extends Struct.ComponentSchema {
 export interface ElementsFeatureItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_feature_items';
   info: {
+    description: '';
     displayName: 'feature-item';
   };
   attributes: {
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<
@@ -292,12 +294,14 @@ export interface SectionCardsFeatureHighlights extends Struct.ComponentSchema {
 export interface SectionCardsFeature4 extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_feature4s';
   info: {
+    description: '';
     displayName: 'Feature4';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true> &
       Schema.Attribute.Required;
+    noOfGridColumns: Schema.Attribute.Integer & Schema.Attribute.Required;
   };
 }
 

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_cards_feature4s",
   "info": {
-    "displayName": "Feature4"
+    "displayName": "Feature4",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,6 +16,10 @@
       "repeatable": true,
       "component": "elements.items",
       "required": true
+    },
+    "noOfGridColumns": {
+      "type": "integer",
+      "required":true
     }
   }
 }
