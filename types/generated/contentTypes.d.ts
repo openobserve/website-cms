@@ -749,6 +749,7 @@ export interface ApiPlatformPagePlatformPage
         'section-cta.banner',
         'section-cards.case-studies',
         'section-separator.separator',
+        'section-cards.feature-highlights',
       ]
     > &
       Schema.Attribute.Required;
