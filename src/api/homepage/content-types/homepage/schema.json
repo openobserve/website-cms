@@ -25,7 +25,8 @@
         "section-cards.features1",
         "section-cards.clients",
         "section-cards.case-studies",
-        "section-separator.separator"
+        "section-separator.separator",
+        "seo.seo"
       ],
       "required": true
     },

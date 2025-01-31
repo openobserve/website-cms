@@ -19,7 +19,8 @@
         "section-cards.features3",
         "section-cards.testimonials",
         "section-cta.call-to-action",
-        "section-features.info-left-feature"
+        "section-features.info-left-feature",
+        "seo.seo"
       ]
     },
     "seo": {

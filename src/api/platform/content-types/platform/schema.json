@@ -23,7 +23,8 @@
         "section-cta.banner",
         "section-cards.feature4",
         "section-cta.plain-cta",
-        "section-separator.separator"
+        "section-separator.separator",
+        "seo.seo"
       ]
     },
     "seo": {

@@ -22,7 +22,8 @@
         "section-separator.separator",
         "section-cards.blogs",
         "section-cards.resource-feature-highlight",
-        "section-cards.blog-with-categories"
+        "section-cards.blog-with-categories",
+        "seo.seo"
       ]
     },
     "seo": {

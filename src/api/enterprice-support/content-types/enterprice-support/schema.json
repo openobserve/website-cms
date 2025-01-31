@@ -19,7 +19,8 @@
         "section-cta.banner",
         "section-hero.resource-hero-section",
         "section-cards.features1",
-        "section-cards.blogs"
+        "section-cards.blogs",
+        "seo.seo"
       ]
     },
     "seo": {

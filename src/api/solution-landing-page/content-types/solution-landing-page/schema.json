@@ -22,7 +22,8 @@
         "section-cta.call-to-action",
         "section-cards.features5",
         "section-cards.case-studies",
-        "section-separator.separator"
+        "section-separator.separator",
+        "seo.seo"
       ]
     },
     "seo": {

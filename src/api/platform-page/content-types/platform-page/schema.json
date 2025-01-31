@@ -25,7 +25,8 @@
         "section-cta.banner",
         "section-cards.case-studies",
         "section-separator.separator",
-        "section-cards.feature-highlights"
+        "section-cards.feature-highlights",
+        "seo.seo"
       ],
       "required": true
     },
