@@ -453,9 +453,9 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
   attributes: {
     authors: Schema.Attribute.Relation<'manyToMany', 'api::author.author'>;
     caseStudies: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    catogaries: Schema.Attribute.Relation<
+    categories: Schema.Attribute.Relation<
       'manyToMany',
-      'api::catogary.catogary'
+      'api::category.category'
     >;
     content: Schema.Attribute.RichText & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
@@ -509,28 +509,28 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiCatogaryCatogary extends Struct.CollectionTypeSchema {
-  collectionName: 'catogaries';
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
   info: {
-    displayName: 'Catogary';
-    pluralName: 'catogaries';
-    singularName: 'catogary';
+    displayName: 'Category';
+    pluralName: 'categories';
+    singularName: 'category';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog-page.blog-page'>;
-    category: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::catogary.catogary'
+      'api::category.category'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1636,7 +1636,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::blog.blog': ApiBlogBlog;
-      'api::catogary.catogary': ApiCatogaryCatogary;
+      'api::category.category': ApiCategoryCategory;
       'api::community-support.community-support': ApiCommunitySupportCommunitySupport;
       'api::contact.contact': ApiContactContact;
       'api::download.download': ApiDownloadDownload;
