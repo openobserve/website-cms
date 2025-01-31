@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_seo_opengraph_items",
+  "info": {
+    "displayName": "Opengraph-Item"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    },
+    "width": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    }
+  }
+}

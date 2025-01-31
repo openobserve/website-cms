@@ -19,7 +19,8 @@
         "section-cta.banner",
         "section-cards.features1",
         "section-separator.separator",
-        "section-cards.blogs"
+        "section-cards.blogs",
+        "seo.seo"
       ]
     }
   }
