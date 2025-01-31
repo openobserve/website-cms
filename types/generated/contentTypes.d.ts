@@ -421,6 +421,10 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    catogaries: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::catogary.catogary'
+    >;
     content: Schema.Attribute.RichText & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -465,6 +469,38 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCatogaryCatogary extends Struct.CollectionTypeSchema {
+  collectionName: 'catogaries';
+  info: {
+    displayName: 'Catogary';
+    pluralName: 'catogaries';
+    singularName: 'catogary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.String;
+    catogary: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::blog-page.blog-page'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::catogary.catogary'
+    > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1556,6 +1592,7 @@ declare module '@strapi/strapi' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::blog.blog': ApiBlogBlog;
+      'api::catogary.catogary': ApiCatogaryCatogary;
       'api::community-support.community-support': ApiCommunitySupportCommunitySupport;
       'api::contact.contact': ApiContactContact;
       'api::download.download': ApiDownloadDownload;

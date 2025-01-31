@@ -46,6 +46,12 @@
     "publishDate": {
       "type": "date",
       "required": true
+    },
+    "catogaries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::catogary.catogary",
+      "mappedBy": "catogary"
     }
   }
 }
