@@ -51,9 +51,11 @@ export interface ElementsFaqItem extends Struct.ComponentSchema {
 export interface ElementsFeatureItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_feature_items';
   info: {
+    description: '';
     displayName: 'feature-item';
   };
   attributes: {
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<
@@ -292,12 +294,14 @@ export interface SectionCardsFeatureHighlights extends Struct.ComponentSchema {
 export interface SectionCardsFeature4 extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_feature4s';
   info: {
+    description: '';
     displayName: 'Feature4';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true> &
       Schema.Attribute.Required;
+    noOfGridColumns: Schema.Attribute.Integer & Schema.Attribute.Required;
   };
 }
 
@@ -676,6 +680,84 @@ export interface SectionSeparatorSeparator extends Struct.ComponentSchema {
   };
 }
 
+export interface SeoAlternatesItem extends Struct.ComponentSchema {
+  collectionName: 'components_seo_alternates_items';
+  info: {
+    displayName: 'Alternates-Item';
+  };
+  attributes: {
+    canonical: Schema.Attribute.String;
+  };
+}
+
+export interface SeoAuthorsItem extends Struct.ComponentSchema {
+  collectionName: 'components_seo_authors_items';
+  info: {
+    displayName: 'Authors-Item';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface SeoOpengraphItem extends Struct.ComponentSchema {
+  collectionName: 'components_seo_opengraph_items';
+  info: {
+    displayName: 'Opengraph-Item';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    authors: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    height: Schema.Attribute.String;
+    tags: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+    width: Schema.Attribute.String;
+  };
+}
+
+export interface SeoSeo extends Struct.ComponentSchema {
+  collectionName: 'components_seo_seos';
+  info: {
+    description: '';
+    displayName: 'SEO';
+  };
+  attributes: {
+    Alternates: Schema.Attribute.Component<'seo.alternates-item', false>;
+    Authors: Schema.Attribute.Component<'seo.authors-item', false>;
+    category: Schema.Attribute.String;
+    creator: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    manifest: Schema.Attribute.String;
+    OpenGraph: Schema.Attribute.Component<'seo.opengraph-item', false>;
+    publisher: Schema.Attribute.String;
+    robots: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    Twitter: Schema.Attribute.Component<'seo.twitter-item', false>;
+    viewport: Schema.Attribute.String;
+  };
+}
+
+export interface SeoTwitterItem extends Struct.ComponentSchema {
+  collectionName: 'components_seo_twitter_items';
+  info: {
+    displayName: 'Twitter-Item';
+  };
+  attributes: {
+    card: Schema.Attribute.String;
+    creator: Schema.Attribute.String;
+    creatorId: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    Images: Schema.Attribute.String;
+    site: Schema.Attribute.String;
+    siteId: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -728,6 +810,11 @@ declare module '@strapi/strapi' {
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
       'section-separator.separator': SectionSeparatorSeparator;
+      'seo.alternates-item': SeoAlternatesItem;
+      'seo.authors-item': SeoAuthorsItem;
+      'seo.opengraph-item': SeoOpengraphItem;
+      'seo.seo': SeoSeo;
+      'seo.twitter-item': SeoTwitterItem;
     }
   }
 }

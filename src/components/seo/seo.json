@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_seo_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "viewport": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "robots": {
+      "type": "string"
+    },
+    "manifest": {
+      "type": "string"
+    },
+    "Alternates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.alternates-item"
+    },
+    "Authors": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.authors-item"
+    },
+    "OpenGraph": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.opengraph-item"
+    },
+    "Twitter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.twitter-item"
+    }
+  }
+}
