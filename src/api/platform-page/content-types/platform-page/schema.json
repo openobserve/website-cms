@@ -24,7 +24,8 @@
         "section-faqs.frequently-asked-question",
         "section-cta.banner",
         "section-cards.case-studies",
-        "section-separator.separator"
+        "section-separator.separator",
+        "section-cards.feature-highlights"
       ],
       "required": true
     }
