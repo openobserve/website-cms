@@ -19,9 +19,13 @@
         "section-cta.banner",
         "section-cards.features1",
         "section-separator.separator",
-        "section-cards.blogs",
-        "seo.seo"
+        "section-cards.blogs"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

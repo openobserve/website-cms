@@ -19,9 +19,13 @@
         "section-cards.features3",
         "section-cards.testimonials",
         "section-cta.call-to-action",
-        "section-features.info-left-feature",
-        "seo.seo"
+        "section-features.info-left-feature"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

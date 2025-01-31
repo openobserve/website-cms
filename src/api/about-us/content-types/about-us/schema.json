@@ -21,10 +21,14 @@
         "section-cta.banner",
         "section-cards.case-studies",
         "section-cards.features3",
-        "section-separator.separator",
-        "seo.seo"
+        "section-separator.separator"
       ],
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

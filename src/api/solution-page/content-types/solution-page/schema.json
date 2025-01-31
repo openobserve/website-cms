@@ -21,13 +21,17 @@
         "section-features.feature-list",
         "section-cards.case-studies",
         "section-cta.banner",
-        "section-separator.separator",
-        "seo.seo"
+        "section-separator.separator"
       ]
     },
     "slug": {
       "type": "string",
       "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

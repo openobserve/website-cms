@@ -22,9 +22,13 @@
         "section-cta.call-to-action",
         "section-cards.features5",
         "section-cards.case-studies",
-        "section-separator.separator",
-        "seo.seo"
+        "section-separator.separator"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

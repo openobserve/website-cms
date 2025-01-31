@@ -16,9 +16,13 @@
       "type": "dynamiczone",
       "components": [
         "section-cta.banner",
-        "section-cards.features1",
-        "seo.seo"
+        "section-cards.features1"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

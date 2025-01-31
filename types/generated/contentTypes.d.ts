@@ -390,7 +390,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
         'section-cards.case-studies',
         'section-cards.features3',
         'section-separator.separator',
-        'seo.seo',
       ]
     > &
       Schema.Attribute.Required;
@@ -404,6 +403,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -494,7 +494,7 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.DynamicZone<
-      ['section-cta.banner', 'section-cards.features1', 'seo.seo']
+      ['section-cta.banner', 'section-cards.features1']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -503,6 +503,7 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -558,7 +559,6 @@ export interface ApiCommunitySupportCommunitySupport
         'section-cards.features1',
         'section-separator.separator',
         'section-cards.blogs',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -571,6 +571,7 @@ export interface ApiCommunitySupportCommunitySupport
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -595,7 +596,6 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
         'section-cards.community-support',
         'section-cards.case-studies',
         'section-hero.company-hero-section',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -608,6 +608,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -632,7 +633,6 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
         'section-cta.banner',
         'section-faqs.frequently-asked-question',
         'section-separator.separator',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -645,6 +645,7 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -671,7 +672,6 @@ export interface ApiEnterpriceSupportEnterpriceSupport
         'section-hero.resource-hero-section',
         'section-cards.features1',
         'section-cards.blogs',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -684,6 +684,7 @@ export interface ApiEnterpriceSupportEnterpriceSupport
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -707,7 +708,6 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
         'section-hero.resource-hero-section',
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -717,6 +717,7 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -781,7 +782,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         'section-cards.clients',
         'section-cards.case-studies',
         'section-separator.separator',
-        'seo.seo',
       ]
     > &
       Schema.Attribute.Required;
@@ -795,6 +795,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -820,7 +821,6 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
         'section-cards.testimonials',
         'section-cta.call-to-action',
         'section-features.info-left-feature',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -830,6 +830,7 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::job.job'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -858,7 +859,6 @@ export interface ApiPlatformPagePlatformPage
         'section-cards.case-studies',
         'section-separator.separator',
         'section-cards.feature-highlights',
-        'seo.seo',
       ]
     > &
       Schema.Attribute.Required;
@@ -872,6 +872,7 @@ export interface ApiPlatformPagePlatformPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -902,7 +903,6 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
         'section-cards.feature4',
         'section-cta.plain-cta',
         'section-separator.separator',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -915,6 +915,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -940,7 +941,6 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
         'section-faqs.frequently-asked-question',
         'section-cards.testimonials',
         'section-cards.feature4',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -953,6 +953,7 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -981,7 +982,6 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
         'section-cards.blogs',
         'section-cards.resource-feature-highlight',
         'section-cards.blog-with-categories',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -994,6 +994,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1023,7 +1024,6 @@ export interface ApiSolutionLandingPageSolutionLandingPage
         'section-cards.features5',
         'section-cards.case-studies',
         'section-separator.separator',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1036,6 +1036,7 @@ export interface ApiSolutionLandingPageSolutionLandingPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1064,7 +1065,6 @@ export interface ApiSolutionPageSolutionPage
         'section-cards.case-studies',
         'section-cta.banner',
         'section-separator.separator',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1077,6 +1077,7 @@ export interface ApiSolutionPageSolutionPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1104,7 +1105,6 @@ export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
         'section-cards.clients',
         'section-cta.plain-cta',
         'section-cards.why-customer-love-us',
-        'seo.seo',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1117,6 +1117,7 @@ export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

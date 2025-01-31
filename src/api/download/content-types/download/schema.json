@@ -18,9 +18,13 @@
         "section-forms.contact",
         "section-cta.banner",
         "section-faqs.frequently-asked-question",
-        "section-separator.separator",
-        "seo.seo"
+        "section-separator.separator"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

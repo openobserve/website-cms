@@ -17,9 +17,13 @@
       "components": [
         "section-hero.resource-hero-section",
         "section-faqs.frequently-asked-question",
-        "section-cta.banner",
-        "seo.seo"
+        "section-cta.banner"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
