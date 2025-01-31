@@ -47,12 +47,6 @@
       "type": "date",
       "required": true
     },
-    "catogaries": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::catogary.catogary",
-      "mappedBy": "blogs"
-    },
     "caseStudies": {
       "type": "boolean",
       "default": false
@@ -65,6 +59,12 @@
     },
     "seoDescription": {
       "type": "text"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "blogs"
     }
   }
 }
