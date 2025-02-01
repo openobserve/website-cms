@@ -21,7 +21,8 @@
         "section-cards.clients",
         "section-cta.plain-cta",
         "section-cards.why-customer-love-us",
-        "seo.seo"
+        "seo.seo",
+        "section-separator.separator"
       ]
     },
     "seo": {

@@ -590,6 +590,18 @@ export interface SectionHeroCompanyHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHeroContactHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_contact_hero_sections';
+  info: {
+    displayName: 'ContactHeroSection';
+    icon: 'crown';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionHeroFeatureHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_feature_hero_sections';
   info: {
@@ -805,6 +817,7 @@ declare module '@strapi/strapi' {
       'section-forms.contact': SectionFormsContact;
       'section-forms.enterprice-contact': SectionFormsEnterpriceContact;
       'section-hero.company-hero-section': SectionHeroCompanyHeroSection;
+      'section-hero.contact-hero-section': SectionHeroContactHeroSection;
       'section-hero.feature-hero-section': SectionHeroFeatureHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;

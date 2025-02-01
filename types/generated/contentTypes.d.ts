@@ -414,6 +414,7 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
+    description: '';
     displayName: 'Author';
     pluralName: 'authors';
     singularName: 'author';
@@ -422,21 +423,28 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    author: Schema.Attribute.String;
+    bio: Schema.Attribute.Text;
     blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog-page.blog-page'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    instagramUrl: Schema.Attribute.String;
+    linkedInUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::author.author'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    twitterUrl: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    youtubeUrl: Schema.Attribute.String;
   };
 }
 
@@ -600,6 +608,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
         'section-cards.case-studies',
         'section-hero.company-hero-section',
         'seo.seo',
+        'section-separator.separator',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -830,6 +839,7 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
         'section-cta.call-to-action',
         'section-features.info-left-feature',
         'seo.seo',
+        'section-separator.separator',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1121,6 +1131,7 @@ export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
         'section-cta.plain-cta',
         'section-cards.why-customer-love-us',
         'seo.seo',
+        'section-separator.separator',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

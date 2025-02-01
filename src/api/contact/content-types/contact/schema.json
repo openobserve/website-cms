@@ -19,7 +19,8 @@
         "section-cards.community-support",
         "section-cards.case-studies",
         "section-hero.company-hero-section",
-        "seo.seo"
+        "seo.seo",
+        "section-separator.separator"
       ]
     },
     "seo": {
