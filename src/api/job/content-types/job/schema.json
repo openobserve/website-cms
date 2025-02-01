@@ -20,7 +20,8 @@
         "section-cards.testimonials",
         "section-cta.call-to-action",
         "section-features.info-left-feature",
-        "seo.seo"
+        "seo.seo",
+        "section-separator.separator"
       ]
     },
     "seo": {
