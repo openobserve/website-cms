@@ -122,6 +122,7 @@ export interface ElementsItems extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -582,9 +583,6 @@ export interface SectionHeroCompanyHeroSection extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    headingGradientColor: Schema.Attribute.Enumeration<
-      ['blue', 'cyan', 'orange']
-    >;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };

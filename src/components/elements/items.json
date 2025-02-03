@@ -24,6 +24,10 @@
         "videos",
         "audios"
       ]
+    },
+    "link": {
+      "type": "string",
+      "required": true
     }
   }
 }
