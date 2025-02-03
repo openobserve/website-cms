@@ -18,9 +18,9 @@
         "section-cta.banner",
         "section-cards.community-support",
         "section-cards.case-studies",
-        "section-hero.company-hero-section",
         "seo.seo",
-        "section-separator.separator"
+        "section-separator.separator",
+        "section-hero.contact-hero-section"
       ]
     },
     "seo": {
