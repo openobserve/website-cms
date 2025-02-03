@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_hero_company_why_o2_hero_sections",
+  "info": {
+    "displayName": "CompanyWhyO2HeroSection",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}
