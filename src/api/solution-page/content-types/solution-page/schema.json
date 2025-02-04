@@ -15,14 +15,15 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.feature-sub-hero-section",
         "section-cards.feature-highlights",
         "section-faqs.frequently-asked-question",
         "section-features.feature-list",
         "section-cards.case-studies",
         "section-cta.banner",
         "section-separator.separator",
-        "seo.seo"
+        "seo.seo",
+        "section-hero.feature-solution-hero-section",
+        "section-features.feature-sub-page-top-tabs"
       ]
     },
     "slug": {

@@ -40,17 +40,6 @@
         "audios"
       ]
     },
-    "backgroundImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "noOfGridColumns": {
       "type": "integer",
       "required": true

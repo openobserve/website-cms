@@ -835,13 +835,12 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-hero.company-hero-section',
         'section-cards.features3',
         'section-cards.testimonials',
         'section-cta.call-to-action',
-        'section-features.info-left-feature',
         'seo.seo',
         'section-separator.separator',
+        'section-hero.company-why-o2-hero-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1084,7 +1083,6 @@ export interface ApiSolutionPageSolutionPage
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-hero.feature-sub-hero-section',
         'section-cards.feature-highlights',
         'section-faqs.frequently-asked-question',
         'section-features.feature-list',
@@ -1092,6 +1090,8 @@ export interface ApiSolutionPageSolutionPage
         'section-cta.banner',
         'section-separator.separator',
         'seo.seo',
+        'section-hero.feature-solution-hero-section',
+        'section-features.feature-sub-page-top-tabs',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
