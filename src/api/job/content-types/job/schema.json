@@ -15,13 +15,12 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.company-hero-section",
         "section-cards.features3",
         "section-cards.testimonials",
         "section-cta.call-to-action",
-        "section-features.info-left-feature",
         "seo.seo",
-        "section-separator.separator"
+        "section-separator.separator",
+        "section-hero.company-why-o2-hero-section"
       ]
     },
     "seo": {

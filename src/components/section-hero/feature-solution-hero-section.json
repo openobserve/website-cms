@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_section_hero_feature_sub_hero_sections",
+  "collectionName": "components_section_hero_feature_solution_hero_sections",
   "info": {
-    "displayName": "FeatureSubHeroSection",
+    "displayName": "FeatureSolutionHeroSection",
     "icon": "crown",
     "description": ""
   },
@@ -10,20 +10,17 @@
     "heading": {
       "type": "component",
       "repeatable": false,
-      "component": "elements.heading",
-      "required": true
+      "component": "elements.heading"
     },
     "primaryButton": {
       "type": "component",
       "repeatable": false,
-      "component": "elements.button",
-      "required": true
+      "component": "elements.button"
     },
     "secondaryButton": {
       "type": "component",
       "repeatable": false,
-      "component": "elements.button",
-      "required": true
+      "component": "elements.button"
     },
     "image": {
       "type": "media",

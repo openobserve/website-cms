@@ -506,6 +506,18 @@ export interface SectionFeaturesFeatureList extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFeaturesFeatureSubPageTopTabs
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_feature_sub_page_top_tabs';
+  info: {
+    displayName: 'Feature-SubPage-Top-Tabs';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.feature-item', true>;
+  };
+}
+
 export interface SectionFeaturesInfoLeftFeature extends Struct.ComponentSchema {
   collectionName: 'components_section_features_info_left_features';
   info: {
@@ -626,9 +638,6 @@ export interface SectionHeroFeatureHeroSection extends Struct.ComponentSchema {
     icon: 'crown';
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     heading: Schema.Attribute.Component<'elements.heading', false> &
       Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
@@ -637,6 +646,23 @@ export interface SectionHeroFeatureHeroSection extends Struct.ComponentSchema {
     noOfGridColumns: Schema.Attribute.Integer & Schema.Attribute.Required;
     primaryButton: Schema.Attribute.Component<'elements.button', false> &
       Schema.Attribute.Required;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+  };
+}
+
+export interface SectionHeroFeatureSolutionHeroSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_feature_solution_hero_sections';
+  info: {
+    description: '';
+    displayName: 'FeatureSolutionHeroSection';
+    icon: 'crown';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
@@ -650,17 +676,10 @@ export interface SectionHeroFeatureSubHeroSection
     icon: 'crown';
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    bottomImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     heading: Schema.Attribute.Component<'elements.heading', false> &
       Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
-    items: Schema.Attribute.Component<'elements.items', true>;
     primaryButton: Schema.Attribute.Component<'elements.button', false> &
       Schema.Attribute.Required;
     secondaryButton: Schema.Attribute.Component<'elements.button', false> &
@@ -826,6 +845,7 @@ declare module '@strapi/strapi' {
       'section-cta.plain-cta': SectionCtaPlainCta;
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.feature-list': SectionFeaturesFeatureList;
+      'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
       'section-features.info-left-feature': SectionFeaturesInfoLeftFeature;
       'section-features.info-right-feature': SectionFeaturesInfoRightFeature;
       'section-features.platform-tabs-wrapper': SectionFeaturesPlatformTabsWrapper;
@@ -836,6 +856,7 @@ declare module '@strapi/strapi' {
       'section-hero.company-why-o2-hero-section': SectionHeroCompanyWhyO2HeroSection;
       'section-hero.contact-hero-section': SectionHeroContactHeroSection;
       'section-hero.feature-hero-section': SectionHeroFeatureHeroSection;
+      'section-hero.feature-solution-hero-section': SectionHeroFeatureSolutionHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;

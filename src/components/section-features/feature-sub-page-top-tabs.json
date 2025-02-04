@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_features_feature_sub_page_top_tabs",
+  "info": {
+    "displayName": "Feature-SubPage-Top-Tabs"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-item"
+    }
+  }
+}
