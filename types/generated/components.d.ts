@@ -368,12 +368,14 @@ export interface SectionCardsResourceFeatureHighlight
   extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_resource_feature_highlights';
   info: {
+    description: '';
     displayName: 'ResourceFeatureHighlight';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true>;
-    primaryButton: Schema.Attribute.Component<'elements.button', true>;
+    noOfGridColumn: Schema.Attribute.Integer & Schema.Attribute.Required;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 
@@ -381,9 +383,11 @@ export interface SectionCardsResourceSupportCard
   extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_resource_support_cards';
   info: {
+    description: '';
     displayName: 'ResourceSupportCard';
   };
   attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.support-card', true>;
   };
 }

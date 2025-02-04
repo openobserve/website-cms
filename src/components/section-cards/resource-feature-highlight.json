@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_cards_resource_feature_highlights",
   "info": {
-    "displayName": "ResourceFeatureHighlight"
+    "displayName": "ResourceFeatureHighlight",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,8 +18,12 @@
     },
     "primaryButton": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "elements.button"
+    },
+    "noOfGridColumn": {
+      "type": "integer",
+      "required": true
     }
   }
 }
