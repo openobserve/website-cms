@@ -23,7 +23,8 @@
         "section-cards.features5",
         "section-cards.case-studies",
         "section-separator.separator",
-        "seo.seo"
+        "seo.seo",
+        "section-hero.solutions-hero-section"
       ]
     },
     "seo": {

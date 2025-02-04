@@ -1049,6 +1049,7 @@ export interface ApiSolutionLandingPageSolutionLandingPage
         'section-cards.case-studies',
         'section-separator.separator',
         'seo.seo',
+        'section-hero.solutions-hero-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
