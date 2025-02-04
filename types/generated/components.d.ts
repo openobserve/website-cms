@@ -717,6 +717,24 @@ export interface SectionHeroResourceHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHeroSolutionsHeroSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_solutions_hero_sections';
+  info: {
+    displayName: 'SolutionsHeroSection';
+    icon: 'crown';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    items: Schema.Attribute.Component<'elements.items', true>;
+    noOfGridColumn: Schema.Attribute.Integer;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+  };
+}
+
 export interface SectionSeparatorSeparator extends Struct.ComponentSchema {
   collectionName: 'components_section_separator_separators';
   info: {
@@ -860,6 +878,7 @@ declare module '@strapi/strapi' {
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
+      'section-hero.solutions-hero-section': SectionHeroSolutionsHeroSection;
       'section-separator.separator': SectionSeparatorSeparator;
       'seo.alternates-item': SeoAlternatesItem;
       'seo.authors-item': SeoAuthorsItem;
