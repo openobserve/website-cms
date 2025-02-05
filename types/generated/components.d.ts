@@ -434,7 +434,7 @@ export interface SectionCardsWhyCustomerLoveUs extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     unifiedObservability: Schema.Attribute.Component<
       'elements.company-customer-feature',
-      true
+      false
     > &
       Schema.Attribute.Required;
   };
@@ -551,6 +551,18 @@ export interface SectionFeaturesInfoRightFeature
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionFeaturesObservabilitySpace
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_observability_spaces';
+  info: {
+    displayName: 'Observability Space';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -879,6 +891,7 @@ declare module '@strapi/strapi' {
       'section-features.home-features-list': SectionFeaturesHomeFeaturesList;
       'section-features.info-left-feature': SectionFeaturesInfoLeftFeature;
       'section-features.info-right-feature': SectionFeaturesInfoRightFeature;
+      'section-features.observability-space': SectionFeaturesObservabilitySpace;
       'section-features.platform-tabs-wrapper': SectionFeaturesPlatformTabsWrapper;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-forms.contact': SectionFormsContact;
