@@ -843,6 +843,7 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
         'section-separator.separator',
         'section-hero.company-why-o2-hero-section',
         'section-features.info-left-feature',
+        'section-features.observability-space',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
