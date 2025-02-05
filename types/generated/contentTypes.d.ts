@@ -801,6 +801,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         'section-cards.case-studies',
         'section-separator.separator',
         'seo.seo',
+        'section-features.home-features-list',
       ]
     > &
       Schema.Attribute.Required;
@@ -841,6 +842,7 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
         'seo.seo',
         'section-separator.separator',
         'section-hero.company-why-o2-hero-section',
+        'section-features.info-left-feature',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1127,7 +1129,6 @@ export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-hero.company-hero-section',
         'section-cta.banner',
         'section-cards.case-studies',
         'section-cards.clients',
@@ -1135,6 +1136,7 @@ export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
         'section-cards.why-customer-love-us',
         'seo.seo',
         'section-separator.separator',
+        'section-hero.company-why-o2-hero-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
