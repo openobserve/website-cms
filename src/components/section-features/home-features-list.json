@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_features_home_features_lists",
+  "info": {
+    "displayName": "Home Features List"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-item"
+    }
+  }
+}
