@@ -122,7 +122,7 @@ export interface ElementsItems extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    link: Schema.Attribute.String & Schema.Attribute.Required;
+    link: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -518,6 +518,18 @@ export interface SectionFeaturesFeatureSubPageTopTabs
   };
 }
 
+export interface SectionFeaturesHomeFeaturesList
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_home_features_lists';
+  info: {
+    displayName: 'Home Features List';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.feature-item', true>;
+  };
+}
+
 export interface SectionFeaturesInfoLeftFeature extends Struct.ComponentSchema {
   collectionName: 'components_section_features_info_left_features';
   info: {
@@ -864,6 +876,7 @@ declare module '@strapi/strapi' {
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
+      'section-features.home-features-list': SectionFeaturesHomeFeaturesList;
       'section-features.info-left-feature': SectionFeaturesInfoLeftFeature;
       'section-features.info-right-feature': SectionFeaturesInfoRightFeature;
       'section-features.platform-tabs-wrapper': SectionFeaturesPlatformTabsWrapper;
