@@ -15,14 +15,14 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.company-hero-section",
         "section-cta.banner",
         "section-cards.case-studies",
         "section-cards.clients",
         "section-cta.plain-cta",
         "section-cards.why-customer-love-us",
         "seo.seo",
-        "section-separator.separator"
+        "section-separator.separator",
+        "section-hero.company-why-o2-hero-section"
       ]
     },
     "seo": {
