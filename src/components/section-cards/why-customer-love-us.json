@@ -14,7 +14,7 @@
     },
     "unifiedObservability": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "elements.company-customer-feature",
       "required": true
     },
