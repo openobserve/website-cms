@@ -726,6 +726,7 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
         'seo.seo',
+        'section-faqs.fa-qs-page-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
