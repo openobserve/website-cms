@@ -480,16 +480,29 @@ export interface SectionCtaPlainCta extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFaqsFaQsPageSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_faqs_fa_qs_page_sections';
+  info: {
+    description: '';
+    displayName: 'FAQs Page Section';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Component<'elements.faq-item', true>;
+  };
+}
+
 export interface SectionFaqsFrequentlyAskedQuestion
   extends Struct.ComponentSchema {
   collectionName: 'components_section_faqs_frequently_asked_questions';
   info: {
+    description: '';
     displayName: 'Frequently Asked Question';
   };
   attributes: {
     faqs: Schema.Attribute.Component<'elements.faq-item', true> &
       Schema.Attribute.Required;
     heading: Schema.Attribute.Component<'elements.heading', false>;
+    subTitle: Schema.Attribute.String;
   };
 }
 
@@ -597,10 +610,14 @@ export interface SectionFeaturesTabsFeatures extends Struct.ComponentSchema {
 export interface SectionFormsContact extends Struct.ComponentSchema {
   collectionName: 'components_section_forms_contacts';
   info: {
+    description: '';
     displayName: 'Contact';
   };
   attributes: {
+    description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+    subTitle: Schema.Attribute.Text;
   };
 }
 
@@ -885,6 +902,7 @@ declare module '@strapi/strapi' {
       'section-cta.banner': SectionCtaBanner;
       'section-cta.call-to-action': SectionCtaCallToAction;
       'section-cta.plain-cta': SectionCtaPlainCta;
+      'section-faqs.fa-qs-page-section': SectionFaqsFaQsPageSection;
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_faqs_fa_qs_page_sections",
+  "info": {
+    "displayName": "FAQs Page Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq-item"
+    }
+  }
+}
