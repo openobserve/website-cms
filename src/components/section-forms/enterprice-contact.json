@@ -20,7 +20,7 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.feature-title-description"
+      "component": "elements.items"
     }
   }
 }

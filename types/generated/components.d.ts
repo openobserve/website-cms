@@ -74,7 +74,7 @@ export interface ElementsFeatureTitleDescription
     displayName: 'feature-title-description';
   };
   attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -630,10 +630,7 @@ export interface SectionFormsEnterpriceContact extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.Component<'elements.heading', false>;
-    items: Schema.Attribute.Component<
-      'elements.feature-title-description',
-      true
-    >;
+    items: Schema.Attribute.Component<'elements.items', true>;
     subTitle: Schema.Attribute.Text;
   };
 }
