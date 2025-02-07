@@ -689,6 +689,7 @@ export interface ApiEnterpriceSupportEnterpriceSupport
         'section-cards.features1',
         'section-cards.blogs',
         'seo.seo',
+        'section-forms.enterprice-contact',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

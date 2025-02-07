@@ -20,7 +20,8 @@
         "section-hero.resource-hero-section",
         "section-cards.features1",
         "section-cards.blogs",
-        "seo.seo"
+        "seo.seo",
+        "section-forms.enterprice-contact"
       ]
     },
     "seo": {
