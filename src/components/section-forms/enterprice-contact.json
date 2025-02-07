@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_forms_enterprice_contacts",
   "info": {
-    "displayName": "Enterprice-contact"
+    "displayName": "Enterprice-contact",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,6 +10,17 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.heading"
+    },
+    "subTitle": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
     }
   }
 }
