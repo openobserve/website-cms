@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resource_categories",
+  "info": {
+    "singularName": "resource-category",
+    "pluralName": "resource-categories",
+    "displayName": "Resource Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "resource_category": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::resource-page.resource-page",
+      "mappedBy": "categories"
+    }
+  }
+}
