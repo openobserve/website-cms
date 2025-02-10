@@ -930,6 +930,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
         'section-cta.plain-cta',
         'section-separator.separator',
         'seo.seo',
+        'section-cards.case-studies',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
