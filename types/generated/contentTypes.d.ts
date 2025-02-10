@@ -1019,6 +1019,125 @@ export interface ApiPrivicyPolicyPagePrivicyPolicyPage
   };
 }
 
+export interface ApiResourceAuthorResourceAuthor
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'resource_authors';
+  info: {
+    description: '';
+    displayName: 'Resource Author';
+    pluralName: 'resource-authors';
+    singularName: 'resource-author';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bio: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resource-author.resource-author'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    resource_pages: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::resource-page.resource-page'
+    >;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResourceCategoryResourceCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'resource_categories';
+  info: {
+    description: '';
+    displayName: 'Resource Category';
+    pluralName: 'resource-categories';
+    singularName: 'resource-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resource-category.resource-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    resource_category: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::resource-page.resource-page'
+    >;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResourcePageResourcePage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'resource_pages';
+  info: {
+    description: '';
+    displayName: 'Resource Page';
+    pluralName: 'resource-pages';
+    singularName: 'resource-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    authors: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::resource-author.resource-author'
+    >;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::resource-category.resource-category'
+    >;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resource-page.resource-page'
+    > &
+      Schema.Attribute.Private;
+    publishDate: Schema.Attribute.Date;
+    publishedAt: Schema.Attribute.DateTime;
+    seoDescription: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiResourceResource extends Struct.SingleTypeSchema {
   collectionName: 'resources';
   info: {
@@ -1746,6 +1865,9 @@ declare module '@strapi/strapi' {
       'api::platform.platform': ApiPlatformPlatform;
       'api::pricing.pricing': ApiPricingPricing;
       'api::privicy-policy-page.privicy-policy-page': ApiPrivicyPolicyPagePrivicyPolicyPage;
+      'api::resource-author.resource-author': ApiResourceAuthorResourceAuthor;
+      'api::resource-category.resource-category': ApiResourceCategoryResourceCategory;
+      'api::resource-page.resource-page': ApiResourcePageResourcePage;
       'api::resource.resource': ApiResourceResource;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
