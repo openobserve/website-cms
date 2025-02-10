@@ -988,6 +988,37 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPrivicyPolicyPagePrivicyPolicyPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'privicy_policy_pages';
+  info: {
+    description: '';
+    displayName: 'Privacy Policy Page';
+    pluralName: 'privicy-policy-pages';
+    singularName: 'privicy-policy-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privicy-policy-page.privicy-policy-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiResourceResource extends Struct.SingleTypeSchema {
   collectionName: 'resources';
   info: {
@@ -1112,6 +1143,36 @@ export interface ApiSolutionPageSolutionPage
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTermsOfServicePageTermsOfServicePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'terms_of_service_pages';
+  info: {
+    displayName: 'Terms Of Service Page';
+    pluralName: 'terms-of-service-pages';
+    singularName: 'terms-of-service-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-of-service-page.terms-of-service-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1684,9 +1745,11 @@ declare module '@strapi/strapi' {
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::platform.platform': ApiPlatformPlatform;
       'api::pricing.pricing': ApiPricingPricing;
+      'api::privicy-policy-page.privicy-policy-page': ApiPrivicyPolicyPagePrivicyPolicyPage;
       'api::resource.resource': ApiResourceResource;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
+      'api::terms-of-service-page.terms-of-service-page': ApiTermsOfServicePageTermsOfServicePage;
       'api::why-choose-us.why-choose-us': ApiWhyChooseUsWhyChooseUs;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
