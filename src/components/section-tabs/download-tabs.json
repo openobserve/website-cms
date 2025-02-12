@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_tabs_download_tabs",
+  "info": {
+    "displayName": "DownloadTabs"
+  },
+  "options": {},
+  "attributes": {
+    "cloudData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-features.cloud-section-for-downloads"
+    },
+    "selfHostedData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-features.self-hosted-for-downloads"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_section_navigation_sub_items",
+  "info": {
+    "displayName": "subItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

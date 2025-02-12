@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_section_navigation_companies",
+  "info": {
+    "displayName": "Company"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section-navigation.sub-item"
+    }
+  }
+}
