@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_section_navigation_platforms",
+  "info": {
+    "displayName": "Platform"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section-navigation.platfrom-item"
+    },
+    "keyFeature": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-navigation.key-feature"
+    }
+  }
+}

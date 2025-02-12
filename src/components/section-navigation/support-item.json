@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_section_navigation_support_items",
+  "info": {
+    "displayName": "SupportItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section-navigation.sub-item"
+    }
+  }
+}

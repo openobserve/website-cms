@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_section_features_cloud_section_for_downloads",
+  "info": {
+    "displayName": "CloudSectionForDownloads"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description",
+      "required": true
+    },
+    "bottomTitle": {
+      "type": "string"
+    },
+    "bottomDescription": {
+      "type": "string"
+    }
+  }
+}

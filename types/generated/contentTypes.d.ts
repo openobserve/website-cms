@@ -648,7 +648,9 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
         'section-cta.banner',
         'section-faqs.frequently-asked-question',
         'section-separator.separator',
-        'seo.seo',
+        'section-cards.explore-resources',
+        'section-table.plans-feature-table',
+        'section-tabs.download-tabs',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -771,6 +773,44 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     socialMedia: Schema.Attribute.Component<'elements.social-media-icon', true>;
     termsText: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
+  collectionName: 'headers';
+  info: {
+    description: '';
+    displayName: 'Header';
+    pluralName: 'headers';
+    singularName: 'header';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company: Schema.Attribute.Component<'section-navigation.company', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::header.header'
+    > &
+      Schema.Attribute.Private;
+    platform: Schema.Attribute.Component<'section-navigation.platform', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    resources: Schema.Attribute.Component<
+      'section-navigation.resources',
+      false
+    >;
+    solutions: Schema.Attribute.Component<
+      'section-navigation.soltuions',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -969,7 +1009,7 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
         'section-faqs.frequently-asked-question',
         'section-cards.testimonials',
         'section-cards.feature4',
-        'seo.seo',
+        'section-tabs.pricing-tabs',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1860,6 +1900,7 @@ declare module '@strapi/strapi' {
       'api::enterprice-support.enterprice-support': ApiEnterpriceSupportEnterpriceSupport;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
+      'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::job.job': ApiJobJob;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;

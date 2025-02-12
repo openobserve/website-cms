@@ -1,7 +1,8 @@
 {
-  "collectionName": "components_section_testimonials",
+  "collectionName": "components_section_cards_explore_resources",
   "info": {
-    "displayName": "Testimonials"
+    "displayName": "ExploreResources",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,8 +14,7 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.testimonial-card",
-      "required": true
+      "component": "elements.resource-card-item"
     }
   }
 }

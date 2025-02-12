@@ -19,7 +19,9 @@
         "section-cta.banner",
         "section-faqs.frequently-asked-question",
         "section-separator.separator",
-        "seo.seo"
+        "section-cards.explore-resources",
+        "section-table.plans-feature-table",
+        "section-tabs.download-tabs"
       ]
     },
     "seo": {

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_elements_plan_comparison_items",
+  "info": {
+    "displayName": "PlanComparisonItem"
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "string",
+      "required": true
+    },
+    "cloud": {
+      "type": "string",
+      "required": true
+    },
+    "selfHosted": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
