@@ -15,13 +15,13 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-forms.contact",
         "section-cta.banner",
         "section-faqs.frequently-asked-question",
         "section-separator.separator",
         "section-cards.explore-resources",
         "section-table.plans-feature-table",
-        "section-tabs.download-tabs"
+        "section-tabs.download-tabs",
+        "section-forms.download-contact-form"
       ]
     },
     "seo": {
