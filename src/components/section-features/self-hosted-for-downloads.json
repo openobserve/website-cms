@@ -29,6 +29,17 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.feature-title-description"
+    },
+    "title": {
+      "type": "string"
+    },
+    "enterpriseBottomDescription": {
+      "type": "text"
+    },
+    "selfHostedButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_section_forms_download_contact_forms",
+  "info": {
+    "displayName": "DownloadContactForm"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
