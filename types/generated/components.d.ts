@@ -8,6 +8,7 @@ export interface ElementsButton extends Struct.ComponentSchema {
   };
   attributes: {
     link: Schema.Attribute.String & Schema.Attribute.Required;
+    target: Schema.Attribute.String;
     text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -678,13 +679,16 @@ export interface SectionFeaturesSelfHostedForDownloads
   attributes: {
     dockerCommand: Schema.Attribute.Text & Schema.Attribute.Required;
     downloadTitle: Schema.Attribute.String;
+    enterpriseBottomDescription: Schema.Attribute.Text;
     enterpriseDescription: Schema.Attribute.Text;
     enterpriseFeatures: Schema.Attribute.Component<
       'elements.feature-title-description',
       true
     >;
     enterpriseTitle: Schema.Attribute.String;
+    selfHostedButton: Schema.Attribute.Component<'elements.button', false>;
     systemDownload: Schema.Attribute.Component<'elements.items', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -724,6 +728,17 @@ export interface SectionFormsContact extends Struct.ComponentSchema {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true>;
     subTitle: Schema.Attribute.Text;
+  };
+}
+
+export interface SectionFormsDownloadContactForm
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_forms_download_contact_forms';
+  info: {
+    displayName: 'DownloadContactForm';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
   };
 }
 
@@ -1164,6 +1179,7 @@ declare module '@strapi/strapi' {
       'section-features.self-hosted-for-pricing': SectionFeaturesSelfHostedForPricing;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-forms.contact': SectionFormsContact;
+      'section-forms.download-contact-form': SectionFormsDownloadContactForm;
       'section-forms.enterprice-contact': SectionFormsEnterpriceContact;
       'section-hero.company-hero-section': SectionHeroCompanyHeroSection;
       'section-hero.company-why-o2-hero-section': SectionHeroCompanyWhyO2HeroSection;
