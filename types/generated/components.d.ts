@@ -644,6 +644,18 @@ export interface SectionFeaturesInfoRightFeature
   };
 }
 
+export interface SectionFeaturesKeyFeatureWrapper
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_key_feature_wrappers';
+  info: {
+    displayName: 'KeyFeatureWrapper';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
 export interface SectionFeaturesObservabilitySpace
   extends Struct.ComponentSchema {
   collectionName: 'components_section_features_observability_spaces';
@@ -1173,6 +1185,7 @@ declare module '@strapi/strapi' {
       'section-features.home-features-list': SectionFeaturesHomeFeaturesList;
       'section-features.info-left-feature': SectionFeaturesInfoLeftFeature;
       'section-features.info-right-feature': SectionFeaturesInfoRightFeature;
+      'section-features.key-feature-wrapper': SectionFeaturesKeyFeatureWrapper;
       'section-features.observability-space': SectionFeaturesObservabilitySpace;
       'section-features.platform-tabs-wrapper': SectionFeaturesPlatformTabsWrapper;
       'section-features.self-hosted-for-downloads': SectionFeaturesSelfHostedForDownloads;
