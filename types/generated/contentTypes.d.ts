@@ -644,13 +644,13 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-forms.contact',
         'section-cta.banner',
         'section-faqs.frequently-asked-question',
         'section-separator.separator',
         'section-cards.explore-resources',
         'section-table.plans-feature-table',
         'section-tabs.download-tabs',
+        'section-forms.download-contact-form',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
