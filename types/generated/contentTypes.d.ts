@@ -902,6 +902,44 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiKeyFeaturesPageKeyFeaturesPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'key_features_pages';
+  info: {
+    description: '';
+    displayName: 'Key Features Page';
+    pluralName: 'key-features-pages';
+    singularName: 'key-features-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-separator.separator',
+        'section-cta.banner',
+        'section-cards.case-studies',
+        'section-features.key-feature-wrapper',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::key-features-page.key-features-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlatformPagePlatformPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'platform_pages';
@@ -1903,6 +1941,7 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::job.job': ApiJobJob;
+      'api::key-features-page.key-features-page': ApiKeyFeaturesPageKeyFeaturesPage;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::platform.platform': ApiPlatformPlatform;
       'api::pricing.pricing': ApiPricingPricing;

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_features_key_feature_wrappers",
+  "info": {
+    "displayName": "KeyFeatureWrapper"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    }
+  }
+}
