@@ -13,7 +13,7 @@
     },
     "selfHostedData": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "elements.plan-item"
     }
   }

@@ -160,7 +160,14 @@ export interface ElementsPlanItem extends Struct.ComponentSchema {
   };
   attributes: {
     bottomDescription: Schema.Attribute.Text;
+    demoButton: Schema.Attribute.Component<'elements.button', false>;
     description: Schema.Attribute.Text;
+    enterpriseDescription: Schema.Attribute.String;
+    enterpriseFeatures: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    enterpriseTitle: Schema.Attribute.String;
     featureDesc: Schema.Attribute.String;
     features: Schema.Attribute.Component<
       'elements.feature-title-description',
@@ -698,6 +705,7 @@ export interface SectionFeaturesSelfHostedForDownloads
       true
     >;
     enterpriseTitle: Schema.Attribute.String;
+    haDeploymentDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     selfHostedButton: Schema.Attribute.Component<'elements.button', false>;
     systemDownload: Schema.Attribute.Component<'elements.items', true>;
     title: Schema.Attribute.String;
@@ -1031,6 +1039,7 @@ export interface SectionTablePlansFeatureTable extends Struct.ComponentSchema {
 export interface SectionTabsDownloadTabs extends Struct.ComponentSchema {
   collectionName: 'components_section_tabs_download_tabs';
   info: {
+    description: '';
     displayName: 'DownloadTabs';
   };
   attributes: {
@@ -1053,7 +1062,7 @@ export interface SectionTabsPricingTabs extends Struct.ComponentSchema {
   };
   attributes: {
     cloudData: Schema.Attribute.Component<'elements.plan-item', true>;
-    selfHostedData: Schema.Attribute.Component<'elements.plan-item', true>;
+    selfHostedData: Schema.Attribute.Component<'elements.plan-item', false>;
   };
 }
 

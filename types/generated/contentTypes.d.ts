@@ -551,46 +551,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCommunitySupportCommunitySupport
-  extends Struct.SingleTypeSchema {
-  collectionName: 'community_supports';
-  info: {
-    description: '';
-    displayName: 'Community Support Page';
-    pluralName: 'community-supports';
-    singularName: 'community-support';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-hero.resource-hero-section',
-        'section-cta.banner',
-        'section-cards.features1',
-        'section-separator.separator',
-        'section-cards.blogs',
-        'seo.seo',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::community-support.community-support'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
@@ -660,47 +620,6 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::download.download'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiEnterpriceSupportEnterpriceSupport
-  extends Struct.SingleTypeSchema {
-  collectionName: 'enterprice_supports';
-  info: {
-    description: '';
-    displayName: 'Enterprise Support Page';
-    pluralName: 'enterprice-supports';
-    singularName: 'enterprice-support';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-separator.separator',
-        'section-cta.banner',
-        'section-hero.resource-hero-section',
-        'section-cards.features1',
-        'section-cards.blogs',
-        'seo.seo',
-        'section-forms.enterprice-contact',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::enterprice-support.enterprice-support'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1932,10 +1851,8 @@ declare module '@strapi/strapi' {
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
-      'api::community-support.community-support': ApiCommunitySupportCommunitySupport;
       'api::contact.contact': ApiContactContact;
       'api::download.download': ApiDownloadDownload;
-      'api::enterprice-support.enterprice-support': ApiEnterpriceSupportEnterpriceSupport;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
