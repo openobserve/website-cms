@@ -590,6 +590,36 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
+  collectionName: 'demo_pages';
+  info: {
+    description: '';
+    displayName: 'Demo Page';
+    pluralName: 'demo-pages';
+    singularName: 'demo-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<['section-hero.demo-herosection']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::demo-page.demo-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
   collectionName: 'downloads';
   info: {
@@ -1852,6 +1882,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
+      'api::demo-page.demo-page': ApiDemoPageDemoPage;
       'api::download.download': ApiDownloadDownload;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;

@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "demo_pages",
+  "info": {
+    "singularName": "demo-page",
+    "pluralName": "demo-pages",
+    "displayName": "Demo Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.demo-herosection"
+      ]
+    }
+  }
+}
