@@ -589,6 +589,21 @@ export interface SectionFeaturesCloudTabsForPricing
   };
 }
 
+export interface SectionFeaturesDemoFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_demo_features';
+  info: {
+    displayName: 'demoFeatures';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionFeaturesFeatureList extends Struct.ComponentSchema {
   collectionName: 'components_section_features_feature_lists';
   info: {
@@ -813,6 +828,21 @@ export interface SectionHeroContactHeroSection extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionHeroDemoHerosection extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_demo_herosections';
+  info: {
+    displayName: 'DemoHerosection';
+    icon: 'crown';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<
+      'section-features.demo-features',
+      true
+    >;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
   };
 }
 
@@ -1189,6 +1219,7 @@ declare module '@strapi/strapi' {
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.cloud-section-for-downloads': SectionFeaturesCloudSectionForDownloads;
       'section-features.cloud-tabs-for-pricing': SectionFeaturesCloudTabsForPricing;
+      'section-features.demo-features': SectionFeaturesDemoFeatures;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
       'section-features.home-features-list': SectionFeaturesHomeFeaturesList;
@@ -1206,6 +1237,7 @@ declare module '@strapi/strapi' {
       'section-hero.company-hero-section': SectionHeroCompanyHeroSection;
       'section-hero.company-why-o2-hero-section': SectionHeroCompanyWhyO2HeroSection;
       'section-hero.contact-hero-section': SectionHeroContactHeroSection;
+      'section-hero.demo-herosection': SectionHeroDemoHerosection;
       'section-hero.feature-hero-section': SectionHeroFeatureHeroSection;
       'section-hero.feature-solution-hero-section': SectionHeroFeatureSolutionHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
