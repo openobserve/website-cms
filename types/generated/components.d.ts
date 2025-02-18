@@ -160,7 +160,14 @@ export interface ElementsPlanItem extends Struct.ComponentSchema {
   };
   attributes: {
     bottomDescription: Schema.Attribute.Text;
+    demoButton: Schema.Attribute.Component<'elements.button', false>;
     description: Schema.Attribute.Text;
+    enterpriseDescription: Schema.Attribute.String;
+    enterpriseFeatures: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    enterpriseTitle: Schema.Attribute.String;
     featureDesc: Schema.Attribute.String;
     features: Schema.Attribute.Component<
       'elements.feature-title-description',
@@ -1055,7 +1062,7 @@ export interface SectionTabsPricingTabs extends Struct.ComponentSchema {
   };
   attributes: {
     cloudData: Schema.Attribute.Component<'elements.plan-item', true>;
-    selfHostedData: Schema.Attribute.Component<'elements.plan-item', true>;
+    selfHostedData: Schema.Attribute.Component<'elements.plan-item', false>;
   };
 }
 

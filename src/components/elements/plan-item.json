@@ -32,6 +32,22 @@
     },
     "featureDesc": {
       "type": "string"
+    },
+    "enterpriseTitle": {
+      "type": "string"
+    },
+    "enterpriseDescription": {
+      "type": "string"
+    },
+    "enterpriseFeatures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "demoButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }
