@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_tabs_download_tabs",
   "info": {
-    "displayName": "DownloadTabs"
+    "displayName": "DownloadTabs",
+    "description": ""
   },
   "options": {},
   "attributes": {

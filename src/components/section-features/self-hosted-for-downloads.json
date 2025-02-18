@@ -40,6 +40,10 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
+    },
+    "haDeploymentDescription": {
+      "type": "text",
+      "required": true
     }
   }
 }

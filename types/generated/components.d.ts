@@ -698,6 +698,7 @@ export interface SectionFeaturesSelfHostedForDownloads
       true
     >;
     enterpriseTitle: Schema.Attribute.String;
+    haDeploymentDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     selfHostedButton: Schema.Attribute.Component<'elements.button', false>;
     systemDownload: Schema.Attribute.Component<'elements.items', true>;
     title: Schema.Attribute.String;
@@ -1031,6 +1032,7 @@ export interface SectionTablePlansFeatureTable extends Struct.ComponentSchema {
 export interface SectionTabsDownloadTabs extends Struct.ComponentSchema {
   collectionName: 'components_section_tabs_download_tabs';
   info: {
+    description: '';
     displayName: 'DownloadTabs';
   };
   attributes: {
