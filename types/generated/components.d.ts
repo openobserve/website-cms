@@ -503,7 +503,13 @@ export interface SectionCtaBanner extends Struct.ComponentSchema {
   attributes: {
     bannerDescription: Schema.Attribute.Text;
     bannerTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    featureTitle: Schema.Attribute.String;
+    getStartedText: Schema.Attribute.String;
     heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
@@ -921,6 +927,22 @@ export interface SectionHeroHomepageHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHeroKeyFeatureHerosection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_key_feature_herosections';
+  info: {
+    displayName: 'KeyFeatureHerosection';
+    icon: 'crown';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionHeroResourceHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_resource_hero_sections';
   info: {
@@ -1242,6 +1264,7 @@ declare module '@strapi/strapi' {
       'section-hero.feature-solution-hero-section': SectionHeroFeatureSolutionHeroSection;
       'section-hero.feature-sub-hero-section': SectionHeroFeatureSubHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
+      'section-hero.key-feature-herosection': SectionHeroKeyFeatureHerosection;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
       'section-hero.solutions-hero-section': SectionHeroSolutionsHeroSection;
       'section-navigation.company': SectionNavigationCompany;
