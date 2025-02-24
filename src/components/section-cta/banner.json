@@ -27,6 +27,17 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "featureTitle": {
+      "type": "string"
+    },
+    "getStartedText": {
+      "type": "string"
     }
   }
 }
