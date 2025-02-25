@@ -889,6 +889,45 @@ export interface ApiKeyFeaturesPageKeyFeaturesPage
   };
 }
 
+export interface ApiOpenObserveCloudFreeTierOpenObserveCloudFreeTier
+  extends Struct.SingleTypeSchema {
+  collectionName: 'open_observe_cloud_free_tiers';
+  info: {
+    description: '';
+    displayName: 'OpenObserve Cloud Free Tier';
+    pluralName: 'open-observe-cloud-free-tiers';
+    singularName: 'open-observe-cloud-free-tier';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bottomText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    featureTitle: Schema.Attribute.String;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::open-observe-cloud-free-tier.open-observe-cloud-free-tier'
+    > &
+      Schema.Attribute.Private;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlatformPagePlatformPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'platform_pages';
@@ -1890,6 +1929,7 @@ declare module '@strapi/strapi' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::job.job': ApiJobJob;
       'api::key-features-page.key-features-page': ApiKeyFeaturesPageKeyFeaturesPage;
+      'api::open-observe-cloud-free-tier.open-observe-cloud-free-tier': ApiOpenObserveCloudFreeTierOpenObserveCloudFreeTier;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::platform.platform': ApiPlatformPlatform;
       'api::pricing.pricing': ApiPricingPricing;
