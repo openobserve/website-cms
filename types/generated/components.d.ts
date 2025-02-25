@@ -501,17 +501,7 @@ export interface SectionCtaBanner extends Struct.ComponentSchema {
     displayName: 'Banner';
   };
   attributes: {
-    bannerDescription: Schema.Attribute.Text;
-    bannerTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    featureTitle: Schema.Attribute.String;
-    getStartedText: Schema.Attribute.String;
     heading: Schema.Attribute.Component<'elements.heading', false>;
-    items: Schema.Attribute.Component<
-      'elements.feature-title-description',
-      true
-    >;
-    primaryButton: Schema.Attribute.Component<'elements.button', false>;
-    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 
