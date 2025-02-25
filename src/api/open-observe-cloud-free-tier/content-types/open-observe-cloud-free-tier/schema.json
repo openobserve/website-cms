@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "open_observe_cloud_free_tiers",
+  "info": {
+    "singularName": "open-observe-cloud-free-tier",
+    "pluralName": "open-observe-cloud-free-tiers",
+    "displayName": "OpenObserve Cloud Free Tier",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "featureTitle": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "bottomText": {
+      "type": "string"
+    }
+  }
+}
