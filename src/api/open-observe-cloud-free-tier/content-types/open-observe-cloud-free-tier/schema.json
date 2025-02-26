@@ -38,6 +38,12 @@
     },
     "bottomText": {
       "type": "string"
+    },
+    "monthlyText": {
+      "type": "string"
+    },
+    "componentId": {
+      "type": "string"
     }
   }
 }

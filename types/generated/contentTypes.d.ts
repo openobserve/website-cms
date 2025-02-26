@@ -903,6 +903,7 @@ export interface ApiOpenObserveCloudFreeTierOpenObserveCloudFreeTier
   };
   attributes: {
     bottomText: Schema.Attribute.String;
+    componentId: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -918,6 +919,7 @@ export interface ApiOpenObserveCloudFreeTierOpenObserveCloudFreeTier
       'api::open-observe-cloud-free-tier.open-observe-cloud-free-tier'
     > &
       Schema.Attribute.Private;
+    monthlyText: Schema.Attribute.String;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     publishedAt: Schema.Attribute.DateTime;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
