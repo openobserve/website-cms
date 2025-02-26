@@ -292,6 +292,10 @@ export interface SectionCardsCaseStudies extends Struct.ComponentSchema {
     displayName: 'Case Studies';
   };
   attributes: {
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
