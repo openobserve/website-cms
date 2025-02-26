@@ -173,6 +173,8 @@ export interface ElementsPlanItem extends Struct.ComponentSchema {
       'elements.feature-title-description',
       true
     >;
+    monthlyText: Schema.Attribute.String;
+    pricing: Schema.Attribute.String;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     subTitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
