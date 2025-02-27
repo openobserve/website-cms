@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_navigation_key_features",
   "info": {
-    "displayName": "keyFeature"
+    "displayName": "keyFeature",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,9 @@
       "type": "component",
       "repeatable": true,
       "component": "section-navigation.sub-item"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }
