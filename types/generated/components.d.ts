@@ -982,10 +982,12 @@ export interface SectionNavigationCompany extends Struct.ComponentSchema {
 export interface SectionNavigationKeyFeature extends Struct.ComponentSchema {
   collectionName: 'components_section_navigation_key_features';
   info: {
+    description: '';
     displayName: 'keyFeature';
   };
   attributes: {
     items: Schema.Attribute.Component<'section-navigation.sub-item', true>;
+    link: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -993,6 +995,7 @@ export interface SectionNavigationKeyFeature extends Struct.ComponentSchema {
 export interface SectionNavigationPlatform extends Struct.ComponentSchema {
   collectionName: 'components_section_navigation_platforms';
   info: {
+    description: '';
     displayName: 'Platform';
   };
   attributes: {

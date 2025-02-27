@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_navigation_platforms",
   "info": {
-    "displayName": "Platform"
+    "displayName": "Platform",
+    "description": ""
   },
   "options": {},
   "attributes": {
