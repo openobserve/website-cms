@@ -504,7 +504,12 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.DynamicZone<
-      ['section-cta.banner', 'section-cards.features1', 'seo.seo']
+      [
+        'section-cta.banner',
+        'section-cards.features1',
+        'seo.seo',
+        'section-cards.blogs',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -707,6 +712,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    address: Schema.Attribute.String;
     copyRightText: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -718,10 +724,10 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       'api::footer.footer'
     > &
       Schema.Attribute.Private;
-    privacyText: Schema.Attribute.String;
+    privacyText: Schema.Attribute.Component<'elements.button', false>;
     publishedAt: Schema.Attribute.DateTime;
     socialMedia: Schema.Attribute.Component<'elements.social-media-icon', true>;
-    termsText: Schema.Attribute.String;
+    termsOfService: Schema.Attribute.Component<'elements.button', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1228,7 +1234,6 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
         'section-separator.separator',
         'section-cards.blogs',
         'section-cards.resource-feature-highlight',
-        'section-cards.blog-with-categories',
         'seo.seo',
       ]
     >;

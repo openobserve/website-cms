@@ -15,12 +15,6 @@
     "copyRightText": {
       "type": "string"
     },
-    "termsText": {
-      "type": "string"
-    },
-    "privacyText": {
-      "type": "string"
-    },
     "footerData": {
       "type": "component",
       "repeatable": true,
@@ -30,6 +24,19 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.social-media-icon"
+    },
+    "privacyText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "termsOfService": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "address": {
+      "type": "string"
     }
   }
 }

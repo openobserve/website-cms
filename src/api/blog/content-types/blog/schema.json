@@ -17,7 +17,8 @@
       "components": [
         "section-cta.banner",
         "section-cards.features1",
-        "seo.seo"
+        "seo.seo",
+        "section-cards.blogs"
       ]
     },
     "seo": {

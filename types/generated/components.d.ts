@@ -266,20 +266,11 @@ export interface ElementsTestimonialCard extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionCardsBlogWithCategories extends Struct.ComponentSchema {
-  collectionName: 'components_section_cards_blog_with_categories';
-  info: {
-    displayName: 'BlogWithCategories';
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface SectionCardsBlogs extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_blogs';
   info: {
-    displayName: 'Blogs';
+    description: '';
+    displayName: 'Case Study';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
@@ -291,7 +282,7 @@ export interface SectionCardsCaseStudies extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_case_studies';
   info: {
     description: '';
-    displayName: 'Case Studies';
+    displayName: 'Blog';
   };
   attributes: {
     categories: Schema.Attribute.Relation<
@@ -1216,7 +1207,6 @@ declare module '@strapi/strapi' {
       'elements.support-card': ElementsSupportCard;
       'elements.tab-item': ElementsTabItem;
       'elements.testimonial-card': ElementsTestimonialCard;
-      'section-cards.blog-with-categories': SectionCardsBlogWithCategories;
       'section-cards.blogs': SectionCardsBlogs;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
