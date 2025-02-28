@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_cards_blogs",
   "info": {
-    "displayName": "Blogs"
+    "displayName": "Case Study",
+    "description": ""
   },
   "options": {},
   "attributes": {
