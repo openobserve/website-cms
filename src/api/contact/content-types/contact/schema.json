@@ -17,10 +17,10 @@
       "components": [
         "section-cta.banner",
         "section-cards.community-support",
-        "section-cards.case-studies",
         "seo.seo",
         "section-separator.separator",
-        "section-hero.contact-hero-section"
+        "section-hero.contact-hero-section",
+        "section-cards.blog"
       ]
     },
     "seo": {

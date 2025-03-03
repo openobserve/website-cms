@@ -17,7 +17,6 @@
       "components": [
         "section-separator.separator",
         "section-cta.banner",
-        "section-cards.case-studies",
         "section-features.key-feature-wrapper"
       ]
     },

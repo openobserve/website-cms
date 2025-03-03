@@ -17,12 +17,12 @@
       "components": [
         "section-hero.resource-hero-section",
         "section-cta.banner",
-        "section-cards.case-studies",
         "section-cards.resource-support-card",
         "section-separator.separator",
-        "section-cards.blogs",
         "section-cards.resource-feature-highlight",
-        "seo.seo"
+        "seo.seo",
+        "section-cards.resources-blogs",
+        "section-cards.case-studies"
       ]
     },
     "seo": {

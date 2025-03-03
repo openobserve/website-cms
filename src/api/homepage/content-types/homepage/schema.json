@@ -24,10 +24,10 @@
         "section-cards.features2",
         "section-cards.features1",
         "section-cards.clients",
-        "section-cards.case-studies",
         "section-separator.separator",
         "seo.seo",
-        "section-features.home-features-list"
+        "section-features.home-features-list",
+        "section-cards.blog"
       ],
       "required": true
     },
