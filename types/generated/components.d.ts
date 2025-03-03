@@ -266,13 +266,16 @@ export interface ElementsTestimonialCard extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionCardsBlogs extends Struct.ComponentSchema {
-  collectionName: 'components_section_cards_blogs';
+export interface SectionCardsBlog extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_blog_s';
   info: {
-    description: '';
-    displayName: 'Case Study';
+    displayName: 'Blog ';
   };
   attributes: {
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
@@ -281,14 +284,9 @@ export interface SectionCardsBlogs extends Struct.ComponentSchema {
 export interface SectionCardsCaseStudies extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_case_studies';
   info: {
-    description: '';
-    displayName: 'Blog';
+    displayName: 'Case Studies';
   };
   attributes: {
-    categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    >;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
@@ -440,6 +438,17 @@ export interface SectionCardsResourceSupportCard
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.support-card', true>;
+  };
+}
+
+export interface SectionCardsResourcesBlogs extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_resources_blogs';
+  info: {
+    displayName: 'Resources Blogs';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 
@@ -1207,7 +1216,7 @@ declare module '@strapi/strapi' {
       'elements.support-card': ElementsSupportCard;
       'elements.tab-item': ElementsTabItem;
       'elements.testimonial-card': ElementsTestimonialCard;
-      'section-cards.blogs': SectionCardsBlogs;
+      'section-cards.blog': SectionCardsBlog;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
       'section-cards.community-support': SectionCardsCommunitySupport;
@@ -1220,6 +1229,7 @@ declare module '@strapi/strapi' {
       'section-cards.features5': SectionCardsFeatures5;
       'section-cards.resource-feature-highlight': SectionCardsResourceFeatureHighlight;
       'section-cards.resource-support-card': SectionCardsResourceSupportCard;
+      'section-cards.resources-blogs': SectionCardsResourcesBlogs;
       'section-cards.stats': SectionCardsStats;
       'section-cards.testimonials': SectionCardsTestimonials;
       'section-cards.why-customer-love-us': SectionCardsWhyCustomerLoveUs;

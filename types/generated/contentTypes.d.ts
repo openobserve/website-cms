@@ -387,10 +387,10 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
         'section-features.info-right-feature',
         'section-features.info-left-feature',
         'section-cta.banner',
-        'section-cards.case-studies',
         'section-cards.features3',
         'section-separator.separator',
         'seo.seo',
+        'section-cards.blog',
       ]
     > &
       Schema.Attribute.Required;
@@ -508,7 +508,7 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
         'section-cta.banner',
         'section-cards.features1',
         'seo.seo',
-        'section-cards.blogs',
+        'section-cards.case-studies',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -572,10 +572,10 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
       [
         'section-cta.banner',
         'section-cards.community-support',
-        'section-cards.case-studies',
         'seo.seo',
         'section-separator.separator',
         'section-hero.contact-hero-section',
+        'section-cards.blog',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -795,10 +795,10 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         'section-cards.features2',
         'section-cards.features1',
         'section-cards.clients',
-        'section-cards.case-studies',
         'section-separator.separator',
         'seo.seo',
         'section-features.home-features-list',
+        'section-cards.blog',
       ]
     > &
       Schema.Attribute.Required;
@@ -841,6 +841,7 @@ export interface ApiJobJob extends Struct.SingleTypeSchema {
         'section-hero.company-why-o2-hero-section',
         'section-features.info-left-feature',
         'section-features.observability-space',
+        'section-cards.blog',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -874,7 +875,6 @@ export interface ApiKeyFeaturesPageKeyFeaturesPage
       [
         'section-separator.separator',
         'section-cta.banner',
-        'section-cards.case-studies',
         'section-features.key-feature-wrapper',
       ]
     >;
@@ -955,10 +955,10 @@ export interface ApiPlatformPagePlatformPage
         'section-features.feature-list',
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
-        'section-cards.case-studies',
         'section-separator.separator',
         'section-cards.feature-highlights',
         'seo.seo',
+        'section-cards.blog',
       ]
     > &
       Schema.Attribute.Required;
@@ -1004,7 +1004,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
         'section-cta.plain-cta',
         'section-separator.separator',
         'seo.seo',
-        'section-cards.case-studies',
+        'section-cards.blog',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1229,12 +1229,12 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
       [
         'section-hero.resource-hero-section',
         'section-cta.banner',
-        'section-cards.case-studies',
         'section-cards.resource-support-card',
         'section-separator.separator',
-        'section-cards.blogs',
         'section-cards.resource-feature-highlight',
         'seo.seo',
+        'section-cards.resources-blogs',
+        'section-cards.case-studies',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1275,10 +1275,10 @@ export interface ApiSolutionLandingPageSolutionLandingPage
         'section-features.platform-tabs-wrapper',
         'section-cta.call-to-action',
         'section-cards.features5',
-        'section-cards.case-studies',
         'section-separator.separator',
         'seo.seo',
         'section-hero.solutions-hero-section',
+        'section-cards.blog',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1316,12 +1316,12 @@ export interface ApiSolutionPageSolutionPage
         'section-cards.feature-highlights',
         'section-faqs.frequently-asked-question',
         'section-features.feature-list',
-        'section-cards.case-studies',
         'section-cta.banner',
         'section-separator.separator',
         'seo.seo',
         'section-hero.feature-solution-hero-section',
         'section-features.feature-sub-page-top-tabs',
+        'section-cards.blog',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1387,13 +1387,13 @@ export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
     body: Schema.Attribute.DynamicZone<
       [
         'section-cta.banner',
-        'section-cards.case-studies',
         'section-cards.clients',
         'section-cta.plain-cta',
         'section-cards.why-customer-love-us',
         'seo.seo',
         'section-separator.separator',
         'section-hero.company-why-o2-hero-section',
+        'section-cards.blog',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

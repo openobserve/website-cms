@@ -18,12 +18,12 @@
         "section-cards.feature-highlights",
         "section-faqs.frequently-asked-question",
         "section-features.feature-list",
-        "section-cards.case-studies",
         "section-cta.banner",
         "section-separator.separator",
         "seo.seo",
         "section-hero.feature-solution-hero-section",
-        "section-features.feature-sub-page-top-tabs"
+        "section-features.feature-sub-page-top-tabs",
+        "section-cards.blog"
       ]
     },
     "slug": {

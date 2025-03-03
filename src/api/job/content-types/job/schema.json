@@ -22,7 +22,8 @@
         "section-separator.separator",
         "section-hero.company-why-o2-hero-section",
         "section-features.info-left-feature",
-        "section-features.observability-space"
+        "section-features.observability-space",
+        "section-cards.blog"
       ]
     },
     "seo": {

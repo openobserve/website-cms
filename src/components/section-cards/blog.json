@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_section_cards_case_studies",
+  "collectionName": "components_section_cards_blog_s",
   "info": {
-    "displayName": "Case Studies"
+    "displayName": "Blog "
   },
   "options": {},
   "attributes": {
@@ -14,6 +14,11 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
     }
   }
 }
