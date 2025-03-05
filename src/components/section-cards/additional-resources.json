@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_cards_additional_resources_s",
+  "info": {
+    "displayName": "Additional Resources "
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    }
+  }
+}

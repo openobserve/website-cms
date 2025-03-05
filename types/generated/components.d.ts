@@ -25,6 +25,25 @@ export interface ElementsButtonWithIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsCaseStudyItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_case_study_items';
+  info: {
+    displayName: 'case study item';
+  };
+  attributes: {
+    clientLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+  };
+}
+
 export interface ElementsCompanyCustomerFeature extends Struct.ComponentSchema {
   collectionName: 'components_elements_company_customer_features';
   info: {
@@ -266,6 +285,18 @@ export interface ElementsTestimonialCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsAdditionalResources
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_additional_resources_s';
+  info: {
+    displayName: 'Additional Resources ';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
 export interface SectionCardsBlog extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_blog_s';
   info: {
@@ -289,6 +320,16 @@ export interface SectionCardsCaseStudies extends Struct.ComponentSchema {
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
+  };
+}
+
+export interface SectionCardsCaseStudiesSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_case_studies_sections';
+  info: {
+    displayName: 'Case Studies Section';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.case-study-item', true>;
   };
 }
 
@@ -1200,6 +1241,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'elements.button': ElementsButton;
       'elements.button-with-icon': ElementsButtonWithIcon;
+      'elements.case-study-item': ElementsCaseStudyItem;
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
       'elements.faq-item': ElementsFaqItem;
       'elements.feature-item': ElementsFeatureItem;
@@ -1216,8 +1258,10 @@ declare module '@strapi/strapi' {
       'elements.support-card': ElementsSupportCard;
       'elements.tab-item': ElementsTabItem;
       'elements.testimonial-card': ElementsTestimonialCard;
+      'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.blog': SectionCardsBlog;
       'section-cards.case-studies': SectionCardsCaseStudies;
+      'section-cards.case-studies-section': SectionCardsCaseStudiesSection;
       'section-cards.clients': SectionCardsClients;
       'section-cards.community-support': SectionCardsCommunitySupport;
       'section-cards.explore-resources': SectionCardsExploreResources;
