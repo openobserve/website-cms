@@ -525,6 +525,45 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCaseStudyPageCaseStudyPage extends Struct.SingleTypeSchema {
+  collectionName: 'case_study_pages';
+  info: {
+    description: '';
+    displayName: 'Case Study Page';
+    pluralName: 'case-study-pages';
+    singularName: 'case-study-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-cta.banner',
+        'section-hero.resource-hero-section',
+        'section-separator.separator',
+        'section-cards.additional-resources',
+        'section-cards.case-studies-section',
+        'section-cards.resources-blogs',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study-page.case-study-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -1926,6 +1965,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::blog.blog': ApiBlogBlog;
+      'api::case-study-page.case-study-page': ApiCaseStudyPageCaseStudyPage;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
