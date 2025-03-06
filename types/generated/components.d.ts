@@ -28,6 +28,7 @@ export interface ElementsButtonWithIcon extends Struct.ComponentSchema {
 export interface ElementsCaseStudyItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_case_study_items';
   info: {
+    description: '';
     displayName: 'case study item';
   };
   attributes: {
@@ -41,6 +42,7 @@ export interface ElementsCaseStudyItem extends Struct.ComponentSchema {
       'elements.feature-title-description',
       true
     >;
+    link: Schema.Attribute.String;
   };
 }
 
@@ -326,6 +328,7 @@ export interface SectionCardsCaseStudies extends Struct.ComponentSchema {
 export interface SectionCardsCaseStudiesSection extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_case_studies_sections';
   info: {
+    description: '';
     displayName: 'Case Studies Section';
   };
   attributes: {
