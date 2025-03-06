@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_cards_case_studies_sections",
   "info": {
-    "displayName": "Case Studies Section"
+    "displayName": "Case Studies Section",
+    "description": ""
   },
   "options": {},
   "attributes": {
