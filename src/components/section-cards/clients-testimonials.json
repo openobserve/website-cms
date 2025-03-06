@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_section_cards_clients_testimonials",
+  "info": {
+    "displayName": "Clients Testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    }
+  }
+}
