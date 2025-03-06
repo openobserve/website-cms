@@ -545,6 +545,7 @@ export interface ApiCaseStudyPageCaseStudyPage extends Struct.SingleTypeSchema {
         'section-cards.additional-resources',
         'section-cards.case-studies-section',
         'section-cards.resources-blogs',
+        'section-cards.clients-testimonials',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

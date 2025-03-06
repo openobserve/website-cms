@@ -348,6 +348,17 @@ export interface SectionCardsClients extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsClientsTestimonials
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_clients_testimonials';
+  info: {
+    displayName: 'Clients Testimonials';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
 export interface SectionCardsCommunitySupport extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_community_supports';
   info: {
@@ -1266,6 +1277,7 @@ declare module '@strapi/strapi' {
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.case-studies-section': SectionCardsCaseStudiesSection;
       'section-cards.clients': SectionCardsClients;
+      'section-cards.clients-testimonials': SectionCardsClientsTestimonials;
       'section-cards.community-support': SectionCardsCommunitySupport;
       'section-cards.explore-resources': SectionCardsExploreResources;
       'section-cards.feature-highlights': SectionCardsFeatureHighlights;
