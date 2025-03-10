@@ -22,7 +22,8 @@
         "section-cards.resource-feature-highlight",
         "seo.seo",
         "section-cards.resources-blogs",
-        "section-cards.case-studies"
+        "section-cards.case-studies",
+        "section-cards.clients-testimonials"
       ]
     },
     "seo": {
