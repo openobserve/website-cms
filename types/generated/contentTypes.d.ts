@@ -839,6 +839,8 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         'seo.seo',
         'section-features.home-features-list',
         'section-cards.blog',
+        'section-cards.case-studies',
+        'section-cards.clients-testimonials',
       ]
     > &
       Schema.Attribute.Required;
@@ -1275,6 +1277,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
         'seo.seo',
         'section-cards.resources-blogs',
         'section-cards.case-studies',
+        'section-cards.clients-testimonials',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

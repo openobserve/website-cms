@@ -27,7 +27,9 @@
         "section-separator.separator",
         "seo.seo",
         "section-features.home-features-list",
-        "section-cards.blog"
+        "section-cards.blog",
+        "section-cards.case-studies",
+        "section-cards.clients-testimonials"
       ],
       "required": true
     },
