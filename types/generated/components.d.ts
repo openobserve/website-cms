@@ -16,11 +16,13 @@ export interface ElementsButton extends Struct.ComponentSchema {
 export interface ElementsButtonWithIcon extends Struct.ComponentSchema {
   collectionName: 'components_elements_button_with_icons';
   info: {
+    description: '';
     displayName: 'ButtonWithIcon';
   };
   attributes: {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.String;
+    target: Schema.Attribute.String;
     text: Schema.Attribute.String;
   };
 }
