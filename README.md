@@ -1,8 +1,8 @@
-# 🚀 Getting started with Strapi
+# Getting started with Strapi
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Strapi comes with a full-featured [Command Line Interface](https://docs.strapi.io/dev-docs/installation/cli) (CLI) which lets you set up a project.
 
-### `develop`
+## Develop
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
@@ -12,17 +12,7 @@ npm run develop
 yarn develop
 ```
 
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
+## Build
 
 Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
@@ -32,30 +22,43 @@ npm run build
 yarn build
 ```
 
-## ⚙️ Deployment
+## Start
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
 ```
-yarn strapi deploy
+npm run start
+# or
+yarn start
 ```
 
-## 📚 Learn more
+## Making Changes After Deployment
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+After deploying your Strapi application, you may need to add new content types, update existing ones, or introduce new components. Here’s how to handle such changes effectively:
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+### Adding a New Page (Single Type or Collection Type)
 
-## ✨ Community
+#### Single Type (e.g., About Page, Homepage, Settings Page)
+1. Log in to the Strapi Admin Panel.
+2. Navigate to **Content-Type Builder**.
+3. Click **Create a new Single Type**.
+4. Define the structure by adding necessary fields.
+5. Save the changes and restart the server if required.
+6. Populate content from the **Content Manager**.
+7. Deploy the updated API and ensure the frontend consumes the new endpoint.
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+#### Collection Type (e.g., Blog Posts, Products, Services)
+1. Go to **Content-Type Builder**.
+2. Click **Create a new Collection Type**.
+3. Add relevant fields like title, description, images, etc.
+4. Save and restart the server if necessary.
+5. Add entries in **Content Manager**.
+6. Verify API endpoints and update the frontend accordingly.
 
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+### Creating a New Component
+1. Go to **Content-Type Builder** > **Components**.
+2. Click **Create a new Component**.
+3. Add fields required for the component (e.g., text, images, relations, etc.).
+4. Save the component.
+5. Attach the component to a relevant content type.
+6. Restart Strapi if required.
