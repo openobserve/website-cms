@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "casestudy_pages",
+  "info": {
+    "singularName": "casestudy-page",
+    "pluralName": "casestudy-pages",
+    "displayName": "Casestudy Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::case-study-category.case-study-category",
+      "inversedBy": "casestudy_pages"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case-study-author.case-study-author",
+      "inversedBy": "casestudy_pages"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "string"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seoDescription": {
+      "type": "text"
+    },
+    "publishDate": {
+      "type": "date"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}
