@@ -19,12 +19,9 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.feature-sub-hero-section",
         "section-features.feature-list",
         "section-faqs.frequently-asked-question",
         "section-cta.banner",
-        "section-separator.separator",
-        "section-cards.feature-highlights",
         "seo.seo",
         "section-cards.blog"
       ],

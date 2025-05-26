@@ -4,11 +4,5 @@
     "displayName": "SelfHostedForPricing"
   },
   "options": {},
-  "attributes": {
-    "features": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.plan-item"
-    }
-  }
+  "attributes": {}
 }

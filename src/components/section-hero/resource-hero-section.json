@@ -1,8 +1,9 @@
 {
   "collectionName": "components_section_hero_resource_hero_sections",
   "info": {
-    "displayName": "ResourceHeroSection",
-    "icon": "crown"
+    "displayName": "Landing Page Herosection",
+    "icon": "crown",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,8 +11,10 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "text"
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

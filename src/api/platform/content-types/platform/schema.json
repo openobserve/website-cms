@@ -15,16 +15,7 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.feature-hero-section",
-        "section-forms.contact",
-        "section-features.tabs-features",
-        "section-features.platform-tabs-wrapper",
-        "section-features.feature-list",
         "section-cta.banner",
-        "section-cards.feature4",
-        "section-cta.plain-cta",
-        "section-separator.separator",
-        "seo.seo",
         "section-cards.blog"
       ]
     },

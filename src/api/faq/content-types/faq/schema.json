@@ -15,10 +15,8 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.resource-hero-section",
         "section-faqs.frequently-asked-question",
         "section-cta.banner",
-        "seo.seo",
         "section-faqs.fa-qs-page-section"
       ]
     },

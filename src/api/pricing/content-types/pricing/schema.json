@@ -14,14 +14,7 @@
   "attributes": {
     "body": {
       "type": "dynamiczone",
-      "components": [
-        "section-separator.separator",
-        "section-forms.contact",
-        "section-faqs.frequently-asked-question",
-        "section-cards.testimonials",
-        "section-cards.feature4",
-        "section-tabs.pricing-tabs"
-      ]
+      "components": []
     },
     "seo": {
       "type": "component",

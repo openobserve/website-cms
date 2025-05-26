@@ -10,11 +10,6 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.heading"
-    },
-    "items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.tab-item"
     }
   }
 }

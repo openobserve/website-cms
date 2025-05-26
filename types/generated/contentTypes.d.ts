@@ -369,48 +369,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
-  collectionName: 'about_uses';
-  info: {
-    description: '';
-    displayName: 'About Us Page';
-    pluralName: 'about-uses';
-    singularName: 'about-us';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-hero.company-hero-section',
-        'section-features.info-right-feature',
-        'section-features.info-left-feature',
-        'section-cta.banner',
-        'section-cards.features3',
-        'section-separator.separator',
-        'seo.seo',
-        'section-cards.blog',
-      ]
-    > &
-      Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::about-us.about-us'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -523,40 +481,6 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBlogBlog extends Struct.SingleTypeSchema {
-  collectionName: 'blogs';
-  info: {
-    description: '';
-    displayName: 'Blog Page';
-    pluralName: 'blogs';
-    singularName: 'blog';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-cta.banner',
-        'section-cards.features1',
-        'seo.seo',
-        'section-cards.case-studies',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiCaseStudyAuthorCaseStudyAuthor
   extends Struct.CollectionTypeSchema {
   collectionName: 'case_study_authors';
@@ -627,46 +551,6 @@ export interface ApiCaseStudyCategoryCaseStudyCategory
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCaseStudyPageCaseStudyPage extends Struct.SingleTypeSchema {
-  collectionName: 'case_study_pages';
-  info: {
-    description: '';
-    displayName: 'Case Study Page';
-    pluralName: 'case-study-pages';
-    singularName: 'case-study-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-cta.banner',
-        'section-hero.resource-hero-section',
-        'section-separator.separator',
-        'section-cards.additional-resources',
-        'section-cards.case-studies-section',
-        'section-cards.resources-blogs',
-        'section-cards.clients-testimonials',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::case-study-page.case-study-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -753,45 +637,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiContactContact extends Struct.SingleTypeSchema {
-  collectionName: 'contacts';
-  info: {
-    description: '';
-    displayName: 'Contact Us Page';
-    pluralName: 'contacts';
-    singularName: 'contact';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-cta.banner',
-        'section-cards.community-support',
-        'seo.seo',
-        'section-separator.separator',
-        'section-hero.contact-hero-section',
-        'section-cards.blog',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::contact.contact'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
   collectionName: 'demo_pages';
   info: {
@@ -804,7 +649,7 @@ export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.DynamicZone<['section-hero.demo-herosection']>;
+    body: Schema.Attribute.DynamicZone<[]>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -837,10 +682,6 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
     body: Schema.Attribute.DynamicZone<
       [
         'section-cta.banner',
-        'section-faqs.frequently-asked-question',
-        'section-separator.separator',
-        'section-cards.explore-resources',
-        'section-table.plans-feature-table',
         'section-tabs.download-tabs',
         'section-forms.download-contact-form',
       ]
@@ -876,10 +717,8 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-hero.resource-hero-section',
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
-        'seo.seo',
         'section-faqs.fa-qs-page-section',
       ]
     >;
@@ -943,7 +782,6 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    company: Schema.Attribute.Component<'section-navigation.company', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -953,182 +791,7 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
       'api::header.header'
     > &
       Schema.Attribute.Private;
-    platform: Schema.Attribute.Component<'section-navigation.platform', false>;
     publishedAt: Schema.Attribute.DateTime;
-    resources: Schema.Attribute.Component<
-      'section-navigation.resources',
-      false
-    >;
-    solutions: Schema.Attribute.Component<
-      'section-navigation.soltuions',
-      false
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
-  collectionName: 'homepages';
-  info: {
-    description: '';
-    displayName: 'Homepage';
-    pluralName: 'homepages';
-    singularName: 'homepage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-hero.homepage-hero',
-        'section-forms.contact',
-        'section-features.feature-list',
-        'section-cta.banner',
-        'section-cards.stats',
-        'section-cards.features3',
-        'section-cards.features2',
-        'section-cards.features1',
-        'section-cards.clients',
-        'section-separator.separator',
-        'seo.seo',
-        'section-features.home-features-list',
-        'section-cards.blog',
-        'section-cards.case-studies',
-        'section-cards.clients-testimonials',
-      ]
-    > &
-      Schema.Attribute.Required;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homepage.homepage'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiJobJob extends Struct.SingleTypeSchema {
-  collectionName: 'jobs';
-  info: {
-    description: '';
-    displayName: 'Jobs Landing Page';
-    pluralName: 'jobs';
-    singularName: 'job';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-cards.features3',
-        'section-cards.testimonials',
-        'section-cta.call-to-action',
-        'seo.seo',
-        'section-separator.separator',
-        'section-hero.company-why-o2-hero-section',
-        'section-features.info-left-feature',
-        'section-features.observability-space',
-        'section-cards.blog',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::job.job'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiKeyFeaturesPageKeyFeaturesPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'key_features_pages';
-  info: {
-    description: '';
-    displayName: 'Key Features Page';
-    pluralName: 'key-features-pages';
-    singularName: 'key-features-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-separator.separator',
-        'section-cta.banner',
-        'section-features.key-feature-wrapper',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::key-features-page.key-features-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiOpenObserveCloudFreeTierOpenObserveCloudFreeTier
-  extends Struct.SingleTypeSchema {
-  collectionName: 'open_observe_cloud_free_tiers';
-  info: {
-    description: '';
-    displayName: 'OpenObserve Cloud Free Tier';
-    pluralName: 'open-observe-cloud-free-tiers';
-    singularName: 'open-observe-cloud-free-tier';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bottomText: Schema.Attribute.String;
-    componentId: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    featureTitle: Schema.Attribute.String;
-    items: Schema.Attribute.Component<
-      'elements.feature-title-description',
-      true
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::open-observe-cloud-free-tier.open-observe-cloud-free-tier'
-    > &
-      Schema.Attribute.Private;
-    monthlyText: Schema.Attribute.String;
-    primaryButton: Schema.Attribute.Component<'elements.button', false>;
-    publishedAt: Schema.Attribute.DateTime;
-    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1150,12 +813,9 @@ export interface ApiPlatformPagePlatformPage
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-hero.feature-sub-hero-section',
         'section-features.feature-list',
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
-        'section-separator.separator',
-        'section-cards.feature-highlights',
         'seo.seo',
         'section-cards.blog',
       ]
@@ -1192,19 +852,7 @@ export interface ApiPlatformPlatform extends Struct.SingleTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.DynamicZone<
-      [
-        'section-hero.feature-hero-section',
-        'section-forms.contact',
-        'section-features.tabs-features',
-        'section-features.platform-tabs-wrapper',
-        'section-features.feature-list',
-        'section-cta.banner',
-        'section-cards.feature4',
-        'section-cta.plain-cta',
-        'section-separator.separator',
-        'seo.seo',
-        'section-cards.blog',
-      ]
+      ['section-cta.banner', 'section-cards.blog']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1235,16 +883,7 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-separator.separator',
-        'section-forms.contact',
-        'section-faqs.frequently-asked-question',
-        'section-cards.testimonials',
-        'section-cards.feature4',
-        'section-tabs.pricing-tabs',
-      ]
-    >;
+    body: Schema.Attribute.DynamicZone<[]>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1412,48 +1051,6 @@ export interface ApiResourcePageResourcePage
   };
 }
 
-export interface ApiResourceResource extends Struct.SingleTypeSchema {
-  collectionName: 'resources';
-  info: {
-    description: '';
-    displayName: 'Resources Landing Page';
-    pluralName: 'resources';
-    singularName: 'resource';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-hero.resource-hero-section',
-        'section-cta.banner',
-        'section-cards.resource-support-card',
-        'section-separator.separator',
-        'section-cards.resource-feature-highlight',
-        'seo.seo',
-        'section-cards.resources-blogs',
-        'section-cards.case-studies',
-        'section-cards.clients-testimonials',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::resource.resource'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiSolutionLandingPageSolutionLandingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'solution_landing_pages';
@@ -1469,15 +1066,9 @@ export interface ApiSolutionLandingPageSolutionLandingPage
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-hero.feature-hero-section',
-        'section-forms.contact',
         'section-cta.banner',
         'section-features.platform-tabs-wrapper',
-        'section-cta.call-to-action',
-        'section-cards.features5',
-        'section-separator.separator',
         'seo.seo',
-        'section-hero.solutions-hero-section',
         'section-cards.blog',
       ]
     >;
@@ -1513,13 +1104,10 @@ export interface ApiSolutionPageSolutionPage
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-cards.feature-highlights',
         'section-faqs.frequently-asked-question',
         'section-features.feature-list',
         'section-cta.banner',
-        'section-separator.separator',
         'seo.seo',
-        'section-hero.feature-solution-hero-section',
         'section-features.feature-sub-page-top-tabs',
         'section-cards.blog',
       ]
@@ -1566,47 +1154,6 @@ export interface ApiTermsOfServicePageTermsOfServicePage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiWhyChooseUsWhyChooseUs extends Struct.SingleTypeSchema {
-  collectionName: 'why_choose_uses';
-  info: {
-    description: '';
-    displayName: 'Why Choose Us Page';
-    pluralName: 'why-choose-uses';
-    singularName: 'why-choose-us';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-cta.banner',
-        'section-cards.clients',
-        'section-cta.plain-cta',
-        'section-cards.why-customer-love-us',
-        'seo.seo',
-        'section-separator.separator',
-        'section-hero.company-why-o2-hero-section',
-        'section-cards.blog',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::why-choose-us.why-choose-us'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2122,26 +1669,18 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
-      'api::blog.blog': ApiBlogBlog;
       'api::case-study-author.case-study-author': ApiCaseStudyAuthorCaseStudyAuthor;
       'api::case-study-category.case-study-category': ApiCaseStudyCategoryCaseStudyCategory;
-      'api::case-study-page.case-study-page': ApiCaseStudyPageCaseStudyPage;
       'api::casestudy-page.casestudy-page': ApiCasestudyPageCasestudyPage;
       'api::category.category': ApiCategoryCategory;
-      'api::contact.contact': ApiContactContact;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
       'api::download.download': ApiDownloadDownload;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
-      'api::homepage.homepage': ApiHomepageHomepage;
-      'api::job.job': ApiJobJob;
-      'api::key-features-page.key-features-page': ApiKeyFeaturesPageKeyFeaturesPage;
-      'api::open-observe-cloud-free-tier.open-observe-cloud-free-tier': ApiOpenObserveCloudFreeTierOpenObserveCloudFreeTier;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::platform.platform': ApiPlatformPlatform;
       'api::pricing.pricing': ApiPricingPricing;
@@ -2149,11 +1688,9 @@ declare module '@strapi/strapi' {
       'api::resource-author.resource-author': ApiResourceAuthorResourceAuthor;
       'api::resource-category.resource-category': ApiResourceCategoryResourceCategory;
       'api::resource-page.resource-page': ApiResourcePageResourcePage;
-      'api::resource.resource': ApiResourceResource;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
       'api::terms-of-service-page.terms-of-service-page': ApiTermsOfServicePageTermsOfServicePage;
-      'api::why-choose-us.why-choose-us': ApiWhyChooseUsWhyChooseUs;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
