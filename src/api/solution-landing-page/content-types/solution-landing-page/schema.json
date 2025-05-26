@@ -16,7 +16,6 @@
       "type": "dynamiczone",
       "components": [
         "section-cta.banner",
-        "section-features.platform-tabs-wrapper",
         "seo.seo",
         "section-cards.blog"
       ]

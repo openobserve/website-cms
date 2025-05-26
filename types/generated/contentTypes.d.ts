@@ -1065,12 +1065,7 @@ export interface ApiSolutionLandingPageSolutionLandingPage
   };
   attributes: {
     body: Schema.Attribute.DynamicZone<
-      [
-        'section-cta.banner',
-        'section-features.platform-tabs-wrapper',
-        'seo.seo',
-        'section-cards.blog',
-      ]
+      ['section-cta.banner', 'seo.seo', 'section-cards.blog']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
