@@ -17,7 +17,10 @@
       "components": [
         "section-hero.resource-hero-section",
         "section-cards.feature1",
-        "section-cta.banner"
+        "section-cta.banner",
+        "section-features.global-team",
+        "section-features.technologies",
+        "section-cards.testimonials"
       ]
     },
     "seo": {
