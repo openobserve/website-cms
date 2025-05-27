@@ -4,7 +4,8 @@
   "info": {
     "singularName": "resource-landing-page",
     "pluralName": "resource-landing-pages",
-    "displayName": "Resource Landing Page"
+    "displayName": "Resource Landing Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,8 +18,15 @@
         "section-hero.resource-hero-section",
         "section-cards.feature1",
         "section-cards.case-studies",
-        "section-cards.blog"
+        "section-cards.blog",
+        "section-cards.feature3",
+        "section-cards.articles"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
