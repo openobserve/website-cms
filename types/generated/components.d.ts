@@ -447,6 +447,7 @@ export interface SectionFaqsFaQsPageSection extends Struct.ComponentSchema {
   };
   attributes: {
     faqs: Schema.Attribute.Component<'elements.faq-item', true>;
+    tabs: Schema.Attribute.String;
   };
 }
 
@@ -461,7 +462,6 @@ export interface SectionFaqsFrequentlyAskedQuestion
     faqs: Schema.Attribute.Component<'elements.faq-item', true> &
       Schema.Attribute.Required;
     heading: Schema.Attribute.Component<'elements.heading', false>;
-    subTitle: Schema.Attribute.String;
   };
 }
 
