@@ -837,8 +837,8 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         'section-cards.feature1',
         'section-features.home-marketecture-section',
         'section-cta.banner',
-        'section-features.feature-list',
         'section-cards.feature4',
+        'section-features.homepage-feature',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
