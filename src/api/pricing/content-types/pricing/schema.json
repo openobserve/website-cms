@@ -14,7 +14,11 @@
   "attributes": {
     "body": {
       "type": "dynamiczone",
-      "components": []
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cta.banner",
+        "section-tabs.pricing-tabs"
+      ]
     },
     "seo": {
       "type": "component",
