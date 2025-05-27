@@ -637,6 +637,41 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
+  collectionName: 'contact_uses';
+  info: {
+    displayName: 'Contact Us';
+    pluralName: 'contact-uses';
+    singularName: 'contact-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.resource-hero-section',
+        'section-cards.blog',
+        'section-forms.contact',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us.contact-us'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
   collectionName: 'demo_pages';
   info: {
@@ -1051,6 +1086,7 @@ export interface ApiResourceLandingPageResourceLandingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'resource_landing_pages';
   info: {
+    description: '';
     displayName: 'Resource Landing Page';
     pluralName: 'resource-landing-pages';
     singularName: 'resource-landing-page';
@@ -1065,6 +1101,8 @@ export interface ApiResourceLandingPageResourceLandingPage
         'section-cards.feature1',
         'section-cards.case-studies',
         'section-cards.blog',
+        'section-cards.feature3',
+        'section-cards.articles',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1077,6 +1115,7 @@ export interface ApiResourceLandingPageResourceLandingPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1755,6 +1794,7 @@ declare module '@strapi/strapi' {
       'api::case-study-category.case-study-category': ApiCaseStudyCategoryCaseStudyCategory;
       'api::casestudy-page.casestudy-page': ApiCasestudyPageCasestudyPage;
       'api::category.category': ApiCategoryCategory;
+      'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
       'api::download.download': ApiDownloadDownload;
       'api::faq.faq': ApiFaqFaq;

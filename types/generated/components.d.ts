@@ -198,6 +198,18 @@ export interface ElementsKeyFeatureItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsPartnerItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_partner_items';
+  info: {
+    displayName: 'PartnerItem';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsSocialMediaIcon extends Struct.ComponentSchema {
   collectionName: 'components_elements_social_media_icons';
   info: {
@@ -336,6 +348,18 @@ export interface SectionCardsFeature4 extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsOurPartners extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_our_partners';
+  info: {
+    description: '';
+    displayName: 'Our Partners';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.partner-item', true>;
+  };
+}
+
 export interface SectionCardsPlaformKeyFeatures extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_plaform_key_features';
   info: {
@@ -424,21 +448,6 @@ export interface SectionFeaturesCloudSectionForDownloads
   };
 }
 
-export interface SectionFeaturesDemoFeatures extends Struct.ComponentSchema {
-  collectionName: 'components_section_features_demo_features';
-  info: {
-    displayName: 'demoFeatures';
-  };
-  attributes: {
-    description: Schema.Attribute.String;
-    items: Schema.Attribute.Component<
-      'elements.feature-title-description',
-      true
-    >;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface SectionFeaturesFeatureLeftTabs extends Struct.ComponentSchema {
   collectionName: 'components_section_features_feature_left_tabs';
   info: {
@@ -485,6 +494,30 @@ export interface SectionFeaturesHomeMarketectureSection
     background: Schema.Attribute.Boolean;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface SectionFeaturesOurCommitment extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_our_commitments';
+  info: {
+    displayName: 'Our Commitment';
+  };
+  attributes: {
+    paragraph: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionFeaturesOurStory extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_our_stories';
+  info: {
+    displayName: 'Our Story';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    paragraph: Schema.Attribute.Text;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -732,6 +765,7 @@ declare module '@strapi/strapi' {
       'elements.items': ElementsItems;
       'elements.items-link': ElementsItemsLink;
       'elements.key-feature-item': ElementsKeyFeatureItem;
+      'elements.partner-item': ElementsPartnerItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
       'elements.testimonial-card': ElementsTestimonialCard;
       'section-cards.articles': SectionCardsArticles;
@@ -742,17 +776,19 @@ declare module '@strapi/strapi' {
       'section-cards.feature1': SectionCardsFeature1;
       'section-cards.feature3': SectionCardsFeature3;
       'section-cards.feature4': SectionCardsFeature4;
+      'section-cards.our-partners': SectionCardsOurPartners;
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
       'section-cards.testimonials': SectionCardsTestimonials;
       'section-cta.banner': SectionCtaBanner;
       'section-faqs.fa-qs-page-section': SectionFaqsFaQsPageSection;
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.cloud-section-for-downloads': SectionFeaturesCloudSectionForDownloads;
-      'section-features.demo-features': SectionFeaturesDemoFeatures;
       'section-features.feature-left-tabs': SectionFeaturesFeatureLeftTabs;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
       'section-features.home-marketecture-section': SectionFeaturesHomeMarketectureSection;
+      'section-features.our-commitment': SectionFeaturesOurCommitment;
+      'section-features.our-story': SectionFeaturesOurStory;
       'section-features.self-hosted-for-downloads': SectionFeaturesSelfHostedForDownloads;
       'section-features.self-hosted-for-pricing': SectionFeaturesSelfHostedForPricing;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
