@@ -196,8 +196,19 @@ export interface ElementsItems extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'elements.button', false>;
+    cardLink: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    target: Schema.Attribute.String;
+    theme: Schema.Attribute.Enumeration<
+      [
+        'theme-blue',
+        'theme-red',
+        'theme-purple',
+        'theme-green',
+        'theme-outline',
+      ]
+    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
