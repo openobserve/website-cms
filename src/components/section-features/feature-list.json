@@ -1,16 +1,11 @@
 {
   "collectionName": "components_section_features_feature_lists",
   "info": {
-    "displayName": "Feature List"
+    "displayName": "Feature List",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.heading",
-      "required": true
-    },
     "items": {
       "type": "component",
       "repeatable": true,

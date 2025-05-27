@@ -25,9 +25,19 @@
         "audios"
       ]
     },
-    "link": {
-      "type": "string",
-      "required": false
+    "align": {
+      "type": "enumeration",
+      "enum": [
+        "LEFT",
+        "CENTER",
+        "RIGHT"
+      ],
+      "default": "CENTER"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

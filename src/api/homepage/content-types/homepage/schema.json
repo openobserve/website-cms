@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "platforms",
+  "collectionName": "homepages",
   "info": {
-    "singularName": "platform",
-    "pluralName": "platforms",
-    "displayName": "platform Landing Page",
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
     "description": ""
   },
   "options": {
@@ -15,8 +15,12 @@
     "body": {
       "type": "dynamiczone",
       "components": [
+        "section-hero.homepage-hero",
+        "section-cards.feature1",
+        "section-features.home-marketecture-section",
         "section-cta.banner",
-        "section-cards.blog"
+        "section-features.feature-list",
+        "section-cards.feature4"
       ]
     },
     "seo": {

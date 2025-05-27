@@ -1,11 +1,12 @@
 {
   "collectionName": "components_section_hero_homepage_heroes",
   "info": {
-    "displayName": "Homepage-Hero"
+    "displayName": "Homepage-Hero",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "backgroundVideo": {
+    "video": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -29,11 +30,17 @@
       "component": "elements.button",
       "required": true
     },
-    "secondaryButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.button",
+    "badge": {
+      "type": "string",
       "required": true
+    },
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image"
+    },
+    "trustedText": {
+      "type": "text"
     }
   }
 }

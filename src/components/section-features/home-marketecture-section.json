@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_section_features_home_marketecture_sections",
+  "info": {
+    "displayName": "Home-Marketecture-Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "background": {
+      "type": "boolean"
+    }
+  }
+}

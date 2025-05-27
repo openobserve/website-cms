@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_section_cards_feature4s",
+  "collectionName": "components_section_cards_feature1s",
   "info": {
-    "displayName": "Feature2",
-    "description": ""
+    "displayName": "Feature1"
   },
   "options": {},
   "attributes": {
@@ -22,15 +21,10 @@
         "H6"
       ]
     },
-    "titleItems": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.card-inner-items"
-    },
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.card-item"
+      "component": "elements.items"
     }
   }
 }

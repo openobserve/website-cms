@@ -21,7 +21,7 @@
       "type": "string",
       "required": true
     },
-    "description": {
+    "quote": {
       "type": "text",
       "required": true
     },
