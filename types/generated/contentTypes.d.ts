@@ -856,6 +856,7 @@ export interface ApiPlatformLandingPagePlatformLandingPage
         'section-hero.resource-hero-section',
         'section-cards.feature1',
         'section-features.home-marketecture-section',
+        'section-cards.plaform-key-features',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

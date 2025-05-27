@@ -304,7 +304,9 @@ export interface SectionCardsPlaformKeyFeatures extends Struct.ComponentSchema {
     displayName: 'Plaform-Key-Features';
   };
   attributes: {
+    enterprise: Schema.Attribute.Component<'elements.items', true>;
     heading: Schema.Attribute.Component<'elements.heading', false>;
+    standard: Schema.Attribute.Component<'elements.items', true>;
     tabs: Schema.Attribute.Component<'elements.card-inner-items', true>;
   };
 }
