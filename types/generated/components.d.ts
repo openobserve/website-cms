@@ -47,6 +47,7 @@ export interface ElementsCardItem extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     items: Schema.Attribute.Component<'elements.card-inner-items', true>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String;
   };
 }
@@ -400,6 +401,18 @@ export interface SectionFeaturesDemoFeatures extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFeaturesFeatureLeftTabs extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_feature_left_tabs';
+  info: {
+    description: '';
+    displayName: 'Feature-Left-Tabs';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.card-item', true>;
+  };
+}
+
 export interface SectionFeaturesFeatureList extends Struct.ComponentSchema {
   collectionName: 'components_section_features_feature_lists';
   info: {
@@ -535,6 +548,9 @@ export interface SectionHeroResourceHeroSection extends Struct.ComponentSchema {
     icon: 'crown';
   };
   attributes: {
+    align: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']> &
+      Schema.Attribute.DefaultTo<'LEFT'>;
+    description: Schema.Attribute.Text;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -684,6 +700,7 @@ declare module '@strapi/strapi' {
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.cloud-section-for-downloads': SectionFeaturesCloudSectionForDownloads;
       'section-features.demo-features': SectionFeaturesDemoFeatures;
+      'section-features.feature-left-tabs': SectionFeaturesFeatureLeftTabs;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
       'section-features.home-marketecture-section': SectionFeaturesHomeMarketectureSection;

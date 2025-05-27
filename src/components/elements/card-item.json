@@ -28,6 +28,11 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.card-inner-items"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }
