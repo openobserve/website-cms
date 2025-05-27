@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contact-sale",
     "pluralName": "contact-sales",
-    "displayName": "Contact Sales"
+    "displayName": "Contact Sales",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,6 +18,11 @@
         "section-hero.resource-hero-section",
         "section-forms.contact-sales-form"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
