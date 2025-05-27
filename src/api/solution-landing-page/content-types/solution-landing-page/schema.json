@@ -18,7 +18,8 @@
         "section-cta.banner",
         "section-hero.resource-hero-section",
         "section-cards.feature1",
-        "section-cards.blog"
+        "section-cards.blog",
+        "section-features.feature-left-tabs"
       ]
     },
     "seo": {
