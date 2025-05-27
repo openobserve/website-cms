@@ -300,10 +300,12 @@ export interface SectionCardsFeature4 extends Struct.ComponentSchema {
 export interface SectionCardsPlaformKeyFeatures extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_plaform_key_features';
   info: {
+    description: '';
     displayName: 'Plaform-Key-Features';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
+    tabs: Schema.Attribute.Component<'elements.card-inner-items', true>;
   };
 }
 
