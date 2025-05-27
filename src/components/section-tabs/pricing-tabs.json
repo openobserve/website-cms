@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_tabs_pricing_tabs",
+  "info": {
+    "displayName": "PricingTabs"
+  },
+  "options": {},
+  "attributes": {
+    "cloud": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.pricing-item"
+    },
+    "selfHosted": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.pricing-item"
+    }
+  }
+}

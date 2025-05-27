@@ -210,6 +210,20 @@ export interface ElementsPartnerItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsPricingItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_pricing_items';
+  info: {
+    displayName: 'PricingItem';
+  };
+  attributes: {
+    bottomDescription: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'elements.card-inner-items', true>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsSocialMediaIcon extends Struct.ComponentSchema {
   collectionName: 'components_elements_social_media_icons';
   info: {
@@ -582,15 +596,6 @@ export interface SectionFeaturesSelfHostedForDownloads
   };
 }
 
-export interface SectionFeaturesSelfHostedForPricing
-  extends Struct.ComponentSchema {
-  collectionName: 'components_section_features_self_hosted_for_pricings';
-  info: {
-    displayName: 'SelfHostedForPricing';
-  };
-  attributes: {};
-}
-
 export interface SectionFeaturesTabsFeatures extends Struct.ComponentSchema {
   collectionName: 'components_section_features_tabs_features';
   info: {
@@ -608,11 +613,17 @@ export interface SectionFeaturesTabsFeatures extends Struct.ComponentSchema {
 export interface SectionFeaturesTechnologies extends Struct.ComponentSchema {
   collectionName: 'components_section_features_technologies';
   info: {
+    description: '';
     displayName: 'Technologies';
   };
   attributes: {
     features: Schema.Attribute.Component<'elements.items', true>;
     heading: Schema.Attribute.Component<'elements.heading', false>;
+    techFeatures: Schema.Attribute.Component<
+      'elements.technologies-features',
+      true
+    >;
+    techTags: Schema.Attribute.Component<'elements.tech-we-use', false>;
   };
 }
 
@@ -717,6 +728,17 @@ export interface SectionTabsDownloadTabs extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionTabsPricingTabs extends Struct.ComponentSchema {
+  collectionName: 'components_section_tabs_pricing_tabs';
+  info: {
+    displayName: 'PricingTabs';
+  };
+  attributes: {
+    cloud: Schema.Attribute.Component<'elements.pricing-item', true>;
+    selfHosted: Schema.Attribute.Component<'elements.pricing-item', true>;
+  };
+}
+
 export interface SeoAlternatesItem extends Struct.ComponentSchema {
   collectionName: 'components_seo_alternates_items';
   info: {
@@ -814,6 +836,7 @@ declare module '@strapi/strapi' {
       'elements.items-link': ElementsItemsLink;
       'elements.key-feature-item': ElementsKeyFeatureItem;
       'elements.partner-item': ElementsPartnerItem;
+      'elements.pricing-item': ElementsPricingItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
       'elements.tech-we-use': ElementsTechWeUse;
       'elements.technologies-features': ElementsTechnologiesFeatures;
@@ -841,7 +864,6 @@ declare module '@strapi/strapi' {
       'section-features.our-commitment': SectionFeaturesOurCommitment;
       'section-features.our-story': SectionFeaturesOurStory;
       'section-features.self-hosted-for-downloads': SectionFeaturesSelfHostedForDownloads;
-      'section-features.self-hosted-for-pricing': SectionFeaturesSelfHostedForPricing;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-features.technologies': SectionFeaturesTechnologies;
       'section-forms.contact': SectionFormsContact;
@@ -851,6 +873,7 @@ declare module '@strapi/strapi' {
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
       'section-hero.solutions-hero-section': SectionHeroSolutionsHeroSection;
       'section-tabs.download-tabs': SectionTabsDownloadTabs;
+      'section-tabs.pricing-tabs': SectionTabsPricingTabs;
       'seo.alternates-item': SeoAlternatesItem;
       'seo.authors-item': SeoAuthorsItem;
       'seo.opengraph-item': SeoOpengraphItem;
