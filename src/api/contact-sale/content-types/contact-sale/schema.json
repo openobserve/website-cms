@@ -1,22 +1,16 @@
 {
   "kind": "singleType",
-  "collectionName": "demo_pages",
+  "collectionName": "contact_sales",
   "info": {
-    "singularName": "demo-page",
-    "pluralName": "demo-pages",
-    "displayName": "Demo Page",
-    "description": ""
+    "singularName": "contact-sale",
+    "pluralName": "contact-sales",
+    "displayName": "Contact Sales"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "seo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.seo"
-    },
     "body": {
       "type": "dynamiczone",
       "components": [

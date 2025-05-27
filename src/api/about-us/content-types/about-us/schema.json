@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "contact_uses",
+  "collectionName": "about_uses",
   "info": {
-    "singularName": "contact-us",
-    "pluralName": "contact-uses",
-    "displayName": "Contact Us",
-    "description": ""
+    "singularName": "about-us",
+    "pluralName": "about-uses",
+    "displayName": "About Us"
   },
   "options": {
     "draftAndPublish": true
@@ -15,10 +14,7 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.resource-hero-section",
-        "section-cards.blog",
-        "section-forms.contact",
-        "section-cards.community-support"
+        "section-hero.resource-hero-section"
       ]
     },
     "seo": {
