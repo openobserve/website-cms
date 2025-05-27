@@ -11,26 +11,5 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {
-    "platform": {
-      "type": "component",
-      "repeatable": false,
-      "component": "section-navigation.platform"
-    },
-    "solutions": {
-      "type": "component",
-      "repeatable": false,
-      "component": "section-navigation.soltuions"
-    },
-    "company": {
-      "type": "component",
-      "repeatable": false,
-      "component": "section-navigation.company"
-    },
-    "resources": {
-      "type": "component",
-      "repeatable": false,
-      "component": "section-navigation.resources"
-    }
-  }
+  "attributes": {}
 }

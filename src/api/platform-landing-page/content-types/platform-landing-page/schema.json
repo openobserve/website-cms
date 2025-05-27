@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "platform_landing_pages",
+  "info": {
+    "singularName": "platform-landing-page",
+    "pluralName": "platform-landing-pages",
+    "displayName": "platform Landing Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-cta.banner",
+        "section-hero.resource-hero-section",
+        "section-cards.feature1",
+        "section-features.home-marketecture-section",
+        "section-cards.plaform-key-features"
+      ]
+    }
+  }
+}

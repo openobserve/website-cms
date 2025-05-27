@@ -15,11 +15,8 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-separator.separator",
-        "section-forms.contact",
-        "section-faqs.frequently-asked-question",
-        "section-cards.testimonials",
-        "section-cards.feature4",
+        "section-hero.resource-hero-section",
+        "section-cta.banner",
         "section-tabs.pricing-tabs"
       ]
     },

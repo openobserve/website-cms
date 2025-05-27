@@ -25,9 +25,10 @@
         "audios"
       ]
     },
-    "link": {
-      "type": "string",
-      "required": false
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

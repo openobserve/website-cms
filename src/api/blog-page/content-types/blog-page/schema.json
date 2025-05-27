@@ -60,12 +60,6 @@
     "seoDescription": {
       "type": "text"
     },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "blogs"
-    },
     "categories": {
       "type": "relation",
       "relation": "manyToMany",

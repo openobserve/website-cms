@@ -19,14 +19,12 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.feature-sub-hero-section",
-        "section-features.feature-list",
         "section-faqs.frequently-asked-question",
         "section-cta.banner",
-        "section-separator.separator",
-        "section-cards.feature-highlights",
-        "seo.seo",
-        "section-cards.blog"
+        "section-cards.blog",
+        "section-hero.solutions-hero-section",
+        "section-cards.feature1",
+        "section-features.feature-sub-page-top-tabs"
       ],
       "required": true
     },

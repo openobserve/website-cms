@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_features_our_commitments",
+  "info": {
+    "displayName": "Our Commitment"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    }
+  }
+}

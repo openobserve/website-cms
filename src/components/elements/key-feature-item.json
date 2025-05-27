@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_elements_key_feature_items",
+  "info": {
+    "displayName": "KeyFeatureItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.items"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_section_cards_feature1s",
+  "info": {
+    "displayName": "Feature1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "headingLevel": {
+      "type": "enumeration",
+      "enum": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "align": {
+      "type": "enumeration",
+      "enum": [
+        "LEFT",
+        "CENTER",
+        "RIGHT"
+      ]
+    },
+    "background": {
+      "type": "boolean"
+    }
+  }
+}

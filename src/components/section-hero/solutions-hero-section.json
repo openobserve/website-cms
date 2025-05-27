@@ -1,30 +1,22 @@
 {
   "collectionName": "components_section_hero_solutions_hero_sections",
   "info": {
-    "displayName": "SolutionsHeroSection",
-    "icon": "crown"
+    "displayName": "Platform subpage herosection",
+    "icon": "crown",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.heading"
-    },
-    "items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.items"
-    },
     "primaryButton": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
     },
-    "secondaryButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.button"
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
     },
     "image": {
       "allowedTypes": [
@@ -34,11 +26,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false,
-      "required": true
-    },
-    "noOfGridColumn": {
-      "type": "integer"
+      "multiple": false
     }
   }
 }
