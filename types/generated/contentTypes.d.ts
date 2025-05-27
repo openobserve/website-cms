@@ -850,6 +850,37 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEnterpriseLicenseEnterpriseLicense
+  extends Struct.SingleTypeSchema {
+  collectionName: 'enterprise_licenses';
+  info: {
+    description: '';
+    displayName: 'Enterprise license';
+    pluralName: 'enterprise-licenses';
+    singularName: 'enterprise-license';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::enterprise-license.enterprise-license'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -1038,10 +1069,12 @@ export interface ApiPlatformPagePlatformPage
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'section-features.feature-list',
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
         'section-cards.blog',
+        'section-hero.solutions-hero-section',
+        'section-cards.feature1',
+        'section-features.feature-sub-page-top-tabs',
       ]
     > &
       Schema.Attribute.Required;
@@ -1344,11 +1377,10 @@ export interface ApiSolutionPageSolutionPage
     body: Schema.Attribute.DynamicZone<
       [
         'section-faqs.frequently-asked-question',
-        'section-features.feature-list',
         'section-cta.banner',
-        'seo.seo',
-        'section-features.feature-sub-page-top-tabs',
         'section-cards.blog',
+        'section-cards.feature1',
+        'section-features.feature-sub-page-top-tabs',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1921,6 +1953,7 @@ declare module '@strapi/strapi' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
       'api::download.download': ApiDownloadDownload;
+      'api::enterprise-license.enterprise-license': ApiEnterpriseLicenseEnterpriseLicense;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "enterprise_licenses",
+  "info": {
+    "singularName": "enterprise-license",
+    "pluralName": "enterprise-licenses",
+    "displayName": "Enterprise license",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
