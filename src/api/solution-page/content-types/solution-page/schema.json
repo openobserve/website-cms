@@ -16,11 +16,10 @@
       "type": "dynamiczone",
       "components": [
         "section-faqs.frequently-asked-question",
-        "section-features.feature-list",
         "section-cta.banner",
-        "seo.seo",
-        "section-features.feature-sub-page-top-tabs",
-        "section-cards.blog"
+        "section-cards.blog",
+        "section-cards.feature1",
+        "section-features.feature-sub-page-top-tabs"
       ]
     },
     "slug": {
