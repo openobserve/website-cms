@@ -19,7 +19,8 @@
         "section-cta.banner",
         "section-cards.blog",
         "section-cards.feature1",
-        "section-features.feature-sub-page-top-tabs"
+        "section-features.feature-sub-page-top-tabs",
+        "section-hero.solution-subpage-herosection"
       ]
     },
     "slug": {
