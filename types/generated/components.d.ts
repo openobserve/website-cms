@@ -225,6 +225,29 @@ export interface ElementsSocialMediaIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsTechWeUse extends Struct.ComponentSchema {
+  collectionName: 'components_elements_tech_we_uses';
+  info: {
+    description: '';
+    displayName: 'Tech We  Use';
+  };
+  attributes: {
+    techList: Schema.Attribute.Component<'elements.card-inner-items', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsTechnologiesFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_elements_technologies_features_s';
+  info: {
+    displayName: 'Technologies Features ';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.card-inner-items', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsTestimonialCard extends Struct.ComponentSchema {
   collectionName: 'components_elements_testimonial_cards';
   info: {
@@ -381,9 +404,11 @@ export interface SectionCardsTestimonials extends Struct.ComponentSchema {
     displayName: 'Testimonials';
   };
   attributes: {
+    background: Schema.Attribute.Boolean;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.testimonial-card', true> &
       Schema.Attribute.Required;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 
@@ -484,6 +509,18 @@ export interface SectionFeaturesFeatureSubPageTopTabs
   };
 }
 
+export interface SectionFeaturesGlobalTeam extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_global_teams';
+  info: {
+    displayName: 'Global Team';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<'elements.items', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SectionFeaturesHomeMarketectureSection
   extends Struct.ComponentSchema {
   collectionName: 'components_section_features_home_marketecture_sections';
@@ -565,6 +602,17 @@ export interface SectionFeaturesTabsFeatures extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<'elements.feature-item', true> &
       Schema.Attribute.Required;
+  };
+}
+
+export interface SectionFeaturesTechnologies extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_technologies';
+  info: {
+    displayName: 'Technologies';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<'elements.items', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
   };
 }
 
@@ -767,6 +815,8 @@ declare module '@strapi/strapi' {
       'elements.key-feature-item': ElementsKeyFeatureItem;
       'elements.partner-item': ElementsPartnerItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
+      'elements.tech-we-use': ElementsTechWeUse;
+      'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;
@@ -786,12 +836,14 @@ declare module '@strapi/strapi' {
       'section-features.feature-left-tabs': SectionFeaturesFeatureLeftTabs;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
+      'section-features.global-team': SectionFeaturesGlobalTeam;
       'section-features.home-marketecture-section': SectionFeaturesHomeMarketectureSection;
       'section-features.our-commitment': SectionFeaturesOurCommitment;
       'section-features.our-story': SectionFeaturesOurStory;
       'section-features.self-hosted-for-downloads': SectionFeaturesSelfHostedForDownloads;
       'section-features.self-hosted-for-pricing': SectionFeaturesSelfHostedForPricing;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
+      'section-features.technologies': SectionFeaturesTechnologies;
       'section-forms.contact': SectionFormsContact;
       'section-forms.contact-sales-form': SectionFormsContactSalesForm;
       'section-forms.download-contact-form': SectionFormsDownloadContactForm;

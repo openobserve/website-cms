@@ -16,6 +16,14 @@
       "repeatable": true,
       "component": "elements.testimonial-card",
       "required": true
+    },
+    "background": {
+      "type": "boolean"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

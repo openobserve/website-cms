@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_tech_we_uses",
+  "info": {
+    "displayName": "Tech We  Use",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "techList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card-inner-items"
+    }
+  }
+}

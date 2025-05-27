@@ -369,6 +369,35 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
+  collectionName: 'about_uses';
+  info: {
+    displayName: 'About Us';
+    pluralName: 'about-uses';
+    singularName: 'about-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<['section-hero.resource-hero-section']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-us.about-us'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -637,9 +666,42 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactSaleContactSale extends Struct.SingleTypeSchema {
+  collectionName: 'contact_sales';
+  info: {
+    description: '';
+    displayName: 'Contact Sales';
+    pluralName: 'contact-sales';
+    singularName: 'contact-sale';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      ['section-hero.resource-hero-section', 'section-forms.contact-sales-form']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-sale.contact-sale'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   collectionName: 'contact_uses';
   info: {
+    description: '';
     displayName: 'Contact Us';
     pluralName: 'contact-uses';
     singularName: 'contact-us';
@@ -653,6 +715,7 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
         'section-hero.resource-hero-section',
         'section-cards.blog',
         'section-forms.contact',
+        'section-cards.community-support',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -684,7 +747,9 @@ export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.DynamicZone<[]>;
+    body: Schema.Attribute.DynamicZone<
+      ['section-hero.resource-hero-section', 'section-forms.contact-sales-form']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1787,6 +1852,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
@@ -1794,6 +1860,7 @@ declare module '@strapi/strapi' {
       'api::case-study-category.case-study-category': ApiCaseStudyCategoryCaseStudyCategory;
       'api::casestudy-page.casestudy-page': ApiCasestudyPageCasestudyPage;
       'api::category.category': ApiCategoryCategory;
+      'api::contact-sale.contact-sale': ApiContactSaleContactSale;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
       'api::download.download': ApiDownloadDownload;

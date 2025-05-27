@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_features_global_teams",
+  "info": {
+    "displayName": "Global Team"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
