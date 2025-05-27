@@ -152,6 +152,31 @@ export interface ElementsHeading extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsHomepageFeatureItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_homepage_feature_items';
+  info: {
+    displayName: 'Homepage Feature Item';
+  };
+  attributes: {
+    cardData: Schema.Attribute.Component<'elements.testimonial-card', false>;
+    direction: Schema.Attribute.Enumeration<['LEFT', 'RIGHT']>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    theme: Schema.Attribute.Enumeration<
+      [
+        'theme-blue',
+        'theme-red',
+        'theme-purple',
+        'theme-green',
+        'theme-outline',
+      ]
+    >;
+  };
+}
+
 export interface ElementsImage extends Struct.ComponentSchema {
   collectionName: 'components_elements_images';
   info: {
@@ -548,6 +573,17 @@ export interface SectionFeaturesHomeMarketectureSection
   };
 }
 
+export interface SectionFeaturesHomepageFeature extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_homepage_features';
+  info: {
+    description: '';
+    displayName: 'Homepage Feature';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.homepage-feature-item', true>;
+  };
+}
+
 export interface SectionFeaturesOurCommitment extends Struct.ComponentSchema {
   collectionName: 'components_section_features_our_commitments';
   info: {
@@ -851,6 +887,7 @@ declare module '@strapi/strapi' {
       'elements.feature-title-description': ElementsFeatureTitleDescription;
       'elements.footer-item': ElementsFooterItem;
       'elements.heading': ElementsHeading;
+      'elements.homepage-feature-item': ElementsHomepageFeatureItem;
       'elements.image': ElementsImage;
       'elements.items': ElementsItems;
       'elements.items-link': ElementsItemsLink;
@@ -881,6 +918,7 @@ declare module '@strapi/strapi' {
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
       'section-features.global-team': SectionFeaturesGlobalTeam;
       'section-features.home-marketecture-section': SectionFeaturesHomeMarketectureSection;
+      'section-features.homepage-feature': SectionFeaturesHomepageFeature;
       'section-features.our-commitment': SectionFeaturesOurCommitment;
       'section-features.our-story': SectionFeaturesOurStory;
       'section-features.self-hosted-for-downloads': SectionFeaturesSelfHostedForDownloads;

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_features_homepage_features",
+  "info": {
+    "displayName": "Homepage Feature",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.homepage-feature-item"
+    }
+  }
+}
