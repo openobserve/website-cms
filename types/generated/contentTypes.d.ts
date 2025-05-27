@@ -716,11 +716,7 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.DynamicZone<
-      [
-        'section-faqs.frequently-asked-question',
-        'section-cta.banner',
-        'section-faqs.fa-qs-page-section',
-      ]
+      ['section-faqs.frequently-asked-question', 'section-cta.banner']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1045,6 +1041,42 @@ export interface ApiResourceCategoryResourceCategory
       'api::resource-page.resource-page'
     >;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResourceLandingPageResourceLandingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'resource_landing_pages';
+  info: {
+    displayName: 'Resource Landing Page';
+    pluralName: 'resource-landing-pages';
+    singularName: 'resource-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.resource-hero-section',
+        'section-cards.feature1',
+        'section-cards.case-studies',
+        'section-cards.blog',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resource-landing-page.resource-landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1735,6 +1767,7 @@ declare module '@strapi/strapi' {
       'api::privicy-policy-page.privicy-policy-page': ApiPrivicyPolicyPagePrivicyPolicyPage;
       'api::resource-author.resource-author': ApiResourceAuthorResourceAuthor;
       'api::resource-category.resource-category': ApiResourceCategoryResourceCategory;
+      'api::resource-landing-page.resource-landing-page': ApiResourceLandingPageResourceLandingPage;
       'api::resource-page.resource-page': ApiResourcePageResourcePage;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;

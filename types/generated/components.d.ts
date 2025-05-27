@@ -277,6 +277,17 @@ export interface SectionCardsClients extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsCommunitySupport extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_community_supports';
+  info: {
+    displayName: 'Community-Support';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
 export interface SectionCardsFeature1 extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_feature1s';
   info: {
@@ -531,10 +542,18 @@ export interface SectionFormsContact extends Struct.ComponentSchema {
     displayName: 'Contact';
   };
   attributes: {
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.Component<'elements.heading', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionFormsContactSalesForm extends Struct.ComponentSchema {
+  collectionName: 'components_section_forms_contact_sales_forms';
+  info: {
+    displayName: 'Contact Sales Form';
+  };
+  attributes: {
     items: Schema.Attribute.Component<'elements.items', true>;
-    subTitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -719,6 +738,7 @@ declare module '@strapi/strapi' {
       'section-cards.blog': SectionCardsBlog;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
+      'section-cards.community-support': SectionCardsCommunitySupport;
       'section-cards.feature1': SectionCardsFeature1;
       'section-cards.feature3': SectionCardsFeature3;
       'section-cards.feature4': SectionCardsFeature4;
@@ -737,6 +757,7 @@ declare module '@strapi/strapi' {
       'section-features.self-hosted-for-pricing': SectionFeaturesSelfHostedForPricing;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-forms.contact': SectionFormsContact;
+      'section-forms.contact-sales-form': SectionFormsContactSalesForm;
       'section-forms.download-contact-form': SectionFormsDownloadContactForm;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;

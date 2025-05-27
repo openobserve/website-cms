@@ -16,8 +16,7 @@
       "type": "dynamiczone",
       "components": [
         "section-faqs.frequently-asked-question",
-        "section-cta.banner",
-        "section-faqs.fa-qs-page-section"
+        "section-cta.banner"
       ]
     },
     "seo": {

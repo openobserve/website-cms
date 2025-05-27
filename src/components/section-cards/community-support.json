@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_cards_community_supports",
+  "info": {
+    "displayName": "Community-Support"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_forms_contact_sales_forms",
+  "info": {
+    "displayName": "Contact Sales Form"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    }
+  }
+}
