@@ -863,7 +863,11 @@ export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.DynamicZone<
-      ['section-faqs.frequently-asked-question', 'section-cta.banner']
+      [
+        'section-cta.banner',
+        'section-hero.resource-hero-section',
+        'section-faqs.fa-qs-page-section',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

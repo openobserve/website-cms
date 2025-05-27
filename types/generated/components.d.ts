@@ -698,6 +698,26 @@ export interface SectionHeroResourceHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHeroSolutionSubpageHerosection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_solution_subpage_herosections';
+  info: {
+    displayName: 'Solution subpage herosection';
+  };
+  attributes: {
+    bgImageForLaptop: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    bgImageForMobile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    description: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionHeroSolutionsHeroSection
   extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_solutions_hero_sections';
@@ -875,6 +895,7 @@ declare module '@strapi/strapi' {
       'section-forms.download-contact-form': SectionFormsDownloadContactForm;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
+      'section-hero.solution-subpage-herosection': SectionHeroSolutionSubpageHerosection;
       'section-hero.solutions-hero-section': SectionHeroSolutionsHeroSection;
       'section-tabs.download-tabs': SectionTabsDownloadTabs;
       'section-tabs.pricing-tabs': SectionTabsPricingTabs;
