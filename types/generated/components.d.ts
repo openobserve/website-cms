@@ -167,8 +167,6 @@ export interface ElementsItems extends Struct.ComponentSchema {
     displayName: 'items';
   };
   attributes: {
-    align: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']> &
-      Schema.Attribute.DefaultTo<'CENTER'>;
     button: Schema.Attribute.Component<'elements.button', false>;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -230,6 +228,17 @@ export interface ElementsTestimonialCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsArticles extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_articles';
+  info: {
+    displayName: 'Articles';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+  };
+}
+
 export interface SectionCardsBlog extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_blog_s';
   info: {
@@ -271,13 +280,30 @@ export interface SectionCardsClients extends Struct.ComponentSchema {
 export interface SectionCardsFeature1 extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_feature1s';
   info: {
+    description: '';
     displayName: 'Feature1';
   };
   attributes: {
+    align: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']>;
+    background: Schema.Attribute.Boolean;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     headingLevel: Schema.Attribute.Enumeration<
       ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
     >;
+    items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
+export interface SectionCardsFeature3 extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_feature3s';
+  info: {
+    description: '';
+    displayName: 'Feature3';
+  };
+  attributes: {
+    boolean: Schema.Attribute.Boolean;
+    button: Schema.Attribute.Component<'elements.button', false>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true>;
   };
 }
@@ -289,6 +315,7 @@ export interface SectionCardsFeature4 extends Struct.ComponentSchema {
     displayName: 'Feature2';
   };
   attributes: {
+    background: Schema.Attribute.Boolean;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     headingLevel: Schema.Attribute.Enumeration<
       ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
@@ -688,10 +715,12 @@ declare module '@strapi/strapi' {
       'elements.key-feature-item': ElementsKeyFeatureItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
       'elements.testimonial-card': ElementsTestimonialCard;
+      'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
       'section-cards.feature1': SectionCardsFeature1;
+      'section-cards.feature3': SectionCardsFeature3;
       'section-cards.feature4': SectionCardsFeature4;
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
       'section-cards.testimonials': SectionCardsTestimonials;
