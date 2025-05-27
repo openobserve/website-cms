@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "resource_landing_pages",
+  "info": {
+    "singularName": "resource-landing-page",
+    "pluralName": "resource-landing-pages",
+    "displayName": "Resource Landing Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cards.feature1",
+        "section-cards.case-studies",
+        "section-cards.blog"
+      ]
+    }
+  }
+}
