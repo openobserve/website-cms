@@ -14,11 +14,6 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category"
     }
   }
 }

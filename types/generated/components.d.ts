@@ -297,10 +297,6 @@ export interface SectionCardsBlog extends Struct.ComponentSchema {
     displayName: 'Blog ';
   };
   attributes: {
-    categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    >;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
