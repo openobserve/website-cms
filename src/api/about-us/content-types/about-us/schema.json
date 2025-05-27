@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-us",
     "pluralName": "about-uses",
-    "displayName": "About Us"
+    "displayName": "About Us",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,10 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.resource-hero-section"
+        "section-hero.resource-hero-section",
+        "section-features.our-story",
+        "section-features.our-commitment",
+        "section-cards.our-partners"
       ]
     },
     "seo": {
