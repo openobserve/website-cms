@@ -1037,7 +1037,6 @@ export interface ApiPlatformPagePlatformPage
         'section-features.feature-list',
         'section-faqs.frequently-asked-question',
         'section-cta.banner',
-        'seo.seo',
         'section-cards.blog',
       ]
     > &
@@ -1072,7 +1071,13 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.DynamicZone<[]>;
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.resource-hero-section',
+        'section-cta.banner',
+        'section-tabs.pricing-tabs',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

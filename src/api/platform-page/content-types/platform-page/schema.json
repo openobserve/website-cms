@@ -22,7 +22,6 @@
         "section-features.feature-list",
         "section-faqs.frequently-asked-question",
         "section-cta.banner",
-        "seo.seo",
         "section-cards.blog"
       ],
       "required": true

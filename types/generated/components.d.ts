@@ -104,12 +104,15 @@ export interface ElementsFeatureItem extends Struct.ComponentSchema {
     displayName: 'feature-item';
   };
   attributes: {
-    cardData: Schema.Attribute.Component<'elements.testimonial-card', false>;
-    heading: Schema.Attribute.Component<'elements.heading', false>;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     items: Schema.Attribute.Component<
       'elements.feature-title-description',
       true
     >;
+    tabImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -515,6 +518,7 @@ export interface SectionFeaturesFeatureSubPageTopTabs
   extends Struct.ComponentSchema {
   collectionName: 'components_section_features_feature_sub_page_top_tabs';
   info: {
+    description: '';
     displayName: 'Feature-SubPage-Top-Tabs';
   };
   attributes: {

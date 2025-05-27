@@ -11,15 +11,28 @@
       "repeatable": true,
       "component": "elements.feature-title-description"
     },
-    "heading": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.heading"
+    "title": {
+      "type": "string"
     },
-    "cardData": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.testimonial-card"
+    "tabImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "featureImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
