@@ -15,6 +15,11 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.partner-item"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

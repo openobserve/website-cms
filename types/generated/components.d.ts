@@ -439,6 +439,7 @@ export interface SectionCardsOurPartners extends Struct.ComponentSchema {
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.partner-item', true>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 
