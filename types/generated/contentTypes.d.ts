@@ -637,9 +637,7 @@ export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    body: Schema.Attribute.DynamicZone<
-      ['section-hero.resource-hero-section', 'section-forms.contact-sales-form']
-    >;
+    body: Schema.Attribute.DynamicZone<['section-hero.resource-hero-section']>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

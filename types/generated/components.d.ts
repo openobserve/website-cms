@@ -156,7 +156,7 @@ export interface ElementsHeading extends Struct.ComponentSchema {
     displayName: 'heading';
   };
   attributes: {
-    subtitle: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -709,6 +709,18 @@ export interface SectionFormsContactSalesForm extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionFormsDemoPageForm extends Struct.ComponentSchema {
+  collectionName: 'components_section_forms_demo_page_forms';
+  info: {
+    description: '';
+    displayName: 'Demo Page Form';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'elements.items', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionFormsDownloadContactForm
   extends Struct.ComponentSchema {
   collectionName: 'components_section_forms_download_contact_forms';
@@ -950,6 +962,7 @@ declare module '@strapi/strapi' {
       'section-features.technologies': SectionFeaturesTechnologies;
       'section-forms.contact': SectionFormsContact;
       'section-forms.contact-sales-form': SectionFormsContactSalesForm;
+      'section-forms.demo-page-form': SectionFormsDemoPageForm;
       'section-forms.download-contact-form': SectionFormsDownloadContactForm;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;

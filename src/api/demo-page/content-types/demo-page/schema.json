@@ -20,8 +20,7 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.resource-hero-section",
-        "section-forms.contact-sales-form"
+        "section-hero.resource-hero-section"
       ]
     }
   }
