@@ -24,17 +24,11 @@
       "target": "api::blog-page.blog-page",
       "mappedBy": "tag"
     },
-    "tag": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tag.tag",
-      "mappedBy": "categories"
-    },
-    "categories": {
+    "category": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::tag.tag",
-      "inversedBy": "tag"
+      "target": "api::category.category",
+      "inversedBy": "tags"
     }
   }
 }
