@@ -47,7 +47,7 @@
       "type": "date",
       "required": true
     },
-    "caseStudies": {
+    "customerStories": {
       "type": "boolean",
       "default": false
     },
@@ -65,6 +65,11 @@
       "relation": "manyToMany",
       "target": "api::blog-category.blog-category",
       "inversedBy": "blogs"
+    },
+    "keyOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
     }
   }
 }

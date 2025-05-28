@@ -496,7 +496,6 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     authors: Schema.Attribute.Relation<'manyToMany', 'api::author.author'>;
-    caseStudies: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::blog-category.blog-category'
@@ -505,9 +504,15 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    customerStories: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
+    keyOutcomes: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
