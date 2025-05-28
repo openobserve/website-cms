@@ -917,7 +917,7 @@ export interface ApiPlatformPagePlatformPage
         'section-cards.blog',
         'section-hero.solutions-hero-section',
         'section-cards.feature1',
-        'section-features.feature-sub-page-top-tabs',
+        'section-features.tabs-features',
       ]
     > &
       Schema.Attribute.Required;
@@ -1095,11 +1095,11 @@ export interface ApiResourceLandingPageResourceLandingPage
     body: Schema.Attribute.DynamicZone<
       [
         'section-hero.resource-hero-section',
-        'section-cards.feature1',
         'section-cards.case-studies',
         'section-cards.blog',
         'section-cards.feature3',
         'section-cards.articles',
+        'section-cards.feature4',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

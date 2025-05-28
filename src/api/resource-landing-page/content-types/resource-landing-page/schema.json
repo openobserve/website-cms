@@ -16,11 +16,11 @@
       "type": "dynamiczone",
       "components": [
         "section-hero.resource-hero-section",
-        "section-cards.feature1",
         "section-cards.case-studies",
         "section-cards.blog",
         "section-cards.feature3",
-        "section-cards.articles"
+        "section-cards.articles",
+        "section-cards.feature4"
       ]
     },
     "seo": {

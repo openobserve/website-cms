@@ -24,7 +24,7 @@
         "section-cards.blog",
         "section-hero.solutions-hero-section",
         "section-cards.feature1",
-        "section-features.feature-sub-page-top-tabs"
+        "section-features.tabs-features"
       ],
       "required": true
     },

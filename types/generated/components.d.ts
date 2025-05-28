@@ -416,6 +416,7 @@ export interface SectionCardsFeature4 extends Struct.ComponentSchema {
       ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
     >;
     items: Schema.Attribute.Component<'elements.card-item', true>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
     titleItems: Schema.Attribute.Component<'elements.card-inner-items', true>;
   };
 }
@@ -554,6 +555,7 @@ export interface SectionFeaturesFeatureSubPageTopTabs
     displayName: 'Feature-SubPage-Top-Tabs';
   };
   attributes: {
+    background: Schema.Attribute.Boolean;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.feature-item', true>;
   };
@@ -650,6 +652,7 @@ export interface SectionFeaturesTabsFeatures extends Struct.ComponentSchema {
     displayName: 'Features-Top-Tabs';
   };
   attributes: {
+    background: Schema.Attribute.Boolean;
     heading: Schema.Attribute.Component<'elements.heading', false> &
       Schema.Attribute.Required;
     items: Schema.Attribute.Component<'elements.feature-item', true> &

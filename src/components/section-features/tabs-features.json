@@ -17,6 +17,9 @@
       "repeatable": true,
       "component": "elements.feature-item",
       "required": true
+    },
+    "background": {
+      "type": "boolean"
     }
   }
 }
