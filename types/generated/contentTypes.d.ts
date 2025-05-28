@@ -447,6 +447,7 @@ export interface ApiBlogCategoryBlogCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'blog_categories';
   info: {
+    description: '';
     displayName: 'Blog Category';
     pluralName: 'blog-categories';
     singularName: 'blog-category';
@@ -455,6 +456,14 @@ export interface ApiBlogCategoryBlogCategory
     draftAndPublish: true;
   };
   attributes: {
+    blog_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::blog-category.blog-category'
+    >;
+    blog_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::blog-category.blog-category'
+    >;
     blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog-page.blog-page'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
