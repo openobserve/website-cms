@@ -10,6 +10,15 @@ export interface ElementsButton extends Struct.ComponentSchema {
     link: Schema.Attribute.String & Schema.Attribute.Required;
     target: Schema.Attribute.String;
     text: Schema.Attribute.String & Schema.Attribute.Required;
+    theme: Schema.Attribute.Enumeration<
+      [
+        'theme-blue',
+        'theme-red',
+        'theme-purple',
+        'theme-green',
+        'theme-outline',
+      ]
+    >;
   };
 }
 
@@ -441,9 +450,10 @@ export interface SectionCardsPlaformKeyFeatures extends Struct.ComponentSchema {
   };
   attributes: {
     enterprise: Schema.Attribute.Component<'elements.items', true>;
+    enterpriseCTA: Schema.Attribute.Component<'elements.button', false>;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     standard: Schema.Attribute.Component<'elements.items', true>;
-    tabs: Schema.Attribute.Component<'elements.card-inner-items', true>;
+    standardCTA: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 

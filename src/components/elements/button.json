@@ -16,6 +16,16 @@
     },
     "target": {
       "type": "string"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-outline"
+      ]
     }
   }
 }
