@@ -71,6 +71,12 @@
       "repeatable": true,
       "component": "elements.feature-title-description",
       "required": false
+    },
+    "tag": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tag.tag",
+      "inversedBy": "blogs"
     }
   }
 }

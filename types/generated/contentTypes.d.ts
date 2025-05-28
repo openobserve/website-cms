@@ -456,15 +456,11 @@ export interface ApiBlogCategoryBlogCategory
     draftAndPublish: true;
   };
   attributes: {
-    blog_categories: Schema.Attribute.Relation<
+    blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog-page.blog-page'>;
+    categories: Schema.Attribute.Relation<
       'oneToMany',
       'api::blog-category.blog-category'
     >;
-    blog_category: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::blog-category.blog-category'
-    >;
-    blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog-page.blog-page'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -477,6 +473,10 @@ export interface ApiBlogCategoryBlogCategory
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
+    tags: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::blog-category.blog-category'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -524,6 +524,7 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
+    tag: Schema.Attribute.Relation<'manyToOne', 'api::tag.tag'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1259,6 +1260,36 @@ export interface ApiSolutionPageSolutionPage
   };
 }
 
+export interface ApiTagTag extends Struct.CollectionTypeSchema {
+  collectionName: 'tags';
+  info: {
+    description: '';
+    displayName: 'Tag';
+    pluralName: 'tags';
+    singularName: 'tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog-page.blog-page'>;
+    categories: Schema.Attribute.Relation<'manyToOne', 'api::tag.tag'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    tag: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTermsOfServicePageTermsOfServicePage
   extends Struct.SingleTypeSchema {
   collectionName: 'terms_of_service_pages';
@@ -1822,6 +1853,7 @@ declare module '@strapi/strapi' {
       'api::resource-page.resource-page': ApiResourcePageResourcePage;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
+      'api::tag.tag': ApiTagTag;
       'api::terms-of-service-page.terms-of-service-page': ApiTermsOfServicePageTermsOfServicePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

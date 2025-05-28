@@ -26,17 +26,17 @@
       "target": "api::blog-page.blog-page",
       "mappedBy": "categories"
     },
-    "blog_categories": {
+    "categories": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::blog-category.blog-category",
-      "mappedBy": "blog_category"
+      "mappedBy": "tags"
     },
-    "blog_category": {
+    "tags": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::blog-category.blog-category",
-      "inversedBy": "blog_categories"
+      "inversedBy": "categories"
     }
   }
 }
