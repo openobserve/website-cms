@@ -3,12 +3,12 @@ name: Deploy Strapi CMS
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:
     runs-on: ubicloud-standard-2
-    environment: prod
+    environment: dev
 
     steps:
     - name: Checkout Repository
