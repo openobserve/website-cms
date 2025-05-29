@@ -21,7 +21,7 @@
       "repeatable": false,
       "component": "elements.button"
     },
-    "boolean": {
+    "background": {
       "type": "boolean"
     }
   }
