@@ -523,7 +523,7 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
-    tag: Schema.Attribute.Relation<'manyToOne', 'api::tag.tag'>;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -593,7 +593,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1301,8 +1301,11 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog-page.blog-page'>;
-    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
+    blogs: Schema.Attribute.Relation<'manyToMany', 'api::blog-page.blog-page'>;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

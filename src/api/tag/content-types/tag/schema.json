@@ -20,13 +20,13 @@
     },
     "blogs": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::blog-page.blog-page",
-      "mappedBy": "tag"
+      "mappedBy": "tags"
     },
-    "category": {
+    "categories": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "tags"
     }
