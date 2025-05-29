@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-category",
     "pluralName": "blog-categories",
-    "displayName": "Blog Category"
+    "displayName": "Blog Category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,18 @@
       "relation": "manyToMany",
       "target": "api::blog-page.blog-page",
       "mappedBy": "categories"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-category.blog-category",
+      "mappedBy": "tags"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog-category.blog-category",
+      "inversedBy": "categories"
     }
   }
 }

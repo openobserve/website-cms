@@ -27,7 +27,7 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
@@ -47,7 +47,7 @@
       "type": "date",
       "required": true
     },
-    "caseStudies": {
+    "customerStories": {
       "type": "boolean",
       "default": false
     },
@@ -64,6 +64,18 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::blog-category.blog-category",
+      "inversedBy": "blogs"
+    },
+    "keyOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description",
+      "required": false
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
       "inversedBy": "blogs"
     }
   }
