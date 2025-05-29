@@ -6,13 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "faqs": {
+    "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.faq-item"
-    },
-    "tabs": {
-      "type": "string"
+      "component": "elements.faq-section"
     }
   }
 }
