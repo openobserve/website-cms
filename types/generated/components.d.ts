@@ -529,6 +529,7 @@ export interface SectionFeaturesFeatureLeftTabs extends Struct.ComponentSchema {
     displayName: 'Feature-Left-Tabs';
   };
   attributes: {
+    background: Schema.Attribute.Boolean;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.card-item', true>;
   };

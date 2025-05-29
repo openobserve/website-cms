@@ -15,6 +15,9 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.card-item"
+    },
+    "background": {
+      "type": "boolean"
     }
   }
 }
