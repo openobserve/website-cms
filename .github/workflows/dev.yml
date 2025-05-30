@@ -32,12 +32,12 @@ jobs:
         ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
           set -e 
           echo "Connected to EC2"
-          cd ~/website-cms || git clone https://github.com/openobserve/website-cms.git ~/website-cms
+          cd ~/website-cms || git clone -b dev https://github.com/openobserve/website-cms.git ~/website-cms
           cd ~/website-cms
           sudo chown -R $USER:$USER ~/website-cms
           sudo chmod -R u+rwX ~/website-cms
           git config --global --add safe.directory "$(pwd)"
-          git pull origin main
+          git pull origin dev
           echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
           docker compose up -d --build
         EOF
