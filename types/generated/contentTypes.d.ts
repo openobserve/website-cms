@@ -679,6 +679,7 @@ export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
         'section-cta.banner',
         'section-tabs.download-tabs',
         'section-forms.download-contact-form',
+        'section-hero.resource-hero-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

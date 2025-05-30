@@ -824,6 +824,7 @@ export interface SectionTabsDownloadTabs extends Struct.ComponentSchema {
       'section-features.cloud-section-for-downloads',
       false
     >;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
     selfHostedData: Schema.Attribute.Component<
       'section-features.self-hosted-for-downloads',
       false
