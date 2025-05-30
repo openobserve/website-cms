@@ -106,6 +106,17 @@ export interface ElementsFaqItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_elements_faq_sections';
+  info: {
+    displayName: 'FaqSection';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Component<'elements.faq-item', true>;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsFeatureItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_feature_items';
   info: {
@@ -405,7 +416,7 @@ export interface SectionCardsFeature3 extends Struct.ComponentSchema {
     displayName: 'Feature3';
   };
   attributes: {
-    boolean: Schema.Attribute.Boolean;
+    background: Schema.Attribute.Boolean;
     button: Schema.Attribute.Component<'elements.button', false>;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true>;
@@ -493,8 +504,7 @@ export interface SectionFaqsFaQsPageSection extends Struct.ComponentSchema {
     displayName: 'FAQs Page Section';
   };
   attributes: {
-    faqs: Schema.Attribute.Component<'elements.faq-item', true>;
-    tabs: Schema.Attribute.String;
+    items: Schema.Attribute.Component<'elements.faq-section', true>;
   };
 }
 
@@ -920,6 +930,7 @@ declare module '@strapi/strapi' {
       'elements.case-study-item': ElementsCaseStudyItem;
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
       'elements.faq-item': ElementsFaqItem;
+      'elements.faq-section': ElementsFaqSection;
       'elements.feature-item': ElementsFeatureItem;
       'elements.feature-title-description': ElementsFeatureTitleDescription;
       'elements.footer-item': ElementsFooterItem;
