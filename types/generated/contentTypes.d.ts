@@ -1000,6 +1000,7 @@ export interface ApiPricingPricing extends Struct.SingleTypeSchema {
         'section-hero.resource-hero-section',
         'section-cta.banner',
         'section-tabs.pricing-tabs',
+        'section-faqs.frequently-asked-question',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
