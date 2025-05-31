@@ -643,7 +643,11 @@ export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
   };
   attributes: {
     body: Schema.Attribute.DynamicZone<
-      ['section-hero.resource-hero-section', 'section-forms.demo-page-form']
+      [
+        'section-hero.resource-hero-section',
+        'section-forms.demo-page-form',
+        'section-cards.blog',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -858,6 +862,40 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
+  collectionName: 'navbars';
+  info: {
+    description: '';
+    displayName: 'Navbar';
+    pluralName: 'navbars';
+    singularName: 'navbar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    demoButton: Schema.Attribute.Component<'elements.button', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navbar.navbar'
+    > &
+      Schema.Attribute.Private;
+    loginButton: Schema.Attribute.Component<'elements.button', false>;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    platformData: Schema.Attribute.Component<'elements.items-link', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    resoucesData: Schema.Attribute.Component<'elements.items-link', true>;
+    solutionData: Schema.Attribute.Component<'elements.items-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1836,6 +1874,7 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::navbar.navbar': ApiNavbarNavbar;
       'api::platform-landing-page.platform-landing-page': ApiPlatformLandingPagePlatformLandingPage;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::pricing.pricing': ApiPricingPricing;

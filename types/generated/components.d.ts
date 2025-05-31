@@ -272,10 +272,20 @@ export interface ElementsPartnerItem extends Struct.ComponentSchema {
 export interface ElementsPricingItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_pricing_items';
   info: {
+    description: '';
     displayName: 'PricingItem';
   };
   attributes: {
     bottomDescription: Schema.Attribute.Text;
+    cardTheme: Schema.Attribute.Enumeration<
+      [
+        'theme-blue',
+        'theme-red',
+        'theme-purple',
+        'theme-green',
+        'theme-outline',
+      ]
+    >;
     description: Schema.Attribute.Text;
     features: Schema.Attribute.Component<'elements.card-inner-items', true>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;

@@ -21,7 +21,8 @@
       "type": "dynamiczone",
       "components": [
         "section-hero.resource-hero-section",
-        "section-forms.demo-page-form"
+        "section-forms.demo-page-form",
+        "section-cards.blog"
       ]
     }
   }
