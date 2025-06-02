@@ -1181,10 +1181,6 @@ export interface ApiResourcePageResourcePage
       'manyToMany',
       'api::resource-author.resource-author'
     >;
-    categories: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::resource-category.resource-category'
-    >;
     content: Schema.Attribute.RichText & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1203,6 +1199,10 @@ export interface ApiResourcePageResourcePage
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
+    tags: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::resource-category.resource-category'
+    >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

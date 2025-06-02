@@ -59,6 +59,17 @@ export interface ElementsCardItem extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     items: Schema.Attribute.Component<'elements.card-inner-items', true>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    theme: Schema.Attribute.Enumeration<
+      [
+        'theme-blue',
+        'theme-red',
+        'theme-purple',
+        'theme-green',
+        'theme-outline',
+        'theme-pricing-button',
+        'theme-pricing-card',
+      ]
+    >;
     title: Schema.Attribute.String;
   };
 }

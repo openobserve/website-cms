@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::resource-page.resource-page",
-      "mappedBy": "categories"
+      "mappedBy": "tags"
     }
   }
 }

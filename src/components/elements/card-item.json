@@ -33,6 +33,18 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-outline",
+        "theme-pricing-button",
+        "theme-pricing-card"
+      ]
     }
   }
 }

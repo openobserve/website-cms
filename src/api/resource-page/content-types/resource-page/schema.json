@@ -54,7 +54,7 @@
     "publishDate": {
       "type": "date"
     },
-    "categories": {
+    "tags": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::resource-category.resource-category",
