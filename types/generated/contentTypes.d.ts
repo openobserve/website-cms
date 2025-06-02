@@ -729,6 +729,7 @@ export interface ApiEnterpriseLicenseEnterpriseLicense
       Schema.Attribute.Private;
     modifiedAt: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1047,6 +1048,7 @@ export interface ApiPrivicyPolicyPagePrivicyPolicyPage
       Schema.Attribute.Private;
     modifiedAt: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1350,6 +1352,7 @@ export interface ApiTermsOfServicePageTermsOfServicePage
       Schema.Attribute.Private;
     modifiedAt: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
