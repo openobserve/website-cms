@@ -45,6 +45,12 @@
         "theme-pricing-button",
         "theme-pricing-card"
       ]
+    },
+    "cardLink": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
     }
   }
 }

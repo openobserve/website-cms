@@ -55,10 +55,12 @@ export interface ElementsCardItem extends Struct.ComponentSchema {
     displayName: 'cardItem';
   };
   attributes: {
+    cardLink: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     items: Schema.Attribute.Component<'elements.card-inner-items', true>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    target: Schema.Attribute.String;
     theme: Schema.Attribute.Enumeration<
       [
         'theme-blue',
