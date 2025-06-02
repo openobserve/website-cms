@@ -2,7 +2,8 @@
   "collectionName": "components_elements_items_links",
   "info": {
     "displayName": "Items-link",
-    "icon": "attachment"
+    "icon": "attachment",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,9 @@
     "link": {
       "type": "string",
       "required": true
+    },
+    "target": {
+      "type": "string"
     }
   }
 }

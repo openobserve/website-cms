@@ -236,11 +236,13 @@ export interface ElementsItems extends Struct.ComponentSchema {
 export interface ElementsItemsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_items_links';
   info: {
+    description: '';
     displayName: 'Items-link';
     icon: 'attachment';
   };
   attributes: {
     link: Schema.Attribute.String & Schema.Attribute.Required;
+    target: Schema.Attribute.String;
     text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -284,6 +286,8 @@ export interface ElementsPricingItem extends Struct.ComponentSchema {
         'theme-purple',
         'theme-green',
         'theme-outline',
+        'theme-pricing-button',
+        'theme-pricing-card',
       ]
     >;
     description: Schema.Attribute.Text;
