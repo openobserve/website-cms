@@ -19,6 +19,9 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "modifiedAt": {
+      "type": "date"
     }
   }
 }

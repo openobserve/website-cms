@@ -17,6 +17,9 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "modifiedAt": {
+      "type": "date"
     }
   }
 }

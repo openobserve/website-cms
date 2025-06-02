@@ -727,6 +727,7 @@ export interface ApiEnterpriseLicenseEnterpriseLicense
       'api::enterprise-license.enterprise-license'
     > &
       Schema.Attribute.Private;
+    modifiedAt: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1044,6 +1045,7 @@ export interface ApiPrivicyPolicyPagePrivicyPolicyPage
       'api::privicy-policy-page.privicy-policy-page'
     > &
       Schema.Attribute.Private;
+    modifiedAt: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -1327,6 +1329,7 @@ export interface ApiTermsOfServicePageTermsOfServicePage
   extends Struct.SingleTypeSchema {
   collectionName: 'terms_of_service_pages';
   info: {
+    description: '';
     displayName: 'Terms Of Service Page';
     pluralName: 'terms-of-service-pages';
     singularName: 'terms-of-service-page';
@@ -1345,6 +1348,7 @@ export interface ApiTermsOfServicePageTermsOfServicePage
       'api::terms-of-service-page.terms-of-service-page'
     > &
       Schema.Attribute.Private;
+    modifiedAt: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
