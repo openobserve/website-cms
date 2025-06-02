@@ -26,6 +26,9 @@
       "relation": "oneToMany",
       "target": "api::blog-page.blog-page",
       "mappedBy": "category"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }
