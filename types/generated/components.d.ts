@@ -17,6 +17,8 @@ export interface ElementsButton extends Struct.ComponentSchema {
         'theme-purple',
         'theme-green',
         'theme-outline',
+        'theme-pricing-button',
+        'theme-pricing-card',
       ]
     >;
   };
