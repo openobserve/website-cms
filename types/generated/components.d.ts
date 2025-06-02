@@ -229,6 +229,8 @@ export interface ElementsItems extends Struct.ComponentSchema {
         'theme-purple',
         'theme-green',
         'theme-outline',
+        'theme-pricing-button',
+        'theme-pricing-card',
       ]
     >;
     title: Schema.Attribute.String & Schema.Attribute.Required;

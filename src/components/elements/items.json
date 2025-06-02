@@ -43,7 +43,9 @@
         "theme-red",
         "theme-purple",
         "theme-green",
-        "theme-outline"
+        "theme-outline",
+        "theme-pricing-button",
+        "theme-pricing-card"
       ]
     }
   }
