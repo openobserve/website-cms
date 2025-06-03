@@ -279,12 +279,14 @@ export interface ElementsKeyFeatureItem extends Struct.ComponentSchema {
 export interface ElementsPartnerItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_partner_items';
   info: {
+    description: '';
     displayName: 'PartnerItem';
   };
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.String;
     name: Schema.Attribute.String;
+    role: Schema.Attribute.String;
   };
 }
 
