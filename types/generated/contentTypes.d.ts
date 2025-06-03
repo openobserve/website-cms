@@ -447,7 +447,7 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
   collectionName: 'blog_pages';
   info: {
     description: '';
-    displayName: 'Blog Page';
+    displayName: 'Blog Post';
     pluralName: 'blog-pages';
     singularName: 'blog-page';
   };
@@ -531,7 +531,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: '';
-    displayName: 'Category';
+    displayName: 'Blog Topics';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -1061,7 +1061,7 @@ export interface ApiResourceAuthorResourceAuthor
   collectionName: 'resource_authors';
   info: {
     description: '';
-    displayName: 'Resource Author';
+    displayName: 'Articles Author';
     pluralName: 'resource-authors';
     singularName: 'resource-author';
   };
@@ -1099,7 +1099,7 @@ export interface ApiResourceCategoryResourceCategory
   collectionName: 'resource_categories';
   info: {
     description: '';
-    displayName: 'Resource Category';
+    displayName: 'Articles Tags';
     pluralName: 'resource-categories';
     singularName: 'resource-category';
   };
@@ -1174,7 +1174,7 @@ export interface ApiResourcePageResourcePage
   collectionName: 'resource_pages';
   info: {
     description: '';
-    displayName: 'Resource Page';
+    displayName: 'Articles Post';
     pluralName: 'resource-pages';
     singularName: 'resource-page';
   };
@@ -1299,7 +1299,7 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
     description: '';
-    displayName: 'Tag';
+    displayName: 'Blog Tags';
     pluralName: 'tags';
     singularName: 'tag';
   };
