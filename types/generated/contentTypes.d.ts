@@ -531,7 +531,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: '';
-    displayName: 'Blog Topics';
+    displayName: 'Blog Topic';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -1099,7 +1099,7 @@ export interface ApiResourceCategoryResourceCategory
   collectionName: 'resource_categories';
   info: {
     description: '';
-    displayName: 'Articles Tags';
+    displayName: 'Articles Tag';
     pluralName: 'resource-categories';
     singularName: 'resource-category';
   };
@@ -1299,7 +1299,7 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
     description: '';
-    displayName: 'Blog Tags';
+    displayName: 'Blog Tag';
     pluralName: 'tags';
     singularName: 'tag';
   };
