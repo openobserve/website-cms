@@ -60,12 +60,6 @@
     "seoDescription": {
       "type": "text"
     },
-    "keyOutcomes": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.feature-title-description",
-      "required": false
-    },
     "tags": {
       "type": "relation",
       "relation": "manyToMany",
@@ -77,6 +71,11 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "blog_pages"
+    },
+    "keyOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-description"
     }
   }
 }

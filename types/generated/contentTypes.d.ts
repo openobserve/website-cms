@@ -466,7 +466,7 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     keyOutcomes: Schema.Attribute.Component<
-      'elements.feature-title-description',
+      'elements.feature-description',
       true
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

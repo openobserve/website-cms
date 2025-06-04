@@ -132,6 +132,16 @@ export interface ElementsFaqSection extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsFeatureDescription extends Struct.ComponentSchema {
+  collectionName: 'components_elements_feature_descriptions';
+  info: {
+    displayName: 'Feature-Description';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+  };
+}
+
 export interface ElementsFeatureItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_feature_items';
   info: {
@@ -965,6 +975,7 @@ declare module '@strapi/strapi' {
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
       'elements.faq-item': ElementsFaqItem;
       'elements.faq-section': ElementsFaqSection;
+      'elements.feature-description': ElementsFeatureDescription;
       'elements.feature-item': ElementsFeatureItem;
       'elements.feature-title-description': ElementsFeatureTitleDescription;
       'elements.footer-item': ElementsFooterItem;
