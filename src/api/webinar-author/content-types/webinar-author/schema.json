@@ -47,6 +47,9 @@
       "relation": "manyToMany",
       "target": "api::webinar-post.webinar-post",
       "mappedBy": "authors"
+    },
+    "role": {
+      "type": "string"
     }
   }
 }
