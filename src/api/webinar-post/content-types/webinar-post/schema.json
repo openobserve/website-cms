@@ -58,6 +58,14 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "video": {
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
