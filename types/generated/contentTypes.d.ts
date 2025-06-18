@@ -1423,8 +1423,8 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime;
-    description: Schema.Attribute.Text;
     duration: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1435,6 +1435,7 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
       'elements.feature-title-description',
       true
     >;
+    overview: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     resources: Schema.Attribute.Component<'elements.items-link', true>;
     slug: Schema.Attribute.String;
