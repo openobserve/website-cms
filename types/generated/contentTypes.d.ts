@@ -1388,6 +1388,7 @@ export interface ApiWebinarAuthorWebinarAuthor
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
     slug: Schema.Attribute.String;
     twitterUrl: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
