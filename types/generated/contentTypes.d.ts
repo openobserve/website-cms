@@ -1360,6 +1360,130 @@ export interface ApiTermsOfServicePageTermsOfServicePage
   };
 }
 
+export interface ApiWebinarAuthorWebinarAuthor
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'webinar_authors';
+  info: {
+    description: '';
+    displayName: 'Webinar Author';
+    pluralName: 'webinar-authors';
+    singularName: 'webinar-author';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bio: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    facebookUrl: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    instagramUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::webinar-author.webinar-author'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    twitterUrl: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webinars: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::webinar-post.webinar-post'
+    >;
+    youtubeUrl: Schema.Attribute.String;
+  };
+}
+
+export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
+  collectionName: 'webinar_posts';
+  info: {
+    description: '';
+    displayName: 'Webinar Post';
+    pluralName: 'webinar-posts';
+    singularName: 'webinar-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    authors: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::webinar-author.webinar-author'
+    >;
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.DateTime;
+    description: Schema.Attribute.Text;
+    duration: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::webinar-post.webinar-post'
+    > &
+      Schema.Attribute.Private;
+    objectives: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    resources: Schema.Attribute.Component<'elements.items-link', true>;
+    slug: Schema.Attribute.String;
+    tags: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::webinar-tag.webinar-tag'
+    >;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['webinar', 'videos']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'files' | 'videos'>;
+  };
+}
+
+export interface ApiWebinarTagWebinarTag extends Struct.CollectionTypeSchema {
+  collectionName: 'webinar_tags';
+  info: {
+    description: '';
+    displayName: 'Webinar Tag';
+    pluralName: 'webinar-tags';
+    singularName: 'webinar-tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::webinar-tag.webinar-tag'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    webinars: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::webinar-post.webinar-post'
+    >;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1896,6 +2020,9 @@ declare module '@strapi/strapi' {
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
       'api::tag.tag': ApiTagTag;
       'api::terms-of-service-page.terms-of-service-page': ApiTermsOfServicePageTermsOfServicePage;
+      'api::webinar-author.webinar-author': ApiWebinarAuthorWebinarAuthor;
+      'api::webinar-post.webinar-post': ApiWebinarPostWebinarPost;
+      'api::webinar-tag.webinar-tag': ApiWebinarTagWebinarTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
