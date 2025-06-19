@@ -39,7 +39,7 @@
     "facebookUrl": {
       "type": "string"
     },
-    "instagramUrl": {
+    "linkedInUrl": {
       "type": "string"
     },
     "webinars": {

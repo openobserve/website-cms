@@ -1379,7 +1379,7 @@ export interface ApiWebinarAuthorWebinarAuthor
       Schema.Attribute.Private;
     facebookUrl: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
-    instagramUrl: Schema.Attribute.String;
+    linkedInUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
