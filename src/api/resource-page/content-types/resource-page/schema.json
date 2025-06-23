@@ -59,6 +59,11 @@
       "relation": "manyToMany",
       "target": "api::resource-category.resource-category",
       "inversedBy": "resource_category"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

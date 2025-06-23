@@ -477,6 +477,7 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishDate: Schema.Attribute.Date & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1201,6 +1202,7 @@ export interface ApiResourcePageResourcePage
       Schema.Attribute.Private;
     publishDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     seoDescription: Schema.Attribute.Text;
     seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1438,6 +1440,7 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
     overview: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     resources: Schema.Attribute.Component<'elements.items-link', true>;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String;
     tags: Schema.Attribute.Relation<
       'manyToMany',
