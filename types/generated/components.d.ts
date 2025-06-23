@@ -932,8 +932,8 @@ export interface SeoSeo extends Struct.ComponentSchema {
     displayName: 'SEO';
   };
   attributes: {
-    Alternates: Schema.Attribute.Component<'seo.alternates-item', false>;
     Authors: Schema.Attribute.Component<'seo.authors-item', false>;
+    canonical: Schema.Attribute.String;
     category: Schema.Attribute.String;
     creator: Schema.Attribute.String;
     description: Schema.Attribute.Text;
