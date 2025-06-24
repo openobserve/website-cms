@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "seoTitle": {
-      "type": "string",
-      "required": true
-    },
     "description": {
       "type": "text"
     },
@@ -47,9 +43,6 @@
       "relation": "manyToMany",
       "target": "api::resource-author.resource-author",
       "inversedBy": "resource_pages"
-    },
-    "seoDescription": {
-      "type": "text"
     },
     "publishDate": {
       "type": "date"

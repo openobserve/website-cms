@@ -478,8 +478,6 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     publishDate: Schema.Attribute.Date & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
-    seoDescription: Schema.Attribute.Text;
-    seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1203,8 +1201,6 @@ export interface ApiResourcePageResourcePage
     publishDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
-    seoDescription: Schema.Attribute.Text;
-    seoTitle: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     tags: Schema.Attribute.Relation<
       'manyToMany',
