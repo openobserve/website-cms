@@ -379,6 +379,18 @@ export interface ElementsTestimonialCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsAdditionalResources
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_additional_resources';
+  info: {
+    displayName: 'Additional Resources';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
 export interface SectionCardsArticles extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_articles';
   info: {
@@ -540,6 +552,24 @@ export interface SectionCtaBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCtaDownloadCta extends Struct.ComponentSchema {
+  collectionName: 'components_section_cta_download_ctas';
+  info: {
+    displayName: 'Download CTA';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionFaqsFaQsPageSection extends Struct.ComponentSchema {
   collectionName: 'components_section_faqs_fa_qs_page_sections';
   info: {
@@ -584,6 +614,26 @@ export interface SectionFeaturesCloudSectionForDownloads
       false
     >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionFeaturesDownloadDeploymentOption
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_download_deployment_options';
+  info: {
+    description: '';
+    displayName: 'Download Deployment Option';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    enterpriseButton: Schema.Attribute.Component<'elements.button', false>;
+    haDeploymentDescription: Schema.Attribute.Text;
+    haDeploymentPrimaryButton: Schema.Attribute.Component<
+      'elements.button',
+      false
+    >;
+    haDeploymentTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -991,6 +1041,7 @@ declare module '@strapi/strapi' {
       'elements.tech-we-use': ElementsTechWeUse;
       'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
+      'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;
       'section-cards.case-studies': SectionCardsCaseStudies;
@@ -1003,9 +1054,11 @@ declare module '@strapi/strapi' {
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
       'section-cards.testimonials': SectionCardsTestimonials;
       'section-cta.banner': SectionCtaBanner;
+      'section-cta.download-cta': SectionCtaDownloadCta;
       'section-faqs.fa-qs-page-section': SectionFaqsFaQsPageSection;
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-features.cloud-section-for-downloads': SectionFeaturesCloudSectionForDownloads;
+      'section-features.download-deployment-option': SectionFeaturesDownloadDeploymentOption;
       'section-features.feature-left-tabs': SectionFeaturesFeatureLeftTabs;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;

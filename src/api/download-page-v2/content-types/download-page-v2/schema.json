@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "download_page_v2s",
+  "info": {
+    "singularName": "download-page-v2",
+    "pluralName": "download-page-v2s",
+    "displayName": "Download Page v2",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-features.download-deployment-option",
+        "section-cards.additional-resources"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

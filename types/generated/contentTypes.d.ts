@@ -666,6 +666,43 @@ export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDownloadPageV2DownloadPageV2
+  extends Struct.SingleTypeSchema {
+  collectionName: 'download_page_v2s';
+  info: {
+    description: '';
+    displayName: 'Download Page v2';
+    pluralName: 'download-page-v2s';
+    singularName: 'download-page-v2';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.resource-hero-section',
+        'section-features.download-deployment-option',
+        'section-cards.additional-resources',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::download-page-v2.download-page-v2'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDownloadDownload extends Struct.SingleTypeSchema {
   collectionName: 'downloads';
   info: {
@@ -2002,6 +2039,7 @@ declare module '@strapi/strapi' {
       'api::contact-sale.contact-sale': ApiContactSaleContactSale;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
+      'api::download-page-v2.download-page-v2': ApiDownloadPageV2DownloadPageV2;
       'api::download.download': ApiDownloadDownload;
       'api::enterprise-license.enterprise-license': ApiEnterpriseLicenseEnterpriseLicense;
       'api::faq.faq': ApiFaqFaq;
