@@ -17,7 +17,8 @@
       "components": [
         "section-hero.resource-hero-section",
         "section-features.download-deployment-option",
-        "section-cards.additional-resources"
+        "section-cards.additional-resources",
+        "section-cta.download-cta"
       ]
     },
     "seo": {

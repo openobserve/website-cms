@@ -684,6 +684,7 @@ export interface ApiDownloadPageV2DownloadPageV2
         'section-hero.resource-hero-section',
         'section-features.download-deployment-option',
         'section-cards.additional-resources',
+        'section-cta.download-cta',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
