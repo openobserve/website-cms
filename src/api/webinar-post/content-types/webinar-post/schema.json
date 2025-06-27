@@ -75,6 +75,10 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo"
+    },
+    "webinarId": {
+      "type": "string",
+      "required": false
     }
   }
 }

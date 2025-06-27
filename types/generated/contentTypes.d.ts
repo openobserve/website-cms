@@ -1520,6 +1520,7 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     video: Schema.Attribute.String;
+    webinarId: Schema.Attribute.String;
   };
 }
 
