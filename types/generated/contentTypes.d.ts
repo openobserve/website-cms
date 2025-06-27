@@ -841,6 +841,40 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGithubReleaseGithubRelease
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'github_releases';
+  info: {
+    displayName: 'Github Release';
+    pluralName: 'github-releases';
+    singularName: 'github-release';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    changelog: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::github-release.github-release'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    release_name: Schema.Attribute.String;
+    release_url: Schema.Attribute.String;
+    repository: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    version: Schema.Attribute.String;
+  };
+}
+
 export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   collectionName: 'headers';
   info: {
@@ -2045,6 +2079,7 @@ declare module '@strapi/strapi' {
       'api::enterprise-license.enterprise-license': ApiEnterpriseLicenseEnterpriseLicense;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
+      'api::github-release.github-release': ApiGithubReleaseGithubRelease;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navbar.navbar': ApiNavbarNavbar;
