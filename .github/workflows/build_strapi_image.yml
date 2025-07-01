@@ -1,0 +1,119 @@
+name: Build and Push Strapi to ECR (Test)
+
+on:
+  push:
+    branches:
+      - build_strapi_prod_image
+
+jobs:
+  build-and-push:
+    name: Build Docker Image and Push to Amazon ECR
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Install Python Dependencies
+      run: pip install psutil requests
+
+    - name: Create Monitor Script
+      run: |
+        cat << 'EOF' > cpu_to_openobserve.py
+        import psutil, requests, json, time, os, socket, signal, sys, base64
+
+        OO_URL = "https://introspection.dev.zinclabs.dev/api/default/github_runner/_json"
+        USERNAME = "introspectionroot@openobserve.ai"
+        PASSWORD = "1ZRdj1DwiE5d7KIU"
+
+        auth_str = f"{USERNAME}:{PASSWORD}"
+        auth_header = base64.b64encode(auth_str.encode("utf-8")).decode("utf-8")
+        OO_HEADERS = {
+            "Content-Type": "application/json",
+            "Authorization": f"Basic {auth_header}"
+        }
+
+        def collect_metrics():
+            mem = psutil.virtual_memory()
+            disk = psutil.disk_usage('/')
+            return {
+                "timestamp": int(time.time() * 1000),
+                "runner": os.getenv("HOSTNAME", socket.gethostname()),
+                "cpu_percent": psutil.cpu_percent(interval=1),
+                "cpu_cores": psutil.cpu_count(logical=True),
+                "memory_percent": mem.percent,
+                "memory_available_mb": round(mem.available / (1024 * 1024), 2),
+                "disk_percent": disk.percent,
+                "disk_free_gb": round(disk.free / (1024 * 1024 * 1024), 2),
+                "level": "info",
+                "job": "github-monitor",
+                "log": "runner resource metrics"
+            }
+
+        def send(payload):
+            try:
+                print("Sending:", payload)
+                resp = requests.post(OO_URL, headers=OO_HEADERS, data=json.dumps([payload]), verify=False)
+                print("Status:", resp.status_code)
+            except Exception as e:
+                print("Error:", e)
+
+        def handler(sig, frame):
+            print("Received stop signal. Exiting monitor.")
+            sys.exit(0)
+
+        signal.signal(signal.SIGTERM, handler)
+        signal.signal(signal.SIGINT, handler)
+
+        while True:
+            send(collect_metrics())
+            time.sleep(10)
+        EOF
+
+    - name: Start Continuous Monitor
+      run: |
+        python3 cpu_to_openobserve.py &
+        echo $! > monitor.pid
+
+    - name: Check and Install AWS CLI
+      run: |
+        if ! command -v aws &> /dev/null
+        then
+          echo "AWS CLI not found. Installing..."
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+        else
+          echo "AWS CLI is already installed."
+          aws --version
+        fi
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+        
+    - name: Log in to Amazon ECR
+      run: |
+        aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 325553860333.dkr.ecr.us-east-2.amazonaws.com
+
+    - name: Build Docker Image
+      run: |
+        docker build -t openobserve/strapi .
+
+    - name: Tag Docker Image
+      run: |
+        docker tag openobserve/strapi:latest 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:latest
+
+    - name: Push Docker Image to Amazon ECR
+      run: |
+        docker push 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:latest
+
+    - name: Stop Monitor
+      if: always()
+      run: |
+        if [ -f monitor.pid ]; then
+          kill $(cat monitor.pid) || echo "Monitor already stopped"
+        fi
