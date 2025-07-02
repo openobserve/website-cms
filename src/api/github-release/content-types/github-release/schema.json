@@ -4,7 +4,8 @@
   "info": {
     "singularName": "github-release",
     "pluralName": "github-releases",
-    "displayName": "Github Release"
+    "displayName": "Github Release",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,6 +29,13 @@
     },
     "changelog": {
       "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "PUBLIC",
+        "ENTERPRISE"
+      ]
     }
   }
 }
