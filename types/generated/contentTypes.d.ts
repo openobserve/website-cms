@@ -877,6 +877,38 @@ export interface ApiGithubReleaseGithubRelease
   };
 }
 
+export interface ApiGlobalAdsBannerGlobalAdsBanner
+  extends Struct.SingleTypeSchema {
+  collectionName: 'global_ads_banners';
+  info: {
+    displayName: 'Global Ads Banner';
+    pluralName: 'global-ads-banners';
+    singularName: 'global-ads-banner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global-ads-banner.global-ads-banner'
+    > &
+      Schema.Attribute.Private;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    tag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   collectionName: 'headers';
   info: {
@@ -2083,6 +2115,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::github-release.github-release': ApiGithubReleaseGithubRelease;
+      'api::global-ads-banner.global-ads-banner': ApiGlobalAdsBannerGlobalAdsBanner;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navbar.navbar': ApiNavbarNavbar;

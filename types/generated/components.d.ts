@@ -308,6 +308,7 @@ export interface ElementsPricingItem extends Struct.ComponentSchema {
   };
   attributes: {
     bottomDescription: Schema.Attribute.Text;
+    calculationButton: Schema.Attribute.Component<'elements.button', false>;
     cardTheme: Schema.Attribute.Enumeration<
       [
         'theme-blue',

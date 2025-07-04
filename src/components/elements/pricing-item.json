@@ -36,6 +36,11 @@
         "theme-pricing-button",
         "theme-pricing-card"
       ]
+    },
+    "calculationButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }
