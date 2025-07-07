@@ -774,6 +774,40 @@ export interface ApiEnterpriseLicenseEnterpriseLicense
   };
 }
 
+export interface ApiEventPageEventPage extends Struct.CollectionTypeSchema {
+  collectionName: 'event_pages';
+  info: {
+    description: '';
+    displayName: 'Event page';
+    pluralName: 'event-pages';
+    singularName: 'event-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    eventDate: Schema.Attribute.Date;
+    eventType: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event-page.event-page'
+    > &
+      Schema.Attribute.Private;
+    place: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -2112,6 +2146,7 @@ declare module '@strapi/strapi' {
       'api::download-page-v2.download-page-v2': ApiDownloadPageV2DownloadPageV2;
       'api::download.download': ApiDownloadDownload;
       'api::enterprise-license.enterprise-license': ApiEnterpriseLicenseEnterpriseLicense;
+      'api::event-page.event-page': ApiEventPageEventPage;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::github-release.github-release': ApiGithubReleaseGithubRelease;
