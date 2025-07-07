@@ -4,7 +4,8 @@
   "info": {
     "singularName": "global-ads-banner",
     "pluralName": "global-ads-banners",
-    "displayName": "Global Ads Banner"
+    "displayName": "Global Ads Banner",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,8 @@
       "type": "string"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 60
     },
     "primaryButton": {
       "type": "component",
