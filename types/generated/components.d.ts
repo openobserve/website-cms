@@ -110,6 +110,21 @@ export interface ElementsCompanyCustomerFeature extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsEventCardItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_event_card_items';
+  info: {
+    displayName: 'Event CardItem';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    eventEndDate: Schema.Attribute.Date;
+    eventPlace: Schema.Attribute.String;
+    eventStartDate: Schema.Attribute.Date;
+    eventType: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsFaqItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_faq_items';
   info: {
@@ -445,6 +460,18 @@ export interface SectionCardsCommunitySupport extends Struct.ComponentSchema {
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
+export interface SectionCardsEventCards extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_event_cards';
+  info: {
+    description: '';
+    displayName: 'EventCards';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.event-card-item', true>;
   };
 }
 
@@ -1024,6 +1051,7 @@ declare module '@strapi/strapi' {
       'elements.card-item': ElementsCardItem;
       'elements.case-study-item': ElementsCaseStudyItem;
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
+      'elements.event-card-item': ElementsEventCardItem;
       'elements.faq-item': ElementsFaqItem;
       'elements.faq-section': ElementsFaqSection;
       'elements.feature-description': ElementsFeatureDescription;
@@ -1048,6 +1076,7 @@ declare module '@strapi/strapi' {
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
       'section-cards.community-support': SectionCardsCommunitySupport;
+      'section-cards.event-cards': SectionCardsEventCards;
       'section-cards.feature1': SectionCardsFeature1;
       'section-cards.feature3': SectionCardsFeature3;
       'section-cards.feature4': SectionCardsFeature4;

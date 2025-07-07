@@ -774,7 +774,7 @@ export interface ApiEnterpriseLicenseEnterpriseLicense
   };
 }
 
-export interface ApiEventPageEventPage extends Struct.CollectionTypeSchema {
+export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
   collectionName: 'event_pages';
   info: {
     description: '';
@@ -786,22 +786,20 @@ export interface ApiEventPageEventPage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    body: Schema.Attribute.DynamicZone<
+      ['section-hero.resource-hero-section', 'section-cards.event-cards']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    eventDate: Schema.Attribute.Date;
-    eventType: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::event-page.event-page'
     > &
       Schema.Attribute.Private;
-    place: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -915,6 +913,7 @@ export interface ApiGlobalAdsBannerGlobalAdsBanner
   extends Struct.SingleTypeSchema {
   collectionName: 'global_ads_banners';
   info: {
+    description: '';
     displayName: 'Global Ads Banner';
     pluralName: 'global-ads-banners';
     singularName: 'global-ads-banner';
@@ -936,7 +935,10 @@ export interface ApiGlobalAdsBannerGlobalAdsBanner
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     publishedAt: Schema.Attribute.DateTime;
     tag: Schema.Attribute.String;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

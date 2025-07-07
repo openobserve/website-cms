@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "event_pages",
   "info": {
     "singularName": "event-page",
@@ -12,23 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cards.event-cards"
+      ]
     },
-    "description": {
-      "type": "text"
-    },
-    "slug": {
-      "type": "string"
-    },
-    "eventDate": {
-      "type": "date"
-    },
-    "place": {
-      "type": "string"
-    },
-    "eventType": {
-      "type": "string"
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
