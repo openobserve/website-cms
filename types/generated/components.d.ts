@@ -113,6 +113,7 @@ export interface ElementsCompanyCustomerFeature extends Struct.ComponentSchema {
 export interface ElementsEventCardItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_event_card_items';
   info: {
+    description: '';
     displayName: 'Event CardItem';
   };
   attributes: {
@@ -121,6 +122,7 @@ export interface ElementsEventCardItem extends Struct.ComponentSchema {
     eventPlace: Schema.Attribute.String;
     eventStartDate: Schema.Attribute.Date;
     eventType: Schema.Attribute.String;
+    theme: Schema.Attribute.Enumeration<['theme-green', 'theme-orange']>;
     title: Schema.Attribute.String;
   };
 }

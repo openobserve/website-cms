@@ -1,7 +1,8 @@
 {
   "collectionName": "components_elements_event_card_items",
   "info": {
-    "displayName": "Event CardItem"
+    "displayName": "Event CardItem",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -22,6 +23,13 @@
     },
     "eventEndDate": {
       "type": "date"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-green",
+        "theme-orange"
+      ]
     }
   }
 }
