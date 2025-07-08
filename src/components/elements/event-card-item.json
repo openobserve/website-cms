@@ -10,7 +10,9 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 250,
+      "minLength": 200
     },
     "eventType": {
       "type": "string"
@@ -27,7 +29,7 @@
     "theme": {
       "type": "enumeration",
       "enum": [
-        "theme-green",
+        "theme-green-minimal",
         "theme-orange"
       ]
     }
