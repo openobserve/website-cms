@@ -14,6 +14,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             "openobserve-prod-website.s3.us-west-2.amazonaws.com",
+            "openobserve-staging-website.s3.us-west-2.amazonaws.com",
           ],
           "media-src": [
             "'self'",
@@ -21,6 +22,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             "openobserve-prod-website.s3.us-west-2.amazonaws.com",
+            "openobserve-staging-website.s3.us-west-2.amazonaws.com",
           ],
           upgradeInsecureRequests: null,
         },

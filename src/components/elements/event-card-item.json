@@ -12,7 +12,7 @@
     "description": {
       "type": "text",
       "maxLength": 250,
-      "minLength": 200
+      "minLength": 150
     },
     "eventType": {
       "type": "string"
