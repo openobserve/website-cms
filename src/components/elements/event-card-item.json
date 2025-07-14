@@ -32,6 +32,11 @@
         "theme-green-minimal",
         "theme-orange"
       ]
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

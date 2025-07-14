@@ -117,10 +117,11 @@ export interface ElementsEventCardItem extends Struct.ComponentSchema {
     displayName: 'Event CardItem';
   };
   attributes: {
+    button: Schema.Attribute.Component<'elements.button', false>;
     description: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
-        minLength: 200;
+        minLength: 150;
       }>;
     eventEndDate: Schema.Attribute.Date;
     eventPlace: Schema.Attribute.String;
