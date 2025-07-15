@@ -7,9 +7,9 @@ export interface ElementsButton extends Struct.ComponentSchema {
     displayName: 'button';
   };
   attributes: {
-    link: Schema.Attribute.String & Schema.Attribute.Required;
+    link: Schema.Attribute.String;
     target: Schema.Attribute.String;
-    text: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String;
     theme: Schema.Attribute.Enumeration<
       [
         'theme-blue',
