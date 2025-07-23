@@ -8,6 +8,7 @@ export default ({ env }) => ({
     config: {
       provider: "aws-s3",
       providerOptions: {
+        baseUrl: "https://openobserve.ai",
         rootPath: "assets",
         s3Options: {
           region: env("AWS_REGION"),
