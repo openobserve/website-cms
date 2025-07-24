@@ -1330,6 +1330,7 @@ export interface ApiResourceLandingPageResourceLandingPage
         'section-cards.feature3',
         'section-cards.articles',
         'section-cards.feature4',
+        'section-cards.webinar',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

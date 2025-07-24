@@ -576,6 +576,17 @@ export interface SectionCardsTestimonials extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsWebinar extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_webinars';
+  info: {
+    displayName: 'Webinar';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+  };
+}
+
 export interface SectionCtaBanner extends Struct.ComponentSchema {
   collectionName: 'components_section_cta_banners';
   info: {
@@ -1093,6 +1104,7 @@ declare module '@strapi/strapi' {
       'section-cards.our-partners': SectionCardsOurPartners;
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
       'section-cards.testimonials': SectionCardsTestimonials;
+      'section-cards.webinar': SectionCardsWebinar;
       'section-cta.banner': SectionCtaBanner;
       'section-cta.download-cta': SectionCtaDownloadCta;
       'section-faqs.fa-qs-page-section': SectionFaqsFaQsPageSection;
