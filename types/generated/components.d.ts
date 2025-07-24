@@ -866,7 +866,8 @@ export interface SectionFormsDownloadContactForm
   extends Struct.ComponentSchema {
   collectionName: 'components_section_forms_download_contact_forms';
   info: {
-    displayName: 'DownloadContactForm';
+    description: '';
+    displayName: 'Partner Page Form';
   };
   attributes: {
     title: Schema.Attribute.String;

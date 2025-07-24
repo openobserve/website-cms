@@ -1046,6 +1046,45 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPartnerPagePartnerPage extends Struct.SingleTypeSchema {
+  collectionName: 'partner_pages';
+  info: {
+    description: '';
+    displayName: 'Partner Page';
+    pluralName: 'partner-pages';
+    singularName: 'partner-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.resource-hero-section',
+        'section-faqs.frequently-asked-question',
+        'section-cta.banner',
+        'section-cards.feature4',
+        'section-cards.feature3',
+        'section-forms.download-contact-form',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::partner-page.partner-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlatformLandingPagePlatformLandingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'platform_landing_pages';
@@ -2156,6 +2195,7 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::partner-page.partner-page': ApiPartnerPagePartnerPage;
       'api::platform-landing-page.platform-landing-page': ApiPlatformLandingPagePlatformLandingPage;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
       'api::pricing.pricing': ApiPricingPricing;
