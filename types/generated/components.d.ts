@@ -327,10 +327,12 @@ export interface ElementsPartnerItem extends Struct.ComponentSchema {
 export interface ElementsPopupItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_popup_items';
   info: {
+    description: '';
     displayName: 'popupItem';
   };
   attributes: {
     button: Schema.Attribute.Component<'elements.button', false>;
+    isVideo: Schema.Attribute.Boolean;
     title: Schema.Attribute.String;
   };
 }
