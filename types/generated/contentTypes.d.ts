@@ -465,6 +465,7 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<false>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    isUpdatePublishDate: Schema.Attribute.Boolean;
     keyOutcomes: Schema.Attribute.Component<
       'elements.feature-description',
       true
