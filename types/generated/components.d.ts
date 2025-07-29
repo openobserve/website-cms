@@ -324,6 +324,17 @@ export interface ElementsPartnerItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsPopupItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_popup_items';
+  info: {
+    displayName: 'popupItem';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsPricingItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_pricing_items';
   info: {
@@ -1086,6 +1097,7 @@ declare module '@strapi/strapi' {
       'elements.items-link': ElementsItemsLink;
       'elements.key-feature-item': ElementsKeyFeatureItem;
       'elements.partner-item': ElementsPartnerItem;
+      'elements.popup-item': ElementsPopupItem;
       'elements.pricing-item': ElementsPricingItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
       'elements.tech-we-use': ElementsTechWeUse;

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_elements_popup_items",
+  "info": {
+    "displayName": "popupItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

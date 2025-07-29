@@ -973,6 +973,36 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomepagePopupHomepagePopup extends Struct.SingleTypeSchema {
+  collectionName: 'homepage_popups';
+  info: {
+    description: '';
+    displayName: 'Homepage Popup ';
+    pluralName: 'homepage-popups';
+    singularName: 'homepage-popup';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.popup-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage-popup.homepage-popup'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -2194,6 +2224,7 @@ declare module '@strapi/strapi' {
       'api::github-release.github-release': ApiGithubReleaseGithubRelease;
       'api::global-ads-banner.global-ads-banner': ApiGlobalAdsBannerGlobalAdsBanner;
       'api::header.header': ApiHeaderHeader;
+      'api::homepage-popup.homepage-popup': ApiHomepagePopupHomepagePopup;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::partner-page.partner-page': ApiPartnerPagePartnerPage;
