@@ -1635,6 +1635,10 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime;
     duration: Schema.Attribute.String;
+    faqs: Schema.Attribute.Component<
+      'section-faqs.frequently-asked-question',
+      true
+    >;
     image: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

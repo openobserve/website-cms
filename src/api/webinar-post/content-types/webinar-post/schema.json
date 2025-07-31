@@ -79,6 +79,11 @@
     "webinarId": {
       "type": "string",
       "required": false
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section-faqs.frequently-asked-question"
     }
   }
 }
