@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "security_compliances",
+  "info": {
+    "singularName": "security-compliance",
+    "pluralName": "security-compliances",
+    "displayName": "Security Compliance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "herosection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-hero.resource-hero-section"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-faqs.frequently-asked-question"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

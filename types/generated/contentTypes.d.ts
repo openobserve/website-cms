@@ -866,6 +866,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     privacyText: Schema.Attribute.Component<'elements.button', false>;
     publishedAt: Schema.Attribute.DateTime;
+    securityCompliance: Schema.Attribute.Component<'elements.button', false>;
     socialMedia: Schema.Attribute.Component<'elements.social-media-icon', true>;
     termsOfService: Schema.Attribute.Component<'elements.button', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1420,6 +1421,44 @@ export interface ApiResourcePageResourcePage
       'api::resource-category.resource-category'
     >;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSecurityComplianceSecurityCompliance
+  extends Struct.SingleTypeSchema {
+  collectionName: 'security_compliances';
+  info: {
+    displayName: 'Security Compliance';
+    pluralName: 'security-compliances';
+    singularName: 'security-compliance';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Component<
+      'section-faqs.frequently-asked-question',
+      false
+    >;
+    herosection: Schema.Attribute.Component<
+      'section-hero.resource-hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::security-compliance.security-compliance'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2241,6 +2280,7 @@ declare module '@strapi/strapi' {
       'api::resource-category.resource-category': ApiResourceCategoryResourceCategory;
       'api::resource-landing-page.resource-landing-page': ApiResourceLandingPageResourceLandingPage;
       'api::resource-page.resource-page': ApiResourcePageResourcePage;
+      'api::security-compliance.security-compliance': ApiSecurityComplianceSecurityCompliance;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
       'api::tag.tag': ApiTagTag;
