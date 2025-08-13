@@ -1,4 +1,4 @@
-name: Build and Push Strapi to ECR (Test)
+name: Build and Push Strapi Dev Image to ECR
 
 on:
   push:
