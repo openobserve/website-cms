@@ -3,7 +3,7 @@ name: Build and Push Strapi Dev Image to ECR
 on:
   push:
     branches:
-      - build_strapi_dev_images
+      - build_strapi_dev_image
 
 jobs:
   build-and-push:
