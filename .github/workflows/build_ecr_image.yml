@@ -1,0 +1,54 @@
+name: Build and Push Strapi to ECR (Test)
+
+on:
+  push:
+    branches:
+      - build_strapi_dev_images
+
+jobs:
+  build-and-push:
+    name: Build Docker Image and Push to Amazon ECR
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Check and Install AWS CLI
+      run: |
+        if ! command -v aws &> /dev/null
+        then
+          echo "AWS CLI not found. Installing..."
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+        else
+          echo "AWS CLI is already installed."
+          aws --version
+        fi
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2
+        
+    - name: Log in to Amazon ECR
+      run: |
+        aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 325553860333.dkr.ecr.us-east-2.amazonaws.com
+
+        - name: Set version variable
+        id: vars
+        run: echo "VERSION=$(date +'%Y%m%d')-${GITHUB_SHA::7}" >> $GITHUB_ENV
+  
+    - name: Build Docker Image
+      run: |
+        docker build -t openobserve/strapi:${VERSION} .
+        docker tag openobserve/strapi:${VERSION} 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:${VERSION}
+        docker tag openobserve/strapi:${VERSION} 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:latest
+  
+    - name: Push Docker Image to Amazon ECR
+      run: |
+        docker push 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:${VERSION}
+        docker push 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:latest
