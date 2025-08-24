@@ -1,0 +1,44 @@
+name: Deploy Strapi CMS
+# right now added for main branch 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubicloud-standard-2
+    environment: main
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup SSH Key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.EC2_SSH_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+        ls -lah ~/.ssh
+        cat ~/.ssh/id_rsa
+
+    - name: Test SSH Connection
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "echo SSH Connection Successful"
+     
+    - name: Deploy to EC2
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          set -e 
+          echo "Connected to EC2"
+          cd ~/website-cms || git clone -b main https://github.com/openobserve/website-cms.git ~/website-cms
+          cd ~/website-cms
+          sudo chown -R $USER:$USER ~/website-cms
+          sudo chmod -R u+rwX ~/website-cms
+          git config --global --add safe.directory "$(pwd)"
+          git pull origin main
+          echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
+          docker compose build --no-cache
+          docker compose up -d
+        EOF
