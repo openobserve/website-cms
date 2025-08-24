@@ -37,6 +37,11 @@
     },
     "address": {
       "type": "string"
+    },
+    "securityCompliance": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

@@ -30,11 +30,6 @@
     "manifest": {
       "type": "string"
     },
-    "Alternates": {
-      "type": "component",
-      "repeatable": false,
-      "component": "seo.alternates-item"
-    },
     "Authors": {
       "type": "component",
       "repeatable": false,
@@ -49,6 +44,9 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.twitter-item"
+    },
+    "canonical": {
+      "type": "string"
     }
   }
 }

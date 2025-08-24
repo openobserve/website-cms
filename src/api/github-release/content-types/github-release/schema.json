@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "github_releases",
+  "info": {
+    "singularName": "github-release",
+    "pluralName": "github-releases",
+    "displayName": "Github Release",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version": {
+      "type": "string"
+    },
+    "release_name": {
+      "type": "string"
+    },
+    "release_url": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "changelog": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "PUBLIC",
+        "ENTERPRISE"
+      ]
+    }
+  }
+}

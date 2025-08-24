@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_section_features_technologies",
+  "info": {
+    "displayName": "Technologies",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "techTags": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.tech-we-use"
+    },
+    "techFeatures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.technologies-features"
+    }
+  }
+}

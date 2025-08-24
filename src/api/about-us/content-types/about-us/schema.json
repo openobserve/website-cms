@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about-us",
     "pluralName": "about-uses",
-    "displayName": "About Us Page",
+    "displayName": "About Us",
     "description": ""
   },
   "options": {
@@ -15,16 +15,11 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.company-hero-section",
-        "section-features.info-right-feature",
-        "section-features.info-left-feature",
-        "section-cta.banner",
-        "section-cards.features3",
-        "section-separator.separator",
-        "seo.seo",
-        "section-cards.blog"
-      ],
-      "required": true
+        "section-hero.resource-hero-section",
+        "section-features.our-story",
+        "section-features.our-commitment",
+        "section-cards.our-partners"
+      ]
     },
     "seo": {
       "type": "component",

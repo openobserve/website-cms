@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "resource_landing_pages",
+  "info": {
+    "singularName": "resource-landing-page",
+    "pluralName": "resource-landing-pages",
+    "displayName": "Resource Landing Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cards.case-studies",
+        "section-cards.blog",
+        "section-cards.feature3",
+        "section-cards.articles",
+        "section-cards.feature4",
+        "section-cards.webinar"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

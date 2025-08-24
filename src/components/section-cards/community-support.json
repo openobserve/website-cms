@@ -1,8 +1,7 @@
 {
   "collectionName": "components_section_cards_community_supports",
   "info": {
-    "displayName": "Community-Support",
-    "description": ""
+    "displayName": "Community-Support"
   },
   "options": {},
   "attributes": {
@@ -14,12 +13,7 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.items",
-      "required": true
-    },
-    "description": {
-      "type": "text",
-      "required": true
+      "component": "elements.items"
     }
   }
 }

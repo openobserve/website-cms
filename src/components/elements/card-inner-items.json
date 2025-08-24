@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_elements_card_inner_items",
+  "info": {
+    "displayName": "cardInnerItems"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

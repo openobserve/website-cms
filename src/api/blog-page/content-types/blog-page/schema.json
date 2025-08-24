@@ -4,7 +4,7 @@
   "info": {
     "singularName": "blog-page",
     "pluralName": "blog-pages",
-    "displayName": "Blog Page",
+    "displayName": "Blog Post",
     "description": ""
   },
   "options": {
@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "seoTitle": {
-      "type": "string",
-      "required": true
-    },
     "description": {
       "type": "text",
       "required": true
@@ -27,7 +23,7 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
@@ -47,7 +43,7 @@
       "type": "date",
       "required": true
     },
-    "caseStudies": {
+    "customerStories": {
       "type": "boolean",
       "default": false
     },
@@ -57,14 +53,30 @@
       "target": "api::author.author",
       "inversedBy": "blogs"
     },
-    "seoDescription": {
-      "type": "text"
-    },
-    "categories": {
+    "tags": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::category.category",
+      "target": "api::tag.tag",
       "inversedBy": "blogs"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "blog_pages"
+    },
+    "keyOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-description"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "isUpdatePublishDate": {
+      "type": "boolean"
     }
   }
 }

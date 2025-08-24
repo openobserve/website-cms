@@ -16,9 +16,6 @@
       "repeatable": true,
       "component": "elements.faq-item",
       "required": true
-    },
-    "subTitle": {
-      "type": "string"
     }
   }
 }

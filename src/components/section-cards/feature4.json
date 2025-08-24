@@ -1,7 +1,7 @@
 {
   "collectionName": "components_section_cards_feature4s",
   "info": {
-    "displayName": "Feature4",
+    "displayName": "Feature2",
     "description": ""
   },
   "options": {},
@@ -11,15 +11,34 @@
       "repeatable": false,
       "component": "elements.heading"
     },
+    "headingLevel": {
+      "type": "enumeration",
+      "enum": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6"
+      ]
+    },
+    "titleItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card-inner-items"
+    },
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.items",
-      "required": true
+      "component": "elements.card-item"
     },
-    "noOfGridColumns": {
-      "type": "integer",
-      "required":true
+    "background": {
+      "type": "boolean"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

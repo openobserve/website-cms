@@ -4,7 +4,8 @@
   "info": {
     "singularName": "terms-of-service-page",
     "pluralName": "terms-of-service-pages",
-    "displayName": "Terms Of Service Page"
+    "displayName": "Terms Of Service Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,14 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "modifiedAt": {
+      "type": "date"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

@@ -8,14 +8,26 @@
   "attributes": {
     "text": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "link": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "target": {
       "type": "string"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-outline",
+        "theme-pricing-button",
+        "theme-pricing-card"
+      ]
     }
   }
 }

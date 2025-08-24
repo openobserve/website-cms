@@ -16,22 +16,12 @@
       "type": "dynamiczone",
       "components": [
         "section-hero.homepage-hero",
-        "section-forms.contact",
-        "section-features.feature-list",
+        "section-cards.feature1",
+        "section-features.home-marketecture-section",
         "section-cta.banner",
-        "section-cards.stats",
-        "section-cards.features3",
-        "section-cards.features2",
-        "section-cards.features1",
-        "section-cards.clients",
-        "section-separator.separator",
-        "seo.seo",
-        "section-features.home-features-list",
-        "section-cards.blog",
-        "section-cards.case-studies",
-        "section-cards.clients-testimonials"
-      ],
-      "required": true
+        "section-cards.feature4",
+        "section-features.homepage-feature"
+      ]
     },
     "seo": {
       "type": "component",

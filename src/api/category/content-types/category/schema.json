@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category",
+    "displayName": "Blog Topic",
     "description": ""
   },
   "options": {
@@ -13,18 +13,22 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
-    "blogs": {
+    "tags": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::blog-page.blog-page",
+      "target": "api::tag.tag",
       "mappedBy": "categories"
     },
-    "slug": {
-      "type": "string",
-      "required": true
+    "blog_pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-page.blog-page",
+      "mappedBy": "category"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

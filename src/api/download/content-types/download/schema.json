@@ -16,12 +16,9 @@
       "type": "dynamiczone",
       "components": [
         "section-cta.banner",
-        "section-faqs.frequently-asked-question",
-        "section-separator.separator",
-        "section-cards.explore-resources",
-        "section-table.plans-feature-table",
         "section-tabs.download-tabs",
-        "section-forms.download-contact-form"
+        "section-forms.download-contact-form",
+        "section-hero.resource-hero-section"
       ]
     },
     "seo": {

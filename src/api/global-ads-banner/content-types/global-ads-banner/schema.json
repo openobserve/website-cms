@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_ads_banners",
+  "info": {
+    "singularName": "global-ads-banner",
+    "pluralName": "global-ads-banners",
+    "displayName": "Global Ads Banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "date": {
+      "type": "datetime"
+    }
+  }
+}

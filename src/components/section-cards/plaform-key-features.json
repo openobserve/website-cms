@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_section_cards_plaform_key_features",
+  "info": {
+    "displayName": "Plaform-Key-Features",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "standard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "enterprise": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "enterpriseCTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "standardCTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

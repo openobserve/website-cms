@@ -15,6 +15,11 @@
       "type": "component",
       "repeatable": false,
       "component": "section-features.self-hosted-for-downloads"
-    }
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    } 
   }
 }

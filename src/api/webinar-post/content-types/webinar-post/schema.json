@@ -1,0 +1,89 @@
+{
+  "kind": "collectionType",
+  "collectionName": "webinar_posts",
+  "info": {
+    "singularName": "webinar-post",
+    "pluralName": "webinar-posts",
+    "displayName": "Webinar Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "text"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "objectives": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "webinar",
+        "videos"
+      ]
+    },
+    "resources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items-link"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::webinar-author.webinar-author",
+      "inversedBy": "webinars"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::webinar-tag.webinar-tag",
+      "inversedBy": "webinars"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "video": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "webinarId": {
+      "type": "string",
+      "required": false
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "section-faqs.frequently-asked-question"
+    }
+  }
+}

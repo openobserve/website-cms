@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_features_cloud_section_for_downloads",
   "info": {
-    "displayName": "CloudSectionForDownloads"
+    "displayName": "CloudSectionForDownloads",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,11 +16,13 @@
       "component": "elements.feature-title-description",
       "required": true
     },
-    "bottomTitle": {
-      "type": "string"
+    "description": {
+      "type": "text"
     },
-    "bottomDescription": {
-      "type": "string"
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-with-icon"
     }
   }
 }

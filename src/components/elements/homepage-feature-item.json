@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_elements_homepage_feature_items",
+  "info": {
+    "displayName": "Homepage Feature Item"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "cardData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.testimonial-card"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "LEFT",
+        "RIGHT"
+      ]
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-outline"
+      ]
+    }
+  }
+}

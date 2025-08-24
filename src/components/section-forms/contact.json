@@ -6,22 +6,8 @@
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.heading"
-    },
-    "description": {
-      "type": "text",
-      "required": false
-    },
-    "items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.items"
-    },
-    "subTitle": {
-      "type": "text"
+    "title": {
+      "type": "string"
     }
   }
 }

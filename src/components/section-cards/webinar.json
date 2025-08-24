@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_section_cards_webinars",
+  "info": {
+    "displayName": "Webinar"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

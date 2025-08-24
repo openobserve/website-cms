@@ -6,28 +6,33 @@
   },
   "options": {},
   "attributes": {
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "items": {
       "type": "component",
       "repeatable": true,
       "component": "elements.feature-title-description"
     },
-    "description": {
-      "type": "text"
+    "title": {
+      "type": "string"
+    },
+    "tabImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "featureImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

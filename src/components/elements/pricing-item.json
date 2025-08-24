@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_elements_pricing_items",
+  "info": {
+    "displayName": "PricingItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bottomDescription": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card-inner-items"
+    },
+    "cardTheme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-outline",
+        "theme-pricing-button",
+        "theme-pricing-card"
+      ]
+    },
+    "calculationButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

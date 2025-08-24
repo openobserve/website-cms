@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_elements_card_items",
+  "info": {
+    "displayName": "cardItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "items": {
+      "displayName": "cardInnerItems",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card-inner-items"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-outline",
+        "theme-pricing-button",
+        "theme-pricing-card"
+      ]
+    },
+    "cardLink": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    }
+  }
+}

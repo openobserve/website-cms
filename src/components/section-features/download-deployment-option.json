@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_section_features_download_deployment_options",
+  "info": {
+    "displayName": "Download Deployment Option",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "enterpriseButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "haDeploymentTitle": {
+      "type": "string"
+    },
+    "haDeploymentDescription": {
+      "type": "text"
+    },
+    "haDeploymentPrimaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_sales",
+  "info": {
+    "singularName": "contact-sale",
+    "pluralName": "contact-sales",
+    "displayName": "Contact Sales",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-forms.contact-sales-form"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

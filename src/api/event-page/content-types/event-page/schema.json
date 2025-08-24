@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "event_pages",
+  "info": {
+    "singularName": "event-page",
+    "pluralName": "event-pages",
+    "displayName": "Event page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cards.event-cards"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

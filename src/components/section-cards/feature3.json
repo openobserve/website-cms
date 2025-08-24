@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_cards_feature3s",
+  "info": {
+    "displayName": "Feature3",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "background": {
+      "type": "boolean"
+    }
+  }
+}

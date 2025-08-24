@@ -15,16 +15,11 @@
     "body": {
       "type": "dynamiczone",
       "components": [
-        "section-hero.feature-hero-section",
-        "section-forms.contact",
         "section-cta.banner",
-        "section-features.platform-tabs-wrapper",
-        "section-cta.call-to-action",
-        "section-cards.features5",
-        "section-separator.separator",
-        "seo.seo",
-        "section-hero.solutions-hero-section",
-        "section-cards.blog"
+        "section-hero.resource-hero-section",
+        "section-cards.feature1",
+        "section-cards.blog",
+        "section-features.feature-left-tabs"
       ]
     },
     "seo": {

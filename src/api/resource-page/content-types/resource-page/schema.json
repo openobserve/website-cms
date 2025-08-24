@@ -4,7 +4,7 @@
   "info": {
     "singularName": "resource-page",
     "pluralName": "resource-pages",
-    "displayName": "Resource Page",
+    "displayName": "Articles Post",
     "description": ""
   },
   "options": {
@@ -13,10 +13,6 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
-    },
-    "seoTitle": {
       "type": "string",
       "required": true
     },
@@ -48,17 +44,19 @@
       "target": "api::resource-author.resource-author",
       "inversedBy": "resource_pages"
     },
-    "seoDescription": {
-      "type": "text"
-    },
     "publishDate": {
       "type": "date"
     },
-    "categories": {
+    "tags": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::resource-category.resource-category",
       "inversedBy": "resource_category"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

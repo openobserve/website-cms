@@ -6,10 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "faqs": {
+    "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.faq-item"
+      "component": "elements.faq-section"
     }
   }
 }

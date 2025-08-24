@@ -19,6 +19,14 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "modifiedAt": {
+      "type": "date"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "resource-author",
     "pluralName": "resource-authors",
-    "displayName": "Resource Author",
+    "displayName": "Articles Author",
     "description": ""
   },
   "options": {
@@ -31,15 +31,15 @@
       "required": true
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     }
   }
 }

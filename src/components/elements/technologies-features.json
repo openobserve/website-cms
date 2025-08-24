@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_elements_technologies_features_s",
+  "info": {
+    "displayName": "Technologies Features "
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card-inner-items"
+    }
+  }
+}

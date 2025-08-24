@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepage_popups",
+  "info": {
+    "singularName": "homepage-popup",
+    "pluralName": "homepage-popups",
+    "displayName": "Homepage Popup ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.popup-item"
+    }
+  }
+}

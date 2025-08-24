@@ -25,9 +25,28 @@
         "audios"
       ]
     },
-    "link": {
-      "type": "string",
-      "required": false
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "cardLink": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-outline",
+        "theme-pricing-button",
+        "theme-pricing-card"
+      ]
     }
   }
 }
