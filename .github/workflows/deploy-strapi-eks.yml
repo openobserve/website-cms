@@ -79,8 +79,7 @@ jobs:
     - name: Deploy to EKS
       run: |
         kubectl apply -f k8s/strapi-deployment.yaml
-        kubectl rollout restart deployment/strapi
-
+    
     - name: Wait for strapi deployment to be created
       run: |
         for i in {1..10}; do
@@ -88,7 +87,8 @@ jobs:
           echo "Waiting for deployment to register..."
           sleep 5
         done
-
-    - name: Wait for rollout
+    
+    - name: Restart strapi after apply
       run: |
+        kubectl rollout restart deployment/strapi || true
         kubectl rollout status deployment/strapi --timeout=120s
