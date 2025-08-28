@@ -83,12 +83,12 @@ jobs:
     - name: Wait for strapi deployment to be created
       run: |
         for i in {1..10}; do
-          kubectl get deployment strapi && break
+          kubectl get deployment strapi -n strapi && break
           echo "Waiting for deployment to register..."
           sleep 5
         done
     
     - name: Restart strapi after apply
       run: |
-        kubectl rollout restart deployment/strapi || true
-        kubectl rollout status deployment/strapi --timeout=120s
+        kubectl rollout restart deployment/strapi -n strapi || true
+        kubectl rollout status deployment/strapi -n strapi --timeout=120s
