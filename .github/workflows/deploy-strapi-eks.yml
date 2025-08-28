@@ -80,4 +80,15 @@ jobs:
       run: |
         kubectl apply -f k8s/strapi-deployment.yaml
         kubectl rollout restart deployment/strapi
+
+    - name: Wait for strapi deployment to be created
+      run: |
+        for i in {1..10}; do
+          kubectl get deployment strapi && break
+          echo "Waiting for deployment to register..."
+          sleep 5
+        done
+
+    - name: Wait for rollout
+      run: |
         kubectl rollout status deployment/strapi --timeout=120s
