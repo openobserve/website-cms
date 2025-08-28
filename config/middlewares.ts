@@ -17,6 +17,7 @@ export default [
                         "openobserve-staging-website.s3.us-west-2.amazonaws.com",
                         "openobserve-website-staging.s3.us-east-2.amazonaws.com",
                         "openobserve-website-prod.s3.us-east-2.amazonaws.com",
+                        "openobserve-dev-website.s3.us-east-2.amazonaws.com",
                         "openobserve.ai",
                     ],
                     "media-src": [
@@ -28,6 +29,7 @@ export default [
                         "openobserve-staging-website.s3.us-west-2.amazonaws.com",
                         "openobserve-website-staging.s3.us-east-2.amazonaws.com",
                         "openobserve-website-prod.s3.us-east-2.amazonaws.com",
+                        "openobserve-dev-website.s3.us-east-2.amazonaws.com",
                         "openobserve.ai",
                     ],
                     upgradeInsecureRequests: null,

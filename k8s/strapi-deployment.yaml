@@ -1,0 +1,97 @@
+---
+# 1. Kubernetes ServiceAccount with IRSA annotation
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: strapi-sa
+  namespace: strapi
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::325553860333:role/eks-strapi-ecr-role
+---
+#2. Kubernetes Secret for environment variables (optional)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: strapi-env-secrets
+  namespace: strapi
+  labels:
+    app: strapi
+stringData:
+  DATABASE_CLIENT: postgres
+  DATABASE_HOST: zinc-instance-2-strapi-cluster.cluster-cktd1xpfvdmi.us-east-2.rds.amazonaws.com
+  DATABASE_PORT: "5432"
+  DATABASE_NAME: strapidb2
+  DATABASE_USERNAME: postgres
+  DATABASE_PASSWORD: SupermanVsSpiderman735
+  APP_KEYS: nBW7oTTmPJfRT5TFY2lURg==,V1+ImL+dkgeN3yNKhTpOVA==,vgbZec0mZuCdCMPNiz9ifg==,zJbTHvgY1+Ug0rC47jtbyQ==
+  API_TOKEN_SALT: r4nBBui7C9JxX+IsWNleLA==
+  ADMIN_JWT_SECRET: uk4pFBBCf45kCK0dQ4HXeA==
+  TRANSFER_TOKEN_SALT: XhQcxxagwUUsk53zavU96Q==
+  AWS_REGION: us-east-2
+  AWS_BUCKET: openobserve-website-prod
+  JWT_SECRET: Af9vR2BoctKWwIt1wDgHjg==
+---
+# 3. PVC for media uploads (optional)
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: strapi-pvc
+  namespace: strapi
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+# 4. Strapi Deployment pulling from Amazon ECR using IRSA
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strapi
+  namespace: strapi
+  labels:
+    app: strapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: strapi
+  template:
+    metadata:
+      labels:
+        app: strapi
+    spec:
+      serviceAccountName: strapi-sa
+      containers:
+        - name: strapi
+          image: 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:latest
+          ports:
+            - containerPort: 1337
+          envFrom:
+            - secretRef:
+                name: strapi-env-secrets
+          volumeMounts:
+            - name: strapi-data
+              mountPath: /app/public/uploads
+      volumes:
+        - name: strapi-data
+          persistentVolumeClaim:
+            claimName: strapi-pvc
+---
+# 5. Service to expose Strapi internally or publicly
+apiVersion: v1
+kind: Service
+metadata:
+  name: strapi
+  namespace: strapi
+  labels:
+    app: strapi
+spec:
+  type: ClusterIP
+  selector:
+    app: strapi
+  ports:
+    - port: 1337
+      targetPort: 1337
+      protocol: TCP
