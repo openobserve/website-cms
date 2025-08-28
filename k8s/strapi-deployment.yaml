@@ -18,7 +18,7 @@ metadata:
     app: strapi
 stringData:
   DATABASE_CLIENT: postgres
-  DATABASE_HOST: strapi-dev.cluster-cktd1xpfvdmi.us-east-2.rds.amazonaws.com
+  DATABASE_HOST: zinc-instance-2-strapi-cluster.cluster-cktd1xpfvdmi.us-east-2.rds.amazonaws.com
   DATABASE_PORT: "5432"
   DATABASE_NAME: strapidb2
   DATABASE_USERNAME: postgres
@@ -28,7 +28,7 @@ stringData:
   ADMIN_JWT_SECRET: uk4pFBBCf45kCK0dQ4HXeA==
   TRANSFER_TOKEN_SALT: XhQcxxagwUUsk53zavU96Q==
   AWS_REGION: us-east-2
-  AWS_BUCKET: openobserve-dev-website
+  AWS_BUCKET: openobserve-website-prod
   JWT_SECRET: Af9vR2BoctKWwIt1wDgHjg==
 ---
 # 3. PVC for media uploads (optional)
@@ -78,3 +78,20 @@ spec:
         - name: strapi-data
           persistentVolumeClaim:
             claimName: strapi-pvc
+---
+# 5. Service to expose Strapi internally or publicly
+apiVersion: v1
+kind: Service
+metadata:
+  name: strapi
+  namespace: strapi
+  labels:
+    app: strapi
+spec:
+  type: ClusterIP
+  selector:
+    app: strapi
+  ports:
+    - port: 1337
+      targetPort: 1337
+      protocol: TCP
