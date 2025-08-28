@@ -63,11 +63,27 @@ spec:
         app: strapi
     spec:
       serviceAccountName: strapi-sa
+      initContainers:
+        - name: strapi-build
+          image: 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:latest
+          command: ["/bin/sh"]
+          args: ["-c", "npm run build && rm -rf /app/.cache"]
+          env:
+            - name: NODE_ENV
+              value: "production"
+          envFrom:
+            - secretRef:
+                name: strapi-env-secrets
       containers:
         - name: strapi
           image: 325553860333.dkr.ecr.us-east-2.amazonaws.com/openobserve/strapi:latest
           ports:
             - containerPort: 1337
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: STRAPI_DISABLE_UPDATE_NOTIFICATION
+              value: "true"
           envFrom:
             - secretRef:
                 name: strapi-env-secrets
