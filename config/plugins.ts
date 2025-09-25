@@ -22,6 +22,18 @@ export default ({ env }) => ({
         uploadStream: {},
         delete: {},
       },
+
+      // Custom filename sanitizer without slugify
+      sanitizeFilename: (file: { name: string; hash: string; ext: string }) => {
+        // Remove the extension
+        const originalName = file.name.replace(/\.[^/.]+$/, "");
+
+        // Replace spaces with dash (optional)
+        const sanitizedBase = originalName.replace(/ /g, "-");
+
+        // Append hash to ensure uniqueness
+        return `${sanitizedBase}_${file.hash}${file.ext}`;
+      },
     },
   },
 });
