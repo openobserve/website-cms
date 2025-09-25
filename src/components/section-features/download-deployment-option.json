@@ -27,6 +27,14 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "freeIngestionText": {
+      "type": "string"
     }
   }
 }

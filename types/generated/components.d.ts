@@ -688,12 +688,17 @@ export interface SectionFeaturesDownloadDeploymentOption
   attributes: {
     description: Schema.Attribute.String;
     enterpriseButton: Schema.Attribute.Component<'elements.button', false>;
+    freeIngestionText: Schema.Attribute.String;
     haDeploymentDescription: Schema.Attribute.Text;
     haDeploymentPrimaryButton: Schema.Attribute.Component<
       'elements.button',
       false
     >;
     haDeploymentTitle: Schema.Attribute.String;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
     title: Schema.Attribute.String;
   };
 }
