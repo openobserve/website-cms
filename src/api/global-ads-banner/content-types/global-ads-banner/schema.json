@@ -16,8 +16,7 @@
       "type": "string"
     },
     "title": {
-      "type": "string",
-      "maxLength": 60
+      "type": "string"
     },
     "primaryButton": {
       "type": "component",
