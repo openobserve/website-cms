@@ -15,9 +15,6 @@
     "title": {
       "type": "string"
     },
-    "overview": {
-      "type": "text"
-    },
     "date": {
       "type": "datetime"
     },
@@ -48,12 +45,6 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::webinar-author.webinar-author",
-      "inversedBy": "webinars"
-    },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::webinar-tag.webinar-tag",
       "inversedBy": "webinars"
     },
     "content": {
