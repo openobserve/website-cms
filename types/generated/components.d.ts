@@ -204,7 +204,7 @@ export interface ElementsFeatureTitleDescription
     displayName: 'feature-title-description';
   };
   attributes: {
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -696,10 +696,12 @@ export interface SectionFaqsFrequentlyAskedQuestion
 export interface SectionFaqsPlatformFaqs extends Struct.ComponentSchema {
   collectionName: 'components_section_faqs_platform_faqs';
   info: {
+    description: '';
     displayName: 'Platform-faqs';
   };
   attributes: {
     faqs: Schema.Attribute.Component<'elements.faq-item-v2-markdown', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
   };
 }
 
