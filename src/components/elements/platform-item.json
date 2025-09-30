@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_platform_items",
+  "info": {
+    "displayName": "Platform-Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

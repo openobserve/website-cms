@@ -145,6 +145,17 @@ export interface ElementsFaqItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsFaqItemV2Markdown extends Struct.ComponentSchema {
+  collectionName: 'components_elements_faq_item_v2_markdowns';
+  info: {
+    displayName: 'FaqItem-v2-markdown';
+  };
+  attributes: {
+    answer: Schema.Attribute.RichText & Schema.Attribute.Required;
+    question: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_elements_faq_sections';
   info: {
@@ -321,6 +332,32 @@ export interface ElementsPartnerItem extends Struct.ComponentSchema {
     link: Schema.Attribute.String;
     name: Schema.Attribute.String;
     role: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsPlatformFeatureItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_platform_feature_items';
+  info: {
+    description: '';
+    displayName: 'Platform-Feature-Item';
+  };
+  attributes: {
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    items: Schema.Attribute.Component<'elements.platform-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsPlatformItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_platform_items';
+  info: {
+    displayName: 'Platform-Item';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -656,6 +693,16 @@ export interface SectionFaqsFrequentlyAskedQuestion
   };
 }
 
+export interface SectionFaqsPlatformFaqs extends Struct.ComponentSchema {
+  collectionName: 'components_section_faqs_platform_faqs';
+  info: {
+    displayName: 'Platform-faqs';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Component<'elements.faq-item-v2-markdown', true>;
+  };
+}
+
 export interface SectionFeaturesCloudSectionForDownloads
   extends Struct.ComponentSchema {
   collectionName: 'components_section_features_cloud_section_for_downloads';
@@ -798,6 +845,19 @@ export interface SectionFeaturesOurStory extends Struct.ComponentSchema {
     paragraph: Schema.Attribute.Text;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionFeaturesPlatformFeaturesTopTabs
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_platform_features_top_tabs';
+  info: {
+    displayName: 'Platform-Features-Top-Tabs';
+  };
+  attributes: {
+    background: Schema.Attribute.Boolean;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.platform-feature-item', true>;
   };
 }
 
@@ -1092,6 +1152,7 @@ declare module '@strapi/strapi' {
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
       'elements.event-card-item': ElementsEventCardItem;
       'elements.faq-item': ElementsFaqItem;
+      'elements.faq-item-v2-markdown': ElementsFaqItemV2Markdown;
       'elements.faq-section': ElementsFaqSection;
       'elements.feature-description': ElementsFeatureDescription;
       'elements.feature-item': ElementsFeatureItem;
@@ -1104,6 +1165,8 @@ declare module '@strapi/strapi' {
       'elements.items-link': ElementsItemsLink;
       'elements.key-feature-item': ElementsKeyFeatureItem;
       'elements.partner-item': ElementsPartnerItem;
+      'elements.platform-feature-item': ElementsPlatformFeatureItem;
+      'elements.platform-item': ElementsPlatformItem;
       'elements.popup-item': ElementsPopupItem;
       'elements.pricing-item': ElementsPricingItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
@@ -1128,6 +1191,7 @@ declare module '@strapi/strapi' {
       'section-cta.download-cta': SectionCtaDownloadCta;
       'section-faqs.fa-qs-page-section': SectionFaqsFaQsPageSection;
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
+      'section-faqs.platform-faqs': SectionFaqsPlatformFaqs;
       'section-features.cloud-section-for-downloads': SectionFeaturesCloudSectionForDownloads;
       'section-features.download-deployment-option': SectionFeaturesDownloadDeploymentOption;
       'section-features.feature-left-tabs': SectionFeaturesFeatureLeftTabs;
@@ -1138,6 +1202,7 @@ declare module '@strapi/strapi' {
       'section-features.homepage-feature': SectionFeaturesHomepageFeature;
       'section-features.our-commitment': SectionFeaturesOurCommitment;
       'section-features.our-story': SectionFeaturesOurStory;
+      'section-features.platform-features-top-tabs': SectionFeaturesPlatformFeaturesTopTabs;
       'section-features.self-hosted-for-downloads': SectionFeaturesSelfHostedForDownloads;
       'section-features.tabs-features': SectionFeaturesTabsFeatures;
       'section-features.technologies': SectionFeaturesTechnologies;

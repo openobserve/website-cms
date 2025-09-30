@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_elements_faq_item_v2_markdowns",
+  "info": {
+    "displayName": "FaqItem-v2-markdown"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "richtext",
+      "required": true
+    },
+    "answer": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

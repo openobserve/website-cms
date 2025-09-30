@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_elements_platform_feature_items",
+  "info": {
+    "displayName": "Platform-Feature-Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.platform-item"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_section_faqs_platform_faqs",
+  "info": {
+    "displayName": "Platform-faqs"
+  },
+  "options": {},
+  "attributes": {
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq-item-v2-markdown"
+    }
+  }
+}
