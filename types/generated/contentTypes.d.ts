@@ -1174,6 +1174,8 @@ export interface ApiPlatformPagePlatformPage
         'section-hero.solutions-hero-section',
         'section-cards.feature1',
         'section-features.tabs-features',
+        'section-features.platform-features-top-tabs',
+        'section-faqs.platform-faqs',
       ]
     > &
       Schema.Attribute.Required;
