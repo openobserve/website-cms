@@ -204,7 +204,7 @@ export interface ElementsFeatureTitleDescription
     displayName: 'feature-title-description';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
