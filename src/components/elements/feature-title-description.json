@@ -11,7 +11,8 @@
       "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "text",
+      "required": false
     }
   }
 }
