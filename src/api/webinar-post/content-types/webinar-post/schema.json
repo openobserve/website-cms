@@ -50,12 +50,6 @@
       "target": "api::webinar-author.webinar-author",
       "inversedBy": "webinars"
     },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::webinar-tag.webinar-tag",
-      "inversedBy": "webinars"
-    },
     "content": {
       "type": "richtext"
     },
