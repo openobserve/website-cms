@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_section_json_structure_for_google_bot_json_ld_schemas",
+  "info": {
+    "displayName": "JSON LD Schema",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "type": {
+      "type": "string"
+    },
+    "publishedDate": {
+      "type": "date"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::author.author"
+    },
+    "proficiencyLevel": {
+      "type": "string"
+    },
+    "audienceType": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    }
+  }
+}

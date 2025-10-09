@@ -476,6 +476,10 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
+    structuredSchema: Schema.Attribute.Component<
+      'section-json-structure-for-google-bot.json-ld-schema',
+      false
+    >;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
