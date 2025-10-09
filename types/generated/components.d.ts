@@ -1035,6 +1035,27 @@ export interface SectionHeroSolutionsHeroSection
   };
 }
 
+export interface SectionJsonStructureForGoogleBotJsonLdSchema
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_json_structure_for_google_bot_json_ld_schemas';
+  info: {
+    description: '';
+    displayName: 'JSON LD Schema';
+  };
+  attributes: {
+    about: Schema.Attribute.String;
+    audienceType: Schema.Attribute.String;
+    authors: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
+    description: Schema.Attribute.Text;
+    headline: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    proficiencyLevel: Schema.Attribute.String;
+    publishedDate: Schema.Attribute.Date;
+    type: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SectionTabsDownloadTabs extends Struct.ComponentSchema {
   collectionName: 'components_section_tabs_download_tabs';
   info: {
@@ -1216,6 +1237,7 @@ declare module '@strapi/strapi' {
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
       'section-hero.solution-subpage-herosection': SectionHeroSolutionSubpageHerosection;
       'section-hero.solutions-hero-section': SectionHeroSolutionsHeroSection;
+      'section-json-structure-for-google-bot.json-ld-schema': SectionJsonStructureForGoogleBotJsonLdSchema;
       'section-tabs.download-tabs': SectionTabsDownloadTabs;
       'section-tabs.pricing-tabs': SectionTabsPricingTabs;
       'seo.alternates-item': SeoAlternatesItem;

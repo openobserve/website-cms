@@ -65,11 +65,6 @@
       "target": "api::category.category",
       "inversedBy": "blog_pages"
     },
-    "keyOutcomes": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.feature-description"
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
@@ -77,6 +72,11 @@
     },
     "isUpdatePublishDate": {
       "type": "boolean"
+    },
+    "structuredSchema": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-json-structure-for-google-bot.json-ld-schema"
     }
   }
 }

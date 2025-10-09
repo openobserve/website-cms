@@ -466,10 +466,6 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     isUpdatePublishDate: Schema.Attribute.Boolean;
-    keyOutcomes: Schema.Attribute.Component<
-      'elements.feature-description',
-      true
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -480,6 +476,10 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
+    structuredSchema: Schema.Attribute.Component<
+      'section-json-structure-for-google-bot.json-ld-schema',
+      false
+    >;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -1693,10 +1693,6 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
     resources: Schema.Attribute.Component<'elements.items-link', true>;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String;
-    tags: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::webinar-tag.webinar-tag'
-    >;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['webinar', 'videos']>;
     updatedAt: Schema.Attribute.DateTime;
@@ -1704,40 +1700,6 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     video: Schema.Attribute.String;
     webinarId: Schema.Attribute.String;
-  };
-}
-
-export interface ApiWebinarTagWebinarTag extends Struct.CollectionTypeSchema {
-  collectionName: 'webinar_tags';
-  info: {
-    description: '';
-    displayName: 'Webinar Tag';
-    pluralName: 'webinar-tags';
-    singularName: 'webinar-tag';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::webinar-tag.webinar-tag'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    webinars: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::webinar-post.webinar-post'
-    >;
   };
 }
 
@@ -2286,7 +2248,6 @@ declare module '@strapi/strapi' {
       'api::terms-of-service-page.terms-of-service-page': ApiTermsOfServicePageTermsOfServicePage;
       'api::webinar-author.webinar-author': ApiWebinarAuthorWebinarAuthor;
       'api::webinar-post.webinar-post': ApiWebinarPostWebinarPost;
-      'api::webinar-tag.webinar-tag': ApiWebinarTagWebinarTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
