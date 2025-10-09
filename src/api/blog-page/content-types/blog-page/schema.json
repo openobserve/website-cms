@@ -72,6 +72,11 @@
     },
     "isUpdatePublishDate": {
       "type": "boolean"
+    },
+    "structuredSchema": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-json-structure-for-google-bot.json-ld-schema"
     }
   }
 }
