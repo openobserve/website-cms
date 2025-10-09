@@ -77,6 +77,11 @@
       "type": "component",
       "repeatable": false,
       "component": "section-json-structure-for-google-bot.json-ld-schema"
+    },
+    "keyOutcomes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-description"
     }
   }
 }
