@@ -49,6 +49,12 @@
     },
     "instagramUrl": {
       "type": "string"
+    },
+    "comparision_pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::comparision-page.comparision-page",
+      "mappedBy": "authors"
     }
   }
 }

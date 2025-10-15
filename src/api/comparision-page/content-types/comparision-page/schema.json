@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comparision_pages",
+  "info": {
+    "singularName": "comparision-page",
+    "pluralName": "comparision-pages",
+    "displayName": "Comparision Pages",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "publishDate": {
+      "type": "date"
+    },
+    "structuredSchema": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-json-structure-for-google-bot.json-ld-schema"
+    },
+    "FAQs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-faqs.frequently-asked-question"
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "comparision_pages"
+    },
+    "isUpdatePublishDate": {
+      "type": "boolean"
+    }
+  }
+}
