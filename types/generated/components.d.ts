@@ -976,6 +976,7 @@ export interface SectionHeroHomepageHero extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     primaryButton: Schema.Attribute.Component<'elements.button', false> &
       Schema.Attribute.Required;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
     trustedText: Schema.Attribute.Text;
