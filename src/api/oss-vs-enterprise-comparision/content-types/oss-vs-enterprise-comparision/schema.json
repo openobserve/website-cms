@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "oss_vs_enterprise_comparisions",
+  "info": {
+    "singularName": "oss-vs-enterprise-comparision",
+    "pluralName": "oss-vs-enterprise-comparisions",
+    "displayName": "OSS vs Enterprise Comparision",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "platformComparisonItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.os-svs-enterprise-comparison-item"
+    },
+    "editionComparisonData": {
+      "type": "richtext"
+    }
+  }
+}
