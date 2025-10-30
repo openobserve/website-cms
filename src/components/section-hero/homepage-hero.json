@@ -41,6 +41,11 @@
     },
     "trustedText": {
       "type": "text"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }
