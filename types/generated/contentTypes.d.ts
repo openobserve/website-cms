@@ -1129,6 +1129,41 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOssVsEnterpriseComparisionOssVsEnterpriseComparision
+  extends Struct.SingleTypeSchema {
+  collectionName: 'oss_vs_enterprise_comparisions';
+  info: {
+    description: '';
+    displayName: 'OSS vs Enterprise Comparision';
+    pluralName: 'oss-vs-enterprise-comparisions';
+    singularName: 'oss-vs-enterprise-comparision';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    editionComparisonData: Schema.Attribute.RichText;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::oss-vs-enterprise-comparision.oss-vs-enterprise-comparision'
+    > &
+      Schema.Attribute.Private;
+    platformComparisonItems: Schema.Attribute.Component<
+      'elements.os-svs-enterprise-comparison-item',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPartnerPagePartnerPage extends Struct.SingleTypeSchema {
   collectionName: 'partner_pages';
   info: {
@@ -2287,6 +2322,7 @@ declare module '@strapi/strapi' {
       'api::homepage-popup.homepage-popup': ApiHomepagePopupHomepagePopup;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::oss-vs-enterprise-comparision.oss-vs-enterprise-comparision': ApiOssVsEnterpriseComparisionOssVsEnterpriseComparision;
       'api::partner-page.partner-page': ApiPartnerPagePartnerPage;
       'api::platform-landing-page.platform-landing-page': ApiPlatformLandingPagePlatformLandingPage;
       'api::platform-page.platform-page': ApiPlatformPagePlatformPage;
