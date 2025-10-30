@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_elements_os_svs_enterprise_comparison_items",
+  "info": {
+    "displayName": "OSSvsEnterprise-ComparisonItem"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}

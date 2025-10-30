@@ -321,6 +321,21 @@ export interface ElementsKeyFeatureItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsOsSvsEnterpriseComparisonItem
+  extends Struct.ComponentSchema {
+  collectionName: 'components_elements_os_svs_enterprise_comparison_items';
+  info: {
+    displayName: 'OSSvsEnterprise-ComparisonItem';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+  };
+}
+
 export interface ElementsPartnerItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_partner_items';
   info: {
@@ -1188,6 +1203,7 @@ declare module '@strapi/strapi' {
       'elements.items': ElementsItems;
       'elements.items-link': ElementsItemsLink;
       'elements.key-feature-item': ElementsKeyFeatureItem;
+      'elements.os-svs-enterprise-comparison-item': ElementsOsSvsEnterpriseComparisonItem;
       'elements.partner-item': ElementsPartnerItem;
       'elements.platform-feature-item': ElementsPlatformFeatureItem;
       'elements.platform-item': ElementsPlatformItem;
