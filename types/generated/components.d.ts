@@ -205,7 +205,7 @@ export interface ElementsFeatureTitleDescription
   };
   attributes: {
     description: Schema.Attribute.Text;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 
