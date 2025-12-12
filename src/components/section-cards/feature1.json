@@ -37,6 +37,11 @@
     },
     "background": {
       "type": "boolean"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

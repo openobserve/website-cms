@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_hero_solution_subpage_herosections",
   "info": {
-    "displayName": "Solution subpage herosection"
+    "displayName": "Solution subpage herosection",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,34 +18,42 @@
       "component": "elements.button"
     },
     "bgImageForLaptop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "bgImageForMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

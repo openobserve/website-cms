@@ -558,6 +558,7 @@ export interface SectionCardsFeature1 extends Struct.ComponentSchema {
   attributes: {
     align: Schema.Attribute.Enumeration<['LEFT', 'CENTER', 'RIGHT']>;
     background: Schema.Attribute.Boolean;
+    ctaButton: Schema.Attribute.Component<'elements.button', false>;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     headingLevel: Schema.Attribute.Enumeration<
       ['H1', 'H2', 'H3', 'H4', 'H5', 'H6']
@@ -964,6 +965,7 @@ export interface SectionFormsDemoPageForm extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'elements.items', true>;
+    quote: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -1019,6 +1021,7 @@ export interface SectionHeroSolutionSubpageHerosection
   extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_solution_subpage_herosections';
   info: {
+    description: '';
     displayName: 'Solution subpage herosection';
   };
   attributes: {
@@ -1031,6 +1034,7 @@ export interface SectionHeroSolutionSubpageHerosection
     description: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String;
   };
 }
@@ -1047,6 +1051,7 @@ export interface SectionHeroSolutionsHeroSection
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String;
   };
 }
