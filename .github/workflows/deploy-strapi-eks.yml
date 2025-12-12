@@ -3,7 +3,7 @@ name: Build and Push Strapi Dev Image to ECR
 on:
   push:
     branches:
-      - ci/update_build_121225
+      - main
 
 permissions:
   id-token: write
