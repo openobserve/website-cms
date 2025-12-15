@@ -443,6 +443,17 @@ export interface ElementsTechWeUse extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsTechnologies extends Struct.ComponentSchema {
+  collectionName: 'components_elements_technologies';
+  info: {
+    displayName: 'Technologies';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsTechnologiesFeatures extends Struct.ComponentSchema {
   collectionName: 'components_elements_technologies_features_s';
   info: {
@@ -596,6 +607,19 @@ export interface SectionCardsFeature4 extends Struct.ComponentSchema {
     items: Schema.Attribute.Component<'elements.card-item', true>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     titleItems: Schema.Attribute.Component<'elements.card-inner-items', true>;
+  };
+}
+
+export interface SectionCardsModernFoundationCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_modern_foundation_card_s';
+  info: {
+    description: '';
+    displayName: 'Modern Foundation Card ';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.technologies', true>;
   };
 }
 
@@ -982,6 +1006,25 @@ export interface SectionFormsDownloadContactForm
   };
 }
 
+export interface SectionHeroAiNativePageHerosection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_ai_native_page_herosections';
+  info: {
+    description: '';
+    displayName: 'AI Native Page Herosection';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    stats: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    tagLine: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
+  };
+}
+
 export interface SectionHeroHomepageHero extends Struct.ComponentSchema {
   collectionName: 'components_section_hero_homepage_heroes';
   info: {
@@ -1216,6 +1259,7 @@ declare module '@strapi/strapi' {
       'elements.pricing-item': ElementsPricingItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
       'elements.tech-we-use': ElementsTechWeUse;
+      'elements.technologies': ElementsTechnologies;
       'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
@@ -1228,6 +1272,7 @@ declare module '@strapi/strapi' {
       'section-cards.feature1': SectionCardsFeature1;
       'section-cards.feature3': SectionCardsFeature3;
       'section-cards.feature4': SectionCardsFeature4;
+      'section-cards.modern-foundation-card': SectionCardsModernFoundationCard;
       'section-cards.our-partners': SectionCardsOurPartners;
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
       'section-cards.testimonials': SectionCardsTestimonials;
@@ -1255,6 +1300,7 @@ declare module '@strapi/strapi' {
       'section-forms.contact-sales-form': SectionFormsContactSalesForm;
       'section-forms.demo-page-form': SectionFormsDemoPageForm;
       'section-forms.download-contact-form': SectionFormsDownloadContactForm;
+      'section-hero.ai-native-page-herosection': SectionHeroAiNativePageHerosection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
       'section-hero.solution-subpage-herosection': SectionHeroSolutionSubpageHerosection;

@@ -406,6 +406,45 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAiNativeLandingPageAiNativeLandingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'ai_native_landing_pages';
+  info: {
+    description: '';
+    displayName: 'AI Native Landing Page';
+    pluralName: 'ai-native-landing-pages';
+    singularName: 'ai-native-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.ai-native-page-herosection',
+        'section-cards.feature1',
+        'section-cta.banner',
+        'elements.testimonial-card',
+        'section-cards.modern-foundation-card',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ai-native-landing-page.ai-native-landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -2302,6 +2341,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
+      'api::ai-native-landing-page.ai-native-landing-page': ApiAiNativeLandingPageAiNativeLandingPage;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::career-page.career-page': ApiCareerPageCareerPage;
