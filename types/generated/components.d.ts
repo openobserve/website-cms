@@ -689,6 +689,19 @@ export interface SectionCardsWebinar extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCtaAiNativeCtaBanner extends Struct.ComponentSchema {
+  collectionName: 'components_section_cta_ai_native_cta_banners';
+  info: {
+    displayName: 'AI Native  CTA Banner';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionCtaBanner extends Struct.ComponentSchema {
   collectionName: 'components_section_cta_banners';
   info: {
@@ -1290,6 +1303,7 @@ declare module '@strapi/strapi' {
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
       'section-cards.testimonials': SectionCardsTestimonials;
       'section-cards.webinar': SectionCardsWebinar;
+      'section-cta.ai-native-cta-banner': SectionCtaAiNativeCtaBanner;
       'section-cta.banner': SectionCtaBanner;
       'section-cta.download-cta': SectionCtaDownloadCta;
       'section-faqs.fa-qs-page-section': SectionFaqsFaQsPageSection;
