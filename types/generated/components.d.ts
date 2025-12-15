@@ -610,6 +610,18 @@ export interface SectionCardsFeature4 extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsFeature5 extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_feature5s';
+  info: {
+    description: '';
+    displayName: 'Feature5';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
 export interface SectionCardsModernFoundationCard
   extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_modern_foundation_card_s';
@@ -1272,6 +1284,7 @@ declare module '@strapi/strapi' {
       'section-cards.feature1': SectionCardsFeature1;
       'section-cards.feature3': SectionCardsFeature3;
       'section-cards.feature4': SectionCardsFeature4;
+      'section-cards.feature5': SectionCardsFeature5;
       'section-cards.modern-foundation-card': SectionCardsModernFoundationCard;
       'section-cards.our-partners': SectionCardsOurPartners;
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;

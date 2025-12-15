@@ -422,10 +422,10 @@ export interface ApiAiNativeLandingPageAiNativeLandingPage
     body: Schema.Attribute.DynamicZone<
       [
         'section-hero.ai-native-page-herosection',
-        'section-cards.feature1',
         'section-cta.banner',
         'elements.testimonial-card',
         'section-cards.modern-foundation-card',
+        'section-cards.feature5',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
