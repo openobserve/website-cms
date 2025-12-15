@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_hero_ai_native_page_herosections",
+  "info": {
+    "displayName": "AI Native Page Herosection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tagLine": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}

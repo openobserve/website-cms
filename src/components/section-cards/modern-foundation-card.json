@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_cards_modern_foundation_card_s",
+  "info": {
+    "displayName": "Modern Foundation Card ",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.technologies"
+    }
+  }
+}
