@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_features_migration_steps",
+  "info": {
+    "displayName": "Migration Steps",
+    "description": "Migration process section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.migration-step"
+    }
+  }
+}

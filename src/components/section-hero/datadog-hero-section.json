@@ -1,0 +1,60 @@
+{
+  "collectionName": "components_section_hero_datadog_hero_sections",
+  "info": {
+    "displayName": "Datadog Hero Section",
+    "icon": "crown",
+    "description": "Hero section for Datadog alternative landing page"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrowText": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "highlightedText": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text",
+      "required": true
+    },
+    "datadogPricing": {
+      "type": "string",
+      "default": "$15-27/host/month"
+    },
+    "datadogNote": {
+      "type": "string",
+      "default": "+ $0.05/custom metric + $1.70/million spans"
+    },
+    "openobservePricing": {
+      "type": "string",
+      "default": "$0/host"
+    },
+    "openobserveNote": {
+      "type": "string",
+      "default": "Unlimited custom metrics included"
+    },
+    "trustLabel": {
+      "type": "string",
+      "default": "Teams that made the switch"
+    },
+    "trustLogos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.trust-logo"
+    },
+    "formTitle": {
+      "type": "string",
+      "required": true
+    },
+    "formDescription": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

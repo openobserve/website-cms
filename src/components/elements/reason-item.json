@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_elements_reason_items",
+  "info": {
+    "displayName": "Reason Item",
+    "description": "Individual reason card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

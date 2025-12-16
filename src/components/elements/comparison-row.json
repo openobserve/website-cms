@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_comparison_rows",
+  "info": {
+    "displayName": "Comparison Row",
+    "description": "Row in feature comparison table"
+  },
+  "options": {},
+  "attributes": {
+    "featureName": {
+      "type": "string",
+      "required": true
+    },
+    "datadogValue": {
+      "type": "string",
+      "required": true
+    },
+    "openobserveValue": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

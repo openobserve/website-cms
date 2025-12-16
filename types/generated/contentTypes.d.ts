@@ -724,6 +724,46 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDatadogAlternativeLandingPageDatadogAlternativeLandingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'datadog_alternative_landing_pages';
+  info: {
+    description: 'Landing page for Datadog alternative';
+    displayName: 'Datadog Alternative Landing Page';
+    pluralName: 'datadog-alternative-landing-pages';
+    singularName: 'datadog-alternative-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.datadog-hero-section',
+        'section-cards.switch-reasons',
+        'section-features.feature-comparison',
+        'section-cards.testimonial-section',
+        'section-features.migration-steps',
+        'section-cta.datadog-cta',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::datadog-alternative-landing-page.datadog-alternative-landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
   collectionName: 'demo_pages';
   info: {
@@ -2349,6 +2389,7 @@ declare module '@strapi/strapi' {
       'api::comparision-page.comparision-page': ApiComparisionPageComparisionPage;
       'api::contact-sale.contact-sale': ApiContactSaleContactSale;
       'api::contact-us.contact-us': ApiContactUsContactUs;
+      'api::datadog-alternative-landing-page.datadog-alternative-landing-page': ApiDatadogAlternativeLandingPageDatadogAlternativeLandingPage;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
       'api::download-page-v2.download-page-v2': ApiDownloadPageV2DownloadPageV2;
       'api::download.download': ApiDownloadDownload;
