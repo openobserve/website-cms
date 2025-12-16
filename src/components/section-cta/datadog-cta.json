@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_section_cta_datadog_ctas",
+  "info": {
+    "displayName": "Datadog CTA",
+    "description": "CTA section for datadog alternative page"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

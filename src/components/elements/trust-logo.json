@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_trust_logos",
+  "info": {
+    "displayName": "Trust Logo",
+    "description": "Logo for trust section"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

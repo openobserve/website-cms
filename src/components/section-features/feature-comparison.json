@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_features_feature_comparisons",
+  "info": {
+    "displayName": "Feature Comparison",
+    "description": "Feature comparison table section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.comparison-row"
+    }
+  }
+}

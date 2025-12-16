@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "datadog_alternative_landing_pages",
+  "info": {
+    "singularName": "datadog-alternative-landing-page",
+    "pluralName": "datadog-alternative-landing-pages",
+    "displayName": "Datadog Alternative Landing Page",
+    "description": "Landing page for Datadog alternative"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.datadog-hero-section",
+        "section-cards.switch-reasons",
+        "section-features.feature-comparison",
+        "section-cards.testimonial-section",
+        "section-features.migration-steps",
+        "section-cta.datadog-cta"
+      ]
+    }
+  }
+}

@@ -110,6 +110,19 @@ export interface ElementsCompanyCustomerFeature extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsComparisonRow extends Struct.ComponentSchema {
+  collectionName: 'components_elements_comparison_rows';
+  info: {
+    description: 'Row in feature comparison table';
+    displayName: 'Comparison Row';
+  };
+  attributes: {
+    datadogValue: Schema.Attribute.String & Schema.Attribute.Required;
+    featureName: Schema.Attribute.String & Schema.Attribute.Required;
+    openobserveValue: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsEventCardItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_event_card_items';
   info: {
@@ -321,6 +334,18 @@ export interface ElementsKeyFeatureItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsMigrationStep extends Struct.ComponentSchema {
+  collectionName: 'components_elements_migration_steps';
+  info: {
+    description: 'Individual migration step';
+    displayName: 'Migration Step';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsOsSvsEnterpriseComparisonItem
   extends Struct.ComponentSchema {
   collectionName: 'components_elements_os_svs_enterprise_comparison_items';
@@ -416,6 +441,19 @@ export interface ElementsPricingItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsReasonItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_reason_items';
+  info: {
+    description: 'Individual reason card';
+    displayName: 'Reason Item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsSocialMediaIcon extends Struct.ComponentSchema {
   collectionName: 'components_elements_social_media_icons';
   info: {
@@ -477,6 +515,18 @@ export interface ElementsTestimonialCard extends Struct.ComponentSchema {
     name: Schema.Attribute.String & Schema.Attribute.Required;
     quote: Schema.Attribute.Text & Schema.Attribute.Required;
     role: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsTrustLogo extends Struct.ComponentSchema {
+  collectionName: 'components_elements_trust_logos';
+  info: {
+    description: 'Logo for trust section';
+    displayName: 'Trust Logo';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -663,6 +713,32 @@ export interface SectionCardsPlaformKeyFeatures extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsSwitchReasons extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_switch_reasons';
+  info: {
+    description: 'Why teams switch section';
+    displayName: 'Switch Reasons';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    reasons: Schema.Attribute.Component<'elements.reason-item', true>;
+  };
+}
+
+export interface SectionCardsTestimonialSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_testimonial_sections';
+  info: {
+    description: 'Customer testimonial';
+    displayName: 'Testimonial Section';
+  };
+  attributes: {
+    authorInitials: Schema.Attribute.String & Schema.Attribute.Required;
+    authorName: Schema.Attribute.String & Schema.Attribute.Required;
+    authorTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionCardsTestimonials extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_testimonials';
   info: {
@@ -712,6 +788,20 @@ export interface SectionCtaBanner extends Struct.ComponentSchema {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+  };
+}
+
+export interface SectionCtaDatadogCta extends Struct.ComponentSchema {
+  collectionName: 'components_section_cta_datadog_ctas';
+  info: {
+    description: 'CTA section for datadog alternative page';
+    displayName: 'Datadog CTA';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -817,6 +907,19 @@ export interface SectionFeaturesDownloadDeploymentOption
   };
 }
 
+export interface SectionFeaturesFeatureComparison
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_feature_comparisons';
+  info: {
+    description: 'Feature comparison table section';
+    displayName: 'Feature Comparison';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<'elements.comparison-row', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
 export interface SectionFeaturesFeatureLeftTabs extends Struct.ComponentSchema {
   collectionName: 'components_section_features_feature_left_tabs';
   info: {
@@ -888,6 +991,18 @@ export interface SectionFeaturesHomepageFeature extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'elements.homepage-feature-item', true>;
+  };
+}
+
+export interface SectionFeaturesMigrationSteps extends Struct.ComponentSchema {
+  collectionName: 'components_section_features_migration_steps';
+  info: {
+    description: 'Migration process section';
+    displayName: 'Migration Steps';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    steps: Schema.Attribute.Component<'elements.migration-step', true>;
   };
 }
 
@@ -1047,6 +1162,34 @@ export interface SectionHeroAiNativePageHerosection
     tagLine: Schema.Attribute.String;
     title: Schema.Attribute.String;
     trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
+  };
+}
+
+export interface SectionHeroDatadogHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_section_hero_datadog_hero_sections';
+  info: {
+    description: 'Hero section for Datadog alternative landing page';
+    displayName: 'Datadog Hero Section';
+    icon: 'crown';
+  };
+  attributes: {
+    datadogNote: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'+ $0.05/custom metric + $1.70/million spans'>;
+    datadogPricing: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'$15-27/host/month'>;
+    eyebrowText: Schema.Attribute.String & Schema.Attribute.Required;
+    formDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    formTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    highlightedText: Schema.Attribute.String & Schema.Attribute.Required;
+    openobserveNote: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Unlimited custom metrics included'>;
+    openobservePricing: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'$0/host'>;
+    subtitle: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    trustLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Teams that made the switch'>;
+    trustLogos: Schema.Attribute.Component<'elements.trust-logo', true>;
   };
 }
 
@@ -1262,6 +1405,7 @@ declare module '@strapi/strapi' {
       'elements.card-item': ElementsCardItem;
       'elements.case-study-item': ElementsCaseStudyItem;
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
+      'elements.comparison-row': ElementsComparisonRow;
       'elements.event-card-item': ElementsEventCardItem;
       'elements.faq-item': ElementsFaqItem;
       'elements.faq-item-v2-markdown': ElementsFaqItemV2Markdown;
@@ -1276,17 +1420,20 @@ declare module '@strapi/strapi' {
       'elements.items': ElementsItems;
       'elements.items-link': ElementsItemsLink;
       'elements.key-feature-item': ElementsKeyFeatureItem;
+      'elements.migration-step': ElementsMigrationStep;
       'elements.os-svs-enterprise-comparison-item': ElementsOsSvsEnterpriseComparisonItem;
       'elements.partner-item': ElementsPartnerItem;
       'elements.platform-feature-item': ElementsPlatformFeatureItem;
       'elements.platform-item': ElementsPlatformItem;
       'elements.popup-item': ElementsPopupItem;
       'elements.pricing-item': ElementsPricingItem;
+      'elements.reason-item': ElementsReasonItem;
       'elements.social-media-icon': ElementsSocialMediaIcon;
       'elements.tech-we-use': ElementsTechWeUse;
       'elements.technologies': ElementsTechnologies;
       'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
+      'elements.trust-logo': ElementsTrustLogo;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;
@@ -1301,22 +1448,27 @@ declare module '@strapi/strapi' {
       'section-cards.modern-foundation-card': SectionCardsModernFoundationCard;
       'section-cards.our-partners': SectionCardsOurPartners;
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
+      'section-cards.switch-reasons': SectionCardsSwitchReasons;
+      'section-cards.testimonial-section': SectionCardsTestimonialSection;
       'section-cards.testimonials': SectionCardsTestimonials;
       'section-cards.webinar': SectionCardsWebinar;
       'section-cta.ai-native-cta-banner': SectionCtaAiNativeCtaBanner;
       'section-cta.banner': SectionCtaBanner;
+      'section-cta.datadog-cta': SectionCtaDatadogCta;
       'section-cta.download-cta': SectionCtaDownloadCta;
       'section-faqs.fa-qs-page-section': SectionFaqsFaQsPageSection;
       'section-faqs.frequently-asked-question': SectionFaqsFrequentlyAskedQuestion;
       'section-faqs.platform-faqs': SectionFaqsPlatformFaqs;
       'section-features.cloud-section-for-downloads': SectionFeaturesCloudSectionForDownloads;
       'section-features.download-deployment-option': SectionFeaturesDownloadDeploymentOption;
+      'section-features.feature-comparison': SectionFeaturesFeatureComparison;
       'section-features.feature-left-tabs': SectionFeaturesFeatureLeftTabs;
       'section-features.feature-list': SectionFeaturesFeatureList;
       'section-features.feature-sub-page-top-tabs': SectionFeaturesFeatureSubPageTopTabs;
       'section-features.global-team': SectionFeaturesGlobalTeam;
       'section-features.home-marketecture-section': SectionFeaturesHomeMarketectureSection;
       'section-features.homepage-feature': SectionFeaturesHomepageFeature;
+      'section-features.migration-steps': SectionFeaturesMigrationSteps;
       'section-features.our-commitment': SectionFeaturesOurCommitment;
       'section-features.our-story': SectionFeaturesOurStory;
       'section-features.platform-features-top-tabs': SectionFeaturesPlatformFeaturesTopTabs;
@@ -1328,6 +1480,7 @@ declare module '@strapi/strapi' {
       'section-forms.demo-page-form': SectionFormsDemoPageForm;
       'section-forms.download-contact-form': SectionFormsDownloadContactForm;
       'section-hero.ai-native-page-herosection': SectionHeroAiNativePageHerosection;
+      'section-hero.datadog-hero-section': SectionHeroDatadogHeroSection;
       'section-hero.homepage-hero': SectionHeroHomepageHero;
       'section-hero.resource-hero-section': SectionHeroResourceHeroSection;
       'section-hero.solution-subpage-herosection': SectionHeroSolutionSubpageHerosection;

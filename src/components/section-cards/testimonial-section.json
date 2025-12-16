@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_cards_testimonial_sections",
+  "info": {
+    "displayName": "Testimonial Section",
+    "description": "Customer testimonial"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "authorName": {
+      "type": "string",
+      "required": true
+    },
+    "authorTitle": {
+      "type": "string",
+      "required": true
+    },
+    "authorInitials": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

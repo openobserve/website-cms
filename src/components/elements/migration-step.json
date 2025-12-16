@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_elements_migration_steps",
+  "info": {
+    "displayName": "Migration Step",
+    "description": "Individual migration step"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
