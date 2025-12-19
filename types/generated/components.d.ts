@@ -530,134 +530,119 @@ export interface ElementsTrustLogo extends Struct.ComponentSchema {
   };
 }
 
-export interface ExperimentChangeAddClass extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_change_add_classes';
+export interface LandingPageComponentCtaBanner extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_cta_banners';
   info: {
-    description: 'Add CSS classes to an element';
-    displayName: 'Change Add Class';
-  };
-  attributes: {
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'addClass'>;
-    value: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface ExperimentChangeImage extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_change_images';
-  info: {
-    description: 'Change image source of an element';
-    displayName: 'Change Image';
-  };
-  attributes: {
-    attribute: Schema.Attribute.String & Schema.Attribute.DefaultTo<'src'>;
-    Image: Schema.Attribute.Media<'images'>;
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'image'>;
-  };
-}
-
-export interface ExperimentChangeStyle extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_change_styles';
-  info: {
-    description: 'Change CSS style of an element';
-    displayName: 'Change Style';
-  };
-  attributes: {
-    property: Schema.Attribute.String & Schema.Attribute.Required;
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'style'>;
-    value: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface ExperimentChangeText extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_change_texts';
-  info: {
-    description: 'Change text content of an element';
-    displayName: 'Change Text';
-  };
-  attributes: {
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'text'>;
-    value: Schema.Attribute.Text & Schema.Attribute.Required;
-  };
-}
-
-export interface ExperimentGoal extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_goals';
-  info: {
-    description: 'Experiment goal/conversion tracking';
-    displayName: 'Goal';
+    description: 'Call-to-action banner for landing pages';
+    displayName: 'CTA Banner';
   };
   attributes: {
     description: Schema.Attribute.Text;
-    selector: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<
-      ['click', 'pageview', 'custom', 'formSubmit']
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'click'>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    title: Schema.Attribute.String;
   };
 }
 
-export interface ExperimentTargetingRules extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_targeting_rules';
+export interface LandingPageComponentDatadogHeroSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_datadog_hero_sections';
   info: {
-    description: 'Rules for targeting specific pages and devices';
-    displayName: 'Targeting Rules';
+    description: '';
+    displayName: 'Datadog Hero Section';
   };
   attributes: {
-    devices: Schema.Attribute.JSON &
-      Schema.Attribute.DefaultTo<['desktop', 'mobile', 'tablet']>;
-    goal: Schema.Attribute.Component<'experiment.goal', false>;
-    urls: Schema.Attribute.Component<'experiment.url-match', true>;
+    datadogNote: Schema.Attribute.String;
+    datadogPricing: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    openobserveNote: Schema.Attribute.String;
+    openobservePricing: Schema.Attribute.String;
+    tagLine: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
   };
 }
 
-export interface ExperimentUrlMatch extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_url_matches';
+export interface LandingPageComponentFeatureCards
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_feature_cards';
   info: {
-    description: 'URL matching pattern for targeting';
-    displayName: 'URL Match';
+    description: 'Cards section for landing pages';
+    displayName: 'Feature Cards';
   };
   attributes: {
-    matchType: Schema.Attribute.Enumeration<
-      ['exact', 'contains', 'regex', 'startsWith']
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'exact'>;
-    value: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.reason-item', true>;
   };
 }
 
-export interface ExperimentVariant extends Struct.ComponentSchema {
-  collectionName: 'components_experiment_variants';
+export interface LandingPageComponentFeatureComparison
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_feature_comparisons';
   info: {
-    description: 'Experiment variant configuration';
-    displayName: 'Variant';
+    description: 'Feature comparison table for landing pages';
+    displayName: 'Feature Comparison';
   };
   attributes: {
-    changes: Schema.Attribute.DynamicZone<
-      [
-        'experiment.change-text',
-        'experiment.change-style',
-        'experiment.change-image',
-        'experiment.change-add-class',
-      ]
+    comparisonRows: Schema.Attribute.Component<'elements.comparison-row', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
+export interface LandingPageComponentHeroSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_hero_sections';
+  info: {
+    description: 'Hero section for landing pages';
+    displayName: 'AI Native Page Herosection';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    stats: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
     >;
-    key: Schema.Attribute.String & Schema.Attribute.Required;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    weight: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 100;
-          min: 0;
-        },
-        number
-      > &
-      Schema.Attribute.DefaultTo<50>;
+    tagLine: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
+  };
+}
+
+export interface LandingPageComponentMigrationSteps
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_migration_steps';
+  info: {
+    description: 'Step-by-step migration guide for landing pages';
+    displayName: 'Migration Steps';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    steps: Schema.Attribute.Component<'elements.migration-step', true>;
+  };
+}
+
+export interface LandingPageComponentModernFoundationCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_modern_foundation_card_s';
+  info: {
+    displayName: 'Modern Foundation Card ';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.technologies', true>;
+  };
+}
+
+export interface LandingPageComponentTestimonialSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_testimonial_sections';
+  info: {
+    description: 'Customer testimonials for landing pages';
+    displayName: 'Testimonial Section';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    testimonials: Schema.Attribute.Component<'elements.testimonial-card', true>;
   };
 }
 
@@ -729,6 +714,18 @@ export interface SectionCardsCommunitySupport extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionCardsDatadogSwitchReasons
+  extends Struct.ComponentSchema {
+  collectionName: 'components_section_cards_datadog_switch_reasons';
+  info: {
+    displayName: 'Datadog Switch Reasons';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    reasons: Schema.Attribute.Component<'elements.reason-item', true>;
+  };
+}
+
 export interface SectionCardsEventCards extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_event_cards';
   info: {
@@ -791,18 +788,6 @@ export interface SectionCardsFeature4 extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionCardsFeature5 extends Struct.ComponentSchema {
-  collectionName: 'components_section_cards_feature5s';
-  info: {
-    description: '';
-    displayName: 'Feature5';
-  };
-  attributes: {
-    heading: Schema.Attribute.Component<'elements.heading', false>;
-    items: Schema.Attribute.Component<'elements.items', true>;
-  };
-}
-
 export interface SectionCardsModernFoundationCard
   extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_modern_foundation_card_s';
@@ -848,11 +833,11 @@ export interface SectionCardsSwitchReasons extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_switch_reasons';
   info: {
     description: 'Why teams switch section';
-    displayName: 'Switch Reasons';
+    displayName: 'Feature5';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
-    reasons: Schema.Attribute.Component<'elements.reason-item', true>;
+    items: Schema.Attribute.Component<'elements.items', true>;
   };
 }
 
@@ -863,6 +848,9 @@ export interface SectionCardsTestimonialSection extends Struct.ComponentSchema {
     displayName: 'Testimonial Section';
   };
   attributes: {
+    authorImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     authorInitials: Schema.Attribute.String & Schema.Attribute.Required;
     authorName: Schema.Attribute.String & Schema.Attribute.Required;
     authorTitle: Schema.Attribute.String & Schema.Attribute.Required;
@@ -899,6 +887,7 @@ export interface SectionCardsWebinar extends Struct.ComponentSchema {
 export interface SectionCtaAiNativeCtaBanner extends Struct.ComponentSchema {
   collectionName: 'components_section_cta_ai_native_cta_banners';
   info: {
+    description: '';
     displayName: 'AI Native  CTA Banner';
   };
   attributes: {
@@ -923,16 +912,15 @@ export interface SectionCtaBanner extends Struct.ComponentSchema {
 }
 
 export interface SectionCtaDatadogCta extends Struct.ComponentSchema {
-  collectionName: 'components_section_cta_datadog_ctas';
+  collectionName: 'components_section_cta_datadog_cta_s';
   info: {
-    description: 'CTA section for datadog alternative page';
-    displayName: 'Datadog CTA';
+    displayName: 'Datadog CTA ';
   };
   attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.String;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -1565,25 +1553,25 @@ declare module '@strapi/strapi' {
       'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.trust-logo': ElementsTrustLogo;
-      'experiment.change-add-class': ExperimentChangeAddClass;
-      'experiment.change-image': ExperimentChangeImage;
-      'experiment.change-style': ExperimentChangeStyle;
-      'experiment.change-text': ExperimentChangeText;
-      'experiment.goal': ExperimentGoal;
-      'experiment.targeting-rules': ExperimentTargetingRules;
-      'experiment.url-match': ExperimentUrlMatch;
-      'experiment.variant': ExperimentVariant;
+      'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
+      'landing-page-component.datadog-hero-section': LandingPageComponentDatadogHeroSection;
+      'landing-page-component.feature-cards': LandingPageComponentFeatureCards;
+      'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;
+      'landing-page-component.hero-section': LandingPageComponentHeroSection;
+      'landing-page-component.migration-steps': LandingPageComponentMigrationSteps;
+      'landing-page-component.modern-foundation-card': LandingPageComponentModernFoundationCard;
+      'landing-page-component.testimonial-section': LandingPageComponentTestimonialSection;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;
       'section-cards.case-studies': SectionCardsCaseStudies;
       'section-cards.clients': SectionCardsClients;
       'section-cards.community-support': SectionCardsCommunitySupport;
+      'section-cards.datadog-switch-reasons': SectionCardsDatadogSwitchReasons;
       'section-cards.event-cards': SectionCardsEventCards;
       'section-cards.feature1': SectionCardsFeature1;
       'section-cards.feature3': SectionCardsFeature3;
       'section-cards.feature4': SectionCardsFeature4;
-      'section-cards.feature5': SectionCardsFeature5;
       'section-cards.modern-foundation-card': SectionCardsModernFoundationCard;
       'section-cards.our-partners': SectionCardsOurPartners;
       'section-cards.plaform-key-features': SectionCardsPlaformKeyFeatures;
