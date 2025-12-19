@@ -1,18 +1,16 @@
 {
-  "collectionName": "components_section_cta_datadog_ctas",
+  "collectionName": "components_landing_page_component_cta_banners",
   "info": {
-    "displayName": "Datadog CTA",
-    "description": "CTA section for datadog alternative page"
+    "displayName": "CTA Banner",
+    "description": "Call-to-action banner for landing pages"
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "description": {
-      "type": "text",
-      "required": true
+      "type": "text"
     },
     "primaryButton": {
       "type": "component",
