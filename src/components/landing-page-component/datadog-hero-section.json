@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_landing_page_component_datadog_hero_sections",
+  "info": {
+    "displayName": "Datadog Hero Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tagLine": {
+      "type": "string"
+    },
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image"
+    },
+    "datadogPricing": {
+      "type": "string"
+    },
+    "datadogNote": {
+      "type": "string"
+    },
+    "openobservePricing": {
+      "type": "string"
+    },
+    "openobserveNote": {
+      "type": "string"
+    }
+  }
+}

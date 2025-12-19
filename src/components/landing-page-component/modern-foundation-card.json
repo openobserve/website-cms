@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_section_cards_feature5s",
+  "collectionName": "components_landing_page_component_modern_foundation_card_s",
   "info": {
-    "displayName": "Feature5",
-    "description": ""
+    "displayName": "Modern Foundation Card "
   },
   "options": {},
   "attributes": {
@@ -14,7 +13,7 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.items"
+      "component": "elements.technologies"
     }
   }
 }

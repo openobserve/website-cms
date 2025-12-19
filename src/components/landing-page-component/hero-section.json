@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_landing_page_component_hero_sections",
+  "info": {
+    "displayName": "AI Native Page Herosection",
+    "description": "Hero section for landing pages"
+  },
+  "options": {},
+  "attributes": {
+    "tagLine": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}

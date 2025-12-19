@@ -16,27 +16,24 @@
       "type": "uid",
       "required": true
     },
-    "body": {
-      "type": "dynamiczone",
-      "components": [
-        "section-hero.ai-native-page-herosection",
-        "section-hero.datadog-hero-section",
-        "section-cta.ai-native-cta-banner",
-        "section-cta.datadog-cta",
-        "section-cards.modern-foundation-card",
-        "section-cards.feature5",
-        "section-cards.switch-reasons",
-        "section-cards.testimonial-section",
-        "section-features.migration-steps",
-        "elements.testimonial-card",
-        "section-features.feature-comparison"
-      ]
-    },
     "seo": {
       "type": "component",
       "repeatable": false,
       "component": "seo.seo",
       "required": false
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "landing-page-component.testimonial-section",
+        "landing-page-component.modern-foundation-card",
+        "landing-page-component.migration-steps",
+        "landing-page-component.hero-section",
+        "landing-page-component.feature-comparison",
+        "landing-page-component.feature-cards",
+        "landing-page-component.datadog-hero-section",
+        "landing-page-component.cta-banner"
+      ]
     }
   }
 }

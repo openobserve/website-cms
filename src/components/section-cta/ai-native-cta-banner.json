@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_cta_ai_native_cta_banners",
   "info": {
-    "displayName": "AI Native  CTA Banner"
+    "displayName": "Landing Page CTA",
+    "description": ""
   },
   "options": {},
   "attributes": {
