@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_experiment_change_styles",
+  "info": {
+    "displayName": "Change Style",
+    "description": "Change CSS style of an element"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "style"
+    },
+    "selector": {
+      "type": "string",
+      "required": true
+    },
+    "property": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "Landing Pages",
+    "description": "Flexible landing pages with dynamic content sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.ai-native-page-herosection",
+        "section-hero.datadog-hero-section",
+        "section-cta.ai-native-cta-banner",
+        "section-cta.datadog-cta",
+        "section-cards.modern-foundation-card",
+        "section-cards.feature5",
+        "section-cards.switch-reasons",
+        "section-cards.testimonial-section",
+        "section-features.migration-steps",
+        "elements.testimonial-card",
+        "section-features.feature-comparison"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo",
+      "required": false
+    }
+  }
+}

@@ -530,6 +530,137 @@ export interface ElementsTrustLogo extends Struct.ComponentSchema {
   };
 }
 
+export interface ExperimentChangeAddClass extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_change_add_classes';
+  info: {
+    description: 'Add CSS classes to an element';
+    displayName: 'Change Add Class';
+  };
+  attributes: {
+    selector: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'addClass'>;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExperimentChangeImage extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_change_images';
+  info: {
+    description: 'Change image source of an element';
+    displayName: 'Change Image';
+  };
+  attributes: {
+    attribute: Schema.Attribute.String & Schema.Attribute.DefaultTo<'src'>;
+    Image: Schema.Attribute.Media<'images'>;
+    selector: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'image'>;
+  };
+}
+
+export interface ExperimentChangeStyle extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_change_styles';
+  info: {
+    description: 'Change CSS style of an element';
+    displayName: 'Change Style';
+  };
+  attributes: {
+    property: Schema.Attribute.String & Schema.Attribute.Required;
+    selector: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'style'>;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExperimentChangeText extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_change_texts';
+  info: {
+    description: 'Change text content of an element';
+    displayName: 'Change Text';
+  };
+  attributes: {
+    selector: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.String & Schema.Attribute.DefaultTo<'text'>;
+    value: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface ExperimentGoal extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_goals';
+  info: {
+    description: 'Experiment goal/conversion tracking';
+    displayName: 'Goal';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    selector: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      ['click', 'pageview', 'custom', 'formSubmit']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'click'>;
+  };
+}
+
+export interface ExperimentTargetingRules extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_targeting_rules';
+  info: {
+    description: 'Rules for targeting specific pages and devices';
+    displayName: 'Targeting Rules';
+  };
+  attributes: {
+    devices: Schema.Attribute.JSON &
+      Schema.Attribute.DefaultTo<['desktop', 'mobile', 'tablet']>;
+    goal: Schema.Attribute.Component<'experiment.goal', false>;
+    urls: Schema.Attribute.Component<'experiment.url-match', true>;
+  };
+}
+
+export interface ExperimentUrlMatch extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_url_matches';
+  info: {
+    description: 'URL matching pattern for targeting';
+    displayName: 'URL Match';
+  };
+  attributes: {
+    matchType: Schema.Attribute.Enumeration<
+      ['exact', 'contains', 'regex', 'startsWith']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'exact'>;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExperimentVariant extends Struct.ComponentSchema {
+  collectionName: 'components_experiment_variants';
+  info: {
+    description: 'Experiment variant configuration';
+    displayName: 'Variant';
+  };
+  attributes: {
+    changes: Schema.Attribute.DynamicZone<
+      [
+        'experiment.change-text',
+        'experiment.change-style',
+        'experiment.change-image',
+        'experiment.change-add-class',
+      ]
+    >;
+    key: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    weight: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<50>;
+  };
+}
+
 export interface SectionCardsAdditionalResources
   extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_additional_resources';
@@ -1434,6 +1565,14 @@ declare module '@strapi/strapi' {
       'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.trust-logo': ElementsTrustLogo;
+      'experiment.change-add-class': ExperimentChangeAddClass;
+      'experiment.change-image': ExperimentChangeImage;
+      'experiment.change-style': ExperimentChangeStyle;
+      'experiment.change-text': ExperimentChangeText;
+      'experiment.goal': ExperimentGoal;
+      'experiment.targeting-rules': ExperimentTargetingRules;
+      'experiment.url-match': ExperimentUrlMatch;
+      'experiment.variant': ExperimentVariant;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;

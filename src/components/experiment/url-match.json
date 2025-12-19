@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_experiment_url_matches",
+  "info": {
+    "displayName": "URL Match",
+    "description": "URL matching pattern for targeting"
+  },
+  "options": {},
+  "attributes": {
+    "matchType": {
+      "type": "enumeration",
+      "enum": [
+        "exact",
+        "contains",
+        "regex",
+        "startsWith"
+      ],
+      "default": "exact",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
