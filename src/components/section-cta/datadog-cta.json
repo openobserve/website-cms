@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_cta_datadog_cta_s",
   "info": {
-    "displayName": "Datadog CTA "
+    "displayName": "CTA Type 2",
+    "description": ""
   },
   "options": {},
   "attributes": {

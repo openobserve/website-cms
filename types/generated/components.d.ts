@@ -544,25 +544,6 @@ export interface LandingPageComponentCtaBanner extends Struct.ComponentSchema {
   };
 }
 
-export interface LandingPageComponentDatadogHeroSection
-  extends Struct.ComponentSchema {
-  collectionName: 'components_landing_page_component_datadog_hero_sections';
-  info: {
-    description: '';
-    displayName: 'Datadog Hero Section';
-  };
-  attributes: {
-    datadogNote: Schema.Attribute.String;
-    datadogPricing: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    openobserveNote: Schema.Attribute.String;
-    openobservePricing: Schema.Attribute.String;
-    tagLine: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
-  };
-}
-
 export interface LandingPageComponentFeatureCards
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_feature_cards';
@@ -594,9 +575,13 @@ export interface LandingPageComponentHeroSection
   collectionName: 'components_landing_page_component_hero_sections';
   info: {
     description: 'Hero section for landing pages';
-    displayName: 'AI Native Page Herosection';
+    displayName: 'Herosection';
   };
   attributes: {
+    comparisions: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
     description: Schema.Attribute.Text;
     stats: Schema.Attribute.Component<
       'elements.feature-title-description',
@@ -888,7 +873,7 @@ export interface SectionCtaAiNativeCtaBanner extends Struct.ComponentSchema {
   collectionName: 'components_section_cta_ai_native_cta_banners';
   info: {
     description: '';
-    displayName: 'AI Native  CTA Banner';
+    displayName: 'CTA Type 1';
   };
   attributes: {
     description: Schema.Attribute.Text;
@@ -914,7 +899,8 @@ export interface SectionCtaBanner extends Struct.ComponentSchema {
 export interface SectionCtaDatadogCta extends Struct.ComponentSchema {
   collectionName: 'components_section_cta_datadog_cta_s';
   info: {
-    displayName: 'Datadog CTA ';
+    description: '';
+    displayName: 'CTA Type 2';
   };
   attributes: {
     description: Schema.Attribute.String;
@@ -1554,7 +1540,6 @@ declare module '@strapi/strapi' {
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.trust-logo': ElementsTrustLogo;
       'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
-      'landing-page-component.datadog-hero-section': LandingPageComponentDatadogHeroSection;
       'landing-page-component.feature-cards': LandingPageComponentFeatureCards;
       'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;
       'landing-page-component.hero-section': LandingPageComponentHeroSection;

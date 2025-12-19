@@ -1,7 +1,7 @@
 {
   "collectionName": "components_landing_page_component_hero_sections",
   "info": {
-    "displayName": "AI Native Page Herosection",
+    "displayName": "Herosection",
     "description": "Hero section for landing pages"
   },
   "options": {},
@@ -21,6 +21,11 @@
       "component": "elements.image"
     },
     "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "comparisions": {
       "type": "component",
       "repeatable": true,
       "component": "elements.feature-title-description"

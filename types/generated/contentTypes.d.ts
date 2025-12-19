@@ -1194,7 +1194,6 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
         'landing-page-component.hero-section',
         'landing-page-component.feature-comparison',
         'landing-page-component.feature-cards',
-        'landing-page-component.datadog-hero-section',
         'landing-page-component.cta-banner',
       ]
     >;
