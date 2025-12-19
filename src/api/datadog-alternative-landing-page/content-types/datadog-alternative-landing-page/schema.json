@@ -24,7 +24,8 @@
         "section-features.feature-comparison",
         "section-cards.testimonial-section",
         "section-features.migration-steps",
-        "section-cta.datadog-cta"
+        "section-cta.datadog-cta",
+        "section-cards.datadog-switch-reasons"
       ]
     }
   }
