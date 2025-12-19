@@ -940,6 +940,53 @@ export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiExperimentExperiment extends Struct.CollectionTypeSchema {
+  collectionName: 'experiments';
+  info: {
+    description: 'A/B testing and experimentation configuration';
+    displayName: 'Experiment';
+    pluralName: 'experiments';
+    singularName: 'experiment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    endDate: Schema.Attribute.DateTime;
+    experimentId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experiment.experiment'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    startDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    status: Schema.Attribute.Enumeration<
+      ['active', 'paused', 'completed', 'draft']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'draft'>;
+    targetingRules: Schema.Attribute.Component<
+      'experiment.targeting-rules',
+      false
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    variants: Schema.Attribute.Component<'experiment.variant', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.SingleTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -2395,6 +2442,7 @@ declare module '@strapi/strapi' {
       'api::download.download': ApiDownloadDownload;
       'api::enterprise-license.enterprise-license': ApiEnterpriseLicenseEnterpriseLicense;
       'api::event-page.event-page': ApiEventPageEventPage;
+      'api::experiment.experiment': ApiExperimentExperiment;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::github-release.github-release': ApiGithubReleaseGithubRelease;

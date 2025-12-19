@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_experiment_targeting_rules",
+  "info": {
+    "displayName": "Targeting Rules",
+    "description": "Rules for targeting specific pages and devices"
+  },
+  "options": {},
+  "attributes": {
+    "urls": {
+      "type": "component",
+      "repeatable": true,
+      "component": "experiment.url-match"
+    },
+    "devices": {
+      "type": "enumeration",
+      "default": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ]
+    },
+    "goal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "experiment.goal"
+    }
+  }
+}
