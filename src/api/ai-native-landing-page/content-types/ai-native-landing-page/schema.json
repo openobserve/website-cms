@@ -23,7 +23,8 @@
         "section-hero.ai-native-page-herosection",
         "elements.testimonial-card",
         "section-cards.modern-foundation-card",
-        "section-cta.ai-native-cta-banner"
+        "section-cta.ai-native-cta-banner",
+        "section-cards.switch-reasons"
       ]
     }
   }

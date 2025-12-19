@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_section_cards_switch_reasons",
+  "collectionName": "components_section_cards_datadog_switch_reasons",
   "info": {
-    "displayName": "Feature5",
-    "description": "Why teams switch section"
+    "displayName": "Datadog Switch Reasons"
   },
   "options": {},
   "attributes": {
@@ -11,10 +10,10 @@
       "repeatable": false,
       "component": "elements.heading"
     },
-    "items": {
+    "reasons": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.items"
+      "component": "elements.reason-item"
     }
   }
 }

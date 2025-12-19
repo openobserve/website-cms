@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_section_cta_ai_native_cta_banners",
+  "collectionName": "components_section_cta_datadog_cta_s",
   "info": {
-    "displayName": "AI Native  CTA Banner",
-    "description": ""
+    "displayName": "Datadog CTA "
   },
   "options": {},
   "attributes": {
@@ -10,7 +9,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "string"
     },
     "primaryButton": {
       "type": "component",
