@@ -626,8 +626,10 @@ export interface LandingPageComponentTestimonialSection
     displayName: 'Testimonial Section';
   };
   attributes: {
-    heading: Schema.Attribute.Component<'elements.heading', false>;
-    testimonials: Schema.Attribute.Component<'elements.testimonial-card', true>;
+    image: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    quote: Schema.Attribute.Text;
+    role: Schema.Attribute.String;
   };
 }
 
