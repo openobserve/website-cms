@@ -1188,13 +1188,13 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
   attributes: {
     body: Schema.Attribute.DynamicZone<
       [
-        'landing-page-component.testimonial-section',
         'landing-page-component.modern-foundation-card',
         'landing-page-component.migration-steps',
         'landing-page-component.hero-section',
         'landing-page-component.feature-comparison',
         'landing-page-component.feature-cards',
         'landing-page-component.cta-banner',
+        'landing-page-component.testimonial-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

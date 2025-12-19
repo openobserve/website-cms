@@ -6,15 +6,17 @@
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.heading"
+    "name": {
+      "type": "string"
     },
-    "testimonials": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.testimonial-card"
+    "role": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "text"
     }
   }
 }
