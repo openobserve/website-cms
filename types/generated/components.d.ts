@@ -626,7 +626,7 @@ export interface LandingPageComponentTestimonialSection
     displayName: 'Testimonial Section';
   };
   attributes: {
-    image: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
     quote: Schema.Attribute.Text;
     role: Schema.Attribute.String;
