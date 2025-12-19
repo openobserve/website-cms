@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_section_cards_switch_reasons",
+  "collectionName": "components_landing_page_component_feature_cards",
   "info": {
-    "displayName": "Feature5",
-    "description": "Why teams switch section"
+    "displayName": "Feature Cards",
+    "description": "Cards section for landing pages"
   },
   "options": {},
   "attributes": {
@@ -14,7 +14,7 @@
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.items"
+      "component": "elements.reason-item"
     }
   }
 }

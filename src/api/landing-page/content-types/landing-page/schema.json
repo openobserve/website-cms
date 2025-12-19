@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "Landing Pages",
+    "description": "Flexible landing pages with dynamic content sections"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo",
+      "required": false
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "landing-page-component.testimonial-section",
+        "landing-page-component.modern-foundation-card",
+        "landing-page-component.migration-steps",
+        "landing-page-component.hero-section",
+        "landing-page-component.feature-comparison",
+        "landing-page-component.feature-cards",
+        "landing-page-component.cta-banner"
+      ]
+    }
+  }
+}

@@ -424,8 +424,8 @@ export interface ApiAiNativeLandingPageAiNativeLandingPage
         'section-hero.ai-native-page-herosection',
         'elements.testimonial-card',
         'section-cards.modern-foundation-card',
-        'section-cards.feature5',
         'section-cta.ai-native-cta-banner',
+        'section-cards.switch-reasons',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -740,11 +740,11 @@ export interface ApiDatadogAlternativeLandingPageDatadogAlternativeLandingPage
     body: Schema.Attribute.DynamicZone<
       [
         'section-hero.datadog-hero-section',
-        'section-cards.switch-reasons',
         'section-features.feature-comparison',
         'section-cards.testimonial-section',
         'section-features.migration-steps',
         'section-cta.datadog-cta',
+        'section-cards.datadog-switch-reasons',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1168,6 +1168,47 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
+  collectionName: 'landing_pages';
+  info: {
+    description: 'Flexible landing pages with dynamic content sections';
+    displayName: 'Landing Pages';
+    pluralName: 'landing-pages';
+    singularName: 'landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'landing-page-component.testimonial-section',
+        'landing-page-component.modern-foundation-card',
+        'landing-page-component.migration-steps',
+        'landing-page-component.hero-section',
+        'landing-page-component.feature-comparison',
+        'landing-page-component.feature-cards',
+        'landing-page-component.cta-banner',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-page.landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2402,6 +2443,7 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::homepage-popup.homepage-popup': ApiHomepagePopupHomepagePopup;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::oss-vs-enterprise-comparision.oss-vs-enterprise-comparision': ApiOssVsEnterpriseComparisionOssVsEnterpriseComparision;
       'api::partner-page.partner-page': ApiPartnerPagePartnerPage;

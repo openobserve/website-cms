@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_section_cta_datadog_cta_s",
+  "collectionName": "components_landing_page_component_cta_banners",
   "info": {
-    "displayName": "CTA Type 2",
-    "description": ""
+    "displayName": "CTA Banner",
+    "description": "Call-to-action banner for landing pages"
   },
   "options": {},
   "attributes": {
@@ -10,7 +10,7 @@
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
     },
     "primaryButton": {
       "type": "component",
