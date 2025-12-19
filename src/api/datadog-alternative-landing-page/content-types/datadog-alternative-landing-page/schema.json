@@ -21,10 +21,10 @@
       "type": "dynamiczone",
       "components": [
         "section-hero.datadog-hero-section",
-        "section-cards.switch-reasons",
         "section-features.feature-comparison",
         "section-cards.testimonial-section",
-        "section-features.migration-steps"
+        "section-features.migration-steps",
+        "section-cta.datadog-cta"
       ]
     }
   }
