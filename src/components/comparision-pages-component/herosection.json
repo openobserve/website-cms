@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_comparision_pages_component_herosections",
+  "info": {
+    "displayName": "Herosection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tagLine": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

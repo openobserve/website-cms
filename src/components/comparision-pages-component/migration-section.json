@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_comparision_pages_component_migration_section_s",
+  "info": {
+    "displayName": "Migration Section ",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.testimonial-card"
+    }
+  }
+}

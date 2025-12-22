@@ -1,5 +1,81 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ComparisionPagesComponentDemoSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_demo_sections';
+  info: {
+    displayName: 'Demo Section';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
+export interface ComparisionPagesComponentFaqsSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_faqs_sections';
+  info: {
+    displayName: 'Faqs Section';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Component<'elements.faq-item', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
+export interface ComparisionPagesComponentFeatureCards
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_feature_cards';
+  info: {
+    displayName: 'Feature Cards';
+  };
+  attributes: {
+    ctaButton: Schema.Attribute.Component<'elements.button', false>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.items', true>;
+  };
+}
+
+export interface ComparisionPagesComponentHerosection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_herosections';
+  info: {
+    description: '';
+    displayName: 'Herosection';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    stats: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    tagLine: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
+  };
+}
+
+export interface ComparisionPagesComponentMigrationSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_migration_section_s';
+  info: {
+    description: '';
+    displayName: 'Migration Section ';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    testimonial: Schema.Attribute.Component<'elements.testimonial-card', false>;
+  };
+}
+
 export interface ElementsButton extends Struct.ComponentSchema {
   collectionName: 'components_elements_buttons';
   info: {
@@ -1506,6 +1582,11 @@ export interface SeoTwitterItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'comparision-pages-component.demo-section': ComparisionPagesComponentDemoSection;
+      'comparision-pages-component.faqs-section': ComparisionPagesComponentFaqsSection;
+      'comparision-pages-component.feature-cards': ComparisionPagesComponentFeatureCards;
+      'comparision-pages-component.herosection': ComparisionPagesComponentHerosection;
+      'comparision-pages-component.migration-section': ComparisionPagesComponentMigrationSection;
       'elements.button': ElementsButton;
       'elements.button-with-icon': ElementsButtonWithIcon;
       'elements.card-inner-items': ElementsCardInnerItems;

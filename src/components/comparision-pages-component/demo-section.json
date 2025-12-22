@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_comparision_pages_component_demo_sections",
+  "info": {
+    "displayName": "Demo Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    }
+  }
+}

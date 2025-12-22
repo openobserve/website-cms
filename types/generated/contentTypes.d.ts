@@ -655,6 +655,46 @@ export interface ApiComparisionPageComparisionPage
   };
 }
 
+export interface ApiComparisonPagesV2ComparisonPagesV2
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'comparison_pages_v2s';
+  info: {
+    description: '';
+    displayName: 'Comparison Pages v2';
+    pluralName: 'comparison-pages-v2s';
+    singularName: 'comparison-pages-v2';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'comparision-pages-component.migration-section',
+        'comparision-pages-component.herosection',
+        'comparision-pages-component.feature-cards',
+        'comparision-pages-component.faqs-section',
+        'comparision-pages-component.demo-section',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comparison-pages-v2.comparison-pages-v2'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactSaleContactSale extends Struct.SingleTypeSchema {
   collectionName: 'contact_sales';
   info: {
@@ -2428,6 +2468,7 @@ declare module '@strapi/strapi' {
       'api::career-page.career-page': ApiCareerPageCareerPage;
       'api::category.category': ApiCategoryCategory;
       'api::comparision-page.comparision-page': ApiComparisionPageComparisionPage;
+      'api::comparison-pages-v2.comparison-pages-v2': ApiComparisonPagesV2ComparisonPagesV2;
       'api::contact-sale.contact-sale': ApiContactSaleContactSale;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::datadog-alternative-landing-page.datadog-alternative-landing-page': ApiDatadogAlternativeLandingPageDatadogAlternativeLandingPage;
