@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comparison_pages_v2s",
+  "info": {
+    "singularName": "comparison-pages-v2",
+    "pluralName": "comparison-pages-v2s",
+    "displayName": "Comparison Pages v2",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "comparision-pages-component.migration-section",
+        "comparision-pages-component.herosection",
+        "comparision-pages-component.feature-cards",
+        "comparision-pages-component.faqs-section",
+        "comparision-pages-component.demo-section"
+      ]
+    }
+  }
+}

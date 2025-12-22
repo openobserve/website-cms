@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_comparision_pages_component_faqs_sections",
+  "info": {
+    "displayName": "Faqs Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq-item"
+    }
+  }
+}
