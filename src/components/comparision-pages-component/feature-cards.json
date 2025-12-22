@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_comparision_pages_component_feature_cards",
+  "info": {
+    "displayName": "Feature Cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.items"
+    }
+  }
+}
