@@ -1,5 +1,81 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AbExperimentsComponentTargetingRules
+  extends Struct.ComponentSchema {
+  collectionName: 'components_ab_experiments_targeting_rules';
+  info: {
+    description: 'Targeting rules for AB experiments';
+    displayName: 'Targeting Rules';
+  };
+  attributes: {
+    devices: Schema.Attribute.Enumeration<['desktop', 'mobile', 'tablet']>;
+    url: Schema.Attribute.Component<'ab-experiments-component.url-rule', true>;
+  };
+}
+
+export interface AbExperimentsComponentUrlRule extends Struct.ComponentSchema {
+  collectionName: 'components_ab_experiments_url_rules';
+  info: {
+    description: 'URL targeting rule for AB experiments';
+    displayName: 'URL Rule';
+  };
+  attributes: {
+    matchType: Schema.Attribute.Enumeration<
+      ['exact', 'contains', 'startsWith', 'regex', 'endsWith']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'exact'>;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AbExperimentsComponentVariant extends Struct.ComponentSchema {
+  collectionName: 'components_ab_experiments_variants';
+  info: {
+    description: 'Experiment variant configuration';
+    displayName: 'Variant';
+  };
+  attributes: {
+    changes: Schema.Attribute.Component<
+      'ab-experiments-component.variant-change',
+      true
+    >;
+    key: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    weight: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<50>;
+  };
+}
+
+export interface AbExperimentsComponentVariantChange
+  extends Struct.ComponentSchema {
+  collectionName: 'components_ab_experiments_variant_changes';
+  info: {
+    description: 'DOM change configuration for experiment variants';
+    displayName: 'Variant Change';
+  };
+  attributes: {
+    className: Schema.Attribute.String;
+    html: Schema.Attribute.Text;
+    selector: Schema.Attribute.String & Schema.Attribute.Required;
+    style: Schema.Attribute.Text;
+    type: Schema.Attribute.Enumeration<
+      ['text', 'style', 'image', 'html', 'class']
+    > &
+      Schema.Attribute.Required;
+    url: Schema.Attribute.String;
+    value: Schema.Attribute.Text;
+  };
+}
+
 export interface ComparisionPagesComponentDemoSection
   extends Struct.ComponentSchema {
   collectionName: 'components_comparision_pages_component_demo_sections';
@@ -1582,6 +1658,10 @@ export interface SeoTwitterItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'ab-experiments-component.targeting-rules': AbExperimentsComponentTargetingRules;
+      'ab-experiments-component.url-rule': AbExperimentsComponentUrlRule;
+      'ab-experiments-component.variant': AbExperimentsComponentVariant;
+      'ab-experiments-component.variant-change': AbExperimentsComponentVariantChange;
       'comparision-pages-component.demo-section': ComparisionPagesComponentDemoSection;
       'comparision-pages-component.faqs-section': ComparisionPagesComponentFaqsSection;
       'comparision-pages-component.feature-cards': ComparisionPagesComponentFeatureCards;

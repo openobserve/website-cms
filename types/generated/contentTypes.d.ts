@@ -369,6 +369,61 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAbExperimentAbExperiment
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'ab_experiments';
+  info: {
+    description: 'AB Testing Experiments Configuration';
+    displayName: 'AB Experiment';
+    pluralName: 'ab-experiments';
+    singularName: 'ab-experiment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    endDate: Schema.Attribute.Date;
+    experimentId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ab-experiment.ab-experiment'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    startDate: Schema.Attribute.Date;
+    status: Schema.Attribute.Enumeration<['active', 'paused']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'paused'>;
+    targetingRules: Schema.Attribute.Component<
+      'ab-experiments-component.targeting-rules',
+      false
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    variants: Schema.Attribute.Component<
+      'ab-experiments-component.variant',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 2;
+        },
+        number
+      >;
+  };
+}
+
 export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
   collectionName: 'about_uses';
   info: {
@@ -396,45 +451,6 @@ export interface ApiAboutUsAboutUs extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::about-us.about-us'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiAiNativeLandingPageAiNativeLandingPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'ai_native_landing_pages';
-  info: {
-    description: '';
-    displayName: 'AI Native Landing Page';
-    pluralName: 'ai-native-landing-pages';
-    singularName: 'ai-native-landing-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-hero.ai-native-page-herosection',
-        'elements.testimonial-card',
-        'section-cards.modern-foundation-card',
-        'section-cta.ai-native-cta-banner',
-        'section-cards.switch-reasons',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::ai-native-landing-page.ai-native-landing-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -754,46 +770,6 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contact-us.contact-us'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiDatadogAlternativeLandingPageDatadogAlternativeLandingPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'datadog_alternative_landing_pages';
-  info: {
-    description: 'Landing page for Datadog alternative';
-    displayName: 'Datadog Alternative Landing Page';
-    pluralName: 'datadog-alternative-landing-pages';
-    singularName: 'datadog-alternative-landing-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.DynamicZone<
-      [
-        'section-hero.datadog-hero-section',
-        'section-features.feature-comparison',
-        'section-cards.testimonial-section',
-        'section-features.migration-steps',
-        'section-cta.datadog-cta',
-        'section-cards.datadog-switch-reasons',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::datadog-alternative-landing-page.datadog-alternative-landing-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -2461,8 +2437,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::ab-experiment.ab-experiment': ApiAbExperimentAbExperiment;
       'api::about-us.about-us': ApiAboutUsAboutUs;
-      'api::ai-native-landing-page.ai-native-landing-page': ApiAiNativeLandingPageAiNativeLandingPage;
       'api::author.author': ApiAuthorAuthor;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::career-page.career-page': ApiCareerPageCareerPage;
@@ -2471,7 +2447,6 @@ declare module '@strapi/strapi' {
       'api::comparison-pages-v2.comparison-pages-v2': ApiComparisonPagesV2ComparisonPagesV2;
       'api::contact-sale.contact-sale': ApiContactSaleContactSale;
       'api::contact-us.contact-us': ApiContactUsContactUs;
-      'api::datadog-alternative-landing-page.datadog-alternative-landing-page': ApiDatadogAlternativeLandingPageDatadogAlternativeLandingPage;
       'api::demo-page.demo-page': ApiDemoPageDemoPage;
       'api::download-page-v2.download-page-v2': ApiDownloadPageV2DownloadPageV2;
       'api::download.download': ApiDownloadDownload;

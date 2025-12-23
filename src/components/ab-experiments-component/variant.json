@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_ab_experiments_variants",
+  "info": {
+    "displayName": "Variant",
+    "description": "Experiment variant configuration"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "key": {
+      "type": "string",
+      "required": true
+    },
+    "weight": {
+      "type": "decimal",
+      "required": true,
+      "default": 50.0,
+      "min": 0,
+      "max": 100
+    },
+    "changes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ab-experiments-component.variant-change"
+    }
+  }
+}

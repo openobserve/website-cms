@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_ab_experiments_variant_changes",
+  "info": {
+    "displayName": "Variant Change",
+    "description": "DOM change configuration for experiment variants"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "style",
+        "image",
+        "html",
+        "class"
+      ],
+      "required": true
+    },
+    "selector": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "text"
+    },
+    "style": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "html": {
+      "type": "text"
+    },
+    "className": {
+      "type": "string"
+    }
+  }
+}
