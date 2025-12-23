@@ -15,8 +15,7 @@
         "regex",
         "endsWith"
       ],
-      "required": true,
-      "default": "exact"
+      "required": true
     },
     "value": {
       "type": "string",

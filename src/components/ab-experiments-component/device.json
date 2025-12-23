@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ab_experiments_component_devices",
+  "info": {
+    "displayName": "device"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -390,6 +390,9 @@ export interface ApiAbExperimentAbExperiment
     experimentId: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    experimentStatus: Schema.Attribute.Enumeration<['active', 'paused']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'active'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -399,9 +402,6 @@ export interface ApiAbExperimentAbExperiment
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     startDate: Schema.Attribute.Date;
-    status: Schema.Attribute.Enumeration<['active', 'paused']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'paused'>;
     targetingRules: Schema.Attribute.Component<
       'ab-experiments-component.targeting-rules',
       false
@@ -414,13 +414,7 @@ export interface ApiAbExperimentAbExperiment
       'ab-experiments-component.variant',
       true
     > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 2;
-        },
-        number
-      >;
+      Schema.Attribute.Required;
   };
 }
 

@@ -21,14 +21,14 @@
       "type": "string",
       "required": true
     },
-    "status": {
+    "experimentStatus": {
       "type": "enumeration",
       "enum": [
         "active",
         "paused"
       ],
-      "required": true,
-      "default": "paused"
+      "default": "active",
+      "required": true
     },
     "description": {
       "type": "text"
@@ -49,8 +49,7 @@
       "type": "component",
       "repeatable": true,
       "component": "ab-experiments-component.variant",
-      "required": true,
-      "min": 2
+      "required": true
     }
   }
 }
