@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ab_experiments",
+  "info": {
+    "singularName": "ab-experiment",
+    "pluralName": "ab-experiments",
+    "displayName": "AB Experiment",
+    "description": "AB Testing Experiments Configuration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "experimentId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "paused"
+      ],
+      "required": true,
+      "default": "paused"
+    },
+    "description": {
+      "type": "text"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "targetingRules": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ab-experiments-component.targeting-rules",
+      "required": true
+    },
+    "variants": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ab-experiments-component.variant",
+      "required": true,
+      "min": 2
+    }
+  }
+}

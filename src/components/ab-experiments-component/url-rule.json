@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_ab_experiments_url_rules",
+  "info": {
+    "displayName": "URL Rule",
+    "description": "URL targeting rule for AB experiments"
+  },
+  "options": {},
+  "attributes": {
+    "matchType": {
+      "type": "enumeration",
+      "enum": [
+        "exact",
+        "contains",
+        "startsWith",
+        "regex",
+        "endsWith"
+      ],
+      "required": true,
+      "default": "exact"
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
