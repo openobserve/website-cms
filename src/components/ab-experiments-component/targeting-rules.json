@@ -12,9 +12,7 @@
       "component": "ab-experiments-component.url-rule"
     },
     "devices": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ab-experiments-component.device"
+      "type": "string"
     }
   }
 }
