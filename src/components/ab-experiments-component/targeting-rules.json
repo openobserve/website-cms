@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_ab_experiments_targeting_rules",
+  "info": {
+    "displayName": "Targeting Rules",
+    "description": "Targeting rules for AB experiments"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ab-experiments-component.url-rule"
+    },
+    "devices": {
+      "type": "enumeration",
+      "enum": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "multiple": true
+    }
+  }
+}
