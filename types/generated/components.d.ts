@@ -1,5 +1,15 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AbExperimentsComponentDevice extends Struct.ComponentSchema {
+  collectionName: 'components_ab_experiments_component_devices';
+  info: {
+    displayName: 'device';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface AbExperimentsComponentTargetingRules
   extends Struct.ComponentSchema {
   collectionName: 'components_ab_experiments_targeting_rules';
@@ -8,7 +18,10 @@ export interface AbExperimentsComponentTargetingRules
     displayName: 'Targeting Rules';
   };
   attributes: {
-    devices: Schema.Attribute.Enumeration<['desktop', 'mobile', 'tablet']>;
+    devices: Schema.Attribute.Component<
+      'ab-experiments-component.device',
+      true
+    >;
     url: Schema.Attribute.Component<'ab-experiments-component.url-rule', true>;
   };
 }
@@ -23,8 +36,7 @@ export interface AbExperimentsComponentUrlRule extends Struct.ComponentSchema {
     matchType: Schema.Attribute.Enumeration<
       ['exact', 'contains', 'startsWith', 'regex', 'endsWith']
     > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'exact'>;
+      Schema.Attribute.Required;
     value: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -50,8 +62,7 @@ export interface AbExperimentsComponentVariant extends Struct.ComponentSchema {
           min: 0;
         },
         number
-      > &
-      Schema.Attribute.DefaultTo<50>;
+      >;
   };
 }
 
@@ -1658,6 +1669,7 @@ export interface SeoTwitterItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'ab-experiments-component.device': AbExperimentsComponentDevice;
       'ab-experiments-component.targeting-rules': AbExperimentsComponentTargetingRules;
       'ab-experiments-component.url-rule': AbExperimentsComponentUrlRule;
       'ab-experiments-component.variant': AbExperimentsComponentVariant;

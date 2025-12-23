@@ -17,7 +17,6 @@
     "weight": {
       "type": "decimal",
       "required": true,
-      "default": 50.0,
       "min": 0,
       "max": 100
     },
