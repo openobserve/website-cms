@@ -27,14 +27,21 @@
     "style": {
       "type": "text"
     },
-    "url": {
-      "type": "string"
-    },
     "html": {
       "type": "text"
     },
     "className": {
       "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
