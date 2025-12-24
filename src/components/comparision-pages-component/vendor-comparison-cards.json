@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_comparision_pages_component_vendor_comparison_cards",
+  "info": {
+    "displayName": "Vendor Comparison Cards"
+  },
+  "options": {},
+  "attributes": {
+    "tagLine": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.comparison-item"
+    }
+  }
+}

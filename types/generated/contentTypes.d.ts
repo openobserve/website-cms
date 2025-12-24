@@ -665,6 +665,44 @@ export interface ApiComparisionPageComparisionPage
   };
 }
 
+export interface ApiComparisonLandingPageComparisonLandingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'comparison_landing_pages';
+  info: {
+    description: '';
+    displayName: 'Comparison Landing Page';
+    pluralName: 'comparison-landing-pages';
+    singularName: 'comparison-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'comparision-pages-component.landing-herosection',
+        'comparision-pages-component.landing-page-cta-banner',
+        'comparision-pages-component.vendor-comparison-cards',
+        'comparision-pages-component.why-choose-o2',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::comparison-landing-page.comparison-landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiComparisonPagesV2ComparisonPagesV2
   extends Struct.CollectionTypeSchema {
   collectionName: 'comparison_pages_v2s';
@@ -2438,6 +2476,7 @@ declare module '@strapi/strapi' {
       'api::career-page.career-page': ApiCareerPageCareerPage;
       'api::category.category': ApiCategoryCategory;
       'api::comparision-page.comparision-page': ApiComparisionPageComparisionPage;
+      'api::comparison-landing-page.comparison-landing-page': ApiComparisonLandingPageComparisonLandingPage;
       'api::comparison-pages-v2.comparison-pages-v2': ApiComparisonPagesV2ComparisonPagesV2;
       'api::contact-sale.contact-sale': ApiContactSaleContactSale;
       'api::contact-us.contact-us': ApiContactUsContactUs;

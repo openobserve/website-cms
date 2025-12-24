@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "comparison_landing_pages",
+  "info": {
+    "singularName": "comparison-landing-page",
+    "pluralName": "comparison-landing-pages",
+    "displayName": "Comparison Landing Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "comparision-pages-component.landing-herosection",
+        "comparision-pages-component.landing-page-cta-banner",
+        "comparision-pages-component.vendor-comparison-cards",
+        "comparision-pages-component.why-choose-o2"
+      ]
+    }
+  }
+}

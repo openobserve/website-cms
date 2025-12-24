@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_comparision_pages_component_landing_page_cta_banners",
+  "info": {
+    "displayName": "Landing Page CTA Banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}

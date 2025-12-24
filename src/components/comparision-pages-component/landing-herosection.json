@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_comparision_pages_component_landing_herosections",
+  "info": {
+    "displayName": "Landing Herosection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}
