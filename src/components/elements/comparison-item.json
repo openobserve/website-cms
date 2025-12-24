@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_comparison_items",
+  "info": {
+    "displayName": "comparisonItem"
+  },
+  "options": {},
+  "attributes": {
+    "shortLabel": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "badges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
