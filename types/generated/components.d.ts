@@ -457,6 +457,7 @@ export interface ElementsFeatureTitleDescription
     displayName: 'feature-title-description';
   };
   attributes: {
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
