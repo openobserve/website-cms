@@ -9,6 +9,9 @@
     "title": {
       "type": "string",
       "required": false
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
