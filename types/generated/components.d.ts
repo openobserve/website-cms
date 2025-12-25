@@ -191,11 +191,11 @@ export interface ComparisionPagesComponentVendorComparisonCards
   extends Struct.ComponentSchema {
   collectionName: 'components_comparision_pages_component_vendor_comparison_cards';
   info: {
+    description: '';
     displayName: 'Vendor Comparison Cards';
   };
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
-    items: Schema.Attribute.Component<'elements.comparison-item', true>;
     tagLine: Schema.Attribute.String;
   };
 }
@@ -439,6 +439,16 @@ export interface ElementsFeatureItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsFeatureTitle extends Struct.ComponentSchema {
+  collectionName: 'components_elements_feature_titles';
+  info: {
+    displayName: 'feature-title';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsFeatureTitleDescription
   extends Struct.ComponentSchema {
   collectionName: 'components_elements_feature_title_descriptions';
@@ -447,7 +457,6 @@ export interface ElementsFeatureTitleDescription
     displayName: 'feature-title-description';
   };
   attributes: {
-    description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -1763,6 +1772,7 @@ declare module '@strapi/strapi' {
       'elements.faq-section': ElementsFaqSection;
       'elements.feature-description': ElementsFeatureDescription;
       'elements.feature-item': ElementsFeatureItem;
+      'elements.feature-title': ElementsFeatureTitle;
       'elements.feature-title-description': ElementsFeatureTitleDescription;
       'elements.footer-item': ElementsFooterItem;
       'elements.heading': ElementsHeading;

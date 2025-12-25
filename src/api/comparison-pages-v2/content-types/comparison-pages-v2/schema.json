@@ -30,6 +30,20 @@
         "comparision-pages-component.faqs-section",
         "comparision-pages-component.demo-section"
       ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "shortLabel": {
+      "type": "string"
+    },
+    "highlights": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title"
     }
   }
 }
