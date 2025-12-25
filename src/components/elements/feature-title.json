@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_elements_feature_titles",
+  "info": {
+    "displayName": "feature-title"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

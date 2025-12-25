@@ -1,7 +1,8 @@
 {
   "collectionName": "components_comparision_pages_component_vendor_comparison_cards",
   "info": {
-    "displayName": "Vendor Comparison Cards"
+    "displayName": "Vendor Comparison Cards",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,11 +13,6 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.heading"
-    },
-    "items": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.comparison-item"
     }
   }
 }
