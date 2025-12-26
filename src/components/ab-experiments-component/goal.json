@@ -1,18 +1,27 @@
 {
   "collectionName": "components_ab_experiments_component_goal_s",
   "info": {
-    "displayName": "Goal "
+    "displayName": "Goal ",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "type": {
-      "type": "string"
-    },
     "selector": {
       "type": "string"
     },
     "value": {
       "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Element Click",
+        "Form Submit",
+        "Page View",
+        "Scroll Depth",
+        "Time On Page",
+        "Custom"
+      ]
     }
   }
 }
