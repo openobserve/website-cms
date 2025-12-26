@@ -13,6 +13,11 @@
     },
     "devices": {
       "type": "string"
+    },
+    "goal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ab-experiments-component.goal"
     }
   }
 }

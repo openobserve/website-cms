@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AbExperimentsComponentGoal extends Struct.ComponentSchema {
+  collectionName: 'components_ab_experiments_component_goal_s';
+  info: {
+    displayName: 'Goal ';
+  };
+  attributes: {
+    selector: Schema.Attribute.String;
+    type: Schema.Attribute.String;
+    value: Schema.Attribute.Integer;
+  };
+}
+
 export interface AbExperimentsComponentTargetingRules
   extends Struct.ComponentSchema {
   collectionName: 'components_ab_experiments_targeting_rules';
@@ -9,6 +21,7 @@ export interface AbExperimentsComponentTargetingRules
   };
   attributes: {
     devices: Schema.Attribute.String;
+    goal: Schema.Attribute.Component<'ab-experiments-component.goal', false>;
     url: Schema.Attribute.Component<'ab-experiments-component.url-rule', true>;
   };
 }
@@ -1746,6 +1759,7 @@ export interface SeoTwitterItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'ab-experiments-component.goal': AbExperimentsComponentGoal;
       'ab-experiments-component.targeting-rules': AbExperimentsComponentTargetingRules;
       'ab-experiments-component.url-rule': AbExperimentsComponentUrlRule;
       'ab-experiments-component.variant': AbExperimentsComponentVariant;
