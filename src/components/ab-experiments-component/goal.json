@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ab_experiments_component_goal_s",
+  "info": {
+    "displayName": "Goal "
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "selector": {
+      "type": "string"
+    },
+    "value": {
+      "type": "integer"
+    }
+  }
+}
