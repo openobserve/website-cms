@@ -3,11 +3,21 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface AbExperimentsComponentGoal extends Struct.ComponentSchema {
   collectionName: 'components_ab_experiments_component_goal_s';
   info: {
+    description: '';
     displayName: 'Goal ';
   };
   attributes: {
     selector: Schema.Attribute.String;
-    type: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      [
+        'Element Click',
+        'Form Submit',
+        'Page View',
+        'Scroll Depth',
+        'Time On Page',
+        'Custom',
+      ]
+    >;
     value: Schema.Attribute.Integer;
   };
 }
