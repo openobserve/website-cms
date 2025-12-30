@@ -64,6 +64,7 @@ export interface AbExperimentsComponentVariant extends Struct.ComponentSchema {
     >;
     key: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    variantId: Schema.Attribute.String;
     weight: Schema.Attribute.Decimal &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
@@ -207,6 +208,18 @@ export interface ComparisionPagesComponentMigrationSection
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     testimonial: Schema.Attribute.Component<'elements.testimonial-card', false>;
+  };
+}
+
+export interface ComparisionPagesComponentSwitchFromOtherPlatforms
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_switch_from_other_platforms';
+  info: {
+    displayName: 'Switch From Other Platforms';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.reason-item', true>;
   };
 }
 
@@ -1781,6 +1794,7 @@ declare module '@strapi/strapi' {
       'comparision-pages-component.landing-herosection': ComparisionPagesComponentLandingHerosection;
       'comparision-pages-component.landing-page-cta-banner': ComparisionPagesComponentLandingPageCtaBanner;
       'comparision-pages-component.migration-section': ComparisionPagesComponentMigrationSection;
+      'comparision-pages-component.switch-from-other-platforms': ComparisionPagesComponentSwitchFromOtherPlatforms;
       'comparision-pages-component.vendor-comparison-cards': ComparisionPagesComponentVendorComparisonCards;
       'comparision-pages-component.why-choose-o2': ComparisionPagesComponentWhyChooseO2;
       'elements.button': ElementsButton;
