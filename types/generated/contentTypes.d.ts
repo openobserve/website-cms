@@ -737,10 +737,7 @@ export interface ApiComparisonPagesV2ComparisonPagesV2
       'api::comparison-pages-v2.comparison-pages-v2'
     > &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     shortLabel: Schema.Attribute.String;
