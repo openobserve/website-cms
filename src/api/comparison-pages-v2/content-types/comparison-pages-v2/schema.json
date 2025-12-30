@@ -45,6 +45,16 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.feature-title"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
