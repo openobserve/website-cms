@@ -28,7 +28,8 @@
         "comparision-pages-component.herosection",
         "comparision-pages-component.feature-cards",
         "comparision-pages-component.faqs-section",
-        "comparision-pages-component.demo-section"
+        "comparision-pages-component.demo-section",
+        "comparision-pages-component.switch-from-other-platforms"
       ]
     },
     "title": {

@@ -24,6 +24,9 @@
       "type": "component",
       "repeatable": true,
       "component": "ab-experiments-component.variant-change"
+    },
+    "variantId": {
+      "type": "string"
     }
   }
 }
