@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_comparision_pages_component_feature_comparison_items",
+  "info": {
+    "displayName": "Feature Comparison Item"
+  },
+  "options": {},
+  "attributes": {
+    "featureLabel": {
+      "type": "string",
+      "required": true
+    },
+    "competitorValue": {
+      "type": "string"
+    },
+    "openobserveValue": {
+      "type": "string"
+    },
+    "referanceLinkText": {
+      "type": "string"
+    },
+    "referanceUrl": {
+      "type": "string"
+    }
+  }
+}

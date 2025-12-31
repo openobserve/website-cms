@@ -134,6 +134,37 @@ export interface ComparisionPagesComponentFeatureCards
   };
 }
 
+export interface ComparisionPagesComponentFeatureComparison
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_feature_comparison_s';
+  info: {
+    description: '';
+    displayName: 'Feature Comparison ';
+  };
+  attributes: {
+    comparisonRows: Schema.Attribute.Component<
+      'comparision-pages-component.feature-comparison-item',
+      true
+    >;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
+export interface ComparisionPagesComponentFeatureComparisonItem
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_feature_comparison_items';
+  info: {
+    displayName: 'Feature Comparison Item';
+  };
+  attributes: {
+    competitorValue: Schema.Attribute.String;
+    featureLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    openobserveValue: Schema.Attribute.String;
+    referanceLinkText: Schema.Attribute.String;
+    referanceUrl: Schema.Attribute.String;
+  };
+}
+
 export interface ComparisionPagesComponentHerosection
   extends Struct.ComponentSchema {
   collectionName: 'components_comparision_pages_component_herosections';
@@ -207,7 +238,10 @@ export interface ComparisionPagesComponentMigrationSection
     >;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
-    testimonial: Schema.Attribute.Component<'elements.testimonial-card', false>;
+    testimonial: Schema.Attribute.Component<
+      'comparision-pages-component.testomial',
+      false
+    >;
   };
 }
 
@@ -220,6 +254,20 @@ export interface ComparisionPagesComponentSwitchFromOtherPlatforms
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.reason-item', true>;
+  };
+}
+
+export interface ComparisionPagesComponentTestomial
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_testomials';
+  info: {
+    displayName: 'testomial';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    quote: Schema.Attribute.Text;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -1790,11 +1838,14 @@ declare module '@strapi/strapi' {
       'comparision-pages-component.demo-section': ComparisionPagesComponentDemoSection;
       'comparision-pages-component.faqs-section': ComparisionPagesComponentFaqsSection;
       'comparision-pages-component.feature-cards': ComparisionPagesComponentFeatureCards;
+      'comparision-pages-component.feature-comparison': ComparisionPagesComponentFeatureComparison;
+      'comparision-pages-component.feature-comparison-item': ComparisionPagesComponentFeatureComparisonItem;
       'comparision-pages-component.herosection': ComparisionPagesComponentHerosection;
       'comparision-pages-component.landing-herosection': ComparisionPagesComponentLandingHerosection;
       'comparision-pages-component.landing-page-cta-banner': ComparisionPagesComponentLandingPageCtaBanner;
       'comparision-pages-component.migration-section': ComparisionPagesComponentMigrationSection;
       'comparision-pages-component.switch-from-other-platforms': ComparisionPagesComponentSwitchFromOtherPlatforms;
+      'comparision-pages-component.testomial': ComparisionPagesComponentTestomial;
       'comparision-pages-component.vendor-comparison-cards': ComparisionPagesComponentVendorComparisonCards;
       'comparision-pages-component.why-choose-o2': ComparisionPagesComponentWhyChooseO2;
       'elements.button': ElementsButton;

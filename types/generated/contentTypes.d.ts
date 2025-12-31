@@ -724,6 +724,7 @@ export interface ApiComparisonPagesV2ComparisonPagesV2
         'comparision-pages-component.faqs-section',
         'comparision-pages-component.demo-section',
         'comparision-pages-component.switch-from-other-platforms',
+        'comparision-pages-component.feature-comparison',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
