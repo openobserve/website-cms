@@ -29,7 +29,8 @@
         "comparision-pages-component.feature-cards",
         "comparision-pages-component.faqs-section",
         "comparision-pages-component.demo-section",
-        "comparision-pages-component.switch-from-other-platforms"
+        "comparision-pages-component.switch-from-other-platforms",
+        "comparision-pages-component.feature-comparison"
       ]
     },
     "title": {
@@ -37,9 +38,6 @@
     },
     "description": {
       "type": "text"
-    },
-    "shortLabel": {
-      "type": "string"
     },
     "highlights": {
       "type": "component",

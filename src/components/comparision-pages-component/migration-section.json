@@ -29,7 +29,7 @@
     "testimonial": {
       "type": "component",
       "repeatable": false,
-      "component": "elements.testimonial-card"
+      "component": "comparision-pages-component.testomial"
     }
   }
 }
