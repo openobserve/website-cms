@@ -39,9 +39,6 @@
     "description": {
       "type": "text"
     },
-    "shortLabel": {
-      "type": "string"
-    },
     "highlights": {
       "type": "component",
       "repeatable": true,

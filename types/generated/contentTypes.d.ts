@@ -741,7 +741,6 @@ export interface ApiComparisonPagesV2ComparisonPagesV2
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'seo.seo', false>;
-    shortLabel: Schema.Attribute.String;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
