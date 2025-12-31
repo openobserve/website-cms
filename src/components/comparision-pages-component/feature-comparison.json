@@ -11,10 +11,15 @@
       "repeatable": false,
       "component": "elements.heading"
     },
-    "comparisonRows": {
+    "comparisonRowsBody": {
       "type": "component",
       "repeatable": true,
       "component": "comparision-pages-component.feature-comparison-item"
+    },
+    "comaparisonTableHead": {
+      "type": "component",
+      "repeatable": false,
+      "component": "comparision-pages-component.feature-comparison-head"
     }
   }
 }

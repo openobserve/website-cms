@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_comparision_pages_component_feature_comparison_heads",
+  "info": {
+    "displayName": "Feature Comparison Head"
+  },
+  "options": {},
+  "attributes": {
+    "featureHeadLabel": {
+      "type": "string"
+    },
+    "compatitorHeadLabel": {
+      "type": "string"
+    },
+    "openobserveHeadLabel": {
+      "type": "string"
+    },
+    "referanceLabel": {
+      "type": "string"
+    }
+  }
+}
