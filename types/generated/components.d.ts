@@ -142,11 +142,29 @@ export interface ComparisionPagesComponentFeatureComparison
     displayName: 'Feature Comparison ';
   };
   attributes: {
-    comparisonRows: Schema.Attribute.Component<
+    comaparisonTableHead: Schema.Attribute.Component<
+      'comparision-pages-component.feature-comparison-head',
+      false
+    >;
+    comparisonRowsBody: Schema.Attribute.Component<
       'comparision-pages-component.feature-comparison-item',
       true
     >;
     heading: Schema.Attribute.Component<'elements.heading', false>;
+  };
+}
+
+export interface ComparisionPagesComponentFeatureComparisonHead
+  extends Struct.ComponentSchema {
+  collectionName: 'components_comparision_pages_component_feature_comparison_heads';
+  info: {
+    displayName: 'Feature Comparison Head';
+  };
+  attributes: {
+    compatitorHeadLabel: Schema.Attribute.String;
+    featureHeadLabel: Schema.Attribute.String;
+    openobserveHeadLabel: Schema.Attribute.String;
+    referanceLabel: Schema.Attribute.String;
   };
 }
 
@@ -1839,6 +1857,7 @@ declare module '@strapi/strapi' {
       'comparision-pages-component.faqs-section': ComparisionPagesComponentFaqsSection;
       'comparision-pages-component.feature-cards': ComparisionPagesComponentFeatureCards;
       'comparision-pages-component.feature-comparison': ComparisionPagesComponentFeatureComparison;
+      'comparision-pages-component.feature-comparison-head': ComparisionPagesComponentFeatureComparisonHead;
       'comparision-pages-component.feature-comparison-item': ComparisionPagesComponentFeatureComparisonItem;
       'comparision-pages-component.herosection': ComparisionPagesComponentHerosection;
       'comparision-pages-component.landing-herosection': ComparisionPagesComponentLandingHerosection;
