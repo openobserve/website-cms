@@ -9,7 +9,7 @@ export interface AbExperimentsComponentGoal extends Struct.ComponentSchema {
   attributes: {
     selector: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
-      ['Element Click', 'Form Submit', 'Scroll Depth', 'Time On Page', 'Custom']
+      ['Element Click', 'Form Submit', 'Scroll Depth', 'Time On Page']
     >;
     value: Schema.Attribute.Integer;
   };
@@ -78,14 +78,11 @@ export interface AbExperimentsComponentVariantChange
     displayName: 'Variant Change';
   };
   attributes: {
-    className: Schema.Attribute.String;
     html: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     selector: Schema.Attribute.String & Schema.Attribute.Required;
     style: Schema.Attribute.Text;
-    type: Schema.Attribute.Enumeration<
-      ['text', 'style', 'image', 'html', 'class']
-    > &
+    type: Schema.Attribute.Enumeration<['text', 'style', 'image', 'html']> &
       Schema.Attribute.Required;
     value: Schema.Attribute.Text;
   };
