@@ -11,13 +11,22 @@
       "repeatable": true,
       "component": "ab-experiments-component.url-rule"
     },
-    "devices": {
-      "type": "string"
-    },
     "goal": {
       "type": "component",
       "repeatable": false,
       "component": "ab-experiments-component.goal"
+    },
+    "devices": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "Desktop:desktop",
+        "Tablet:tablet",
+        "Mobile:mobile",
+        ""
+      ],
+      "required": true,
+      "customField": "plugin::multi-select.multi-select"
     }
   }
 }
