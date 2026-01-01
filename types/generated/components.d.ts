@@ -9,14 +9,7 @@ export interface AbExperimentsComponentGoal extends Struct.ComponentSchema {
   attributes: {
     selector: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
-      [
-        'Element Click',
-        'Form Submit',
-        'Page View',
-        'Scroll Depth',
-        'Time On Page',
-        'Custom',
-      ]
+      ['Element Click', 'Form Submit', 'Scroll Depth', 'Time On Page', 'Custom']
     >;
     value: Schema.Attribute.Integer;
   };
