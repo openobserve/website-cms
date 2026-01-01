@@ -10,10 +10,6 @@
       "type": "string",
       "required": true
     },
-    "key": {
-      "type": "string",
-      "required": true
-    },
     "weight": {
       "type": "decimal",
       "required": true,

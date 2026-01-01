@@ -126,7 +126,6 @@ export interface AbExperimentsComponentVariant extends Struct.ComponentSchema {
       'ab-experiments-component.variant-change',
       true
     >;
-    key: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     variantId: Schema.Attribute.String;
     weight: Schema.Attribute.Decimal &
