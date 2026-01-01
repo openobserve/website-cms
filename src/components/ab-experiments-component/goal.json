@@ -17,7 +17,6 @@
       "enum": [
         "Element Click",
         "Form Submit",
-        "Page View",
         "Scroll Depth",
         "Time On Page",
         "Custom"
