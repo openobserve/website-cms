@@ -15,55 +15,6 @@ export interface AbExperimentsComponentGoal extends Struct.ComponentSchema {
   };
 }
 
-export interface AbExperimentsComponentHtmlChange
-  extends Struct.ComponentSchema {
-  collectionName: 'components_ab_experiments_html_changes';
-  info: {
-    description: 'HTML content change for experiment variants';
-    displayName: 'HTML Change';
-  };
-  attributes: {
-    html: Schema.Attribute.Text & Schema.Attribute.Required;
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.Enumeration<['html']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'html'>;
-  };
-}
-
-export interface AbExperimentsComponentImageChange
-  extends Struct.ComponentSchema {
-  collectionName: 'components_ab_experiments_image_changes';
-  info: {
-    description: 'Image change for experiment variants';
-    displayName: 'Image Change';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.Required;
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.Enumeration<['image']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'image'>;
-  };
-}
-
-export interface AbExperimentsComponentStyleChange
-  extends Struct.ComponentSchema {
-  collectionName: 'components_ab_experiments_style_changes';
-  info: {
-    description: 'CSS style change for experiment variants';
-    displayName: 'Style Change';
-  };
-  attributes: {
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    style: Schema.Attribute.Text & Schema.Attribute.Required;
-    type: Schema.Attribute.Enumeration<['style']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'style'>;
-  };
-}
-
 export interface AbExperimentsComponentTargetingRules
   extends Struct.ComponentSchema {
   collectionName: 'components_ab_experiments_targeting_rules';
@@ -81,22 +32,6 @@ export interface AbExperimentsComponentTargetingRules
       Schema.Attribute.DefaultTo<'[]'>;
     goal: Schema.Attribute.Component<'ab-experiments-component.goal', false>;
     url: Schema.Attribute.Component<'ab-experiments-component.url-rule', true>;
-  };
-}
-
-export interface AbExperimentsComponentTextChange
-  extends Struct.ComponentSchema {
-  collectionName: 'components_ab_experiments_text_changes';
-  info: {
-    description: 'Text content change for experiment variants';
-    displayName: 'Text Change';
-  };
-  attributes: {
-    selector: Schema.Attribute.String & Schema.Attribute.Required;
-    type: Schema.Attribute.Enumeration<['text']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'text'>;
-    value: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 
@@ -126,6 +61,7 @@ export interface AbExperimentsComponentVariant extends Struct.ComponentSchema {
       'ab-experiments-component.variant-change',
       true
     >;
+    is_control: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     variantId: Schema.Attribute.String;
     weight: Schema.Attribute.Decimal &
@@ -1909,11 +1845,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'ab-experiments-component.goal': AbExperimentsComponentGoal;
-      'ab-experiments-component.html-change': AbExperimentsComponentHtmlChange;
-      'ab-experiments-component.image-change': AbExperimentsComponentImageChange;
-      'ab-experiments-component.style-change': AbExperimentsComponentStyleChange;
       'ab-experiments-component.targeting-rules': AbExperimentsComponentTargetingRules;
-      'ab-experiments-component.text-change': AbExperimentsComponentTextChange;
       'ab-experiments-component.url-rule': AbExperimentsComponentUrlRule;
       'ab-experiments-component.variant': AbExperimentsComponentVariant;
       'ab-experiments-component.variant-change': AbExperimentsComponentVariantChange;
