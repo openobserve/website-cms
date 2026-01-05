@@ -23,6 +23,10 @@
     },
     "variantId": {
       "type": "string"
+    },
+    "is_control": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
