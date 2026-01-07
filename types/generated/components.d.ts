@@ -934,6 +934,8 @@ export interface LandingPageComponentHeroSection
       true
     >;
     description: Schema.Attribute.Text;
+    formButtonText: Schema.Attribute.String;
+    formsectionHeading: Schema.Attribute.Component<'elements.heading', false>;
     stats: Schema.Attribute.Component<
       'elements.feature-title-description',
       true
