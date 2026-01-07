@@ -882,6 +882,19 @@ export interface LandingPageComponentCtaBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingPageComponentEligibilityRequirements
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_eligibility_requirements';
+  info: {
+    description: '';
+    displayName: 'Eligibility Requirements';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.feature-title', true>;
+  };
+}
+
 export interface LandingPageComponentFeatureCards
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_feature_cards';
@@ -953,6 +966,18 @@ export interface LandingPageComponentModernFoundationCard
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.technologies', true>;
+  };
+}
+
+export interface LandingPageComponentTermsAndConditions
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_terms_and_conditions';
+  info: {
+    displayName: 'Terms and Conditions';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
   };
 }
 
@@ -1901,11 +1926,13 @@ declare module '@strapi/strapi' {
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.trust-logo': ElementsTrustLogo;
       'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
+      'landing-page-component.eligibility-requirements': LandingPageComponentEligibilityRequirements;
       'landing-page-component.feature-cards': LandingPageComponentFeatureCards;
       'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;
       'landing-page-component.hero-section': LandingPageComponentHeroSection;
       'landing-page-component.migration-steps': LandingPageComponentMigrationSteps;
       'landing-page-component.modern-foundation-card': LandingPageComponentModernFoundationCard;
+      'landing-page-component.terms-and-conditions': LandingPageComponentTermsAndConditions;
       'landing-page-component.testimonial-section': LandingPageComponentTestimonialSection;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;

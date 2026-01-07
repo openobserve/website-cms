@@ -1249,6 +1249,8 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
         'landing-page-component.feature-cards',
         'landing-page-component.cta-banner',
         'landing-page-component.testimonial-section',
+        'landing-page-component.terms-and-conditions',
+        'landing-page-component.eligibility-requirements',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

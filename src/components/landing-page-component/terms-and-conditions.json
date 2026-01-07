@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_landing_page_component_terms_and_conditions",
+  "info": {
+    "displayName": "Terms and Conditions"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
