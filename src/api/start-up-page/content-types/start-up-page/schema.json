@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "start_up_pages",
+  "info": {
+    "singularName": "start-up-page",
+    "pluralName": "start-up-pages",
+    "displayName": "Start Up Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "body": {
+      "type": "dynamiczone",
+      "components": [
+        "section-hero.resource-hero-section",
+        "section-cta.banner",
+        "landing-page-component.terms-and-conditions",
+        "landing-page-component.eligibility-requirements",
+        "landing-page-component.hero-section",
+        "landing-page-component.feature-cards",
+        "landing-page-component.testimonial-section"
+      ]
+    }
+  }
+}
