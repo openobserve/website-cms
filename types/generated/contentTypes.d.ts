@@ -1828,8 +1828,8 @@ export interface ApiStartUpPageStartUpPage extends Struct.SingleTypeSchema {
         'landing-page-component.terms-and-conditions',
         'landing-page-component.eligibility-requirements',
         'landing-page-component.hero-section',
-        'landing-page-component.feature-cards',
         'landing-page-component.testimonial-section',
+        'section-cards.feature1',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
