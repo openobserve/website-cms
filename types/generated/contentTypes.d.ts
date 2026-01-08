@@ -1809,6 +1809,46 @@ export interface ApiSolutionPageSolutionPage
   };
 }
 
+export interface ApiStartUpPageStartUpPage extends Struct.SingleTypeSchema {
+  collectionName: 'start_up_pages';
+  info: {
+    description: '';
+    displayName: 'Start Up Page';
+    pluralName: 'start-up-pages';
+    singularName: 'start-up-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'section-hero.resource-hero-section',
+        'section-cta.banner',
+        'landing-page-component.terms-and-conditions',
+        'landing-page-component.eligibility-requirements',
+        'landing-page-component.hero-section',
+        'landing-page-component.feature-cards',
+        'landing-page-component.testimonial-section',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::start-up-page.start-up-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
@@ -2515,6 +2555,7 @@ declare module '@strapi/strapi' {
       'api::security-compliance.security-compliance': ApiSecurityComplianceSecurityCompliance;
       'api::solution-landing-page.solution-landing-page': ApiSolutionLandingPageSolutionLandingPage;
       'api::solution-page.solution-page': ApiSolutionPageSolutionPage;
+      'api::start-up-page.start-up-page': ApiStartUpPageStartUpPage;
       'api::tag.tag': ApiTagTag;
       'api::terms-of-service-page.terms-of-service-page': ApiTermsOfServicePageTermsOfServicePage;
       'api::webinar-author.webinar-author': ApiWebinarAuthorWebinarAuthor;
