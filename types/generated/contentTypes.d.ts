@@ -517,6 +517,10 @@ export interface ApiBlogPageBlogPage extends Struct.CollectionTypeSchema {
     customerStories: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    faqs: Schema.Attribute.Component<
+      'section-faqs.frequently-asked-question',
+      false
+    >;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     isUpdatePublishDate: Schema.Attribute.Boolean;
     keyOutcomes: Schema.Attribute.Component<
