@@ -45,6 +45,11 @@
     },
     "about": {
       "type": "string"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.faq-item"
     }
   }
 }

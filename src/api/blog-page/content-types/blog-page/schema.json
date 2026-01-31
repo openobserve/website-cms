@@ -82,6 +82,11 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.feature-description"
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-faqs.frequently-asked-question"
     }
   }
 }

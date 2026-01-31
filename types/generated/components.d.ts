@@ -1751,6 +1751,7 @@ export interface SectionJsonStructureForGoogleBotJsonLdSchema
     audienceType: Schema.Attribute.String;
     authors: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
     description: Schema.Attribute.Text;
+    faqs: Schema.Attribute.Component<'elements.faq-item', true>;
     headline: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     proficiencyLevel: Schema.Attribute.String;
