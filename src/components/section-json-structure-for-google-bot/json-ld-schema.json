@@ -6,6 +6,24 @@
   },
   "options": {},
   "attributes": {
+    "schemaType": {
+      "type": "enumeration",
+      "enum": [
+        "WebPage",
+        "Article",
+        "BlogPosting",
+        "TechArticle",
+        "SoftwareApplication",
+        "Product",
+        "FAQPage",
+        "BreadcrumbList",
+        "Event",
+        "Organization"
+      ],
+      "required": true,
+      "default": "WebPage",
+      "description": "Primary schema.org @type for the page. Used to determine which JSON-LD properties are rendered."
+    },
     "headline": {
       "type": "string"
     },
