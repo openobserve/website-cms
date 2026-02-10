@@ -1756,6 +1756,22 @@ export interface SectionJsonStructureForGoogleBotJsonLdSchema
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     proficiencyLevel: Schema.Attribute.String;
     publishedDate: Schema.Attribute.Date;
+    schemaType: Schema.Attribute.Enumeration<
+      [
+        'WebPage',
+        'Article',
+        'BlogPosting',
+        'TechArticle',
+        'SoftwareApplication',
+        'Product',
+        'FAQPage',
+        'BreadcrumbList',
+        'Event',
+        'Organization',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'WebPage'>;
     type: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };
@@ -1846,6 +1862,10 @@ export interface SeoSeo extends Struct.ComponentSchema {
     OpenGraph: Schema.Attribute.Component<'seo.opengraph-item', false>;
     publisher: Schema.Attribute.String;
     robots: Schema.Attribute.String;
+    structuredSchema: Schema.Attribute.Component<
+      'section-json-structure-for-google-bot.json-ld-schema',
+      false
+    >;
     title: Schema.Attribute.String;
     Twitter: Schema.Attribute.Component<'seo.twitter-item', false>;
     viewport: Schema.Attribute.String;
