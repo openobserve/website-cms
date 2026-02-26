@@ -36,6 +36,9 @@
         "PUBLIC",
         "ENTERPRISE"
       ]
+    },
+    "isLatest": {
+      "type": "boolean"
     }
   }
 }
