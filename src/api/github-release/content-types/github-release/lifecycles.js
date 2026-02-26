@@ -3,7 +3,6 @@
 module.exports = {
   async beforeCreate(event) {
     const { data } = event.params;
-    console.log('beforeCreate', data);
     if (data.isLatest === true) {
       await strapi.db.query('api::github-release.github-release').updateMany({
         where: {
