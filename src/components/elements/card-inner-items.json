@@ -7,6 +7,13 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "isSubItem": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
