@@ -9,6 +9,9 @@
     "title": {
       "type": "string"
     },
+    "badge": {
+      "type": "string"
+    },
     "description": {
       "type": "text"
     },
@@ -16,6 +19,11 @@
       "type": "text"
     },
     "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
       "type": "component",
       "repeatable": false,
       "component": "elements.button"

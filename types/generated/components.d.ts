@@ -355,6 +355,8 @@ export interface ElementsCardInnerItems extends Struct.ComponentSchema {
     displayName: 'cardInnerItems';
   };
   attributes: {
+    isSubItem: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    price: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -759,6 +761,7 @@ export interface ElementsPricingItem extends Struct.ComponentSchema {
     displayName: 'PricingItem';
   };
   attributes: {
+    badge: Schema.Attribute.String;
     bottomDescription: Schema.Attribute.Text;
     calculationButton: Schema.Attribute.Component<'elements.button', false>;
     cardTheme: Schema.Attribute.Enumeration<
@@ -775,6 +778,7 @@ export interface ElementsPricingItem extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     features: Schema.Attribute.Component<'elements.card-inner-items', true>;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String;
   };
 }
