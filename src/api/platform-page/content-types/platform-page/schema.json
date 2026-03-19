@@ -36,7 +36,8 @@
       "component": "seo.seo"
     },
     "isPreviewPage": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }
