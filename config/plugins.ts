@@ -7,6 +7,7 @@ export default ({ env }) => ({
   upload: {
     config: {
       provider: "aws-s3",
+      sizeLimit: 200 * 1024 * 1024, // 200MB
       providerOptions: {
         baseUrl: "https://openobserve.ai",
         rootPath: "assets",
