@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_landing_page_component_problem_sections",
+  "info": {
+    "displayName": "Problem Section",
+    "description": "The Problem section with tag, heading and problem cards"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "problemCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.reason-item"
+    }
+  }
+}

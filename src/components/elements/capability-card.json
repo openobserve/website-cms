@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_elements_capability_cards",
+  "info": {
+    "displayName": "Capability Card",
+    "description": "AI capability card with number, badge, title, description and feature list"
+  },
+  "options": {},
+  "attributes": {
+    "cardNumber": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title"
+    }
+  }
+}

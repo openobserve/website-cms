@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_landing_page_component_social_proof_sections",
+  "info": {
+    "displayName": "Social Proof Section",
+    "description": "Trusted by section with logos, GitHub stars and backer information"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.trust-logo"
+    },
+    "githubStarsText": {
+      "type": "string"
+    },
+    "backersText": {
+      "type": "string"
+    }
+  }
+}

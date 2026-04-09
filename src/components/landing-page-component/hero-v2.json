@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_landing_page_component_hero_v2s",
+  "info": {
+    "displayName": "Hero V2",
+    "description": "Hero section with tagline, title, description, CTA buttons and stats"
+  },
+  "options": {},
+  "attributes": {
+    "tagLine": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}
