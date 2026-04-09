@@ -15,18 +15,13 @@
     "description": {
       "type": "text"
     },
-    "screenshot": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
       ]
-    },
-    "telemetryTags": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.feature-title"
     }
   }
 }

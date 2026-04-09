@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "tagLine": {
-      "type": "string"
-    },
     "title": {
       "type": "string",
       "required": true
@@ -30,6 +27,9 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.feature-title-description"
+    },
+    "subLine": {
+      "type": "string"
     }
   }
 }
