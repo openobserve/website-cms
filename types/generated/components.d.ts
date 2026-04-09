@@ -357,7 +357,6 @@ export interface ElementsCapabilityCard extends Struct.ComponentSchema {
   };
   attributes: {
     badge: Schema.Attribute.String;
-    cardNumber: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     features: Schema.Attribute.Component<'elements.feature-title', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -805,6 +804,7 @@ export interface ElementsReasonItem extends Struct.ComponentSchema {
     displayName: 'Reason Item';
   };
   attributes: {
+    badge: Schema.Attribute.String;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -925,6 +925,8 @@ export interface LandingPageComponentCtaBanner extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    subLine: Schema.Attribute.String;
+    tagLine: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -1007,7 +1009,7 @@ export interface LandingPageComponentHeroV2 extends Struct.ComponentSchema {
       'elements.feature-title-description',
       true
     >;
-    tagLine: Schema.Attribute.String;
+    subLine: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -1046,9 +1048,8 @@ export interface LandingPageComponentPlatformOverview
   };
   attributes: {
     description: Schema.Attribute.Text;
-    screenshot: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images'>;
     sectionTag: Schema.Attribute.String;
-    telemetryTags: Schema.Attribute.Component<'elements.feature-title', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -1077,7 +1078,7 @@ export interface LandingPageComponentSocialProofSection
   attributes: {
     backersText: Schema.Attribute.String;
     githubStarsText: Schema.Attribute.String;
-    logos: Schema.Attribute.Component<'elements.trust-logo', true>;
+    items: Schema.Attribute.Component<'elements.feature-title', true>;
     sectionTag: Schema.Attribute.String;
   };
 }

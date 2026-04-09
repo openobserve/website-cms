@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "cardNumber": {
-      "type": "string"
-    },
     "badge": {
       "type": "string"
     },

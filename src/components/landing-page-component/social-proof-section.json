@@ -9,16 +9,16 @@
     "sectionTag": {
       "type": "string"
     },
-    "logos": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.trust-logo"
-    },
     "githubStarsText": {
       "type": "string"
     },
     "backersText": {
       "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title"
     }
   }
 }
