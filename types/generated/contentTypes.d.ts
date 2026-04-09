@@ -1256,6 +1256,14 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
         'landing-page-component.testimonial-section',
         'landing-page-component.terms-and-conditions',
         'landing-page-component.eligibility-requirements',
+        'landing-page-component.hero-v2',
+        'landing-page-component.problem-section',
+        'landing-page-component.platform-overview',
+        'landing-page-component.ai-capabilities-section',
+        'landing-page-component.architecture-section',
+        'landing-page-component.social-proof-section',
+        'section-hero.homepage-hero',
+        'section-features.home-marketecture-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

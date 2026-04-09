@@ -349,6 +349,21 @@ export interface ElementsButtonWithIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsCapabilityCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_capability_cards';
+  info: {
+    description: 'AI capability card with number, badge, title, description and feature list';
+    displayName: 'Capability Card';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    cardNumber: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'elements.feature-title', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsCardInnerItems extends Struct.ComponentSchema {
   collectionName: 'components_elements_card_inner_items';
   info: {
@@ -872,6 +887,34 @@ export interface ElementsTrustLogo extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingPageComponentAiCapabilitiesSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_ai_capabilities_sections';
+  info: {
+    description: 'Three interconnected AI capabilities section with tag, heading and capability cards';
+    displayName: 'AI Capabilities Section';
+  };
+  attributes: {
+    capabilities: Schema.Attribute.Component<'elements.capability-card', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    sectionTag: Schema.Attribute.String;
+  };
+}
+
+export interface LandingPageComponentArchitectureSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_architecture_sections';
+  info: {
+    description: 'Built differently / built for scale section with tag, heading, description and feature cards';
+    displayName: 'Architecture Section';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<'elements.reason-item', true>;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    sectionTag: Schema.Attribute.String;
+  };
+}
+
 export interface LandingPageComponentCtaBanner extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_cta_banners';
   info: {
@@ -950,6 +993,25 @@ export interface LandingPageComponentHeroSection
   };
 }
 
+export interface LandingPageComponentHeroV2 extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_hero_v2s';
+  info: {
+    description: 'Hero section with tagline, title, description, CTA buttons and stats';
+    displayName: 'Hero V2';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    stats: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    tagLine: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LandingPageComponentMigrationSteps
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_migration_steps';
@@ -972,6 +1034,51 @@ export interface LandingPageComponentModernFoundationCard
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.technologies', true>;
+  };
+}
+
+export interface LandingPageComponentPlatformOverview
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_platform_overviews';
+  info: {
+    description: 'Platform overview section with tag, heading, description, screenshot and telemetry tags';
+    displayName: 'Platform Overview';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    screenshot: Schema.Attribute.Media<'images'>;
+    sectionTag: Schema.Attribute.String;
+    telemetryTags: Schema.Attribute.Component<'elements.feature-title', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LandingPageComponentProblemSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_problem_sections';
+  info: {
+    description: 'The Problem section with tag, heading and problem cards';
+    displayName: 'Problem Section';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    problemCards: Schema.Attribute.Component<'elements.reason-item', true>;
+    sectionTag: Schema.Attribute.String;
+  };
+}
+
+export interface LandingPageComponentSocialProofSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_social_proof_sections';
+  info: {
+    description: 'Trusted by section with logos, GitHub stars and backer information';
+    displayName: 'Social Proof Section';
+  };
+  attributes: {
+    backersText: Schema.Attribute.String;
+    githubStarsText: Schema.Attribute.String;
+    logos: Schema.Attribute.Component<'elements.trust-logo', true>;
+    sectionTag: Schema.Attribute.String;
   };
 }
 
@@ -1917,6 +2024,7 @@ declare module '@strapi/strapi' {
       'comparision-pages-component.why-choose-o2': ComparisionPagesComponentWhyChooseO2;
       'elements.button': ElementsButton;
       'elements.button-with-icon': ElementsButtonWithIcon;
+      'elements.capability-card': ElementsCapabilityCard;
       'elements.card-inner-items': ElementsCardInnerItems;
       'elements.card-item': ElementsCardItem;
       'elements.case-study-item': ElementsCaseStudyItem;
@@ -1952,13 +2060,19 @@ declare module '@strapi/strapi' {
       'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.trust-logo': ElementsTrustLogo;
+      'landing-page-component.ai-capabilities-section': LandingPageComponentAiCapabilitiesSection;
+      'landing-page-component.architecture-section': LandingPageComponentArchitectureSection;
       'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
       'landing-page-component.eligibility-requirements': LandingPageComponentEligibilityRequirements;
       'landing-page-component.feature-cards': LandingPageComponentFeatureCards;
       'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;
       'landing-page-component.hero-section': LandingPageComponentHeroSection;
+      'landing-page-component.hero-v2': LandingPageComponentHeroV2;
       'landing-page-component.migration-steps': LandingPageComponentMigrationSteps;
       'landing-page-component.modern-foundation-card': LandingPageComponentModernFoundationCard;
+      'landing-page-component.platform-overview': LandingPageComponentPlatformOverview;
+      'landing-page-component.problem-section': LandingPageComponentProblemSection;
+      'landing-page-component.social-proof-section': LandingPageComponentSocialProofSection;
       'landing-page-component.terms-and-conditions': LandingPageComponentTermsAndConditions;
       'landing-page-component.testimonial-section': LandingPageComponentTestimonialSection;
       'section-cards.additional-resources': SectionCardsAdditionalResources;

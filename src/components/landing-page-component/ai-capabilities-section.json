@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_landing_page_component_ai_capabilities_sections",
+  "info": {
+    "displayName": "AI Capabilities Section",
+    "description": "Three interconnected AI capabilities section with tag, heading and capability cards"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "capabilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.capability-card"
+    }
+  }
+}

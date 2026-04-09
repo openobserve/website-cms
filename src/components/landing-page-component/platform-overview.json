@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_landing_page_component_platform_overviews",
+  "info": {
+    "displayName": "Platform Overview",
+    "description": "Platform overview section with tag, heading, description, screenshot and telemetry tags"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "screenshot": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "telemetryTags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title"
+    }
+  }
+}
