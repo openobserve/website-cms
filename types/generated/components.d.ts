@@ -359,6 +359,7 @@ export interface ElementsCapabilityCard extends Struct.ComponentSchema {
     badge: Schema.Attribute.String;
     description: Schema.Attribute.Text;
     features: Schema.Attribute.Component<'elements.feature-title', true>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
