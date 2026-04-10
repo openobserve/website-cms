@@ -1111,6 +1111,20 @@ export interface LandingPageComponentTestimonialSection
   };
 }
 
+export interface LandingPageComponentTestimonial2
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_testimonial2s';
+  info: {
+    displayName: 'Testimonial2';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+    quote: Schema.Attribute.Text;
+    role: Schema.Attribute.String;
+  };
+}
+
 export interface SectionCardsAdditionalResources
   extends Struct.ComponentSchema {
   collectionName: 'components_section_cards_additional_resources';
@@ -2077,6 +2091,7 @@ declare module '@strapi/strapi' {
       'landing-page-component.social-proof-section': LandingPageComponentSocialProofSection;
       'landing-page-component.terms-and-conditions': LandingPageComponentTermsAndConditions;
       'landing-page-component.testimonial-section': LandingPageComponentTestimonialSection;
+      'landing-page-component.testimonial2': LandingPageComponentTestimonial2;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;
