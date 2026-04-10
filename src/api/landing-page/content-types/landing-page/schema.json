@@ -41,7 +41,8 @@
         "landing-page-component.architecture-section",
         "landing-page-component.social-proof-section",
         "section-hero.homepage-hero",
-        "section-features.home-marketecture-section"
+        "section-features.home-marketecture-section",
+        "landing-page-component.testimonial2"
       ]
     }
   }
