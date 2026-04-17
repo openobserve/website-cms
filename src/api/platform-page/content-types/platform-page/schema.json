@@ -27,7 +27,8 @@
                 "section-features.tabs-features",
                 "section-features.platform-features-top-tabs",
                 "section-faqs.platform-faqs",
-                "section-cards.resources-section"
+                "section-cards.resources-section",
+                "section-tabs.customer-stories"
             ],
             "required": true
         },

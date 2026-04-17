@@ -1,0 +1,32 @@
+{
+    "collectionName": "components_elements_customer_story_items",
+    "info": {
+        "displayName": "Customer Story Item",
+        "description": "Individual customer testimonial with company info for tabbed view"
+    },
+    "options": {},
+    "attributes": {
+        "companyName": {
+            "type": "string",
+            "required": true
+        },
+        "companyLogo": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": ["images"]
+        },
+        "quote": {
+            "type": "text",
+            "required": true
+        },
+        "authorName": {
+            "type": "string",
+            "required": true
+        },
+        "authorRole": {
+            "type": "string",
+            "required": true
+        }
+    }
+}
