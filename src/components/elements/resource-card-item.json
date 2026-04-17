@@ -8,7 +8,7 @@
     "attributes": {
         "badge": {
             "type": "enumeration",
-            "enum": ["DOC", "BLOG", "VIDEO"],
+            "enum": ["DOC", "BLOG", "VIDEO", "WEBINAR"],
             "required": true
         },
         "title": {
