@@ -1,0 +1,28 @@
+{
+    "collectionName": "components_section_cards_resources_sections",
+    "info": {
+        "displayName": "Resources Section",
+        "description": "Section displaying resource cards with navigation arrows"
+    },
+    "options": {},
+    "attributes": {
+        "heading": {
+            "type": "component",
+            "repeatable": false,
+            "component": "elements.heading"
+        },
+        "resourceCards": {
+            "type": "component",
+            "repeatable": true,
+            "component": "elements.resource-card-item"
+        },
+        "background": {
+            "type": "boolean",
+            "default": false
+        },
+        "showNavigationArrows": {
+            "type": "boolean",
+            "default": true
+        }
+    }
+}
