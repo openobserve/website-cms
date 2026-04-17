@@ -1,0 +1,34 @@
+{
+    "collectionName": "components_elements_resource_card_items",
+    "info": {
+        "displayName": "Resource Card Item",
+        "description": "Individual resource card with badge, thumbnail, title and link"
+    },
+    "options": {},
+    "attributes": {
+        "badge": {
+            "type": "enumeration",
+            "enum": ["DOC", "BLOG", "VIDEO"],
+            "required": true
+        },
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "thumbnail": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": ["images"]
+        },
+        "link": {
+            "type": "string",
+            "required": true
+        },
+        "target": {
+            "type": "enumeration",
+            "enum": ["_self", "_blank"],
+            "default": "_blank"
+        }
+    }
+}

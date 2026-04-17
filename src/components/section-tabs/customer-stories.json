@@ -1,0 +1,24 @@
+{
+    "collectionName": "components_section_tabs_customer_stories",
+    "info": {
+        "displayName": "Customer Stories Tabs",
+        "description": "Tabbed customer testimonials section with company stories"
+    },
+    "options": {},
+    "attributes": {
+        "heading": {
+            "type": "component",
+            "repeatable": false,
+            "component": "elements.heading"
+        },
+        "customerStories": {
+            "type": "component",
+            "repeatable": true,
+            "component": "elements.customer-story-item"
+        },
+        "background": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}
