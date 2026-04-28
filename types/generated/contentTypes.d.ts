@@ -1118,16 +1118,13 @@ export interface ApiGlobalAdsBannerGlobalAdsBanner
   attributes: {
     backgroundTheme: Schema.Attribute.Enumeration<
       [
-        'hero-gradient',
-        'theme-blue',
-        'theme-red',
-        'theme-purple',
-        'theme-green',
-        'theme-pricing-button',
-        'theme-pricing-card',
+        'hero-gradient-purple-blue',
+        'hero-gradient-warm',
+        'hero-gradient-cool',
+        'hero-gradient-full',
       ]
     > &
-      Schema.Attribute.DefaultTo<'hero-gradient'>;
+      Schema.Attribute.DefaultTo<'hero-gradient-purple-blue'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
