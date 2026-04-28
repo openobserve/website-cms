@@ -25,6 +25,19 @@
     },
     "date": {
       "type": "datetime"
+    },
+    "backgroundTheme": {
+      "type": "enumeration",
+      "enum": [
+        "hero-gradient",
+        "theme-blue",
+        "theme-red",
+        "theme-purple",
+        "theme-green",
+        "theme-pricing-button",
+        "theme-pricing-card"
+      ],
+      "default": "hero-gradient"
     }
   }
 }

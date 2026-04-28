@@ -1116,6 +1116,18 @@ export interface ApiGlobalAdsBannerGlobalAdsBanner
     draftAndPublish: true;
   };
   attributes: {
+    backgroundTheme: Schema.Attribute.Enumeration<
+      [
+        'hero-gradient',
+        'theme-blue',
+        'theme-red',
+        'theme-purple',
+        'theme-green',
+        'theme-pricing-button',
+        'theme-pricing-card',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'hero-gradient'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1455,6 +1467,8 @@ export interface ApiPlatformPagePlatformPage
         'section-features.tabs-features',
         'section-features.platform-features-top-tabs',
         'section-faqs.platform-faqs',
+        'section-cards.resources-section',
+        'section-tabs.customer-stories',
       ]
     > &
       Schema.Attribute.Required;
