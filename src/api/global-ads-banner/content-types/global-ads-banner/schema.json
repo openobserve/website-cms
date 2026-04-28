@@ -29,15 +29,12 @@
     "backgroundTheme": {
       "type": "enumeration",
       "enum": [
-        "hero-gradient",
-        "theme-blue",
-        "theme-red",
-        "theme-purple",
-        "theme-green",
-        "theme-pricing-button",
-        "theme-pricing-card"
+        "hero-gradient-purple-blue",
+        "hero-gradient-warm",
+        "hero-gradient-cool",
+        "hero-gradient-full"
       ],
-      "default": "hero-gradient"
+      "default": "hero-gradient-purple-blue"
     }
   }
 }
