@@ -17,7 +17,7 @@
     "features": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.reason-item"
+      "component": "elements.architecture-card"
     }
   }
 }

@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_elements_architecture_cards",
+  "info": {
+    "displayName": "Architecture Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "badge": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "cardSize": {
+      "type": "enumeration",
+      "enum": [
+        "regular",
+        "wide"
+      ],
+      "default": "regular"
+    }
+  }
+}
