@@ -311,6 +311,22 @@ export interface ComparisionPagesComponentWhyChooseO2
   };
 }
 
+export interface ElementsArchitectureCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_architecture_cards';
+  info: {
+    displayName: 'Architecture Card';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    button: Schema.Attribute.Component<'elements.button', false>;
+    cardSize: Schema.Attribute.Enumeration<['regular', 'wide']> &
+      Schema.Attribute.DefaultTo<'regular'>;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsButton extends Struct.ComponentSchema {
   collectionName: 'components_elements_buttons';
   info: {
@@ -945,7 +961,7 @@ export interface LandingPageComponentArchitectureSection
     displayName: 'Architecture Section';
   };
   attributes: {
-    features: Schema.Attribute.Component<'elements.reason-item', true>;
+    features: Schema.Attribute.Component<'elements.architecture-card', true>;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     sectionTag: Schema.Attribute.String;
   };
@@ -2108,6 +2124,7 @@ declare module '@strapi/strapi' {
       'comparision-pages-component.testomial': ComparisionPagesComponentTestomial;
       'comparision-pages-component.vendor-comparison-cards': ComparisionPagesComponentVendorComparisonCards;
       'comparision-pages-component.why-choose-o2': ComparisionPagesComponentWhyChooseO2;
+      'elements.architecture-card': ElementsArchitectureCard;
       'elements.button': ElementsButton;
       'elements.button-with-icon': ElementsButtonWithIcon;
       'elements.capability-card': ElementsCapabilityCard;
