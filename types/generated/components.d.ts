@@ -823,6 +823,7 @@ export interface ElementsReasonItem extends Struct.ComponentSchema {
   };
   attributes: {
     badge: Schema.Attribute.String;
+    button: Schema.Attribute.Component<'elements.button', false>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1046,6 +1047,8 @@ export interface LandingPageComponentHeroV2 extends Struct.ComponentSchema {
     >;
     subLine: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -1083,7 +1086,6 @@ export interface LandingPageComponentPlatformOverview
   };
   attributes: {
     description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
     sectionTag: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
