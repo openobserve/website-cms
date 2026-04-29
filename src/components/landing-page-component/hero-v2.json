@@ -30,6 +30,21 @@
     },
     "subLine": {
       "type": "string"
+    },
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image"
+    },
+    "video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -1274,6 +1274,7 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
         'section-hero.homepage-hero',
         'section-features.home-marketecture-section',
         'landing-page-component.testimonial2',
+        'section-faqs.frequently-asked-question',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

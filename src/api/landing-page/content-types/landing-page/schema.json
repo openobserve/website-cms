@@ -42,7 +42,8 @@
         "landing-page-component.social-proof-section",
         "section-hero.homepage-hero",
         "section-features.home-marketecture-section",
-        "landing-page-component.testimonial2"
+        "landing-page-component.testimonial2",
+        "section-faqs.frequently-asked-question"
       ]
     }
   }
