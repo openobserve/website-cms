@@ -966,6 +966,45 @@ export interface ApiEnterpriseLicenseEnterpriseLicense
   };
 }
 
+export interface ApiEventLandingPageEventLandingPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'event_landing_pages';
+  info: {
+    description: 'CMS-driven landing pages for individual events (dinners, meetups, conferences, etc.)';
+    displayName: 'Event Landing Pages';
+    pluralName: 'event-landing-pages';
+    singularName: 'event-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    body: Schema.Attribute.DynamicZone<
+      [
+        'landing-page-component.event-dinner-hero',
+        'landing-page-component.about-section',
+        'landing-page-component.whos-in-the-room',
+        'landing-page-component.cta-banner',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event-landing-page.event-landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
   collectionName: 'event_pages';
   info: {
@@ -2559,6 +2598,7 @@ declare module '@strapi/strapi' {
       'api::download-page-v2.download-page-v2': ApiDownloadPageV2DownloadPageV2;
       'api::download.download': ApiDownloadDownload;
       'api::enterprise-license.enterprise-license': ApiEnterpriseLicenseEnterpriseLicense;
+      'api::event-landing-page.event-landing-page': ApiEventLandingPageEventLandingPage;
       'api::event-page.event-page': ApiEventPageEventPage;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;

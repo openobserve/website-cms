@@ -939,6 +939,23 @@ export interface ElementsTrustLogo extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingPageComponentAboutSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_about_sections';
+  info: {
+    description: 'About section with heading and feature columns';
+    displayName: 'About Section';
+  };
+  attributes: {
+    columns: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    sectionTag: Schema.Attribute.String;
+  };
+}
+
 export interface LandingPageComponentAiCapabilitiesSection
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_ai_capabilities_sections';
@@ -993,6 +1010,23 @@ export interface LandingPageComponentEligibilityRequirements
   attributes: {
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<'elements.feature-title', true>;
+  };
+}
+
+export interface LandingPageComponentEventDinnerHero
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_event_dinner_heroes';
+  info: {
+    description: 'Hero section for invitation-only dinner event pages';
+    displayName: 'Event Dinner Hero';
+  };
+  attributes: {
+    date: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    format: Schema.Attribute.String;
+    location: Schema.Attribute.String;
+    sectionTag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -1174,6 +1208,21 @@ export interface LandingPageComponentTestimonial2
     name: Schema.Attribute.String;
     quote: Schema.Attribute.Text;
     role: Schema.Attribute.String;
+  };
+}
+
+export interface LandingPageComponentWhosInTheRoom
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_whos_in_the_rooms';
+  info: {
+    description: 'Split section showing audience/attendee types for exclusive events';
+    displayName: "Who's in the Room";
+  };
+  attributes: {
+    attendeeTypes: Schema.Attribute.Component<'elements.feature-title', true>;
+    description: Schema.Attribute.Text;
+    sectionTag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -2165,10 +2214,12 @@ declare module '@strapi/strapi' {
       'elements.technologies-features': ElementsTechnologiesFeatures;
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.trust-logo': ElementsTrustLogo;
+      'landing-page-component.about-section': LandingPageComponentAboutSection;
       'landing-page-component.ai-capabilities-section': LandingPageComponentAiCapabilitiesSection;
       'landing-page-component.architecture-section': LandingPageComponentArchitectureSection;
       'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
       'landing-page-component.eligibility-requirements': LandingPageComponentEligibilityRequirements;
+      'landing-page-component.event-dinner-hero': LandingPageComponentEventDinnerHero;
       'landing-page-component.feature-cards': LandingPageComponentFeatureCards;
       'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;
       'landing-page-component.hero-section': LandingPageComponentHeroSection;
@@ -2181,6 +2232,7 @@ declare module '@strapi/strapi' {
       'landing-page-component.terms-and-conditions': LandingPageComponentTermsAndConditions;
       'landing-page-component.testimonial-section': LandingPageComponentTestimonialSection;
       'landing-page-component.testimonial2': LandingPageComponentTestimonial2;
+      'landing-page-component.whos-in-the-room': LandingPageComponentWhosInTheRoom;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;

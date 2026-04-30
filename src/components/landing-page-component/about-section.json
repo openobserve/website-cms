@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_landing_page_component_about_sections",
+  "info": {
+    "displayName": "About Section",
+    "description": "About section with heading and feature columns"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "columns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    }
+  }
+}
