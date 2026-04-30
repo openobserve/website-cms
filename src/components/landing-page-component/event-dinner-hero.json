@@ -12,9 +12,6 @@
     "title": {
       "type": "string"
     },
-    "date": {
-      "type": "string"
-    },
     "location": {
       "type": "string"
     },
@@ -23,6 +20,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }
