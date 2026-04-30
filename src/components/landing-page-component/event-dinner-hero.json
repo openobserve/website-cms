@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_landing_page_component_event_dinner_heroes",
+  "info": {
+    "displayName": "Event Dinner Hero",
+    "description": "Hero section for invitation-only dinner event pages"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
