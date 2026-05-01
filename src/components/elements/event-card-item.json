@@ -21,10 +21,10 @@
       "type": "string"
     },
     "eventStartDate": {
-      "type": "date"
+      "type": "datetime"
     },
     "eventEndDate": {
-      "type": "date"
+      "type": "datetime"
     },
     "theme": {
       "type": "enumeration",
