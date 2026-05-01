@@ -1018,7 +1018,7 @@ export interface LandingPageComponentEventDinnerHero
     displayName: 'Event Dinner Hero';
   };
   attributes: {
-    date: Schema.Attribute.Date;
+    date: Schema.Attribute.DateTime;
     description: Schema.Attribute.Text;
     format: Schema.Attribute.String;
     location: Schema.Attribute.String;
