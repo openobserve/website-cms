@@ -518,7 +518,7 @@ export interface ElementsEventCardItem extends Struct.ComponentSchema {
     eventStartDate: Schema.Attribute.DateTime;
     eventType: Schema.Attribute.String;
     theme: Schema.Attribute.Enumeration<
-      ['theme-green-minimal', 'theme-orange']
+      ['theme-green-minimal', 'theme-orange', 'theme-blue']
     >;
     title: Schema.Attribute.String;
   };

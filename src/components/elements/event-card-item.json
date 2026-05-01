@@ -30,7 +30,8 @@
       "type": "enumeration",
       "enum": [
         "theme-green-minimal",
-        "theme-orange"
+        "theme-orange",
+        "theme-blue"
       ]
     },
     "button": {
