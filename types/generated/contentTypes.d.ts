@@ -1262,6 +1262,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
         'section-cta.banner',
         'section-cards.feature4',
         'section-features.homepage-feature',
+        'section-faqs.frequently-asked-question',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
