@@ -2049,6 +2049,7 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
       'section-faqs.frequently-asked-question',
       true
     >;
+    hubspotFormId: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

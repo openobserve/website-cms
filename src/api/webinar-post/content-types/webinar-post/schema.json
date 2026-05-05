@@ -78,6 +78,9 @@
       "type": "component",
       "repeatable": true,
       "component": "section-faqs.frequently-asked-question"
+    },
+    "hubspotFormId": {
+      "type": "string"
     }
   }
 }
