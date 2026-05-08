@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_landing_page_component_hero_v3s",
+  "info": {
+    "displayName": "Hero V3",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "trustedCompanies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.compare-item"
+    },
+    "formsectionHeading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.heading"
+    },
+    "formButtonText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}

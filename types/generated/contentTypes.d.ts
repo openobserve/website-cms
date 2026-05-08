@@ -1315,6 +1315,11 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
         'section-features.home-marketecture-section',
         'landing-page-component.testimonial2',
         'section-faqs.frequently-asked-question',
+        'landing-page-component.hero-v3',
+        'landing-page-component.switch-from-other-platforms',
+        'comparision-pages-component.migration-section',
+        'section-cta.banner',
+        'section-features.feature-comparison',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -2049,6 +2054,7 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
       'section-faqs.frequently-asked-question',
       true
     >;
+    hubspotFormId: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

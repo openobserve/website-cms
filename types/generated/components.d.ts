@@ -455,6 +455,21 @@ export interface ElementsCompanyCustomerFeature extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsCompareItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_compare_items';
+  info: {
+    description: '';
+    displayName: 'compareItem';
+  };
+  attributes: {
+    datadogText: Schema.Attribute.String;
+    openobserveText: Schema.Attribute.String;
+    theme: Schema.Attribute.Enumeration<
+      ['midnight', 'aurora', 'glass', 'neon']
+    >;
+  };
+}
+
 export interface ElementsComparisonItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_comparison_items';
   info: {
@@ -1099,6 +1114,22 @@ export interface LandingPageComponentHeroV2 extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingPageComponentHeroV3 extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_hero_v3s';
+  info: {
+    description: '';
+    displayName: 'Hero V3';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'elements.compare-item', true>;
+    formButtonText: Schema.Attribute.Component<'elements.button', false>;
+    formsectionHeading: Schema.Attribute.Component<'elements.heading', false>;
+    title: Schema.Attribute.String;
+    trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
+  };
+}
+
 export interface LandingPageComponentMigrationSteps
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_migration_steps';
@@ -1164,6 +1195,21 @@ export interface LandingPageComponentSocialProofSection
     githubStarsText: Schema.Attribute.String;
     items: Schema.Attribute.Component<'elements.feature-title', true>;
     sectionTag: Schema.Attribute.String;
+  };
+}
+
+export interface LandingPageComponentSwitchFromOtherPlatforms
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_switch_from_other_platforms';
+  info: {
+    displayName: 'Switch From Other Platforms';
+  };
+  attributes: {
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    heading: Schema.Attribute.Component<'elements.heading', false>;
+    items: Schema.Attribute.Component<'elements.reason-item', true>;
   };
 }
 
@@ -2178,6 +2224,7 @@ declare module '@strapi/strapi' {
       'elements.card-item': ElementsCardItem;
       'elements.case-study-item': ElementsCaseStudyItem;
       'elements.company-customer-feature': ElementsCompanyCustomerFeature;
+      'elements.compare-item': ElementsCompareItem;
       'elements.comparison-item': ElementsComparisonItem;
       'elements.comparison-row': ElementsComparisonRow;
       'elements.customer-story-item': ElementsCustomerStoryItem;
@@ -2221,11 +2268,13 @@ declare module '@strapi/strapi' {
       'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;
       'landing-page-component.hero-section': LandingPageComponentHeroSection;
       'landing-page-component.hero-v2': LandingPageComponentHeroV2;
+      'landing-page-component.hero-v3': LandingPageComponentHeroV3;
       'landing-page-component.migration-steps': LandingPageComponentMigrationSteps;
       'landing-page-component.modern-foundation-card': LandingPageComponentModernFoundationCard;
       'landing-page-component.platform-overview': LandingPageComponentPlatformOverview;
       'landing-page-component.problem-section': LandingPageComponentProblemSection;
       'landing-page-component.social-proof-section': LandingPageComponentSocialProofSection;
+      'landing-page-component.switch-from-other-platforms': LandingPageComponentSwitchFromOtherPlatforms;
       'landing-page-component.terms-and-conditions': LandingPageComponentTermsAndConditions;
       'landing-page-component.testimonial-section': LandingPageComponentTestimonialSection;
       'landing-page-component.testimonial2': LandingPageComponentTestimonial2;
