@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_compare_items",
+  "info": {
+    "displayName": "compareItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "datadogText": {
+      "type": "string"
+    },
+    "openobserveText": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "midnight",
+        "aurora",
+        "glass",
+        "neon"
+      ]
+    }
+  }
+}
