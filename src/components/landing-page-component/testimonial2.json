@@ -1,7 +1,8 @@
 {
   "collectionName": "components_landing_page_component_testimonial2s",
   "info": {
-    "displayName": "Testimonial2"
+    "displayName": "Testimonial2",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,6 +16,25 @@
       "type": "text"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title-description"
+    },
+    "companyLogo": {
       "allowedTypes": [
         "images",
         "files",
@@ -23,6 +43,9 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "description": {
+      "type": "string"
     }
   }
 }

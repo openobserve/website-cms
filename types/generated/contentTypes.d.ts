@@ -1319,7 +1319,7 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
         'landing-page-component.switch-from-other-platforms',
         'comparision-pages-component.migration-section',
         'section-cta.banner',
-        'section-features.feature-comparison',
+        'comparision-pages-component.feature-comparison',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
