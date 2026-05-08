@@ -1244,10 +1244,20 @@ export interface LandingPageComponentTestimonial2
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_testimonial2s';
   info: {
+    description: '';
     displayName: 'Testimonial2';
   };
   attributes: {
+    companyLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    companyName: Schema.Attribute.String;
+    description: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    items: Schema.Attribute.Component<
+      'elements.feature-title-description',
+      true
+    >;
     name: Schema.Attribute.String;
     quote: Schema.Attribute.Text;
     role: Schema.Attribute.String;
