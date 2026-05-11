@@ -30,6 +30,16 @@
       "type": "component",
       "repeatable": false,
       "component": "comparision-pages-component.testomial"
+    },
+    "videoURL": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "LEFT",
+        "RIGHT"
+      ]
     }
   }
 }

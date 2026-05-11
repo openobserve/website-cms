@@ -245,6 +245,7 @@ export interface ComparisionPagesComponentMigrationSection
     displayName: 'Migration Section ';
   };
   attributes: {
+    direction: Schema.Attribute.Enumeration<['LEFT', 'RIGHT']>;
     heading: Schema.Attribute.Component<'elements.heading', false>;
     items: Schema.Attribute.Component<
       'elements.feature-title-description',
@@ -256,6 +257,7 @@ export interface ComparisionPagesComponentMigrationSection
       'comparision-pages-component.testomial',
       false
     >;
+    videoURL: Schema.Attribute.String;
   };
 }
 
@@ -1202,9 +1204,11 @@ export interface LandingPageComponentSwitchFromOtherPlatforms
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_switch_from_other_platforms';
   info: {
+    description: '';
     displayName: 'Switch From Other Platforms';
   };
   attributes: {
+    button: Schema.Attribute.Component<'elements.button', false>;
     featureImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -1259,8 +1263,10 @@ export interface LandingPageComponentTestimonial2
       true
     >;
     name: Schema.Attribute.String;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
     quote: Schema.Attribute.Text;
     role: Schema.Attribute.String;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
   };
 }
 
