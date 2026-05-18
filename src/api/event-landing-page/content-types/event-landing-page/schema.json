@@ -27,7 +27,8 @@
         "landing-page-component.event-dinner-hero",
         "landing-page-component.about-section",
         "landing-page-component.whos-in-the-room",
-        "landing-page-component.cta-banner"
+        "landing-page-component.cta-banner",
+        "landing-page-component.event-map-section"
       ]
     }
   }

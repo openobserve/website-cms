@@ -985,6 +985,7 @@ export interface ApiEventLandingPageEventLandingPage
         'landing-page-component.about-section',
         'landing-page-component.whos-in-the-room',
         'landing-page-component.cta-banner',
+        'landing-page-component.event-map-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

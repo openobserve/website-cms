@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_landing_page_component_event_map_sections",
+  "info": {
+    "displayName": "Event Map Section",
+    "description": "Google Maps embed section for displaying event venue location"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}
