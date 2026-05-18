@@ -23,6 +23,9 @@
     },
     "date": {
       "type": "datetime"
+    },
+    "hubspotFormId": {
+      "type": "string"
     }
   }
 }

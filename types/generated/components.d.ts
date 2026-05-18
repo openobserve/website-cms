@@ -1038,6 +1038,7 @@ export interface LandingPageComponentEventDinnerHero
     date: Schema.Attribute.DateTime;
     description: Schema.Attribute.Text;
     format: Schema.Attribute.String;
+    hubspotFormId: Schema.Attribute.String;
     location: Schema.Attribute.String;
     sectionTag: Schema.Attribute.String;
     title: Schema.Attribute.String;
