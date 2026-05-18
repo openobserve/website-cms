@@ -1045,6 +1045,21 @@ export interface LandingPageComponentEventDinnerHero
   };
 }
 
+export interface LandingPageComponentEventMapSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_event_map_sections';
+  info: {
+    description: 'Google Maps embed section for displaying event venue location';
+    displayName: 'Event Map Section';
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    location: Schema.Attribute.String;
+    sectionTag: Schema.Attribute.String;
+  };
+}
+
 export interface LandingPageComponentFeatureCards
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_feature_cards';
@@ -2281,6 +2296,7 @@ declare module '@strapi/strapi' {
       'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
       'landing-page-component.eligibility-requirements': LandingPageComponentEligibilityRequirements;
       'landing-page-component.event-dinner-hero': LandingPageComponentEventDinnerHero;
+      'landing-page-component.event-map-section': LandingPageComponentEventMapSection;
       'landing-page-component.feature-cards': LandingPageComponentFeatureCards;
       'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;
       'landing-page-component.hero-section': LandingPageComponentHeroSection;
