@@ -18,7 +18,12 @@
         "FAQPage",
         "BreadcrumbList",
         "Event",
-        "Organization"
+        "Organization",
+        "AboutPage",
+        "ContactPage",
+        "VideoObject",
+        "CollectionPage",
+        "JobPosting"
       ],
       "required": true,
       "default": "WebPage",
@@ -50,6 +55,10 @@
     "publishedDate": {
       "type": "date"
     },
+    "dateModified": {
+      "type": "date",
+      "description": "Date the content was last modified. Used in dateModified schema property."
+    },
     "authors": {
       "type": "relation",
       "relation": "oneToMany",
@@ -63,6 +72,45 @@
     },
     "about": {
       "type": "string"
+    },
+    "keywords": {
+      "type": "string",
+      "description": "Comma-separated list of keywords for the page. Used in schema keywords property."
+    },
+    "articleSection": {
+      "type": "enumeration",
+      "enum": [
+        "Engineering",
+        "Product",
+        "Case Study",
+        "News",
+        "Customer Story",
+        "Tutorial",
+        "Announcement"
+      ],
+      "description": "Article/content section category. Maps to schema.org articleSection."
+    },
+    "wordCount": {
+      "type": "integer",
+      "description": "Approximate word count of the article. Maps to schema.org wordCount."
+    },
+    "readingTimeMinutes": {
+      "type": "integer",
+      "description": "Estimated reading time in minutes. Rendered as ISO 8601 duration (e.g. PT8M) in timeRequired."
+    },
+    "inLanguage": {
+      "type": "string",
+      "default": "en",
+      "description": "BCP 47 language code for the content (e.g. en, fr). Defaults to en."
+    },
+    "noIndex": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, sets robots meta to noindex. Also suppresses schema injection for the page."
+    },
+    "featureList": {
+      "type": "json",
+      "description": "Array of feature strings for SoftwareApplication schema. Each entry becomes a featureList item."
     },
     "faqs": {
       "type": "component",

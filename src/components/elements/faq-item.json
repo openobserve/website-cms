@@ -12,6 +12,15 @@
     "answer": {
       "type": "richtext",
       "required": true
+    },
+    "sortOrder": {
+      "type": "integer",
+      "description": "Controls display order. Lower numbers appear first."
+    },
+    "isVisibleInSchema": {
+      "type": "boolean",
+      "default": true,
+      "description": "When false, this FAQ item is excluded from the FAQPage JSON-LD schema injection."
     }
   }
 }
