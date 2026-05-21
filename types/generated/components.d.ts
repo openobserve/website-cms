@@ -548,7 +548,10 @@ export interface ElementsFaqItem extends Struct.ComponentSchema {
   };
   attributes: {
     answer: Schema.Attribute.RichText & Schema.Attribute.Required;
+    isVisibleInSchema: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
     question: Schema.Attribute.String & Schema.Attribute.Required;
+    sortOrder: Schema.Attribute.Integer;
   };
 }
 
@@ -2069,14 +2072,31 @@ export interface SectionJsonStructureForGoogleBotJsonLdSchema
   };
   attributes: {
     about: Schema.Attribute.String;
+    articleSection: Schema.Attribute.Enumeration<
+      [
+        'Engineering',
+        'Product',
+        'Case Study',
+        'News',
+        'Customer Story',
+        'Tutorial',
+        'Announcement',
+      ]
+    >;
     audienceType: Schema.Attribute.String;
     authors: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
+    dateModified: Schema.Attribute.Date;
     description: Schema.Attribute.Text;
     faqs: Schema.Attribute.Component<'elements.faq-item', true>;
+    featureList: Schema.Attribute.JSON;
     headline: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    inLanguage: Schema.Attribute.String & Schema.Attribute.DefaultTo<'en'>;
+    keywords: Schema.Attribute.String;
+    noIndex: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     proficiencyLevel: Schema.Attribute.String;
     publishedDate: Schema.Attribute.Date;
+    readingTimeMinutes: Schema.Attribute.Integer;
     schemaType: Schema.Attribute.Enumeration<
       [
         'WebPage',
@@ -2089,12 +2109,18 @@ export interface SectionJsonStructureForGoogleBotJsonLdSchema
         'BreadcrumbList',
         'Event',
         'Organization',
+        'AboutPage',
+        'ContactPage',
+        'VideoObject',
+        'CollectionPage',
+        'JobPosting',
       ]
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'WebPage'>;
     type: Schema.Attribute.String;
     url: Schema.Attribute.String;
+    wordCount: Schema.Attribute.Integer;
   };
 }
 
