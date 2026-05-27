@@ -1862,6 +1862,7 @@ export interface ApiSolutionPageSolutionPage
         'section-cards.feature1',
         'section-features.feature-sub-page-top-tabs',
         'section-hero.solution-subpage-herosection',
+        'section-cards.resources-section',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

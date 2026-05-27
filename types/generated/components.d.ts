@@ -601,6 +601,7 @@ export interface ElementsFeatureItem extends Struct.ComponentSchema {
       'elements.feature-title-description',
       true
     >;
+    learnMore: Schema.Attribute.Component<'elements.button', false>;
     tabImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
