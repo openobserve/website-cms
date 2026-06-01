@@ -2050,6 +2050,7 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    CTABanner: Schema.Attribute.Component<'section-cta.banner', false>;
     date: Schema.Attribute.DateTime;
     duration: Schema.Attribute.String;
     faqs: Schema.Attribute.Component<
@@ -2073,6 +2074,8 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
     resources: Schema.Attribute.Component<'elements.items-link', true>;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String;
+    timeZone: Schema.Attribute.Enumeration<['ET', 'IST']> &
+      Schema.Attribute.DefaultTo<'ET'>;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['webinar', 'videos']>;
     updatedAt: Schema.Attribute.DateTime;

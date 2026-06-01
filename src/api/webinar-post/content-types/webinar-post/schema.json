@@ -81,6 +81,19 @@
     },
     "hubspotFormId": {
       "type": "string"
+    },
+    "timeZone": {
+      "type": "enumeration",
+      "enum": [
+        "ET",
+        "IST"
+      ],
+      "default": "ET"
+    },
+    "CTABanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section-cta.banner"
     }
   }
 }
