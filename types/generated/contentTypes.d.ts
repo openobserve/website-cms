@@ -1135,6 +1135,7 @@ export interface ApiGithubReleaseGithubRelease
     release_name: Schema.Attribute.String;
     release_url: Schema.Attribute.String;
     repository: Schema.Attribute.String;
+    sha: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['PUBLIC', 'ENTERPRISE']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
