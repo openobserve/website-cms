@@ -40,7 +40,13 @@
     "isLatest": {
       "type": "boolean"
     },
-    "sha": {
+    "shaKeyForWindows": {
+      "type": "string"
+    },
+    "shaKeyForLinux": {
+      "type": "string"
+    },
+    "shaKeyForMac": {
       "type": "string"
     }
   }
