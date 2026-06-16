@@ -39,6 +39,9 @@
     },
     "isLatest": {
       "type": "boolean"
+    },
+    "sha": {
+      "type": "string"
     }
   }
 }
