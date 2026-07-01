@@ -35,6 +35,13 @@
         "hero-gradient-full"
       ],
       "default": "hero-gradient-purple-blue"
+    },
+    "timeZone": {
+      "type": "enumeration",
+      "enum": [
+        "ET",
+        "IST"
+      ]
     }
   }
 }
