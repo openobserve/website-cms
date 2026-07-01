@@ -1181,6 +1181,7 @@ export interface ApiGlobalAdsBannerGlobalAdsBanner
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     publishedAt: Schema.Attribute.DateTime;
     tag: Schema.Attribute.String;
+    timeZone: Schema.Attribute.Enumeration<['ET', 'IST']>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
