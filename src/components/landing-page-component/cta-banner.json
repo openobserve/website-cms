@@ -12,20 +12,13 @@
     "description": {
       "type": "text"
     },
-    "primaryButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.button"
-    },
-    "secondaryButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.button"
-    },
     "tagLine": {
       "type": "string"
     },
     "subLine": {
+      "type": "string"
+    },
+    "hubspotFormId": {
       "type": "string"
     }
   }

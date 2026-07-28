@@ -24,8 +24,22 @@
     "date": {
       "type": "datetime"
     },
-    "hubspotFormId": {
+    "video": {
       "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }
