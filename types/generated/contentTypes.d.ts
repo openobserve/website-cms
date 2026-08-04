@@ -986,6 +986,8 @@ export interface ApiEventLandingPageEventLandingPage
         'landing-page-component.whos-in-the-room',
         'landing-page-component.cta-banner',
         'landing-page-component.event-map-section',
+        'landing-page-component.why-openobserve',
+        'landing-page-component.action-highlights',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;

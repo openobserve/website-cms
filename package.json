@@ -15,7 +15,7 @@
     "@strapi/plugin-users-permissions": "5.8.1",
     "@strapi/provider-upload-aws-s3": "^5.9.0",
     "@strapi/strapi": "5.8.1",
-    "better-sqlite3": "11.3.0",
+    "better-sqlite3": "^12.11.1",
     "pg": "^8.13.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -36,5 +36,9 @@
   },
   "strapi": {
     "uuid": "35c3cf5f-c01a-4703-9afd-fd9191632e3c"
+  },
+  "allowScripts": {
+    "sharp@0.32.6": true,
+    "better-sqlite3@12.11.1": true
   }
 }

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_elements_highlight_cards",
+  "info": {
+    "displayName": "highlight-card",
+    "description": "Action card with optional date and bullet points"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "dateText": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.feature-title"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    }
+  }
+}
