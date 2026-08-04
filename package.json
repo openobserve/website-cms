@@ -36,5 +36,9 @@
   },
   "strapi": {
     "uuid": "35c3cf5f-c01a-4703-9afd-fd9191632e3c"
+  },
+  "allowScripts": {
+    "sharp@0.32.6": true,
+    "better-sqlite3@12.11.1": true
   }
 }

@@ -20,6 +20,11 @@
     },
     "hubspotFormId": {
       "type": "string"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
     }
   }
 }

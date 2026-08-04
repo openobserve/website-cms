@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_landing_page_component_action_highlights",
+  "info": {
+    "displayName": "Action Highlights",
+    "description": "Two side-by-side action cards (e.g. demo booking and webinar highlight)"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTag": {
+      "type": "string"
+    },
+    "demoCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.highlight-card"
+    },
+    "webinarCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.highlight-card"
+    }
+  }
+}

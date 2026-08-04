@@ -653,6 +653,22 @@ export interface ElementsHeading extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsHighlightCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_highlight_cards';
+  info: {
+    description: 'Action card with optional date and bullet points';
+    displayName: 'highlight-card';
+  };
+  attributes: {
+    bullets: Schema.Attribute.Component<'elements.feature-title', true>;
+    button: Schema.Attribute.Component<'elements.button', false>;
+    dateText: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsHomepageFeatureItem extends Struct.ComponentSchema {
   collectionName: 'components_elements_homepage_feature_items';
   info: {
@@ -974,6 +990,20 @@ export interface LandingPageComponentAboutSection
   };
 }
 
+export interface LandingPageComponentActionHighlights
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_action_highlights';
+  info: {
+    description: 'Two side-by-side action cards (e.g. demo booking and webinar highlight)';
+    displayName: 'Action Highlights';
+  };
+  attributes: {
+    demoCard: Schema.Attribute.Component<'elements.highlight-card', false>;
+    sectionTag: Schema.Attribute.String;
+    webinarCard: Schema.Attribute.Component<'elements.highlight-card', false>;
+  };
+}
+
 export interface LandingPageComponentAiCapabilitiesSection
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_ai_capabilities_sections';
@@ -1009,9 +1039,9 @@ export interface LandingPageComponentCtaBanner extends Struct.ComponentSchema {
     displayName: 'CTA Banner';
   };
   attributes: {
+    ctaButton: Schema.Attribute.Component<'elements.button', false>;
     description: Schema.Attribute.Text;
-    primaryButton: Schema.Attribute.Component<'elements.button', false>;
-    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    hubspotFormId: Schema.Attribute.String;
     subLine: Schema.Attribute.String;
     tagLine: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -1039,13 +1069,19 @@ export interface LandingPageComponentEventDinnerHero
     displayName: 'Event Dinner Hero';
   };
   attributes: {
+    backgroundColor: Schema.Attribute.String;
+    backgroundImage: Schema.Attribute.Media<'images' | 'files'>;
+    ctaButton: Schema.Attribute.Component<'elements.button', false>;
     date: Schema.Attribute.DateTime;
     description: Schema.Attribute.Text;
+    endDate: Schema.Attribute.DateTime;
     format: Schema.Attribute.String;
-    hubspotFormId: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
     location: Schema.Attribute.String;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     sectionTag: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    video: Schema.Attribute.String;
   };
 }
 
@@ -1058,7 +1094,10 @@ export interface LandingPageComponentEventMapSection
   };
   attributes: {
     address: Schema.Attribute.String;
+    ctaButton: Schema.Attribute.Component<'elements.button', false>;
+    description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'>;
     location: Schema.Attribute.String;
     sectionTag: Schema.Attribute.String;
   };
@@ -1299,8 +1338,28 @@ export interface LandingPageComponentWhosInTheRoom
   };
   attributes: {
     attendeeTypes: Schema.Attribute.Component<'elements.feature-title', true>;
+    ctaButton: Schema.Attribute.Component<'elements.button', false>;
     description: Schema.Attribute.Text;
     sectionTag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LandingPageComponentWhyOpenobserve
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_why_openobserves';
+  info: {
+    description: 'Header, description and image with an optional customer quote';
+    displayName: 'Why OpenObserve';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    sectionTag: Schema.Attribute.String;
+    testimonial: Schema.Attribute.Component<
+      'landing-page-component.testimonial2',
+      false
+    >;
     title: Schema.Attribute.String;
   };
 }
@@ -2297,6 +2356,7 @@ declare module '@strapi/strapi' {
       'elements.feature-title-description': ElementsFeatureTitleDescription;
       'elements.footer-item': ElementsFooterItem;
       'elements.heading': ElementsHeading;
+      'elements.highlight-card': ElementsHighlightCard;
       'elements.homepage-feature-item': ElementsHomepageFeatureItem;
       'elements.image': ElementsImage;
       'elements.items': ElementsItems;
@@ -2318,6 +2378,7 @@ declare module '@strapi/strapi' {
       'elements.testimonial-card': ElementsTestimonialCard;
       'elements.trust-logo': ElementsTrustLogo;
       'landing-page-component.about-section': LandingPageComponentAboutSection;
+      'landing-page-component.action-highlights': LandingPageComponentActionHighlights;
       'landing-page-component.ai-capabilities-section': LandingPageComponentAiCapabilitiesSection;
       'landing-page-component.architecture-section': LandingPageComponentArchitectureSection;
       'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
@@ -2339,6 +2400,7 @@ declare module '@strapi/strapi' {
       'landing-page-component.testimonial-section': LandingPageComponentTestimonialSection;
       'landing-page-component.testimonial2': LandingPageComponentTestimonial2;
       'landing-page-component.whos-in-the-room': LandingPageComponentWhosInTheRoom;
+      'landing-page-component.why-openobserve': LandingPageComponentWhyOpenobserve;
       'section-cards.additional-resources': SectionCardsAdditionalResources;
       'section-cards.articles': SectionCardsArticles;
       'section-cards.blog': SectionCardsBlog;

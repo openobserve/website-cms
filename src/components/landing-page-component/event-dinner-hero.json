@@ -24,6 +24,9 @@
     "date": {
       "type": "datetime"
     },
+    "endDate": {
+      "type": "datetime"
+    },
     "video": {
       "type": "string"
     },
@@ -40,6 +43,23 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "backgroundColor": {
+      "type": "string"
     }
   }
 }
