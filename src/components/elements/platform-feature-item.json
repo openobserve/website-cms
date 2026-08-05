@@ -15,6 +15,12 @@
             "required": false,
             "allowedTypes": ["images", "files", "videos", "audios"]
         },
+        "featureImages": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
+            "allowedTypes": ["images"]
+        },
         "items": {
             "type": "component",
             "repeatable": true,
