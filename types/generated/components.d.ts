@@ -1086,6 +1086,28 @@ export interface LandingPageComponentEventDinnerHero
   };
 }
 
+export interface LandingPageComponentEventHeroSimple
+  extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_component_event_hero_simples';
+  info: {
+    description: 'Content-only hero for event pages: background, event information and CTA buttons (no video or image)';
+    displayName: 'Event Hero Simple';
+  };
+  attributes: {
+    backgroundColor: Schema.Attribute.String;
+    backgroundImage: Schema.Attribute.Media<'images' | 'files'>;
+    ctaButton: Schema.Attribute.Component<'elements.button', false>;
+    date: Schema.Attribute.DateTime;
+    description: Schema.Attribute.Text;
+    endDate: Schema.Attribute.DateTime;
+    format: Schema.Attribute.String;
+    location: Schema.Attribute.String;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    sectionTag: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LandingPageComponentEventMapSection
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_event_map_sections';
@@ -2385,6 +2407,7 @@ declare module '@strapi/strapi' {
       'landing-page-component.cta-banner': LandingPageComponentCtaBanner;
       'landing-page-component.eligibility-requirements': LandingPageComponentEligibilityRequirements;
       'landing-page-component.event-dinner-hero': LandingPageComponentEventDinnerHero;
+      'landing-page-component.event-hero-simple': LandingPageComponentEventHeroSimple;
       'landing-page-component.event-map-section': LandingPageComponentEventMapSection;
       'landing-page-component.feature-cards': LandingPageComponentFeatureCards;
       'landing-page-component.feature-comparison': LandingPageComponentFeatureComparison;

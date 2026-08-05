@@ -25,6 +25,7 @@
       "type": "dynamiczone",
       "components": [
         "landing-page-component.event-dinner-hero",
+        "landing-page-component.event-hero-simple",
         "landing-page-component.about-section",
         "landing-page-component.whos-in-the-room",
         "landing-page-component.cta-banner",
