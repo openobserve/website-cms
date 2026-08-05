@@ -54,6 +54,9 @@ metadata:
     app: strapi
 spec:
   replicas: 1
+  # Recreate: strapi-pvc is RWO EBS; RollingUpdate deadlocks on Multi-Attach
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: strapi
