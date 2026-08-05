@@ -809,6 +809,7 @@ export interface ElementsPlatformFeatureItem extends Struct.ComponentSchema {
     featureImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    featureImages: Schema.Attribute.Media<'images', true>;
     items: Schema.Attribute.Component<'elements.platform-item', true>;
     learnMore: Schema.Attribute.Component<'elements.button', false>;
     title: Schema.Attribute.String;
