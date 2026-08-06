@@ -1112,7 +1112,7 @@ export interface LandingPageComponentEventMapSection
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_event_map_sections';
   info: {
-    description: 'Google Maps embed section for displaying event venue location';
+    description: 'Venue location section: text block on the left, Google Maps embed on the right. Uploading an image (e.g. the conference floor map showing the booth) replaces the map embed.';
     displayName: 'Event Map Section';
   };
   attributes: {
@@ -1372,11 +1372,12 @@ export interface LandingPageComponentWhyOpenobserve
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_why_openobserves';
   info: {
-    description: 'Header, description and image with an optional customer quote';
+    description: 'Header, description and image with standout feature cards and a full-width customer quote banner';
     displayName: 'Why OpenObserve';
   };
   attributes: {
     description: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'elements.reason-item', true>;
     image: Schema.Attribute.Media<'images' | 'files'>;
     sectionTag: Schema.Attribute.String;
     testimonial: Schema.Attribute.Component<

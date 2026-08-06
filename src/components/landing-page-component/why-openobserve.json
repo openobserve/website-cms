@@ -2,7 +2,7 @@
   "collectionName": "components_landing_page_component_why_openobserves",
   "info": {
     "displayName": "Why OpenObserve",
-    "description": "Header, description and image with an optional customer quote"
+    "description": "Header, description and image with standout feature cards and a full-width customer quote banner"
   },
   "options": {},
   "attributes": {
@@ -23,6 +23,11 @@
         "images",
         "files"
       ]
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.reason-item"
     },
     "testimonial": {
       "type": "component",
