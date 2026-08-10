@@ -2,7 +2,7 @@
   "collectionName": "components_landing_page_component_event_hero_simples",
   "info": {
     "displayName": "Event Hero Simple",
-    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image)"
+    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Enter `date` as the event's own local time — it is shown exactly as typed, with the `timeZone` value as the label (5:30 PM + PT renders '5:30 PM PT'). No timezone conversion is applied."
   },
   "options": {},
   "attributes": {
@@ -26,6 +26,18 @@
     },
     "endDate": {
       "type": "datetime"
+    },
+    "timeZone": {
+      "type": "enumeration",
+      "enum": [
+        "ET",
+        "CT",
+        "MT",
+        "PT",
+        "IST",
+        "GMT"
+      ],
+      "default": "ET"
     },
     "ctaButton": {
       "type": "component",
