@@ -537,6 +537,10 @@ export interface ElementsEventCardItem extends Struct.ComponentSchema {
     theme: Schema.Attribute.Enumeration<
       ['theme-green-minimal', 'theme-orange', 'theme-blue']
     >;
+    timeZone: Schema.Attribute.Enumeration<
+      ['ET', 'CT', 'MT', 'PT', 'IST', 'GMT']
+    > &
+      Schema.Attribute.DefaultTo<'ET'>;
     title: Schema.Attribute.String;
   };
 }
@@ -1066,7 +1070,7 @@ export interface LandingPageComponentEventDinnerHero
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_event_dinner_heroes';
   info: {
-    description: 'Hero section for invitation-only dinner event pages';
+    description: "Hero section for invitation-only dinner event pages. Enter `date` as the event's own local time \u2014 it is shown exactly as typed, with the `timeZone` value as the label (5:30 PM + PT renders '5:30 PM PT'). No timezone conversion is applied.";
     displayName: 'Event Dinner Hero';
   };
   attributes: {
@@ -1081,6 +1085,10 @@ export interface LandingPageComponentEventDinnerHero
     location: Schema.Attribute.String;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     sectionTag: Schema.Attribute.String;
+    timeZone: Schema.Attribute.Enumeration<
+      ['ET', 'CT', 'MT', 'PT', 'IST', 'GMT']
+    > &
+      Schema.Attribute.DefaultTo<'ET'>;
     title: Schema.Attribute.String;
     video: Schema.Attribute.String;
   };
@@ -1090,7 +1098,7 @@ export interface LandingPageComponentEventHeroSimple
   extends Struct.ComponentSchema {
   collectionName: 'components_landing_page_component_event_hero_simples';
   info: {
-    description: 'Content-only hero for event pages: background, event information and CTA buttons (no video or image)';
+    description: "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Enter `date` as the event's own local time \u2014 it is shown exactly as typed, with the `timeZone` value as the label (5:30 PM + PT renders '5:30 PM PT'). No timezone conversion is applied.";
     displayName: 'Event Hero Simple';
   };
   attributes: {
@@ -1104,6 +1112,10 @@ export interface LandingPageComponentEventHeroSimple
     location: Schema.Attribute.String;
     secondaryButton: Schema.Attribute.Component<'elements.button', false>;
     sectionTag: Schema.Attribute.String;
+    timeZone: Schema.Attribute.Enumeration<
+      ['ET', 'CT', 'MT', 'PT', 'IST', 'GMT']
+    > &
+      Schema.Attribute.DefaultTo<'ET'>;
     title: Schema.Attribute.String;
   };
 }

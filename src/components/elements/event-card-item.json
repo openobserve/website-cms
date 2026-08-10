@@ -26,6 +26,18 @@
     "eventEndDate": {
       "type": "datetime"
     },
+    "timeZone": {
+      "type": "enumeration",
+      "enum": [
+        "ET",
+        "CT",
+        "MT",
+        "PT",
+        "IST",
+        "GMT"
+      ],
+      "default": "ET"
+    },
     "theme": {
       "type": "enumeration",
       "enum": [

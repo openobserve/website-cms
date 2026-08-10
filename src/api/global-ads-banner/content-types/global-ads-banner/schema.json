@@ -5,7 +5,7 @@
     "singularName": "global-ads-banner",
     "pluralName": "global-ads-banners",
     "displayName": "Global Ads Banner",
-    "description": ""
+    "description": "Site-wide header/footer banner. Unlike event pages, `date` here is a real point in time and IS converted into `timeZone` before display (15:00 UTC + ET renders '11:00 AM ET')."
   },
   "options": {
     "draftAndPublish": true
@@ -40,8 +40,13 @@
       "type": "enumeration",
       "enum": [
         "ET",
-        "IST"
-      ]
+        "CT",
+        "MT",
+        "PT",
+        "IST",
+        "GMT"
+      ],
+      "default": "ET"
     }
   }
 }

@@ -86,7 +86,11 @@
       "type": "enumeration",
       "enum": [
         "ET",
-        "IST"
+        "CT",
+        "MT",
+        "PT",
+        "IST",
+        "GMT"
       ],
       "default": "ET"
     },

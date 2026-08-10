@@ -1214,7 +1214,7 @@ export interface ApiGlobalAdsBannerGlobalAdsBanner
   extends Struct.SingleTypeSchema {
   collectionName: 'global_ads_banners';
   info: {
-    description: '';
+    description: "Site-wide header/footer banner. Unlike event pages, `date` here is a real point in time and IS converted into `timeZone` before display (15:00 UTC + ET renders '11:00 AM ET').";
     displayName: 'Global Ads Banner';
     pluralName: 'global-ads-banners';
     singularName: 'global-ads-banner';
@@ -1245,7 +1245,10 @@ export interface ApiGlobalAdsBannerGlobalAdsBanner
     primaryButton: Schema.Attribute.Component<'elements.button', false>;
     publishedAt: Schema.Attribute.DateTime;
     tag: Schema.Attribute.String;
-    timeZone: Schema.Attribute.Enumeration<['ET', 'IST']>;
+    timeZone: Schema.Attribute.Enumeration<
+      ['ET', 'CT', 'MT', 'PT', 'IST', 'GMT']
+    > &
+      Schema.Attribute.DefaultTo<'ET'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -2142,7 +2145,9 @@ export interface ApiWebinarPostWebinarPost extends Struct.CollectionTypeSchema {
     resources: Schema.Attribute.Component<'elements.items-link', true>;
     seo: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.String;
-    timeZone: Schema.Attribute.Enumeration<['ET', 'IST']> &
+    timeZone: Schema.Attribute.Enumeration<
+      ['ET', 'CT', 'MT', 'PT', 'IST', 'GMT']
+    > &
       Schema.Attribute.DefaultTo<'ET'>;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['webinar', 'videos']>;
