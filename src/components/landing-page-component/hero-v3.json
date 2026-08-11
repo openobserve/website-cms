@@ -12,6 +12,21 @@
     "description": {
       "type": "text"
     },
+    "techBadges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.button-with-icon"
+    },
+    "primaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
+    "secondaryButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button"
+    },
     "trustedCompanies": {
       "type": "component",
       "repeatable": true,
@@ -21,6 +36,15 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.compare-item"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     },
     "formsectionHeading": {
       "type": "component",

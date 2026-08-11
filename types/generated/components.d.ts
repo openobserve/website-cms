@@ -1221,6 +1221,10 @@ export interface LandingPageComponentHeroV3 extends Struct.ComponentSchema {
     features: Schema.Attribute.Component<'elements.compare-item', true>;
     formButtonText: Schema.Attribute.Component<'elements.button', false>;
     formsectionHeading: Schema.Attribute.Component<'elements.heading', false>;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    primaryButton: Schema.Attribute.Component<'elements.button', false>;
+    secondaryButton: Schema.Attribute.Component<'elements.button', false>;
+    techBadges: Schema.Attribute.Component<'elements.button-with-icon', true>;
     title: Schema.Attribute.String;
     trustedCompanies: Schema.Attribute.Component<'elements.image', true>;
   };
