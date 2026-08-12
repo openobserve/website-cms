@@ -15,6 +15,10 @@
     "description": {
       "type": "text"
     },
+    "videoLink": {
+      "type": "string",
+      "description": "YouTube video URL (watch, youtu.be or embed link) shown in the hero"
+    },
     "trustedCompanies": {
       "type": "component",
       "repeatable": true,

@@ -46,6 +46,10 @@
       "type": "media",
       "multiple": false
     },
+    "videoLink": {
+      "type": "string",
+      "description": "YouTube video URL (watch, youtu.be or embed link). Shown in place of the form; takes priority over media."
+    },
     "formsectionHeading": {
       "type": "component",
       "repeatable": false,
