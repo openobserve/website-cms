@@ -12,6 +12,10 @@
     "description": {
       "type": "text"
     },
+    "keywords": {
+      "type": "text",
+      "description": "Comma-separated list of keywords for the page. Rendered as the meta keywords tag."
+    },
     "viewport": {
       "type": "string"
     },
