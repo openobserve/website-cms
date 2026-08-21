@@ -2,7 +2,7 @@
   "collectionName": "components_landing_page_component_event_hero_simples",
   "info": {
     "displayName": "Event Hero Simple",
-    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Enter `date` as the event's own local time — it is shown exactly as typed, with the `timeZone` value as the label (5:30 PM + PT renders '5:30 PM PT'). No timezone conversion is applied."
+    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Enter `date` as the event's own local time — it is shown exactly as typed, with the `timeZone` value as the label (5:30 PM + PT renders '5:30 PM PT'). No timezone conversion is applied. Set `hubspotFormId` to put a registration form in the hero, below the CTAs; it renders as a single row when the HubSpot form has one field."
   },
   "options": {},
   "attributes": {
@@ -38,6 +38,9 @@
         "GMT"
       ],
       "default": "ET"
+    },
+    "hubspotFormId": {
+      "type": "string"
     },
     "ctaButton": {
       "type": "component",
