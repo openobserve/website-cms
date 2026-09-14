@@ -2,7 +2,7 @@
   "collectionName": "components_elements_event_card_items",
   "info": {
     "displayName": "Event CardItem",
-    "description": ""
+    "description": "Use `eventDate` + `eventTime` (+ `eventEndsOn` for multi-day). These are timezone-naive: the admin stores exactly what you type, and the page prints exactly that, with `timeZone` as a label (18 Sep + 19:30 + IST renders 'September 18, 2026 · 7:30 PM IST'). No conversion, in either direction, for any visitor. The legacy datetime fields are still read as a fallback until every entry is migrated - do not use them for new entries; their picker shifts what you type by your own browser offset."
   },
   "options": {},
   "attributes": {
@@ -25,6 +25,15 @@
     },
     "eventEndDate": {
       "type": "datetime"
+    },
+    "eventDate": {
+      "type": "date"
+    },
+    "eventTime": {
+      "type": "time"
+    },
+    "eventEndsOn": {
+      "type": "date"
     },
     "timeZone": {
       "type": "enumeration",
