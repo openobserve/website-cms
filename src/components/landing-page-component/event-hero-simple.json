@@ -2,7 +2,7 @@
   "collectionName": "components_landing_page_component_event_hero_simples",
   "info": {
     "displayName": "Event Hero Simple",
-    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Use `eventDate` + `eventTime` (+ `eventEndsOn` for multi-day). These are timezone-naive: the admin stores exactly what you type, and the page prints exactly that, with `timeZone` as a label (18 Sep + 19:30 + IST renders 'September 18, 2026 · 7:30 PM IST'). No conversion, in either direction, for any visitor. The legacy datetime fields are still read as a fallback until every entry is migrated - do not use them for new entries; their picker shifts what you type by your own browser offset."
+    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Use `eventDate` + `eventTime` (+ `eventEndsOn` for multi-day). These are timezone-naive: the admin stores exactly what you type, and the page prints exactly that, with `timeZone` as a label (18 Sep + 19:30 + IST renders 'September 18, 2026 · 7:30 PM IST'). No conversion, in either direction, for any visitor. The legacy datetime fields are still read as a fallback until every entry is migrated - do not use them for new entries; their picker shifts what you type by your own browser offset. `eventEndTime` is optional: set it only when the event should advertise a finish time, and the page renders a range (7:30 PM - 10 PM IST). Leave it blank for a start time alone."
   },
   "options": {},
   "attributes": {
@@ -35,6 +35,9 @@
     },
     "eventEndsOn": {
       "type": "date"
+    },
+    "eventEndTime": {
+      "type": "time"
     },
     "timeZone": {
       "type": "enumeration",
