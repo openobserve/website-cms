@@ -2,7 +2,7 @@
   "collectionName": "components_landing_page_component_event_hero_simples",
   "info": {
     "displayName": "Event Hero Simple",
-    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Enter `date` as the event's own local time — it is shown exactly as typed, with the `timeZone` value as the label (5:30 PM + PT renders '5:30 PM PT'). No timezone conversion is applied. Set `hubspotFormId` to put a registration form in the hero, below the CTAs; it renders as a single row when the HubSpot form has one field."
+    "description": "Content-only hero for event pages: background, event information and CTA buttons (no video or image). Use `eventDate` + `eventTime` (+ `eventEndsOn` for multi-day). These are timezone-naive: the admin stores exactly what you type, and the page prints exactly that, with `timeZone` as a label (18 Sep + 19:30 + IST renders 'September 18, 2026 · 7:30 PM IST'). No conversion, in either direction, for any visitor. The legacy datetime fields are still read as a fallback until every entry is migrated - do not use them for new entries; their picker shifts what you type by your own browser offset."
   },
   "options": {},
   "attributes": {
@@ -26,6 +26,15 @@
     },
     "endDate": {
       "type": "datetime"
+    },
+    "eventDate": {
+      "type": "date"
+    },
+    "eventTime": {
+      "type": "time"
+    },
+    "eventEndsOn": {
+      "type": "date"
     },
     "timeZone": {
       "type": "enumeration",

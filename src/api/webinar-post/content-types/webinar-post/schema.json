@@ -21,6 +21,12 @@
     "date": {
       "type": "datetime"
     },
+    "eventDate": {
+      "type": "date"
+    },
+    "eventTime": {
+      "type": "time"
+    },
     "duration": {
       "type": "string"
     },
