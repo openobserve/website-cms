@@ -3,7 +3,6 @@ import {
   validateVariantChanges,
   validateGoalType,
 } from "./utils/validateVariantChange";
-import { backfillEventTimes } from "./utils/backfillEventTimes";
 
 export default {
   /**
@@ -37,9 +36,5 @@ export default {
    */
   async bootstrap() {
      strapi.server.httpServer.requestTimeout = 5 * 60 * 1000;
-
-     // Populates the naive eventDate/eventTime fields from the legacy datetime
-     // columns. Reports by default; set BACKFILL_EVENT_TIMES=apply to write.
-     await backfillEventTimes(strapi);
   },
 };
