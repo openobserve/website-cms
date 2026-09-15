@@ -20,12 +20,6 @@
     "eventPlace": {
       "type": "string"
     },
-    "eventStartDate": {
-      "type": "datetime"
-    },
-    "eventEndDate": {
-      "type": "datetime"
-    },
     "eventDate": {
       "type": "date"
     },

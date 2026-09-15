@@ -21,12 +21,6 @@
     "description": {
       "type": "text"
     },
-    "date": {
-      "type": "datetime"
-    },
-    "endDate": {
-      "type": "datetime"
-    },
     "eventDate": {
       "type": "date"
     },
