@@ -18,9 +18,6 @@
     "overview": {
       "type": "text"
     },
-    "date": {
-      "type": "datetime"
-    },
     "eventDate": {
       "type": "date"
     },
